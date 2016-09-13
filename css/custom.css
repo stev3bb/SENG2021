@@ -1,7 +1,6 @@
 .navbar {
     margin-bottom: 0;
-    font-size: 26px;
-    height: 100px;
+    --font-size: 20px;
 }
 
 .jumbotron {
