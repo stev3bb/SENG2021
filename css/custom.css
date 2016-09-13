@@ -12,3 +12,8 @@
     color: white;
     text-align: center;
 }
+
+ #map {
+    height: 70%;
+    width: 70%; 
+}
