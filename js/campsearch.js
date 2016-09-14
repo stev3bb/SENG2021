@@ -19,8 +19,14 @@ function initMap() {
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
       map.setCenter(pos);
+
+      //add a marker where u are
+      var marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          title: 'Hello World!'
+      });
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -33,6 +39,6 @@ function initMap() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
+                        'Error: The Geolocation service failed or location not found':
                         'Error: Your browser doesn\'t support geolocation.');
 }
