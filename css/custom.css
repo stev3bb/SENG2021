@@ -14,6 +14,12 @@
 }
 
  #map {
-    height: 70%;
-    width: 70%; 
+    height: 100%;
+    --width: 100%;
+}
+
+.campsearch {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
