@@ -1,6 +1,5 @@
 .navbar {
     margin-bottom: 0;
-    --font-size: 20px;
 }
 
 .navbar-inverse {
@@ -10,15 +9,15 @@
 
 .navbar-inverse .navbar-nav li a {
 	color: #f7f7f7;
-	font-size: 16px;
+	font-size: 18px;
 }
 .navbar-inverse .navbar-nav li a:hover {
 	background: #a6a6a6;
 }
 
 .jumbotron {
-    height: 1000px;
-    background-image: url(../img/home.jpg);
+    height: 950px;
+    background-image: url(../img/home2.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
