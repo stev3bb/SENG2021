@@ -1,3 +1,6 @@
+/***
+    GENERAL STYLING
+***/
 body {
     font-family: 'Raleway', sans-serif;
 }
@@ -47,6 +50,9 @@ body {
     content: '';
 }
 
+/***
+    HOMEPAGE STYLING
+***/
 .jumbotron {
     height: 950px;
     background-image: url(../img/home2.jpg);
@@ -75,6 +81,10 @@ h1#discover {
     font-size: 100px;
 }
 
+
+/***
+    CAMPSITE SEARCH STYLING
+***/
 .googlemap {
     height: 70%;
     width: 70%;
