@@ -1,18 +1,17 @@
+/***
+    GENERAL STYLING
+***/
 body {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.googlemap {
-    height: 70%;
-    width: 70%;
+    font-family: 'Raleway', sans-serif;
 }
 
 .navbar {
+    height: 70px;
     margin-bottom: 0;
 }
 
-.navbar-brand {
-    padding-top: 7px;
+.navbar-inverse .navbar-brand {
+    padding-top: 16px;
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
@@ -30,9 +29,10 @@ body {
 
 .navbar-inverse .navbar-nav li a {
 	color: #a6a6a6;
-    --padding-left: 30px;
-    --padding-right: 30px;
-	font-size: 20px;
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 16px;
+	font-size: 24px;
 }
 .navbar-inverse .navbar-nav li a:hover {
 	color: #f7f7f7;
@@ -40,16 +40,19 @@ body {
 
 .navbar-nav li::before {
     content: '|';
-    font-size: 18px;
+    font-size: 22px;
     float: inherit;
-    margin-top: 12px;
-    color: #f7f7f7;
+    padding-top: 18px;
+    color: #a6a6a6;
 }
 
 .navbar-nav li:first-child::before {
     content: '';
 }
 
+/***
+    HOMEPAGE STYLING
+***/
 .jumbotron {
     height: 950px;
     background-image: url(../img/home2.jpg);
@@ -70,8 +73,21 @@ body {
 }
 
 .vcenter {
-    margin-top: 25%;
-    margin-bottom: 25%;
+    margin-top: 15%;
+}
+
+h1#discover {
+    font-family: 'Amatic SC', cursive;
+    font-size: 100px;
+}
+
+
+/***
+    CAMPSITE SEARCH STYLING
+***/
+.googlemap {
+    height: 70%;
+    width: 70%;
 }
 
 .campsearch {
