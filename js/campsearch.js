@@ -47,6 +47,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function search() {
 //search functionality goes here
-  var searchval = document.getElementById('value').value;
+  var searchval = document.getElementById('searchvalue').value;
+  google.maps.places.AutocompletePrediction(searchval);
   alert(searchval);
 }
+
+

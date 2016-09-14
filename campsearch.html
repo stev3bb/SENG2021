@@ -16,20 +16,6 @@
             height: 80%;
             width: 70%;
             }
-            input[type=text] {
-            width: 130px;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: white;
-            background-image: url('icons/searchicon.png');
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 40px;
-            -webkit-transition: width 0.4s ease-in-out;
-            transition: width 0.4s ease-in-out;
-            }
             input[type=text]:focus {
             width: 40%;
             }
@@ -68,8 +54,8 @@
     <h1>Campsite search</h1>
     <!-- search value -->
 
-    <input type="text" name="searchvalue" id='value' />
-    <input type="button" value="submit" onclick="search()" />
+    <input type="text" placeholder="Enter your city" id ="searchvalue"/>
+    <input type="button" value="search" onclick="search()" />
         
     <script src="js/campsearch.js"></script>
     <!--testing for passing values through search function-->
