@@ -44,3 +44,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Location not found':
                         'Your browser doesn\'t support geolocation.');
 }
+
+function search() {
+//search functionality goes here
+  var searchval = document.getElementById('value').value;
+  alert(searchval);
+}
