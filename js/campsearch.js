@@ -83,14 +83,63 @@ function search() {
 //search functionality goes here
   var searchval = document.getElementById('value').value;
   var radius = document.getElementById('distval').value;
-  /*infowindow = new google.maps.InfoWindow();
+
+  if (document.getElementById('checkednearby').checked){
+
+  //getting current location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+    });
+  }else{
+    //some default location here
+    var pos ={lat: -34.397, lng: 150.644};
+  }
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: pos,
+    //fix hardcoded value here
+    zoom: 10
+  });
+
+  var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
-    location: pyrmont,
-    radius: 50000,
+    location: pos,
+    radius: radius,
     type: ['campground']
-  }, callback);*/
-  alert(searchval + radius);
+  }, callback);
+
+  function callback(results, status) {
+   if (status === google.maps.places.PlacesServiceStatus.OK) {
+   for (var i = 0; i < results.length; i++) {
+     createMarker(results[i]);
+     }
+    }
+  }
+
+  function createMarker(place) {
+   var placeLoc = place.geometry.location;
+   var marker = new google.maps.Marker({
+    map: map,
+   position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+   infowindow.open(map, this);
+   });
+  }
+
+    alert("fuck yea do something");
+  }else{
+    alert("doing something else")
+  }
+
+
 }
 
 
