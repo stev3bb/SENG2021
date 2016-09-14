@@ -8,6 +8,8 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 12
   });
+  //var directionsDisplay = new google.maps.DirectionsRenderer;
+  //var directionsService = new google.maps.DirectionsService;
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
