@@ -54,6 +54,13 @@
     <h1>Campsite search</h1>
     <!-- search value -->
     <input type="text" name="searchvalue" id='value' />
+    <select name="distance" id="distval">
+      <option value="" disabled selected>Distance</option>
+      <option value="50">50km</option>
+      <option value="100">100km</option>
+      <option value="200">200km</option>
+      <option value="500">500km</option>
+    </select>
     <input type="button" value="submit" onclick="search()" />
 
     <!--testing for passing values through search function-->

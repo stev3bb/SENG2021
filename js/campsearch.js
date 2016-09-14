@@ -10,12 +10,12 @@ function initMap() {
   });
   //var directionsDisplay = new google.maps.DirectionsRenderer;
   //var directionsService = new google.maps.DirectionsService;
-  var loc = {lat: -34.4, lng: 150.6};
-  var test = new google.maps.Marker({
-      position: loc,
-      map: map,
-      title: "Test Marker"
-  });
+  //var loc = {lat: -34.4, lng: 150.6};
+  //var test = new google.maps.Marker({
+   //   position: loc,
+    //  map: map,
+     // title: "Test Marker"
+  //});
 
   var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
@@ -41,9 +41,9 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow({
         content: contentString
     });
-    test.addListener('click', function() {
-        infowindow.open(map, test);
-    })
+    //test.addListener('click', function() {
+      //  infowindow.open(map, test);
+    //})
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -67,7 +67,7 @@ function initMap() {
     });
   } else {
     // Browser doesn't support Geolocation
-    //var infoWindow = new google.maps.InfoWindow({map: map});
+    var infoWindow = new google.maps.InfoWindow({map: map});
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
@@ -81,9 +81,16 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function search() {
 //search functionality goes here
-  var searchval = document.getElementById('searchvalue').value;
-  google.maps.places.AutocompletePrediction(searchval);
-  alert(searchval);
+  var searchval = document.getElementById('value').value;
+  var radius = document.getElementById('distval').value;
+  /*infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: pyrmont,
+    radius: 50000,
+    type: ['campground']
+  }, callback);*/
+  alert(searchval + radius);
 }
 
 
