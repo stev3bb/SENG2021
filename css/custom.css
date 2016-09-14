@@ -55,6 +55,15 @@ body {
     text-align: center;
 }
 
+.input-group-xlg, .input-xlg, .btn-xlg {
+    height: 70px;
+    font-size: 32px;
+}
+
+.btn-xlg {
+    width: 70px;
+}
+
 .vcenter {
     margin-top: 25%;
     margin-bottom: 25%;
