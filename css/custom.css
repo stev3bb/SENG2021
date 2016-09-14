@@ -23,13 +23,21 @@ body {
 }
 
 .navbar-inverse .navbar-nav li a {
-	color: #f7f7f7;
+	color: #a6a6a6;
     --padding-left: 30px;
     --padding-right: 30px;
 	font-size: 18px;
 }
 .navbar-inverse .navbar-nav li a:hover {
-	background: #a6a6a6;
+	color: #f7f7f7;
+}
+
+.navbar-nav li::before {
+    content: '|';
+    font-size: 18px;
+    float: inherit;
+    margin-top: 12px;
+    color: #f7f7f7;
 }
 
 .jumbotron {
