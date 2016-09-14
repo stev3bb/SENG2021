@@ -3,6 +3,10 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 
+var map;
+// Create a blank array for all map markers
+var markers = [];
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -10,40 +14,34 @@ function initMap() {
   });
   //var directionsDisplay = new google.maps.DirectionsRenderer;
   //var directionsService = new google.maps.DirectionsService;
-  //var loc = {lat: -34.4, lng: 150.6};
-  //var test = new google.maps.Marker({
-   //   position: loc,
-    //  map: map,
-     // title: "Test Marker"
-  //});
 
-  var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-            '<div id="bodyContent">'+
-            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-            'sandstone rock formation in the southern part of the '+
-            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-            'south west of the nearest large town, Alice Springs; 450&#160;km '+
-            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-            'Aboriginal people of the area. It has many springs, waterholes, '+
-            'rock caves and ancient paintings. Uluru is listed as a World '+
-            'Heritage Site.</p>'+
-            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-            '(last visited June 22, 2009).</p>'+
-            '</div>'+
-            '</div>';
+  var campsites = [
+      {title: 'TEST MARKER', location: {lat: -34.4, lng: 150.6}},
+      {title: 'Honeymoon Bay', location: {lat: -35.01792, lng: 150.807818}},
+      {title: 'Cockatoo Island', location: {lat: -33.8476028, lng: 151.1709488}},
+  ]
 
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-    //test.addListener('click', function() {
-      //  infowindow.open(map, test);
-    //})
+  var largeInfoWindow = new google.maps.InfoWindow();
+
+  for (var i = 0; i < campsites.length; i++) {
+      // Get the location of the campsite
+      var pos = campsites[i].location;
+      var title = campsites[i].title;
+      // Create a marker for each location and add to markers array
+      var marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          title: title,
+          animation: google.maps.animation.DROP,
+          id: i
+      })
+      markers.push(marker);
+      marker.addListener('click', function() {
+          populateInfoWindow(this, largeInfoWindow);
+      })
+  }
+
+  
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -141,5 +139,3 @@ function search() {
 
 
 }
-
-
