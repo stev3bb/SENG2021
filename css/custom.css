@@ -12,9 +12,10 @@ body {
 }
 
 .navbar-brand {
-    padding-top: 5px;
+    padding-top: 7px;
     font-size: 24px;
     font-weight: bold;
+    color: #ffffff;
 }
 
 #logo {
@@ -31,7 +32,7 @@ body {
 	color: #a6a6a6;
     --padding-left: 30px;
     --padding-right: 30px;
-	font-size: 18px;
+	font-size: 20px;
 }
 .navbar-inverse .navbar-nav li a:hover {
 	color: #f7f7f7;
@@ -43,6 +44,10 @@ body {
     float: inherit;
     margin-top: 12px;
     color: #f7f7f7;
+}
+
+.navbar-nav li:first-child::before {
+    content: '';
 }
 
 .jumbotron {
