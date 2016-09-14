@@ -3,6 +3,19 @@
     --font-size: 20px;
 }
 
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: #a6a6a6;
+}
+
 .jumbotron {
     height: 1000px;
     background-image: url(../img/home.jpg);
@@ -11,6 +24,11 @@
     background-repeat: no-repeat;
     color: white;
     text-align: center;
+}
+
+.vcenter {
+    margin-top: 25%;
+    margin-bottom: 25%;
 }
 
  #map {
