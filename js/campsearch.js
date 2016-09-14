@@ -25,7 +25,7 @@ function initMap() {
       var marker = new google.maps.Marker({
           position: pos,
           map: map,
-          title: 'Hello World!'
+          title: "current location"
       });
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -39,6 +39,6 @@ function initMap() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed or location not found':
-                        'Error: Your browser doesn\'t support geolocation.');
+                        'Location not found':
+                        'Your browser doesn\'t support geolocation.');
 }
