@@ -1,11 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .navbar {
     margin-bottom: 0;
-    --font-size: 20px;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#logo {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: #a6a6a6;
+    --padding-left: 30px;
+    --padding-right: 30px;
+	font-size: 18px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	color: #f7f7f7;
+}
+
+.navbar-nav li::before {
+    content: '|';
+    font-size: 18px;
+    float: inherit;
+    margin-top: 12px;
+    color: #f7f7f7;
 }
 
 .jumbotron {
-    height: 1000px;
-    background-image: url(../img/home.jpg);
+    height: 950px;
+    background-image: url(../img/home2.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,7 +50,13 @@
     text-align: center;
 }
 
- #map {
-    height: 10%;
-    width: 10%; 
+.vcenter {
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+.campsearch {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
