@@ -95,7 +95,3 @@ h1#discover {
 height: 80%;
 width: 70%;
 }
-
-input[type=text]:focus {
-width: 40%;
-}
