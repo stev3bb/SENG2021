@@ -85,13 +85,17 @@ h1#discover {
 /***
     CAMPSITE SEARCH STYLING
 ***/
-.googlemap {
-    height: 70%;
-    width: 70%;
-}
 
 .campsearch {
   height: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+}
+
+#map {
+height: 80%;
+width: 70%;
+}
+
+input[type=text]:focus {
+width: 40%;
 }
