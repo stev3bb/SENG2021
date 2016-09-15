@@ -127,40 +127,69 @@ function search() {
     var searchval = document.getElementById('value').value;
     var radius = document.getElementById('distval').value;
 
+    //some variables
+    var map;
+    var service;
+    var marker;
+    var pos;
+    var infowindow;
+    var mapOptions = {
+      zoom: 15
+    };
+
+    //make new map here
+     map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    console.log(map);
+
+    //if the nearby textbox is tickled
     if (document.getElementById('checkednearby').checked) {
 
-        //getting current location
+        //if geolocation is enabled
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
+              pos = new google.maps.LatLng(position.coords.latitude,
+                                         position.coords.longitude);
+              infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: pos,
+                content: 'Located'
+              });
+
+              map.setCenter(pos);
+
+              var request = {
+                location: pos,
+                radius: radius*1000,
+                types: ['campground']
+              }
+              infowindow = new google.maps.InfoWindow();
+              var service = new google.maps.places.PlacesService(map);
+              service.nearbySearch(request,callback);
+            }, function (){
+              handleNoGeolocation(true);
             });
         } else {
-            //some default location here
-            var pos = {
-                lat: -34.397,
-                lng: 150.644
-            };
+          handleNoGeolocation(false);
+          alert("screwed up guys");
         }
 
-        map.center = pos;
-        map.zoom = 10;
+        //map.center = pos;
+        //map.zoom = 10;
         // var map = new google.maps.Map(document.getElementById('map'), {
         //     center: pos,
         //     //fix hardcoded value here
         //     zoom: 10
         // });
 
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-            location: pos,
-            radius: radius,
-            type: ['campground']
-        }, callback);
+        //var infowindow = new google.maps.InfoWindow();
+    //    var service = new google.maps.places.PlacesService(map);
+      //  service.nearbySearch({
+           // location: pos,
+        //    radius: radius,
+         //   type: ['campground']
+        //}, callback);
 
+        //add the pointers here
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
