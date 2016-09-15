@@ -134,7 +134,7 @@ function search() {
     var pos;
     var infowindow;
     var mapOptions = {
-      zoom: 15
+      zoom: 10
     };
 
     //make new map here
@@ -152,7 +152,7 @@ function search() {
               infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: pos,
-                content: 'Located'
+                content: 'My current location'
               });
 
               map.setCenter(pos);
@@ -170,7 +170,7 @@ function search() {
             });
         } else {
           handleNoGeolocation(false);
-          alert("screwed up guys");
+          //alert("screwed up guys");
         }
 
         //map.center = pos;
@@ -211,7 +211,7 @@ function search() {
             });
         }
 
-        alert("fuck yea do something");
+        alert(radius);
     } else {
         alert("doing something else")
     }

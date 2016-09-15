@@ -11,14 +11,14 @@ body {
 }
 
 .navbar-inverse .navbar-brand {
-    padding-top: 16px;
-    font-size: 24px;
+    padding-top: 7px;
+    font-size: 26px;
     font-weight: bold;
     color: #ffffff;
 }
 
 #logo {
-    width: 50px;
+    width: 64px;
     padding-right: 10px;
 }
 
@@ -85,13 +85,17 @@ h1#discover {
 /***
     CAMPSITE SEARCH STYLING
 ***/
-.googlemap {
-    height: 70%;
-    width: 70%;
-}
 
 .campsearch {
   height: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+}
+
+#map {
+height: 80%;
+width: 70%;
+}
+
+input[type=text]:focus {
+width: 40%;
 }
