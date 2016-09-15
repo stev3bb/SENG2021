@@ -144,6 +144,8 @@ function search() {
             };
         }
 
+        map.center = pos;
+        map.zoom = 10;
         // var map = new google.maps.Map(document.getElementById('map'), {
         //     center: pos,
         //     //fix hardcoded value here
