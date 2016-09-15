@@ -81,20 +81,25 @@ function search() {
 //search functionality goes here
   var searchval = document.getElementById('value').value;
   var radius = document.getElementById('distval').value;
+  //position
+  var pos;
 
   if (document.getElementById('checkednearby').checked){
 
   //getting current location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+      pos = new google.maps.LatLng(position.coords.latitude,
+                                         position.coords.longitude);
+
+    infowindow = new google.maps.InfoWindow({
+      map: map,
+      position: pos,
+      content: 'Located'
     });
   }else{
     //some default location here
-    var pos ={lat: -34.397, lng: 150.644};
+    pos ={lat: -34.397, lng: 150.644};
   }
 
   var map = new google.maps.Map(document.getElementById('map'), {
