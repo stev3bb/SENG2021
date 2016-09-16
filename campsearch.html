@@ -9,6 +9,7 @@
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Raleway|Roboto" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,31 +43,34 @@
             </div>
         </div>
     </nav>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <h1>Campsite search</h1>
+            <!-- search value -->
+            <form class="form-inline">
+                <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value"/>
+                <select class="selectpicker" name="distance" id="distval">
+                    <option value="" disabled selected>Distance</option>
+                    <option value="50">50km</option>
+                    <option value="100">100km</option>
+                    <option value="200">200km</option>
+                    <option value="500">500km</option>
+                </select>
+                <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
+                <input class="btn btn-default" type="button" value="Submit" onclick="search()">
+                <input id="hide-markers" class="btn btn-default" type="button" value="Hide Markers">
+                <input id="show-markers" class="btn btn-default" type="button" value="Show Markers">
+            </form>
+        </div>
+    </div>
 
-    <h1>Campsite search</h1>
-    <!-- search value -->
-
-        <input type="text" name="searchvalue" id='value' />
-        <select name="distance" id="distval">
-            <option value="" disabled selected>Distance</option>
-            <option value="50">50km</option>
-            <option value="100">100km</option>
-            <option value="200">200km</option>
-            <option value="500">500km</option>
-        </select>
-        <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
-        <input class="btn btn-default" type="button" value="Submit" onclick="search()">
-        <input id="hide-markers" class="btn btn-default" type="button" value="Hide Markers">
-        <input id="show-markers" class="btn btn-default" type="button" value="Show Markers">
 
     <!--testing for passing values through search function-->
 
     <p>
         <div id="map"></div>
-        <script src="js/campsearch.js"></script>
-        <script async defer
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
-        </script>
     </p>
 
     <h1>TEST</h1>
@@ -76,6 +80,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/campsearch.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
   </body>
 </html>
