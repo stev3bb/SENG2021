@@ -13,12 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Raleway|Roboto" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- Currently not being used - called 'Angular Google Maps'
     <script src="js/angular-simple-logger.js"></script>
     <script src="js/lodash.core.min.js"></script>
-    <script src="js/angular-google-maps.min.js"></script>
+    <script src="js/angular-google-maps.min.js"></script>-->
     <script src="js/app.module.js"></script>
     <script src="js/site-navbar/site-navbar.module.js"></script>
     <script src="js/site-navbar/site-navbar.component.js"></script>
+    <script src="js/home-search/home-search.module.js"></script>
+    <script src="js/home-search/home-search.component.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,13 +43,7 @@
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <div class="input-group input-group-xlg">
-                        <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="location">
-                        <span class="input-group-btn">
-                                <button class="btn btn-default btn-xlg" type="button" ng-click="campsiteSearch(location)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </span>
-                    </div>
-                    <!-- /input-group -->
+                    <home-search></home-search>
                 </div>
                 <div class="col-lg-2"></div>
             </div>

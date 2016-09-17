@@ -14,3 +14,10 @@
 
     mainApp.controller("MainController", MainController);
 }());
+
+<div class="input-group input-group-xlg">
+    <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="location">
+    <span class="input-group-btn">
+            <button class="btn btn-default btn-xlg" type="button" ng-click="campsiteSearch(location)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    </span>
+</div>
