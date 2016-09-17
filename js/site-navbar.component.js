@@ -1,0 +1,44 @@
+angular.
+    module('mainApp').
+    component('siteNavbar', {
+        template:
+            '<nav class="navbar navbar-inverse navbar-static-top">' +
+                '<div class="container">' +
+                    '<div class="navbar-header">' +
+                        '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">' +
+                                '<span class="sr-only">Toggle navigation</span>' +
+                                '<span class="icon-bar"></span>' +
+                                '<span class="icon-bar"></span>' +
+                                '<span class="icon-bar"></span>' +
+                            '</button>' +
+                        '<div class="navbar-brand"><span>' +
+                                '<a href="home.html"><img alt="Explore NSW" src="img/tent.png" id="logo" onmouseover="this.src=\'img/tent_white.png\';" onmouseout="this.src=\'img/tent.png\';"/></a></span>Explore NSW</div>' +
+                    '</div>' +
+                    '<div class="collapse navbar-collapse">' +
+                        '<ul class="nav navbar-nav navbar-right">' +
+                            '<li ng-repeat="nav in $ctrl.navs"><a href={{nav.link}}>{{nav.title}}</a></li>' +
+                        '</ul>' +
+                    '</div>' +
+                '</div>' +
+            '</nav>',
+        controller: function NavController() {
+            this.navs = [
+                {
+                    title: "Home",
+                    link: "home.html"
+                }, {
+                    title: "Campsite Search",
+                    link: "campsearch.html"
+                }, {
+                    title: "Popular Campsites",
+                    link: "popularcampsite.html"
+                }, {
+                    title: "Equipment",
+                    link: "equipment.html"
+                }, {
+                    title: "Guides",
+                    link: "guides.html"
+                }
+            ];
+        }
+    });
