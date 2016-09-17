@@ -76,6 +76,11 @@ body {
     margin-top: 15%;
 }
 
+.colorless-link, .colorless-link:hover, .colorless-link:visited, .colorless-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 h1#discover {
     font-family: 'Amatic SC', cursive;
     font-size: 100px;

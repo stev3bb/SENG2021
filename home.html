@@ -12,6 +12,9 @@
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Raleway|Roboto" rel="stylesheet">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="js/angular-simple-logger.js"></script>
+        <script src="js/lodash.core.min.js"></script>
+        <script src="js/angular-google-maps.min.js"></script>
         <script src="js/MainController.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,10 +58,11 @@
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
+                    {{ location }}
                     <div class="input-group input-group-xlg">
-                        <input type="text" class="form-control input-xlg" placeholder="Address">
+                        <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="location">
                         <span class="input-group-btn">
-                            <button class="btn btn-default btn-xlg" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"</span></button>
+                            <button class="btn btn-default btn-xlg" type="button" ng-click="campsiteSearch(location)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </span>
                     </div><!-- /input-group -->
                 </div>
