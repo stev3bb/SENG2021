@@ -1,0 +1,2073 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'update', '-g' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly mapToRegistry name bower
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry uri https://registry.npmjs.org/bower
+8 silly mapToRegistry name express-generator
+9 silly mapToRegistry using default registry
+10 silly mapToRegistry registry https://registry.npmjs.org/
+11 silly mapToRegistry uri https://registry.npmjs.org/express-generator
+12 silly mapToRegistry name n
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/n
+16 silly mapToRegistry name nodemon
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry uri https://registry.npmjs.org/nodemon
+20 silly mapToRegistry name npm
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/npm
+24 silly mapToRegistry name abbrev
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry https://registry.npmjs.org/
+27 silly mapToRegistry uri https://registry.npmjs.org/abbrev
+28 silly mapToRegistry name aproba
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry uri https://registry.npmjs.org/aproba
+32 silly mapToRegistry name fstream
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry uri https://registry.npmjs.org/fstream
+36 silly mapToRegistry name has-unicode
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/has-unicode
+40 silly mapToRegistry name npm-package-arg
+41 silly mapToRegistry using default registry
+42 silly mapToRegistry registry https://registry.npmjs.org/
+43 silly mapToRegistry uri https://registry.npmjs.org/npm-package-arg
+44 silly mapToRegistry name read-package-tree
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/read-package-tree
+48 silly mapToRegistry name readable-stream
+49 silly mapToRegistry using default registry
+50 silly mapToRegistry registry https://registry.npmjs.org/
+51 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+52 silly mapToRegistry name which
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/which
+56 silly mapToRegistry name wrappy
+57 silly mapToRegistry using default registry
+58 silly mapToRegistry registry https://registry.npmjs.org/
+59 silly mapToRegistry uri https://registry.npmjs.org/wrappy
+60 verbose request uri https://registry.npmjs.org/bower
+61 verbose request no auth needed
+62 info attempt registry request try #1 at 7:11:44 PM
+63 verbose request id 4a433006fb963341
+64 http request GET https://registry.npmjs.org/bower
+65 verbose request uri https://registry.npmjs.org/express-generator
+66 verbose request no auth needed
+67 info attempt registry request try #1 at 7:11:44 PM
+68 http request GET https://registry.npmjs.org/express-generator
+69 verbose request uri https://registry.npmjs.org/nodemon
+70 verbose request no auth needed
+71 info attempt registry request try #1 at 7:11:44 PM
+72 http request GET https://registry.npmjs.org/nodemon
+73 verbose request uri https://registry.npmjs.org/aproba
+74 verbose request no auth needed
+75 info attempt registry request try #1 at 7:11:44 PM
+76 http request GET https://registry.npmjs.org/aproba
+77 verbose request uri https://registry.npmjs.org/fstream
+78 verbose request no auth needed
+79 info attempt registry request try #1 at 7:11:44 PM
+80 http request GET https://registry.npmjs.org/fstream
+81 verbose request uri https://registry.npmjs.org/has-unicode
+82 verbose request no auth needed
+83 info attempt registry request try #1 at 7:11:44 PM
+84 http request GET https://registry.npmjs.org/has-unicode
+85 verbose request uri https://registry.npmjs.org/npm-package-arg
+86 verbose request no auth needed
+87 info attempt registry request try #1 at 7:11:44 PM
+88 http request GET https://registry.npmjs.org/npm-package-arg
+89 verbose request uri https://registry.npmjs.org/read-package-tree
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 7:11:44 PM
+92 http request GET https://registry.npmjs.org/read-package-tree
+93 verbose request uri https://registry.npmjs.org/readable-stream
+94 verbose request no auth needed
+95 info attempt registry request try #1 at 7:11:44 PM
+96 http request GET https://registry.npmjs.org/readable-stream
+97 verbose request uri https://registry.npmjs.org/which
+98 verbose request no auth needed
+99 info attempt registry request try #1 at 7:11:44 PM
+100 http request GET https://registry.npmjs.org/which
+101 verbose request uri https://registry.npmjs.org/wrappy
+102 verbose request no auth needed
+103 info attempt registry request try #1 at 7:11:44 PM
+104 http request GET https://registry.npmjs.org/wrappy
+105 verbose request uri https://registry.npmjs.org/n
+106 verbose request no auth needed
+107 info attempt registry request try #1 at 7:11:44 PM
+108 verbose etag "EYMP312HQUK7SY9SN5ZBPM2EI"
+109 http request GET https://registry.npmjs.org/n
+110 verbose request uri https://registry.npmjs.org/npm
+111 verbose request no auth needed
+112 info attempt registry request try #1 at 7:11:44 PM
+113 verbose etag "D0GVTRWNKU6X0W99LJ5CF0CJY"
+114 http request GET https://registry.npmjs.org/npm
+115 verbose request uri https://registry.npmjs.org/abbrev
+116 verbose request no auth needed
+117 info attempt registry request try #1 at 7:11:44 PM
+118 verbose etag "62NWCZC5Z9LYM8KDMOFL62BXC"
+119 http request GET https://registry.npmjs.org/abbrev
+120 http 200 https://registry.npmjs.org/aproba
+121 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+121 verbose headers   etag: '"93KOGR6QO9L3OXSXVJQA3DCT4"',
+121 verbose headers   'content-type': 'application/json',
+121 verbose headers   'content-encoding': 'gzip',
+121 verbose headers   'cache-control': 'max-age=300',
+121 verbose headers   'content-length': '2267',
+121 verbose headers   'accept-ranges': 'bytes',
+121 verbose headers   date: 'Sat, 17 Sep 2016 09:11:44 GMT',
+121 verbose headers   via: '1.1 varnish',
+121 verbose headers   age: '268',
+121 verbose headers   connection: 'keep-alive',
+121 verbose headers   'x-served-by': 'cache-mel6520-MEL',
+121 verbose headers   'x-cache': 'HIT',
+121 verbose headers   'x-cache-hits': '2',
+121 verbose headers   'x-timer': 'S1474103504.977795,VS0,VE0',
+121 verbose headers   vary: 'Accept-Encoding' }
+122 silly get cb [ 200,
+122 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+122 silly get     etag: '"93KOGR6QO9L3OXSXVJQA3DCT4"',
+122 silly get     'content-type': 'application/json',
+122 silly get     'content-encoding': 'gzip',
+122 silly get     'cache-control': 'max-age=300',
+122 silly get     'content-length': '2267',
+122 silly get     'accept-ranges': 'bytes',
+122 silly get     date: 'Sat, 17 Sep 2016 09:11:44 GMT',
+122 silly get     via: '1.1 varnish',
+122 silly get     age: '268',
+122 silly get     connection: 'keep-alive',
+122 silly get     'x-served-by': 'cache-mel6520-MEL',
+122 silly get     'x-cache': 'HIT',
+122 silly get     'x-cache-hits': '2',
+122 silly get     'x-timer': 'S1474103504.977795,VS0,VE0',
+122 silly get     vary: 'Accept-Encoding' } ]
+123 verbose get saving aproba to /home/nelson/.npm/registry.npmjs.org/aproba/.cache.json
+124 http 200 https://registry.npmjs.org/has-unicode
+125 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+125 verbose headers   etag: '"1QPKGF4OZONOBYPZOT6NZUTC9"',
+125 verbose headers   'content-type': 'application/json',
+125 verbose headers   'content-encoding': 'gzip',
+125 verbose headers   'cache-control': 'max-age=300',
+125 verbose headers   'content-length': '1955',
+125 verbose headers   'accept-ranges': 'bytes',
+125 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+125 verbose headers   via: '1.1 varnish',
+125 verbose headers   age: '268',
+125 verbose headers   connection: 'keep-alive',
+125 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+125 verbose headers   'x-cache': 'HIT',
+125 verbose headers   'x-cache-hits': '3',
+125 verbose headers   'x-timer': 'S1474103505.010326,VS0,VE0',
+125 verbose headers   vary: 'Accept-Encoding' }
+126 silly get cb [ 200,
+126 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+126 silly get     etag: '"1QPKGF4OZONOBYPZOT6NZUTC9"',
+126 silly get     'content-type': 'application/json',
+126 silly get     'content-encoding': 'gzip',
+126 silly get     'cache-control': 'max-age=300',
+126 silly get     'content-length': '1955',
+126 silly get     'accept-ranges': 'bytes',
+126 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+126 silly get     via: '1.1 varnish',
+126 silly get     age: '268',
+126 silly get     connection: 'keep-alive',
+126 silly get     'x-served-by': 'cache-mel6521-MEL',
+126 silly get     'x-cache': 'HIT',
+126 silly get     'x-cache-hits': '3',
+126 silly get     'x-timer': 'S1474103505.010326,VS0,VE0',
+126 silly get     vary: 'Accept-Encoding' } ]
+127 verbose get saving has-unicode to /home/nelson/.npm/registry.npmjs.org/has-unicode/.cache.json
+128 http 200 https://registry.npmjs.org/npm-package-arg
+129 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+129 verbose headers   etag: '"7TOJEBSX0653HUGZB8X196QJZ"',
+129 verbose headers   'content-type': 'application/json',
+129 verbose headers   'content-encoding': 'gzip',
+129 verbose headers   'cache-control': 'max-age=300',
+129 verbose headers   'content-length': '5431',
+129 verbose headers   'accept-ranges': 'bytes',
+129 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+129 verbose headers   via: '1.1 varnish',
+129 verbose headers   age: '164',
+129 verbose headers   connection: 'keep-alive',
+129 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+129 verbose headers   'x-cache': 'HIT',
+129 verbose headers   'x-cache-hits': '1',
+129 verbose headers   'x-timer': 'S1474103505.015316,VS0,VE0',
+129 verbose headers   vary: 'Accept-Encoding' }
+130 silly get cb [ 200,
+130 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+130 silly get     etag: '"7TOJEBSX0653HUGZB8X196QJZ"',
+130 silly get     'content-type': 'application/json',
+130 silly get     'content-encoding': 'gzip',
+130 silly get     'cache-control': 'max-age=300',
+130 silly get     'content-length': '5431',
+130 silly get     'accept-ranges': 'bytes',
+130 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+130 silly get     via: '1.1 varnish',
+130 silly get     age: '164',
+130 silly get     connection: 'keep-alive',
+130 silly get     'x-served-by': 'cache-mel6521-MEL',
+130 silly get     'x-cache': 'HIT',
+130 silly get     'x-cache-hits': '1',
+130 silly get     'x-timer': 'S1474103505.015316,VS0,VE0',
+130 silly get     vary: 'Accept-Encoding' } ]
+131 verbose get saving npm-package-arg to /home/nelson/.npm/registry.npmjs.org/npm-package-arg/.cache.json
+132 http 200 https://registry.npmjs.org/fstream
+133 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+133 verbose headers   etag: '"AFX4EA2RYXNXS5BH7NH1SNOLZ"',
+133 verbose headers   'content-type': 'application/json',
+133 verbose headers   'content-encoding': 'gzip',
+133 verbose headers   'cache-control': 'max-age=300',
+133 verbose headers   'content-length': '6823',
+133 verbose headers   'accept-ranges': 'bytes',
+133 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+133 verbose headers   via: '1.1 varnish',
+133 verbose headers   age: '18',
+133 verbose headers   connection: 'keep-alive',
+133 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+133 verbose headers   'x-cache': 'HIT',
+133 verbose headers   'x-cache-hits': '1',
+133 verbose headers   'x-timer': 'S1474103505.016006,VS0,VE0',
+133 verbose headers   vary: 'Accept-Encoding' }
+134 silly get cb [ 200,
+134 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+134 silly get     etag: '"AFX4EA2RYXNXS5BH7NH1SNOLZ"',
+134 silly get     'content-type': 'application/json',
+134 silly get     'content-encoding': 'gzip',
+134 silly get     'cache-control': 'max-age=300',
+134 silly get     'content-length': '6823',
+134 silly get     'accept-ranges': 'bytes',
+134 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+134 silly get     via: '1.1 varnish',
+134 silly get     age: '18',
+134 silly get     connection: 'keep-alive',
+134 silly get     'x-served-by': 'cache-mel6523-MEL',
+134 silly get     'x-cache': 'HIT',
+134 silly get     'x-cache-hits': '1',
+134 silly get     'x-timer': 'S1474103505.016006,VS0,VE0',
+134 silly get     vary: 'Accept-Encoding' } ]
+135 verbose get saving fstream to /home/nelson/.npm/registry.npmjs.org/fstream/.cache.json
+136 http 200 https://registry.npmjs.org/wrappy
+137 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+137 verbose headers   etag: '"4YHCBF4EFQV6QOW21NQ6F7ATC"',
+137 verbose headers   'content-type': 'application/json',
+137 verbose headers   'content-encoding': 'gzip',
+137 verbose headers   'cache-control': 'max-age=300',
+137 verbose headers   'content-length': '1463',
+137 verbose headers   'accept-ranges': 'bytes',
+137 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+137 verbose headers   via: '1.1 varnish',
+137 verbose headers   age: '178',
+137 verbose headers   connection: 'keep-alive',
+137 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+137 verbose headers   'x-cache': 'HIT',
+137 verbose headers   'x-cache-hits': '2',
+137 verbose headers   'x-timer': 'S1474103505.024237,VS0,VE0',
+137 verbose headers   vary: 'Accept-Encoding' }
+138 silly get cb [ 200,
+138 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+138 silly get     etag: '"4YHCBF4EFQV6QOW21NQ6F7ATC"',
+138 silly get     'content-type': 'application/json',
+138 silly get     'content-encoding': 'gzip',
+138 silly get     'cache-control': 'max-age=300',
+138 silly get     'content-length': '1463',
+138 silly get     'accept-ranges': 'bytes',
+138 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+138 silly get     via: '1.1 varnish',
+138 silly get     age: '178',
+138 silly get     connection: 'keep-alive',
+138 silly get     'x-served-by': 'cache-mel6521-MEL',
+138 silly get     'x-cache': 'HIT',
+138 silly get     'x-cache-hits': '2',
+138 silly get     'x-timer': 'S1474103505.024237,VS0,VE0',
+138 silly get     vary: 'Accept-Encoding' } ]
+139 verbose get saving wrappy to /home/nelson/.npm/registry.npmjs.org/wrappy/.cache.json
+140 http 200 https://registry.npmjs.org/which
+141 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+141 verbose headers   etag: '"2KFIPWGAL54RH75Q4VKLWD6E0"',
+141 verbose headers   'content-type': 'application/json',
+141 verbose headers   'content-encoding': 'gzip',
+141 verbose headers   'cache-control': 'max-age=300',
+141 verbose headers   'content-length': '4492',
+141 verbose headers   'accept-ranges': 'bytes',
+141 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+141 verbose headers   via: '1.1 varnish',
+141 verbose headers   age: '22',
+141 verbose headers   connection: 'keep-alive',
+141 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+141 verbose headers   'x-cache': 'HIT',
+141 verbose headers   'x-cache-hits': '1',
+141 verbose headers   'x-timer': 'S1474103505.029979,VS0,VE0',
+141 verbose headers   vary: 'Accept-Encoding' }
+142 silly get cb [ 200,
+142 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+142 silly get     etag: '"2KFIPWGAL54RH75Q4VKLWD6E0"',
+142 silly get     'content-type': 'application/json',
+142 silly get     'content-encoding': 'gzip',
+142 silly get     'cache-control': 'max-age=300',
+142 silly get     'content-length': '4492',
+142 silly get     'accept-ranges': 'bytes',
+142 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+142 silly get     via: '1.1 varnish',
+142 silly get     age: '22',
+142 silly get     connection: 'keep-alive',
+142 silly get     'x-served-by': 'cache-mel6523-MEL',
+142 silly get     'x-cache': 'HIT',
+142 silly get     'x-cache-hits': '1',
+142 silly get     'x-timer': 'S1474103505.029979,VS0,VE0',
+142 silly get     vary: 'Accept-Encoding' } ]
+143 verbose get saving which to /home/nelson/.npm/registry.npmjs.org/which/.cache.json
+144 http 200 https://registry.npmjs.org/readable-stream
+145 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+145 verbose headers   etag: '"CCKCVM7AJRG2NFRFL5SINMT9N"',
+145 verbose headers   'content-type': 'application/json',
+145 verbose headers   'content-encoding': 'gzip',
+145 verbose headers   'cache-control': 'max-age=300',
+145 verbose headers   'content-length': '8906',
+145 verbose headers   'accept-ranges': 'bytes',
+145 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+145 verbose headers   via: '1.1 varnish',
+145 verbose headers   age: '83',
+145 verbose headers   connection: 'keep-alive',
+145 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+145 verbose headers   'x-cache': 'HIT',
+145 verbose headers   'x-cache-hits': '5',
+145 verbose headers   'x-timer': 'S1474103505.029924,VS0,VE0',
+145 verbose headers   vary: 'Accept-Encoding' }
+146 silly get cb [ 200,
+146 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+146 silly get     etag: '"CCKCVM7AJRG2NFRFL5SINMT9N"',
+146 silly get     'content-type': 'application/json',
+146 silly get     'content-encoding': 'gzip',
+146 silly get     'cache-control': 'max-age=300',
+146 silly get     'content-length': '8906',
+146 silly get     'accept-ranges': 'bytes',
+146 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+146 silly get     via: '1.1 varnish',
+146 silly get     age: '83',
+146 silly get     connection: 'keep-alive',
+146 silly get     'x-served-by': 'cache-mel6523-MEL',
+146 silly get     'x-cache': 'HIT',
+146 silly get     'x-cache-hits': '5',
+146 silly get     'x-timer': 'S1474103505.029924,VS0,VE0',
+146 silly get     vary: 'Accept-Encoding' } ]
+147 verbose get saving readable-stream to /home/nelson/.npm/registry.npmjs.org/readable-stream/.cache.json
+148 http 200 https://registry.npmjs.org/bower
+149 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+149 verbose headers   etag: '"5JN67RF1SO11Z334MUX2R5Q3S"',
+149 verbose headers   'content-type': 'application/json',
+149 verbose headers   'content-encoding': 'gzip',
+149 verbose headers   'cache-control': 'max-age=300',
+149 verbose headers   'content-length': '20715',
+149 verbose headers   'accept-ranges': 'bytes',
+149 verbose headers   date: 'Sat, 17 Sep 2016 09:11:44 GMT',
+149 verbose headers   via: '1.1 varnish',
+149 verbose headers   age: '136',
+149 verbose headers   connection: 'keep-alive',
+149 verbose headers   'x-served-by': 'cache-mel6520-MEL',
+149 verbose headers   'x-cache': 'HIT',
+149 verbose headers   'x-cache-hits': '1',
+149 verbose headers   'x-timer': 'S1474103504.973585,VS0,VE0',
+149 verbose headers   vary: 'Accept-Encoding' }
+150 silly get cb [ 200,
+150 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+150 silly get     etag: '"5JN67RF1SO11Z334MUX2R5Q3S"',
+150 silly get     'content-type': 'application/json',
+150 silly get     'content-encoding': 'gzip',
+150 silly get     'cache-control': 'max-age=300',
+150 silly get     'content-length': '20715',
+150 silly get     'accept-ranges': 'bytes',
+150 silly get     date: 'Sat, 17 Sep 2016 09:11:44 GMT',
+150 silly get     via: '1.1 varnish',
+150 silly get     age: '136',
+150 silly get     connection: 'keep-alive',
+150 silly get     'x-served-by': 'cache-mel6520-MEL',
+150 silly get     'x-cache': 'HIT',
+150 silly get     'x-cache-hits': '1',
+150 silly get     'x-timer': 'S1474103504.973585,VS0,VE0',
+150 silly get     vary: 'Accept-Encoding' } ]
+151 verbose get saving bower to /home/nelson/.npm/registry.npmjs.org/bower/.cache.json
+152 http 304 https://registry.npmjs.org/n
+153 verbose headers { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+153 verbose headers   via: '1.1 varnish',
+153 verbose headers   'cache-control': 'max-age=300',
+153 verbose headers   etag: '"EYMP312HQUK7SY9SN5ZBPM2EI"',
+153 verbose headers   age: '266',
+153 verbose headers   connection: 'keep-alive',
+153 verbose headers   'x-served-by': 'cache-mel6522-MEL',
+153 verbose headers   'x-cache': 'HIT',
+153 verbose headers   'x-cache-hits': '1',
+153 verbose headers   'x-timer': 'S1474103505.059841,VS0,VE0',
+153 verbose headers   vary: 'Accept-Encoding' }
+154 silly get cb [ 304,
+154 silly get   { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+154 silly get     via: '1.1 varnish',
+154 silly get     'cache-control': 'max-age=300',
+154 silly get     etag: '"EYMP312HQUK7SY9SN5ZBPM2EI"',
+154 silly get     age: '266',
+154 silly get     connection: 'keep-alive',
+154 silly get     'x-served-by': 'cache-mel6522-MEL',
+154 silly get     'x-cache': 'HIT',
+154 silly get     'x-cache-hits': '1',
+154 silly get     'x-timer': 'S1474103505.059841,VS0,VE0',
+154 silly get     vary: 'Accept-Encoding' } ]
+155 verbose etag https://registry.npmjs.org/n from cache
+156 verbose get saving n to /home/nelson/.npm/registry.npmjs.org/n/.cache.json
+157 http 304 https://registry.npmjs.org/abbrev
+158 verbose headers { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+158 verbose headers   via: '1.1 varnish',
+158 verbose headers   'cache-control': 'max-age=300',
+158 verbose headers   etag: '"62NWCZC5Z9LYM8KDMOFL62BXC"',
+158 verbose headers   age: '263',
+158 verbose headers   connection: 'keep-alive',
+158 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+158 verbose headers   'x-cache': 'HIT',
+158 verbose headers   'x-cache-hits': '2',
+158 verbose headers   'x-timer': 'S1474103505.059494,VS0,VE0',
+158 verbose headers   vary: 'Accept-Encoding' }
+159 silly get cb [ 304,
+159 silly get   { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+159 silly get     via: '1.1 varnish',
+159 silly get     'cache-control': 'max-age=300',
+159 silly get     etag: '"62NWCZC5Z9LYM8KDMOFL62BXC"',
+159 silly get     age: '263',
+159 silly get     connection: 'keep-alive',
+159 silly get     'x-served-by': 'cache-mel6521-MEL',
+159 silly get     'x-cache': 'HIT',
+159 silly get     'x-cache-hits': '2',
+159 silly get     'x-timer': 'S1474103505.059494,VS0,VE0',
+159 silly get     vary: 'Accept-Encoding' } ]
+160 verbose etag https://registry.npmjs.org/abbrev from cache
+161 verbose get saving abbrev to /home/nelson/.npm/registry.npmjs.org/abbrev/.cache.json
+162 http 304 https://registry.npmjs.org/npm
+163 verbose headers { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+163 verbose headers   via: '1.1 varnish',
+163 verbose headers   'cache-control': 'max-age=300',
+163 verbose headers   etag: '"D0GVTRWNKU6X0W99LJ5CF0CJY"',
+163 verbose headers   age: '71',
+163 verbose headers   connection: 'keep-alive',
+163 verbose headers   'x-served-by': 'cache-mel6522-MEL',
+163 verbose headers   'x-cache': 'HIT',
+163 verbose headers   'x-cache-hits': '1',
+163 verbose headers   'x-timer': 'S1474103505.065903,VS0,VE1',
+163 verbose headers   vary: 'Accept-Encoding' }
+164 silly get cb [ 304,
+164 silly get   { date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+164 silly get     via: '1.1 varnish',
+164 silly get     'cache-control': 'max-age=300',
+164 silly get     etag: '"D0GVTRWNKU6X0W99LJ5CF0CJY"',
+164 silly get     age: '71',
+164 silly get     connection: 'keep-alive',
+164 silly get     'x-served-by': 'cache-mel6522-MEL',
+164 silly get     'x-cache': 'HIT',
+164 silly get     'x-cache-hits': '1',
+164 silly get     'x-timer': 'S1474103505.065903,VS0,VE1',
+164 silly get     vary: 'Accept-Encoding' } ]
+165 verbose etag https://registry.npmjs.org/npm from cache
+166 verbose get saving npm to /home/nelson/.npm/registry.npmjs.org/npm/.cache.json
+167 http 200 https://registry.npmjs.org/express-generator
+168 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+168 verbose headers   etag: '"5CHD1BWEJ35YL25XX8E390A2G"',
+168 verbose headers   'content-type': 'application/json',
+168 verbose headers   'content-encoding': 'gzip',
+168 verbose headers   'cache-control': 'max-age=300',
+168 verbose headers   'content-length': '4706',
+168 verbose headers   'accept-ranges': 'bytes',
+168 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+168 verbose headers   via: '1.1 varnish',
+168 verbose headers   age: '0',
+168 verbose headers   connection: 'keep-alive',
+168 verbose headers   'x-served-by': 'cache-mel6520-MEL',
+168 verbose headers   'x-cache': 'MISS',
+168 verbose headers   'x-cache-hits': '0',
+168 verbose headers   'x-timer': 'S1474103504.972188,VS0,VE228',
+168 verbose headers   vary: 'Accept-Encoding' }
+169 silly get cb [ 200,
+169 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+169 silly get     etag: '"5CHD1BWEJ35YL25XX8E390A2G"',
+169 silly get     'content-type': 'application/json',
+169 silly get     'content-encoding': 'gzip',
+169 silly get     'cache-control': 'max-age=300',
+169 silly get     'content-length': '4706',
+169 silly get     'accept-ranges': 'bytes',
+169 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+169 silly get     via: '1.1 varnish',
+169 silly get     age: '0',
+169 silly get     connection: 'keep-alive',
+169 silly get     'x-served-by': 'cache-mel6520-MEL',
+169 silly get     'x-cache': 'MISS',
+169 silly get     'x-cache-hits': '0',
+169 silly get     'x-timer': 'S1474103504.972188,VS0,VE228',
+169 silly get     vary: 'Accept-Encoding' } ]
+170 verbose get saving express-generator to /home/nelson/.npm/registry.npmjs.org/express-generator/.cache.json
+171 http 200 https://registry.npmjs.org/nodemon
+172 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+172 verbose headers   etag: '"4NQ2DKEL5LLYSG1EYA5GJVF2R"',
+172 verbose headers   'content-type': 'application/json',
+172 verbose headers   'content-encoding': 'gzip',
+172 verbose headers   'cache-control': 'max-age=300',
+172 verbose headers   'content-length': '24602',
+172 verbose headers   'accept-ranges': 'bytes',
+172 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+172 verbose headers   via: '1.1 varnish',
+172 verbose headers   age: '0',
+172 verbose headers   connection: 'keep-alive',
+172 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+172 verbose headers   'x-cache': 'HIT',
+172 verbose headers   'x-cache-hits': '1',
+172 verbose headers   'x-timer': 'S1474103504.973584,VS0,VE810',
+172 verbose headers   vary: 'Accept-Encoding' }
+173 silly get cb [ 200,
+173 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+173 silly get     etag: '"4NQ2DKEL5LLYSG1EYA5GJVF2R"',
+173 silly get     'content-type': 'application/json',
+173 silly get     'content-encoding': 'gzip',
+173 silly get     'cache-control': 'max-age=300',
+173 silly get     'content-length': '24602',
+173 silly get     'accept-ranges': 'bytes',
+173 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+173 silly get     via: '1.1 varnish',
+173 silly get     age: '0',
+173 silly get     connection: 'keep-alive',
+173 silly get     'x-served-by': 'cache-mel6523-MEL',
+173 silly get     'x-cache': 'HIT',
+173 silly get     'x-cache-hits': '1',
+173 silly get     'x-timer': 'S1474103504.973584,VS0,VE810',
+173 silly get     vary: 'Accept-Encoding' } ]
+174 verbose get saving nodemon to /home/nelson/.npm/registry.npmjs.org/nodemon/.cache.json
+175 http 200 https://registry.npmjs.org/read-package-tree
+176 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+176 verbose headers   etag: '"BQ9JWWVUL1T1FBHMTTXD4ZACN"',
+176 verbose headers   'content-type': 'application/json',
+176 verbose headers   'content-encoding': 'gzip',
+176 verbose headers   'cache-control': 'max-age=300',
+176 verbose headers   'content-length': '4185',
+176 verbose headers   'accept-ranges': 'bytes',
+176 verbose headers   date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+176 verbose headers   via: '1.1 varnish',
+176 verbose headers   age: '0',
+176 verbose headers   connection: 'keep-alive',
+176 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+176 verbose headers   'x-cache': 'MISS',
+176 verbose headers   'x-cache-hits': '0',
+176 verbose headers   'x-timer': 'S1474103505.019246,VS0,VE934',
+176 verbose headers   vary: 'Accept-Encoding' }
+177 silly get cb [ 200,
+177 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+177 silly get     etag: '"BQ9JWWVUL1T1FBHMTTXD4ZACN"',
+177 silly get     'content-type': 'application/json',
+177 silly get     'content-encoding': 'gzip',
+177 silly get     'cache-control': 'max-age=300',
+177 silly get     'content-length': '4185',
+177 silly get     'accept-ranges': 'bytes',
+177 silly get     date: 'Sat, 17 Sep 2016 09:11:45 GMT',
+177 silly get     via: '1.1 varnish',
+177 silly get     age: '0',
+177 silly get     connection: 'keep-alive',
+177 silly get     'x-served-by': 'cache-mel6521-MEL',
+177 silly get     'x-cache': 'MISS',
+177 silly get     'x-cache-hits': '0',
+177 silly get     'x-timer': 'S1474103505.019246,VS0,VE934',
+177 silly get     vary: 'Accept-Encoding' } ]
+178 verbose get saving read-package-tree to /home/nelson/.npm/registry.npmjs.org/read-package-tree/.cache.json
+179 info outdated updating [ { dep:
+179 info outdated      Node {
+179 info outdated        id: 62,
+179 info outdated        package: [Object],
+179 info outdated        path: '/usr/local/lib/node_modules/npm/node_modules/readable-stream',
+179 info outdated        realpath: '/usr/local/lib/node_modules/npm/node_modules/readable-stream',
+179 info outdated        parent: [Object],
+179 info outdated        isLink: false,
+179 info outdated        children: [Object],
+179 info outdated        error: null,
+179 info outdated        loaded: false,
+179 info outdated        requiredBy: [Object],
+179 info outdated        requires: [Object],
+179 info outdated        missingDeps: {},
+179 info outdated        missingDevDeps: {},
+179 info outdated        userRequired: true,
+179 info outdated        existing: false },
+179 info outdated     depname: 'readable-stream',
+179 info outdated     current: '2.1.4',
+179 info outdated     wanted: '2.1.5',
+179 info outdated     latest: '2.1.5',
+179 info outdated     req: 'latest',
+179 info outdated     what: 'readable-stream@2.1.5' },
+179 info outdated   { dep:
+179 info outdated      Node {
+179 info outdated        id: 211,
+179 info outdated        package: [Object],
+179 info outdated        path: '/usr/local/lib/node_modules/npm/node_modules/which',
+179 info outdated        realpath: '/usr/local/lib/node_modules/npm/node_modules/which',
+179 info outdated        parent: [Object],
+179 info outdated        isLink: false,
+179 info outdated        children: [Object],
+179 info outdated        error: null,
+179 info outdated        loaded: false,
+179 info outdated        requiredBy: [Object],
+179 info outdated        requires: [Object],
+179 info outdated        missingDeps: {},
+179 info outdated        missingDevDeps: {},
+179 info outdated        userRequired: true,
+179 info outdated        existing: false },
+179 info outdated     depname: 'which',
+179 info outdated     current: '1.2.10',
+179 info outdated     wanted: '1.2.11',
+179 info outdated     latest: '1.2.11',
+179 info outdated     req: 'latest',
+179 info outdated     what: 'which@1.2.11' } ]
+180 silly loadCurrentTree Starting
+181 silly install loadCurrentTree
+182 silly install readLocalPackageData
+183 silly fetchPackageMetaData readable-stream@2.1.5
+184 silly fetchPackageMetaData which@1.2.11
+185 silly fetchNamedPackageData readable-stream
+186 silly mapToRegistry name readable-stream
+187 silly mapToRegistry using default registry
+188 silly mapToRegistry registry https://registry.npmjs.org/
+189 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+190 silly fetchNamedPackageData which
+191 silly mapToRegistry name which
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry uri https://registry.npmjs.org/which
+195 verbose get https://registry.npmjs.org/which not expired, no request
+196 verbose get https://registry.npmjs.org/readable-stream not expired, no request
+197 silly install normalizeTree
+198 silly loadCurrentTree Finishing
+199 silly loadIdealTree Starting
+200 silly install loadIdealTree
+201 silly cloneCurrentTree Starting
+202 silly install cloneCurrentTreeToIdealTree
+203 silly cloneCurrentTree Finishing
+204 silly loadShrinkwrap Starting
+205 silly install loadShrinkwrap
+206 silly loadShrinkwrap Finishing
+207 silly loadAllDepsIntoIdealTree Starting
+208 silly install loadAllDepsIntoIdealTree
+209 silly resolveWithNewModule which@1.2.11 checking installable status
+210 silly cache add args [ 'which@1.2.11', null ]
+211 verbose cache add spec which@1.2.11
+212 silly resolveWithNewModule readable-stream@2.1.5 checking installable status
+213 silly cache add args [ 'readable-stream@2.1.5', null ]
+214 verbose cache add spec readable-stream@2.1.5
+215 silly cache add parsed spec Result {
+215 silly cache add   raw: 'which@1.2.11',
+215 silly cache add   scope: null,
+215 silly cache add   name: 'which',
+215 silly cache add   rawSpec: '1.2.11',
+215 silly cache add   spec: '1.2.11',
+215 silly cache add   type: 'version' }
+216 silly addNamed which@1.2.11
+217 verbose addNamed "1.2.11" is a plain semver version for which
+218 silly mapToRegistry name which
+219 silly mapToRegistry using default registry
+220 silly mapToRegistry registry https://registry.npmjs.org/
+221 silly mapToRegistry uri https://registry.npmjs.org/which
+222 verbose addNameVersion registry:https://registry.npmjs.org/which not in flight; fetching
+223 silly cache add parsed spec Result {
+223 silly cache add   raw: 'readable-stream@2.1.5',
+223 silly cache add   scope: null,
+223 silly cache add   name: 'readable-stream',
+223 silly cache add   rawSpec: '2.1.5',
+223 silly cache add   spec: '2.1.5',
+223 silly cache add   type: 'version' }
+224 silly addNamed readable-stream@2.1.5
+225 verbose addNamed "2.1.5" is a plain semver version for readable-stream
+226 silly mapToRegistry name readable-stream
+227 silly mapToRegistry using default registry
+228 silly mapToRegistry registry https://registry.npmjs.org/
+229 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+230 verbose addNameVersion registry:https://registry.npmjs.org/readable-stream not in flight; fetching
+231 verbose get https://registry.npmjs.org/which not expired, no request
+232 verbose get https://registry.npmjs.org/readable-stream not expired, no request
+233 silly mapToRegistry name which
+234 silly mapToRegistry using default registry
+235 silly mapToRegistry registry https://registry.npmjs.org/
+236 silly mapToRegistry uri https://registry.npmjs.org/which
+237 verbose addRemoteTarball https://registry.npmjs.org/which/-/which-1.2.11.tgz not in flight; adding
+238 verbose addRemoteTarball [ 'https://registry.npmjs.org/which/-/which-1.2.11.tgz',
+238 verbose addRemoteTarball   'c8b2eeea6b8c1659fa7c1dd4fdaabe9533dc5e8b' ]
+239 silly mapToRegistry name readable-stream
+240 silly mapToRegistry using default registry
+241 silly mapToRegistry registry https://registry.npmjs.org/
+242 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+243 verbose addRemoteTarball https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz not in flight; adding
+244 verbose addRemoteTarball [ 'https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz',
+244 verbose addRemoteTarball   '66fa8b720e1438b364681f2ad1a63c618448c9d0' ]
+245 info retry fetch attempt 1 at 7:11:46 PM
+246 info attempt registry request try #1 at 7:11:46 PM
+247 http fetch GET https://registry.npmjs.org/which/-/which-1.2.11.tgz
+248 info retry fetch attempt 1 at 7:11:46 PM
+249 info attempt registry request try #1 at 7:11:46 PM
+250 http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz
+251 http fetch 200 https://registry.npmjs.org/which/-/which-1.2.11.tgz
+252 http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz
+253 silly fetchAndShaCheck shasum c8b2eeea6b8c1659fa7c1dd4fdaabe9533dc5e8b
+254 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/which/-/which-1.2.11.tgz not in flight; adding
+255 verbose addTmpTarball already have metadata; skipping unpack for which@1.2.11
+256 silly cache afterAdd which@1.2.11
+257 verbose afterAdd /home/nelson/.npm/which/1.2.11/package/package.json not in flight; writing
+258 verbose afterAdd /home/nelson/.npm/which/1.2.11/package/package.json written
+259 silly fetchAndShaCheck shasum 66fa8b720e1438b364681f2ad1a63c618448c9d0
+260 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz not in flight; adding
+261 verbose addTmpTarball already have metadata; skipping unpack for readable-stream@2.1.5
+262 silly cache afterAdd readable-stream@2.1.5
+263 verbose afterAdd /home/nelson/.npm/readable-stream/2.1.5/package/package.json not in flight; writing
+264 verbose afterAdd /home/nelson/.npm/readable-stream/2.1.5/package/package.json written
+265 silly fetchNamedPackageData buffer-shims
+266 silly mapToRegistry name buffer-shims
+267 silly mapToRegistry using default registry
+268 silly mapToRegistry registry https://registry.npmjs.org/
+269 silly mapToRegistry uri https://registry.npmjs.org/buffer-shims
+270 silly fetchNamedPackageData core-util-is
+271 silly mapToRegistry name core-util-is
+272 silly mapToRegistry using default registry
+273 silly mapToRegistry registry https://registry.npmjs.org/
+274 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+275 silly fetchNamedPackageData isarray
+276 silly mapToRegistry name isarray
+277 silly mapToRegistry using default registry
+278 silly mapToRegistry registry https://registry.npmjs.org/
+279 silly mapToRegistry uri https://registry.npmjs.org/isarray
+280 silly fetchNamedPackageData process-nextick-args
+281 silly mapToRegistry name process-nextick-args
+282 silly mapToRegistry using default registry
+283 silly mapToRegistry registry https://registry.npmjs.org/
+284 silly mapToRegistry uri https://registry.npmjs.org/process-nextick-args
+285 silly fetchNamedPackageData string_decoder
+286 silly mapToRegistry name string_decoder
+287 silly mapToRegistry using default registry
+288 silly mapToRegistry registry https://registry.npmjs.org/
+289 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+290 silly fetchNamedPackageData util-deprecate
+291 silly mapToRegistry name util-deprecate
+292 silly mapToRegistry using default registry
+293 silly mapToRegistry registry https://registry.npmjs.org/
+294 silly mapToRegistry uri https://registry.npmjs.org/util-deprecate
+295 verbose request uri https://registry.npmjs.org/buffer-shims
+296 verbose request no auth needed
+297 info attempt registry request try #1 at 7:11:46 PM
+298 http request GET https://registry.npmjs.org/buffer-shims
+299 verbose request uri https://registry.npmjs.org/core-util-is
+300 verbose request no auth needed
+301 info attempt registry request try #1 at 7:11:46 PM
+302 http request GET https://registry.npmjs.org/core-util-is
+303 verbose request uri https://registry.npmjs.org/isarray
+304 verbose request no auth needed
+305 info attempt registry request try #1 at 7:11:46 PM
+306 http request GET https://registry.npmjs.org/isarray
+307 verbose request uri https://registry.npmjs.org/process-nextick-args
+308 verbose request no auth needed
+309 info attempt registry request try #1 at 7:11:46 PM
+310 http request GET https://registry.npmjs.org/process-nextick-args
+311 verbose request uri https://registry.npmjs.org/string_decoder
+312 verbose request no auth needed
+313 info attempt registry request try #1 at 7:11:46 PM
+314 http request GET https://registry.npmjs.org/string_decoder
+315 verbose request uri https://registry.npmjs.org/util-deprecate
+316 verbose request no auth needed
+317 info attempt registry request try #1 at 7:11:46 PM
+318 http request GET https://registry.npmjs.org/util-deprecate
+319 http 200 https://registry.npmjs.org/isarray
+320 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+320 verbose headers   etag: '"9BAUPW5RTV3W0838KA6Y08NTG"',
+320 verbose headers   'content-type': 'application/json',
+320 verbose headers   'content-encoding': 'gzip',
+320 verbose headers   'cache-control': 'max-age=300',
+320 verbose headers   'content-length': '2090',
+320 verbose headers   'accept-ranges': 'bytes',
+320 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+320 verbose headers   via: '1.1 varnish',
+320 verbose headers   age: '186',
+320 verbose headers   connection: 'keep-alive',
+320 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+320 verbose headers   'x-cache': 'HIT',
+320 verbose headers   'x-cache-hits': '17',
+320 verbose headers   'x-timer': 'S1474103506.759696,VS0,VE0',
+320 verbose headers   vary: 'Accept-Encoding' }
+321 silly get cb [ 200,
+321 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+321 silly get     etag: '"9BAUPW5RTV3W0838KA6Y08NTG"',
+321 silly get     'content-type': 'application/json',
+321 silly get     'content-encoding': 'gzip',
+321 silly get     'cache-control': 'max-age=300',
+321 silly get     'content-length': '2090',
+321 silly get     'accept-ranges': 'bytes',
+321 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+321 silly get     via: '1.1 varnish',
+321 silly get     age: '186',
+321 silly get     connection: 'keep-alive',
+321 silly get     'x-served-by': 'cache-mel6523-MEL',
+321 silly get     'x-cache': 'HIT',
+321 silly get     'x-cache-hits': '17',
+321 silly get     'x-timer': 'S1474103506.759696,VS0,VE0',
+321 silly get     vary: 'Accept-Encoding' } ]
+322 verbose get saving isarray to /home/nelson/.npm/registry.npmjs.org/isarray/.cache.json
+323 http 200 https://registry.npmjs.org/core-util-is
+324 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+324 verbose headers   etag: '"75RK9UUWAHLYO40UZKLLOJ8YF"',
+324 verbose headers   'content-type': 'application/json',
+324 verbose headers   'content-encoding': 'gzip',
+324 verbose headers   'cache-control': 'max-age=300',
+324 verbose headers   'content-length': '1009',
+324 verbose headers   'accept-ranges': 'bytes',
+324 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+324 verbose headers   via: '1.1 varnish',
+324 verbose headers   age: '186',
+324 verbose headers   connection: 'keep-alive',
+324 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+324 verbose headers   'x-cache': 'HIT',
+324 verbose headers   'x-cache-hits': '22',
+324 verbose headers   'x-timer': 'S1474103506.759273,VS0,VE0',
+324 verbose headers   vary: 'Accept-Encoding' }
+325 silly get cb [ 200,
+325 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+325 silly get     etag: '"75RK9UUWAHLYO40UZKLLOJ8YF"',
+325 silly get     'content-type': 'application/json',
+325 silly get     'content-encoding': 'gzip',
+325 silly get     'cache-control': 'max-age=300',
+325 silly get     'content-length': '1009',
+325 silly get     'accept-ranges': 'bytes',
+325 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+325 silly get     via: '1.1 varnish',
+325 silly get     age: '186',
+325 silly get     connection: 'keep-alive',
+325 silly get     'x-served-by': 'cache-mel6521-MEL',
+325 silly get     'x-cache': 'HIT',
+325 silly get     'x-cache-hits': '22',
+325 silly get     'x-timer': 'S1474103506.759273,VS0,VE0',
+325 silly get     vary: 'Accept-Encoding' } ]
+326 verbose get saving core-util-is to /home/nelson/.npm/registry.npmjs.org/core-util-is/.cache.json
+327 http 200 https://registry.npmjs.org/process-nextick-args
+328 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+328 verbose headers   etag: '"EJ6O60AA1ABD69WZ5R3W1IDX1"',
+328 verbose headers   'content-type': 'application/json',
+328 verbose headers   'content-encoding': 'gzip',
+328 verbose headers   'cache-control': 'max-age=300',
+328 verbose headers   'content-length': '1822',
+328 verbose headers   'accept-ranges': 'bytes',
+328 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+328 verbose headers   via: '1.1 varnish',
+328 verbose headers   age: '297',
+328 verbose headers   connection: 'keep-alive',
+328 verbose headers   'x-served-by': 'cache-mel6522-MEL',
+328 verbose headers   'x-cache': 'HIT',
+328 verbose headers   'x-cache-hits': '9',
+328 verbose headers   'x-timer': 'S1474103506.764753,VS0,VE0',
+328 verbose headers   vary: 'Accept-Encoding' }
+329 silly get cb [ 200,
+329 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+329 silly get     etag: '"EJ6O60AA1ABD69WZ5R3W1IDX1"',
+329 silly get     'content-type': 'application/json',
+329 silly get     'content-encoding': 'gzip',
+329 silly get     'cache-control': 'max-age=300',
+329 silly get     'content-length': '1822',
+329 silly get     'accept-ranges': 'bytes',
+329 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+329 silly get     via: '1.1 varnish',
+329 silly get     age: '297',
+329 silly get     connection: 'keep-alive',
+329 silly get     'x-served-by': 'cache-mel6522-MEL',
+329 silly get     'x-cache': 'HIT',
+329 silly get     'x-cache-hits': '9',
+329 silly get     'x-timer': 'S1474103506.764753,VS0,VE0',
+329 silly get     vary: 'Accept-Encoding' } ]
+330 verbose get saving process-nextick-args to /home/nelson/.npm/registry.npmjs.org/process-nextick-args/.cache.json
+331 http 200 https://registry.npmjs.org/buffer-shims
+332 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+332 verbose headers   etag: '"EHTLU3BE2PY4VZ30RONTAM8RD"',
+332 verbose headers   'content-type': 'application/json',
+332 verbose headers   'content-encoding': 'gzip',
+332 verbose headers   'cache-control': 'max-age=300',
+332 verbose headers   'content-length': '971',
+332 verbose headers   'accept-ranges': 'bytes',
+332 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+332 verbose headers   via: '1.1 varnish',
+332 verbose headers   age: '9',
+332 verbose headers   connection: 'keep-alive',
+332 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+332 verbose headers   'x-cache': 'HIT',
+332 verbose headers   'x-cache-hits': '2',
+332 verbose headers   'x-timer': 'S1474103506.763840,VS0,VE0',
+332 verbose headers   vary: 'Accept-Encoding' }
+333 silly get cb [ 200,
+333 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+333 silly get     etag: '"EHTLU3BE2PY4VZ30RONTAM8RD"',
+333 silly get     'content-type': 'application/json',
+333 silly get     'content-encoding': 'gzip',
+333 silly get     'cache-control': 'max-age=300',
+333 silly get     'content-length': '971',
+333 silly get     'accept-ranges': 'bytes',
+333 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+333 silly get     via: '1.1 varnish',
+333 silly get     age: '9',
+333 silly get     connection: 'keep-alive',
+333 silly get     'x-served-by': 'cache-mel6521-MEL',
+333 silly get     'x-cache': 'HIT',
+333 silly get     'x-cache-hits': '2',
+333 silly get     'x-timer': 'S1474103506.763840,VS0,VE0',
+333 silly get     vary: 'Accept-Encoding' } ]
+334 verbose get saving buffer-shims to /home/nelson/.npm/registry.npmjs.org/buffer-shims/.cache.json
+335 silly resolveWithNewModule isarray@1.0.0 checking installable status
+336 silly cache add args [ 'isarray@~1.0.0', null ]
+337 verbose cache add spec isarray@~1.0.0
+338 silly cache add parsed spec Result {
+338 silly cache add   raw: 'isarray@~1.0.0',
+338 silly cache add   scope: null,
+338 silly cache add   name: 'isarray',
+338 silly cache add   rawSpec: '~1.0.0',
+338 silly cache add   spec: '>=1.0.0 <1.1.0',
+338 silly cache add   type: 'range' }
+339 silly addNamed isarray@>=1.0.0 <1.1.0
+340 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for isarray
+341 silly addNameRange { name: 'isarray', range: '>=1.0.0 <1.1.0', hasData: false }
+342 silly mapToRegistry name isarray
+343 silly mapToRegistry using default registry
+344 silly mapToRegistry registry https://registry.npmjs.org/
+345 silly mapToRegistry uri https://registry.npmjs.org/isarray
+346 verbose addNameRange registry:https://registry.npmjs.org/isarray not in flight; fetching
+347 silly resolveWithNewModule core-util-is@1.0.2 checking installable status
+348 silly cache add args [ 'core-util-is@~1.0.0', null ]
+349 verbose cache add spec core-util-is@~1.0.0
+350 silly cache add parsed spec Result {
+350 silly cache add   raw: 'core-util-is@~1.0.0',
+350 silly cache add   scope: null,
+350 silly cache add   name: 'core-util-is',
+350 silly cache add   rawSpec: '~1.0.0',
+350 silly cache add   spec: '>=1.0.0 <1.1.0',
+350 silly cache add   type: 'range' }
+351 silly addNamed core-util-is@>=1.0.0 <1.1.0
+352 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for core-util-is
+353 silly addNameRange { name: 'core-util-is', range: '>=1.0.0 <1.1.0', hasData: false }
+354 silly mapToRegistry name core-util-is
+355 silly mapToRegistry using default registry
+356 silly mapToRegistry registry https://registry.npmjs.org/
+357 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+358 verbose addNameRange registry:https://registry.npmjs.org/core-util-is not in flight; fetching
+359 verbose get https://registry.npmjs.org/isarray not expired, no request
+360 silly addNameRange number 2 { name: 'isarray', range: '>=1.0.0 <1.1.0', hasData: true }
+361 silly addNameRange versions [ 'isarray', [ '0.0.0', '0.0.1', '1.0.0' ] ]
+362 silly addNamed isarray@1.0.0
+363 verbose addNamed "1.0.0" is a plain semver version for isarray
+364 silly mapToRegistry name isarray
+365 silly mapToRegistry using default registry
+366 silly mapToRegistry registry https://registry.npmjs.org/
+367 silly mapToRegistry uri https://registry.npmjs.org/isarray
+368 verbose addRemoteTarball https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz not in flight; adding
+369 verbose addRemoteTarball [ 'https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz',
+369 verbose addRemoteTarball   'bb935d48582cba168c06834957a54a3e07124f11' ]
+370 silly resolveWithNewModule process-nextick-args@1.0.7 checking installable status
+371 silly cache add args [ 'process-nextick-args@~1.0.6', null ]
+372 verbose cache add spec process-nextick-args@~1.0.6
+373 silly cache add parsed spec Result {
+373 silly cache add   raw: 'process-nextick-args@~1.0.6',
+373 silly cache add   scope: null,
+373 silly cache add   name: 'process-nextick-args',
+373 silly cache add   rawSpec: '~1.0.6',
+373 silly cache add   spec: '>=1.0.6 <1.1.0',
+373 silly cache add   type: 'range' }
+374 silly addNamed process-nextick-args@>=1.0.6 <1.1.0
+375 verbose addNamed ">=1.0.6 <1.1.0" is a valid semver range for process-nextick-args
+376 silly addNameRange { name: 'process-nextick-args',
+376 silly addNameRange   range: '>=1.0.6 <1.1.0',
+376 silly addNameRange   hasData: false }
+377 silly mapToRegistry name process-nextick-args
+378 silly mapToRegistry using default registry
+379 silly mapToRegistry registry https://registry.npmjs.org/
+380 silly mapToRegistry uri https://registry.npmjs.org/process-nextick-args
+381 verbose addNameRange registry:https://registry.npmjs.org/process-nextick-args not in flight; fetching
+382 http 200 https://registry.npmjs.org/string_decoder
+383 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+383 verbose headers   etag: '"3SLQP4XEWUIBONOV855WOPR0B"',
+383 verbose headers   'content-type': 'application/json',
+383 verbose headers   'content-encoding': 'gzip',
+383 verbose headers   'cache-control': 'max-age=300',
+383 verbose headers   'content-length': '1733',
+383 verbose headers   'accept-ranges': 'bytes',
+383 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+383 verbose headers   via: '1.1 varnish',
+383 verbose headers   age: '81',
+383 verbose headers   connection: 'keep-alive',
+383 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+383 verbose headers   'x-cache': 'HIT',
+383 verbose headers   'x-cache-hits': '5',
+383 verbose headers   'x-timer': 'S1474103506.778591,VS0,VE0',
+383 verbose headers   vary: 'Accept-Encoding' }
+384 silly get cb [ 200,
+384 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+384 silly get     etag: '"3SLQP4XEWUIBONOV855WOPR0B"',
+384 silly get     'content-type': 'application/json',
+384 silly get     'content-encoding': 'gzip',
+384 silly get     'cache-control': 'max-age=300',
+384 silly get     'content-length': '1733',
+384 silly get     'accept-ranges': 'bytes',
+384 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+384 silly get     via: '1.1 varnish',
+384 silly get     age: '81',
+384 silly get     connection: 'keep-alive',
+384 silly get     'x-served-by': 'cache-mel6521-MEL',
+384 silly get     'x-cache': 'HIT',
+384 silly get     'x-cache-hits': '5',
+384 silly get     'x-timer': 'S1474103506.778591,VS0,VE0',
+384 silly get     vary: 'Accept-Encoding' } ]
+385 verbose get saving string_decoder to /home/nelson/.npm/registry.npmjs.org/string_decoder/.cache.json
+386 info retry fetch attempt 1 at 7:11:46 PM
+387 info attempt registry request try #1 at 7:11:46 PM
+388 http fetch GET https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+389 verbose get https://registry.npmjs.org/core-util-is not expired, no request
+390 silly addNameRange number 2 { name: 'core-util-is', range: '>=1.0.0 <1.1.0', hasData: true }
+391 silly addNameRange versions [ 'core-util-is', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+392 silly addNamed core-util-is@1.0.2
+393 verbose addNamed "1.0.2" is a plain semver version for core-util-is
+394 silly resolveWithNewModule buffer-shims@1.0.0 checking installable status
+395 silly cache add args [ 'buffer-shims@^1.0.0', null ]
+396 verbose cache add spec buffer-shims@^1.0.0
+397 silly cache add parsed spec Result {
+397 silly cache add   raw: 'buffer-shims@^1.0.0',
+397 silly cache add   scope: null,
+397 silly cache add   name: 'buffer-shims',
+397 silly cache add   rawSpec: '^1.0.0',
+397 silly cache add   spec: '>=1.0.0 <2.0.0',
+397 silly cache add   type: 'range' }
+398 silly addNamed buffer-shims@>=1.0.0 <2.0.0
+399 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for buffer-shims
+400 silly addNameRange { name: 'buffer-shims', range: '>=1.0.0 <2.0.0', hasData: false }
+401 silly mapToRegistry name buffer-shims
+402 silly mapToRegistry using default registry
+403 silly mapToRegistry registry https://registry.npmjs.org/
+404 silly mapToRegistry uri https://registry.npmjs.org/buffer-shims
+405 verbose addNameRange registry:https://registry.npmjs.org/buffer-shims not in flight; fetching
+406 silly mapToRegistry name core-util-is
+407 silly mapToRegistry using default registry
+408 silly mapToRegistry registry https://registry.npmjs.org/
+409 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+410 verbose addRemoteTarball https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz not in flight; adding
+411 verbose addRemoteTarball [ 'https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz',
+411 verbose addRemoteTarball   'b5fd54220aa2bc5ab57aab7140c940754503c1a7' ]
+412 verbose get https://registry.npmjs.org/process-nextick-args not expired, no request
+413 silly addNameRange number 2 { name: 'process-nextick-args',
+413 silly addNameRange   range: '>=1.0.6 <1.1.0',
+413 silly addNameRange   hasData: true }
+414 silly addNameRange versions [ 'process-nextick-args',
+414 silly addNameRange   [ '1.0.0',
+414 silly addNameRange     '1.0.1',
+414 silly addNameRange     '1.0.2',
+414 silly addNameRange     '1.0.3',
+414 silly addNameRange     '1.0.4',
+414 silly addNameRange     '1.0.5',
+414 silly addNameRange     '1.0.6',
+414 silly addNameRange     '1.0.7' ] ]
+415 silly addNamed process-nextick-args@1.0.7
+416 verbose addNamed "1.0.7" is a plain semver version for process-nextick-args
+417 http 200 https://registry.npmjs.org/util-deprecate
+418 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+418 verbose headers   etag: '"363T1WE4HHZV0LMEHAOBAVT0G"',
+418 verbose headers   'content-type': 'application/json',
+418 verbose headers   'content-encoding': 'gzip',
+418 verbose headers   'cache-control': 'max-age=300',
+418 verbose headers   'content-length': '1861',
+418 verbose headers   'accept-ranges': 'bytes',
+418 verbose headers   date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+418 verbose headers   via: '1.1 varnish',
+418 verbose headers   age: '186',
+418 verbose headers   connection: 'keep-alive',
+418 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+418 verbose headers   'x-cache': 'HIT',
+418 verbose headers   'x-cache-hits': '4',
+418 verbose headers   'x-timer': 'S1474103506.795614,VS0,VE0',
+418 verbose headers   vary: 'Accept-Encoding' }
+419 silly get cb [ 200,
+419 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+419 silly get     etag: '"363T1WE4HHZV0LMEHAOBAVT0G"',
+419 silly get     'content-type': 'application/json',
+419 silly get     'content-encoding': 'gzip',
+419 silly get     'cache-control': 'max-age=300',
+419 silly get     'content-length': '1861',
+419 silly get     'accept-ranges': 'bytes',
+419 silly get     date: 'Sat, 17 Sep 2016 09:11:46 GMT',
+419 silly get     via: '1.1 varnish',
+419 silly get     age: '186',
+419 silly get     connection: 'keep-alive',
+419 silly get     'x-served-by': 'cache-mel6523-MEL',
+419 silly get     'x-cache': 'HIT',
+419 silly get     'x-cache-hits': '4',
+419 silly get     'x-timer': 'S1474103506.795614,VS0,VE0',
+419 silly get     vary: 'Accept-Encoding' } ]
+420 verbose get saving util-deprecate to /home/nelson/.npm/registry.npmjs.org/util-deprecate/.cache.json
+421 silly mapToRegistry name process-nextick-args
+422 silly mapToRegistry using default registry
+423 silly mapToRegistry registry https://registry.npmjs.org/
+424 silly mapToRegistry uri https://registry.npmjs.org/process-nextick-args
+425 verbose addRemoteTarball https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz not in flight; adding
+426 verbose addRemoteTarball [ 'https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz',
+426 verbose addRemoteTarball   '150e20b756590ad3f91093f25a4f2ad8bff30ba3' ]
+427 info retry fetch attempt 1 at 7:11:46 PM
+428 info attempt registry request try #1 at 7:11:46 PM
+429 http fetch GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+430 verbose get https://registry.npmjs.org/buffer-shims not expired, no request
+431 silly addNameRange number 2 { name: 'buffer-shims', range: '>=1.0.0 <2.0.0', hasData: true }
+432 silly addNameRange versions [ 'buffer-shims', [ '1.0.0' ] ]
+433 silly addNamed buffer-shims@1.0.0
+434 verbose addNamed "1.0.0" is a plain semver version for buffer-shims
+435 info retry fetch attempt 1 at 7:11:46 PM
+436 info attempt registry request try #1 at 7:11:46 PM
+437 http fetch GET https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+438 silly mapToRegistry name buffer-shims
+439 silly mapToRegistry using default registry
+440 silly mapToRegistry registry https://registry.npmjs.org/
+441 silly mapToRegistry uri https://registry.npmjs.org/buffer-shims
+442 verbose addRemoteTarball https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz not in flight; adding
+443 verbose addRemoteTarball [ 'https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz',
+443 verbose addRemoteTarball   '9978ce317388c649ad8793028c3477ef044a8b51' ]
+444 silly resolveWithNewModule string_decoder@0.10.31 checking installable status
+445 silly cache add args [ 'string_decoder@~0.10.x', null ]
+446 verbose cache add spec string_decoder@~0.10.x
+447 silly cache add parsed spec Result {
+447 silly cache add   raw: 'string_decoder@~0.10.x',
+447 silly cache add   scope: null,
+447 silly cache add   name: 'string_decoder',
+447 silly cache add   rawSpec: '~0.10.x',
+447 silly cache add   spec: '>=0.10.0 <0.11.0',
+447 silly cache add   type: 'range' }
+448 silly addNamed string_decoder@>=0.10.0 <0.11.0
+449 verbose addNamed ">=0.10.0 <0.11.0" is a valid semver range for string_decoder
+450 silly addNameRange { name: 'string_decoder',
+450 silly addNameRange   range: '>=0.10.0 <0.11.0',
+450 silly addNameRange   hasData: false }
+451 silly mapToRegistry name string_decoder
+452 silly mapToRegistry using default registry
+453 silly mapToRegistry registry https://registry.npmjs.org/
+454 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+455 verbose addNameRange registry:https://registry.npmjs.org/string_decoder not in flight; fetching
+456 info retry fetch attempt 1 at 7:11:46 PM
+457 info attempt registry request try #1 at 7:11:46 PM
+458 http fetch GET https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+459 silly resolveWithNewModule util-deprecate@1.0.2 checking installable status
+460 silly cache add args [ 'util-deprecate@~1.0.1', null ]
+461 verbose cache add spec util-deprecate@~1.0.1
+462 silly cache add parsed spec Result {
+462 silly cache add   raw: 'util-deprecate@~1.0.1',
+462 silly cache add   scope: null,
+462 silly cache add   name: 'util-deprecate',
+462 silly cache add   rawSpec: '~1.0.1',
+462 silly cache add   spec: '>=1.0.1 <1.1.0',
+462 silly cache add   type: 'range' }
+463 silly addNamed util-deprecate@>=1.0.1 <1.1.0
+464 verbose addNamed ">=1.0.1 <1.1.0" is a valid semver range for util-deprecate
+465 silly addNameRange { name: 'util-deprecate',
+465 silly addNameRange   range: '>=1.0.1 <1.1.0',
+465 silly addNameRange   hasData: false }
+466 silly mapToRegistry name util-deprecate
+467 silly mapToRegistry using default registry
+468 silly mapToRegistry registry https://registry.npmjs.org/
+469 silly mapToRegistry uri https://registry.npmjs.org/util-deprecate
+470 verbose addNameRange registry:https://registry.npmjs.org/util-deprecate not in flight; fetching
+471 verbose get https://registry.npmjs.org/string_decoder not expired, no request
+472 silly addNameRange number 2 { name: 'string_decoder',
+472 silly addNameRange   range: '>=0.10.0 <0.11.0',
+472 silly addNameRange   hasData: true }
+473 silly addNameRange versions [ 'string_decoder',
+473 silly addNameRange   [ '0.0.0',
+473 silly addNameRange     '0.0.1',
+473 silly addNameRange     '0.10.24',
+473 silly addNameRange     '0.11.10',
+473 silly addNameRange     '0.10.25',
+473 silly addNameRange     '0.11.10-1',
+473 silly addNameRange     '0.10.25-1',
+473 silly addNameRange     '0.10.31' ] ]
+474 silly addNamed string_decoder@0.10.31
+475 verbose addNamed "0.10.31" is a plain semver version for string_decoder
+476 silly mapToRegistry name string_decoder
+477 silly mapToRegistry using default registry
+478 silly mapToRegistry registry https://registry.npmjs.org/
+479 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+480 verbose addRemoteTarball https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz not in flight; adding
+481 verbose addRemoteTarball [ 'https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz',
+481 verbose addRemoteTarball   '62e203bc41766c6c28c9fc84301dab1c5310fa94' ]
+482 verbose get https://registry.npmjs.org/util-deprecate not expired, no request
+483 silly addNameRange number 2 { name: 'util-deprecate',
+483 silly addNameRange   range: '>=1.0.1 <1.1.0',
+483 silly addNameRange   hasData: true }
+484 silly addNameRange versions [ 'util-deprecate', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+485 silly addNamed util-deprecate@1.0.2
+486 verbose addNamed "1.0.2" is a plain semver version for util-deprecate
+487 info retry fetch attempt 1 at 7:11:46 PM
+488 info attempt registry request try #1 at 7:11:46 PM
+489 http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+490 silly mapToRegistry name util-deprecate
+491 silly mapToRegistry using default registry
+492 silly mapToRegistry registry https://registry.npmjs.org/
+493 silly mapToRegistry uri https://registry.npmjs.org/util-deprecate
+494 verbose addRemoteTarball https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz not in flight; adding
+495 verbose addRemoteTarball [ 'https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz',
+495 verbose addRemoteTarball   '450d4dc9fa70de732762fbd2d4a28981419a0ccf' ]
+496 info retry fetch attempt 1 at 7:11:46 PM
+497 info attempt registry request try #1 at 7:11:46 PM
+498 http fetch GET https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+499 http fetch 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+500 silly fetchAndShaCheck shasum b5fd54220aa2bc5ab57aab7140c940754503c1a7
+501 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz not in flight; adding
+502 verbose addTmpTarball already have metadata; skipping unpack for core-util-is@1.0.2
+503 http fetch 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+504 http fetch 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+505 silly fetchAndShaCheck shasum 150e20b756590ad3f91093f25a4f2ad8bff30ba3
+506 silly fetchAndShaCheck shasum bb935d48582cba168c06834957a54a3e07124f11
+507 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz not in flight; adding
+508 verbose addTmpTarball already have metadata; skipping unpack for process-nextick-args@1.0.7
+509 http fetch 200 https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+510 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/isarray/-/isarray-1.0.0.tgz not in flight; adding
+511 verbose addTmpTarball already have metadata; skipping unpack for isarray@1.0.0
+512 silly fetchAndShaCheck shasum 9978ce317388c649ad8793028c3477ef044a8b51
+513 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz not in flight; adding
+514 verbose addTmpTarball already have metadata; skipping unpack for buffer-shims@1.0.0
+515 silly cache afterAdd core-util-is@1.0.2
+516 verbose afterAdd /home/nelson/.npm/core-util-is/1.0.2/package/package.json not in flight; writing
+517 verbose afterAdd /home/nelson/.npm/core-util-is/1.0.2/package/package.json written
+518 silly cache afterAdd process-nextick-args@1.0.7
+519 verbose afterAdd /home/nelson/.npm/process-nextick-args/1.0.7/package/package.json not in flight; writing
+520 silly cache afterAdd isarray@1.0.0
+521 verbose afterAdd /home/nelson/.npm/isarray/1.0.0/package/package.json not in flight; writing
+522 verbose afterAdd /home/nelson/.npm/process-nextick-args/1.0.7/package/package.json written
+523 verbose afterAdd /home/nelson/.npm/isarray/1.0.0/package/package.json written
+524 silly cache afterAdd buffer-shims@1.0.0
+525 verbose afterAdd /home/nelson/.npm/buffer-shims/1.0.0/package/package.json not in flight; writing
+526 http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+527 http fetch 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+528 verbose afterAdd /home/nelson/.npm/buffer-shims/1.0.0/package/package.json written
+529 silly fetchAndShaCheck shasum 450d4dc9fa70de732762fbd2d4a28981419a0ccf
+530 silly fetchAndShaCheck shasum 62e203bc41766c6c28c9fc84301dab1c5310fa94
+531 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz not in flight; adding
+532 verbose addTmpTarball already have metadata; skipping unpack for string_decoder@0.10.31
+533 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz not in flight; adding
+534 verbose addTmpTarball already have metadata; skipping unpack for util-deprecate@1.0.2
+535 silly cache afterAdd util-deprecate@1.0.2
+536 verbose afterAdd /home/nelson/.npm/util-deprecate/1.0.2/package/package.json not in flight; writing
+537 silly cache afterAdd string_decoder@0.10.31
+538 verbose afterAdd /home/nelson/.npm/string_decoder/0.10.31/package/package.json not in flight; writing
+539 verbose afterAdd /home/nelson/.npm/util-deprecate/1.0.2/package/package.json written
+540 verbose afterAdd /home/nelson/.npm/string_decoder/0.10.31/package/package.json written
+541 silly fetchNamedPackageData isexe
+542 silly mapToRegistry name isexe
+543 silly mapToRegistry using default registry
+544 silly mapToRegistry registry https://registry.npmjs.org/
+545 silly mapToRegistry uri https://registry.npmjs.org/isexe
+546 verbose request uri https://registry.npmjs.org/isexe
+547 verbose request no auth needed
+548 info attempt registry request try #1 at 7:11:47 PM
+549 http request GET https://registry.npmjs.org/isexe
+550 http 200 https://registry.npmjs.org/isexe
+551 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+551 verbose headers   etag: '"A2WFQOVCYSXLEGQ5B5D2A8KGT"',
+551 verbose headers   'content-type': 'application/json',
+551 verbose headers   'content-encoding': 'gzip',
+551 verbose headers   'cache-control': 'max-age=300',
+551 verbose headers   'content-length': '2023',
+551 verbose headers   'accept-ranges': 'bytes',
+551 verbose headers   date: 'Sat, 17 Sep 2016 09:11:47 GMT',
+551 verbose headers   via: '1.1 varnish',
+551 verbose headers   age: '139',
+551 verbose headers   connection: 'keep-alive',
+551 verbose headers   'x-served-by': 'cache-mel6523-MEL',
+551 verbose headers   'x-cache': 'HIT',
+551 verbose headers   'x-cache-hits': '3',
+551 verbose headers   'x-timer': 'S1474103507.198650,VS0,VE0',
+551 verbose headers   vary: 'Accept-Encoding' }
+552 silly get cb [ 200,
+552 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+552 silly get     etag: '"A2WFQOVCYSXLEGQ5B5D2A8KGT"',
+552 silly get     'content-type': 'application/json',
+552 silly get     'content-encoding': 'gzip',
+552 silly get     'cache-control': 'max-age=300',
+552 silly get     'content-length': '2023',
+552 silly get     'accept-ranges': 'bytes',
+552 silly get     date: 'Sat, 17 Sep 2016 09:11:47 GMT',
+552 silly get     via: '1.1 varnish',
+552 silly get     age: '139',
+552 silly get     connection: 'keep-alive',
+552 silly get     'x-served-by': 'cache-mel6523-MEL',
+552 silly get     'x-cache': 'HIT',
+552 silly get     'x-cache-hits': '3',
+552 silly get     'x-timer': 'S1474103507.198650,VS0,VE0',
+552 silly get     vary: 'Accept-Encoding' } ]
+553 verbose get saving isexe to /home/nelson/.npm/registry.npmjs.org/isexe/.cache.json
+554 silly resolveWithNewModule isexe@1.1.2 checking installable status
+555 silly cache add args [ 'isexe@^1.1.1', null ]
+556 verbose cache add spec isexe@^1.1.1
+557 silly cache add parsed spec Result {
+557 silly cache add   raw: 'isexe@^1.1.1',
+557 silly cache add   scope: null,
+557 silly cache add   name: 'isexe',
+557 silly cache add   rawSpec: '^1.1.1',
+557 silly cache add   spec: '>=1.1.1 <2.0.0',
+557 silly cache add   type: 'range' }
+558 silly addNamed isexe@>=1.1.1 <2.0.0
+559 verbose addNamed ">=1.1.1 <2.0.0" is a valid semver range for isexe
+560 silly addNameRange { name: 'isexe', range: '>=1.1.1 <2.0.0', hasData: false }
+561 silly mapToRegistry name isexe
+562 silly mapToRegistry using default registry
+563 silly mapToRegistry registry https://registry.npmjs.org/
+564 silly mapToRegistry uri https://registry.npmjs.org/isexe
+565 verbose addNameRange registry:https://registry.npmjs.org/isexe not in flight; fetching
+566 verbose get https://registry.npmjs.org/isexe not expired, no request
+567 silly addNameRange number 2 { name: 'isexe', range: '>=1.1.1 <2.0.0', hasData: true }
+568 silly addNameRange versions [ 'isexe', [ '1.0.0', '1.0.1', '1.1.0', '1.1.1', '1.1.2' ] ]
+569 silly addNamed isexe@1.1.2
+570 verbose addNamed "1.1.2" is a plain semver version for isexe
+571 silly mapToRegistry name isexe
+572 silly mapToRegistry using default registry
+573 silly mapToRegistry registry https://registry.npmjs.org/
+574 silly mapToRegistry uri https://registry.npmjs.org/isexe
+575 verbose addRemoteTarball https://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz not in flight; adding
+576 verbose addRemoteTarball [ 'https://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz',
+576 verbose addRemoteTarball   '36f3e22e60750920f5e7241a476a8c6a42275ad0' ]
+577 info retry fetch attempt 1 at 7:11:47 PM
+578 info attempt registry request try #1 at 7:11:47 PM
+579 http fetch GET https://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz
+580 http fetch 200 https://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz
+581 silly fetchAndShaCheck shasum 36f3e22e60750920f5e7241a476a8c6a42275ad0
+582 verbose addTmpTarball /tmp/npm-10803-4215c29a/registry.npmjs.org/isexe/-/isexe-1.1.2.tgz not in flight; adding
+583 verbose addTmpTarball already have metadata; skipping unpack for isexe@1.1.2
+584 silly cache afterAdd isexe@1.1.2
+585 verbose afterAdd /home/nelson/.npm/isexe/1.1.2/package/package.json not in flight; writing
+586 verbose afterAdd /home/nelson/.npm/isexe/1.1.2/package/package.json written
+587 silly loadAllDepsIntoIdealTree Finishing
+588 silly idealTree:prePrune npm@3.10.7
+588 silly idealTree:prePrune ├── abbrev@1.0.9
+588 silly idealTree:prePrune ├── ansi-regex@2.0.0
+588 silly idealTree:prePrune ├── ansicolors@0.3.2
+588 silly idealTree:prePrune ├── ansistyles@0.1.3
+588 silly idealTree:prePrune ├── aproba@1.0.4
+588 silly idealTree:prePrune ├── archy@1.0.0
+588 silly idealTree:prePrune ├── asap@2.0.4
+588 silly idealTree:prePrune ├── chownr@1.0.1
+588 silly idealTree:prePrune ├── cmd-shim@2.0.2
+588 silly idealTree:prePrune ├─┬ columnify@1.5.4
+588 silly idealTree:prePrune │ └─┬ wcwidth@1.0.0
+588 silly idealTree:prePrune │   └─┬ defaults@1.0.3
+588 silly idealTree:prePrune │     └── clone@1.0.2
+588 silly idealTree:prePrune ├─┬ config-chain@1.1.10
+588 silly idealTree:prePrune │ └── proto-list@1.2.4
+588 silly idealTree:prePrune ├── debuglog@1.0.1
+588 silly idealTree:prePrune ├── dezalgo@1.0.3
+588 silly idealTree:prePrune ├── editor@1.0.0
+588 silly idealTree:prePrune ├── fs-vacuum@1.2.9
+588 silly idealTree:prePrune ├── fs-write-stream-atomic@1.0.8
+588 silly idealTree:prePrune ├─┬ fstream-npm@1.1.1
+588 silly idealTree:prePrune │ └─┬ fstream-ignore@1.0.5
+588 silly idealTree:prePrune │   └─┬ minimatch@3.0.3
+588 silly idealTree:prePrune │     └─┬ brace-expansion@1.1.6
+588 silly idealTree:prePrune │       ├── balanced-match@0.4.2
+588 silly idealTree:prePrune │       └── concat-map@0.0.1
+588 silly idealTree:prePrune ├── fstream@1.0.10
+588 silly idealTree:prePrune ├─┬ glob@7.0.5
+588 silly idealTree:prePrune │ ├── fs.realpath@1.0.0
+588 silly idealTree:prePrune │ ├─┬ minimatch@3.0.3
+588 silly idealTree:prePrune │ │ └─┬ brace-expansion@1.1.6
+588 silly idealTree:prePrune │ │   ├── balanced-match@0.4.2
+588 silly idealTree:prePrune │ │   └── concat-map@0.0.1
+588 silly idealTree:prePrune │ └── path-is-absolute@1.0.0
+588 silly idealTree:prePrune ├── graceful-fs@4.1.5
+588 silly idealTree:prePrune ├── has-unicode@2.0.1
+588 silly idealTree:prePrune ├── hosted-git-info@2.1.5
+588 silly idealTree:prePrune ├── iferr@0.1.5
+588 silly idealTree:prePrune ├── imurmurhash@0.1.4
+588 silly idealTree:prePrune ├── inflight@1.0.5
+588 silly idealTree:prePrune ├── inherits@2.0.1
+588 silly idealTree:prePrune ├── ini@1.3.4
+588 silly idealTree:prePrune ├─┬ init-package-json@1.9.4
+588 silly idealTree:prePrune │ ├─┬ glob@6.0.4
+588 silly idealTree:prePrune │ │ ├─┬ minimatch@3.0.3
+588 silly idealTree:prePrune │ │ │ └─┬ brace-expansion@1.1.6
+588 silly idealTree:prePrune │ │ │   ├── balanced-match@0.4.2
+588 silly idealTree:prePrune │ │ │   └── concat-map@0.0.1
+588 silly idealTree:prePrune │ │ └── path-is-absolute@1.0.0
+588 silly idealTree:prePrune │ └── promzard@0.3.0
+588 silly idealTree:prePrune ├── lockfile@1.0.1
+588 silly idealTree:prePrune ├── lodash._baseindexof@3.1.0
+588 silly idealTree:prePrune ├─┬ lodash._baseuniq@4.6.0
+588 silly idealTree:prePrune │ ├── lodash._createset@4.0.3
+588 silly idealTree:prePrune │ └── lodash._root@3.0.1
+588 silly idealTree:prePrune ├── lodash._bindcallback@3.0.1
+588 silly idealTree:prePrune ├── lodash._cacheindexof@3.0.2
+588 silly idealTree:prePrune ├── lodash._createcache@3.1.2
+588 silly idealTree:prePrune ├── lodash._getnative@3.9.1
+588 silly idealTree:prePrune ├── lodash.clonedeep@4.4.1
+588 silly idealTree:prePrune ├── lodash.restparam@3.6.1
+588 silly idealTree:prePrune ├── lodash.union@4.5.0
+588 silly idealTree:prePrune ├── lodash.uniq@4.4.0
+588 silly idealTree:prePrune ├── lodash.without@4.3.0
+588 silly idealTree:prePrune ├─┬ mkdirp@0.5.1
+588 silly idealTree:prePrune │ └── minimist@0.0.8
+588 silly idealTree:prePrune ├─┬ node-gyp@3.4.0
+588 silly idealTree:prePrune │ ├─┬ minimatch@3.0.3
+588 silly idealTree:prePrune │ │ └─┬ brace-expansion@1.1.6
+588 silly idealTree:prePrune │ │   ├── balanced-match@0.4.2
+588 silly idealTree:prePrune │ │   └── concat-map@0.0.1
+588 silly idealTree:prePrune │ └─┬ path-array@1.0.1
+588 silly idealTree:prePrune │   └─┬ array-index@1.0.0
+588 silly idealTree:prePrune │     ├─┬ debug@2.2.0
+588 silly idealTree:prePrune │     │ └── ms@0.7.1
+588 silly idealTree:prePrune │     └─┬ es6-symbol@3.1.0
+588 silly idealTree:prePrune │       ├── d@0.1.1
+588 silly idealTree:prePrune │       └─┬ es5-ext@0.10.12
+588 silly idealTree:prePrune │         └── es6-iterator@2.0.0
+588 silly idealTree:prePrune ├── nopt@3.0.6
+588 silly idealTree:prePrune ├── normalize-git-url@3.0.2
+588 silly idealTree:prePrune ├─┬ normalize-package-data@2.3.5
+588 silly idealTree:prePrune │ └─┬ is-builtin-module@1.0.0
+588 silly idealTree:prePrune │   └── builtin-modules@1.1.1
+588 silly idealTree:prePrune ├── npm-cache-filename@1.0.2
+588 silly idealTree:prePrune ├── npm-install-checks@3.0.0
+588 silly idealTree:prePrune ├── npm-package-arg@4.2.0
+588 silly idealTree:prePrune ├─┬ npm-registry-client@7.1.2
+588 silly idealTree:prePrune │ ├─┬ concat-stream@1.5.1
+588 silly idealTree:prePrune │ │ ├─┬ readable-stream@2.0.6
+588 silly idealTree:prePrune │ │ │ ├── core-util-is@1.0.2
+588 silly idealTree:prePrune │ │ │ ├── isarray@1.0.0
+588 silly idealTree:prePrune │ │ │ ├── process-nextick-args@1.0.7
+588 silly idealTree:prePrune │ │ │ ├── string_decoder@0.10.31
+588 silly idealTree:prePrune │ │ │ └── util-deprecate@1.0.2
+588 silly idealTree:prePrune │ │ └── typedarray@0.0.6
+588 silly idealTree:prePrune │ └── retry@0.8.0
+588 silly idealTree:prePrune ├── npm-user-validate@0.1.5
+588 silly idealTree:prePrune ├─┬ npmlog@3.1.2
+588 silly idealTree:prePrune │ ├─┬ are-we-there-yet@1.1.2
+588 silly idealTree:prePrune │ │ └── delegates@1.0.0
+588 silly idealTree:prePrune │ ├── console-control-strings@1.1.0
+588 silly idealTree:prePrune │ ├─┬ gauge@2.6.0
+588 silly idealTree:prePrune │ │ ├── has-color@0.1.7
+588 silly idealTree:prePrune │ │ ├── object-assign@4.1.0
+588 silly idealTree:prePrune │ │ ├── signal-exit@3.0.0
+588 silly idealTree:prePrune │ │ ├─┬ string-width@1.0.1
+588 silly idealTree:prePrune │ │ │ ├─┬ code-point-at@1.0.0
+588 silly idealTree:prePrune │ │ │ │ └── number-is-nan@1.0.0
+588 silly idealTree:prePrune │ │ │ └─┬ is-fullwidth-code-point@1.0.0
+588 silly idealTree:prePrune │ │ │   └── number-is-nan@1.0.0
+588 silly idealTree:prePrune │ │ └── wide-align@1.1.0
+588 silly idealTree:prePrune │ └── set-blocking@2.0.0
+588 silly idealTree:prePrune ├── once@1.3.3
+588 silly idealTree:prePrune ├── opener@1.4.1
+588 silly idealTree:prePrune ├─┬ osenv@0.1.3
+588 silly idealTree:prePrune │ ├── os-homedir@1.0.1
+588 silly idealTree:prePrune │ └── os-tmpdir@1.0.1
+588 silly idealTree:prePrune ├── path-is-inside@1.0.1
+588 silly idealTree:prePrune ├── read-cmd-shim@1.0.1
+588 silly idealTree:prePrune ├─┬ read-installed@4.0.3
+588 silly idealTree:prePrune │ └── util-extend@1.0.3
+588 silly idealTree:prePrune ├─┬ read-package-json@2.0.4
+588 silly idealTree:prePrune │ ├─┬ glob@6.0.4
+588 silly idealTree:prePrune │ │ ├─┬ minimatch@3.0.3
+588 silly idealTree:prePrune │ │ │ └─┬ brace-expansion@1.1.6
+588 silly idealTree:prePrune │ │ │   ├── balanced-match@0.4.2
+588 silly idealTree:prePrune │ │ │   └── concat-map@0.0.1
+588 silly idealTree:prePrune │ │ └── path-is-absolute@1.0.0
+588 silly idealTree:prePrune │ └─┬ json-parse-helpfulerror@1.0.3
+588 silly idealTree:prePrune │   └── jju@1.3.0
+588 silly idealTree:prePrune ├── read-package-tree@5.1.5
+588 silly idealTree:prePrune ├─┬ read@1.0.7
+588 silly idealTree:prePrune │ └── mute-stream@0.0.5
+588 silly idealTree:prePrune ├─┬ readable-stream@2.1.5
+588 silly idealTree:prePrune │ ├── buffer-shims@1.0.0
+588 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+588 silly idealTree:prePrune │ ├── isarray@1.0.0
+588 silly idealTree:prePrune │ ├── process-nextick-args@1.0.7
+588 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+588 silly idealTree:prePrune │ └── util-deprecate@1.0.2
+588 silly idealTree:prePrune ├── readdir-scoped-modules@1.0.2
+588 silly idealTree:prePrune ├── realize-package-specifier@3.0.3
+588 silly idealTree:prePrune ├─┬ request@2.74.0
+588 silly idealTree:prePrune │ ├── aws-sign2@0.6.0
+588 silly idealTree:prePrune │ ├── aws4@1.4.1
+588 silly idealTree:prePrune │ ├─┬ bl@1.1.2
+588 silly idealTree:prePrune │ │ └─┬ readable-stream@2.0.6
+588 silly idealTree:prePrune │ │   ├── core-util-is@1.0.2
+588 silly idealTree:prePrune │ │   ├── isarray@1.0.0
+588 silly idealTree:prePrune │ │   ├── process-nextick-args@1.0.7
+588 silly idealTree:prePrune │ │   ├── string_decoder@0.10.31
+588 silly idealTree:prePrune │ │   └── util-deprecate@1.0.2
+588 silly idealTree:prePrune │ ├── caseless@0.11.0
+588 silly idealTree:prePrune │ ├─┬ combined-stream@1.0.5
+588 silly idealTree:prePrune │ │ └── delayed-stream@1.0.0
+588 silly idealTree:prePrune │ ├── extend@3.0.0
+588 silly idealTree:prePrune │ ├── forever-agent@0.6.1
+588 silly idealTree:prePrune │ ├─┬ form-data@1.0.0-rc4
+588 silly idealTree:prePrune │ │ └── async@1.5.2
+588 silly idealTree:prePrune │ ├─┬ har-validator@2.0.6
+588 silly idealTree:prePrune │ │ ├─┬ chalk@1.1.3
+588 silly idealTree:prePrune │ │ │ ├── ansi-styles@2.2.1
+588 silly idealTree:prePrune │ │ │ ├── escape-string-regexp@1.0.5
+588 silly idealTree:prePrune │ │ │ ├── has-ansi@2.0.0
+588 silly idealTree:prePrune │ │ │ └── supports-color@2.0.0
+588 silly idealTree:prePrune │ │ ├─┬ commander@2.9.0
+588 silly idealTree:prePrune │ │ │ └── graceful-readlink@1.0.1
+588 silly idealTree:prePrune │ │ ├─┬ is-my-json-valid@2.13.1
+588 silly idealTree:prePrune │ │ │ ├── generate-function@2.0.0
+588 silly idealTree:prePrune │ │ │ ├─┬ generate-object-property@1.2.0
+588 silly idealTree:prePrune │ │ │ │ └── is-property@1.0.2
+588 silly idealTree:prePrune │ │ │ ├── jsonpointer@2.0.0
+588 silly idealTree:prePrune │ │ │ └── xtend@4.0.1
+588 silly idealTree:prePrune │ │ └─┬ pinkie-promise@2.0.1
+588 silly idealTree:prePrune │ │   └── pinkie@2.0.4
+588 silly idealTree:prePrune │ ├─┬ hawk@3.1.3
+588 silly idealTree:prePrune │ │ ├── boom@2.10.1
+588 silly idealTree:prePrune │ │ ├── cryptiles@2.0.5
+588 silly idealTree:prePrune │ │ ├── hoek@2.16.3
+588 silly idealTree:prePrune │ │ └── sntp@1.0.9
+588 silly idealTree:prePrune │ ├─┬ http-signature@1.1.1
+588 silly idealTree:prePrune │ │ ├── assert-plus@0.2.0
+588 silly idealTree:prePrune │ │ ├─┬ jsprim@1.3.0
+588 silly idealTree:prePrune │ │ │ ├── extsprintf@1.0.2
+588 silly idealTree:prePrune │ │ │ ├── json-schema@0.2.2
+588 silly idealTree:prePrune │ │ │ └── verror@1.3.6
+588 silly idealTree:prePrune │ │ └─┬ sshpk@1.9.2
+588 silly idealTree:prePrune │ │   ├── asn1@0.2.3
+588 silly idealTree:prePrune │ │   ├── assert-plus@1.0.0
+588 silly idealTree:prePrune │ │   ├── dashdash@1.14.0
+588 silly idealTree:prePrune │ │   ├── ecc-jsbn@0.1.1
+588 silly idealTree:prePrune │ │   ├── getpass@0.1.6
+588 silly idealTree:prePrune │ │   ├── jodid25519@1.0.2
+588 silly idealTree:prePrune │ │   ├── jsbn@0.1.0
+588 silly idealTree:prePrune │ │   └── tweetnacl@0.13.3
+588 silly idealTree:prePrune │ ├── is-typedarray@1.0.0
+588 silly idealTree:prePrune │ ├── isstream@0.1.2
+588 silly idealTree:prePrune │ ├── json-stringify-safe@5.0.1
+588 silly idealTree:prePrune │ ├─┬ mime-types@2.1.11
+588 silly idealTree:prePrune │ │ └── mime-db@1.23.0
+588 silly idealTree:prePrune │ ├── node-uuid@1.4.7
+588 silly idealTree:prePrune │ ├── oauth-sign@0.8.2
+588 silly idealTree:prePrune │ ├── qs@6.2.1
+588 silly idealTree:prePrune │ ├── stringstream@0.0.5
+588 silly idealTree:prePrune │ ├── tough-cookie@2.3.1
+588 silly idealTree:prePrune │ └── tunnel-agent@0.4.3
+588 silly idealTree:prePrune ├── retry@0.9.0
+588 silly idealTree:prePrune ├── rimraf@2.5.4
+588 silly idealTree:prePrune ├── semver@5.1.0
+588 silly idealTree:prePrune ├── sha@2.0.1
+588 silly idealTree:prePrune ├── slide@1.1.6
+588 silly idealTree:prePrune ├── sorted-object@2.0.0
+588 silly idealTree:prePrune ├── strip-ansi@3.0.1
+588 silly idealTree:prePrune ├─┬ tar@2.2.1
+588 silly idealTree:prePrune │ └── block-stream@0.0.8
+588 silly idealTree:prePrune ├── text-table@0.2.0
+588 silly idealTree:prePrune ├── uid-number@0.0.6
+588 silly idealTree:prePrune ├── umask@1.1.0
+588 silly idealTree:prePrune ├─┬ unique-filename@1.1.0
+588 silly idealTree:prePrune │ └── unique-slug@2.0.0
+588 silly idealTree:prePrune ├── unpipe@1.0.0
+588 silly idealTree:prePrune ├─┬ validate-npm-package-license@3.0.1
+588 silly idealTree:prePrune │ ├─┬ spdx-correct@1.0.2
+588 silly idealTree:prePrune │ │ └── spdx-license-ids@1.2.0
+588 silly idealTree:prePrune │ └─┬ spdx-expression-parse@1.0.2
+588 silly idealTree:prePrune │   ├── spdx-exceptions@1.0.4
+588 silly idealTree:prePrune │   └── spdx-license-ids@1.2.0
+588 silly idealTree:prePrune ├─┬ validate-npm-package-name@2.2.2
+588 silly idealTree:prePrune │ └── builtins@0.0.7
+588 silly idealTree:prePrune ├─┬ which@1.2.11
+588 silly idealTree:prePrune │ └── isexe@1.1.2
+588 silly idealTree:prePrune ├── wrappy@1.0.2
+588 silly idealTree:prePrune └── write-file-atomic@1.1.4
+589 silly loadIdealTree Finishing
+590 silly currentTree npm@3.10.7
+590 silly currentTree ├── abbrev@1.0.9
+590 silly currentTree ├── ansi-regex@2.0.0
+590 silly currentTree ├── ansicolors@0.3.2
+590 silly currentTree ├── ansistyles@0.1.3
+590 silly currentTree ├── aproba@1.0.4
+590 silly currentTree ├── archy@1.0.0
+590 silly currentTree ├── asap@2.0.4
+590 silly currentTree ├── chownr@1.0.1
+590 silly currentTree ├── cmd-shim@2.0.2
+590 silly currentTree ├─┬ columnify@1.5.4
+590 silly currentTree │ └─┬ wcwidth@1.0.0
+590 silly currentTree │   └─┬ defaults@1.0.3
+590 silly currentTree │     └── clone@1.0.2
+590 silly currentTree ├─┬ config-chain@1.1.10
+590 silly currentTree │ └── proto-list@1.2.4
+590 silly currentTree ├── debuglog@1.0.1
+590 silly currentTree ├── dezalgo@1.0.3
+590 silly currentTree ├── editor@1.0.0
+590 silly currentTree ├── fs-vacuum@1.2.9
+590 silly currentTree ├── fs-write-stream-atomic@1.0.8
+590 silly currentTree ├─┬ fstream-npm@1.1.1
+590 silly currentTree │ └─┬ fstream-ignore@1.0.5
+590 silly currentTree │   └─┬ minimatch@3.0.3
+590 silly currentTree │     └─┬ brace-expansion@1.1.6
+590 silly currentTree │       ├── balanced-match@0.4.2
+590 silly currentTree │       └── concat-map@0.0.1
+590 silly currentTree ├── fstream@1.0.10
+590 silly currentTree ├─┬ glob@7.0.5
+590 silly currentTree │ ├── fs.realpath@1.0.0
+590 silly currentTree │ ├─┬ minimatch@3.0.3
+590 silly currentTree │ │ └─┬ brace-expansion@1.1.6
+590 silly currentTree │ │   ├── balanced-match@0.4.2
+590 silly currentTree │ │   └── concat-map@0.0.1
+590 silly currentTree │ └── path-is-absolute@1.0.0
+590 silly currentTree ├── graceful-fs@4.1.5
+590 silly currentTree ├── has-unicode@2.0.1
+590 silly currentTree ├── hosted-git-info@2.1.5
+590 silly currentTree ├── iferr@0.1.5
+590 silly currentTree ├── imurmurhash@0.1.4
+590 silly currentTree ├── inflight@1.0.5
+590 silly currentTree ├── inherits@2.0.1
+590 silly currentTree ├── ini@1.3.4
+590 silly currentTree ├─┬ init-package-json@1.9.4
+590 silly currentTree │ ├─┬ glob@6.0.4
+590 silly currentTree │ │ ├─┬ minimatch@3.0.3
+590 silly currentTree │ │ │ └─┬ brace-expansion@1.1.6
+590 silly currentTree │ │ │   ├── balanced-match@0.4.2
+590 silly currentTree │ │ │   └── concat-map@0.0.1
+590 silly currentTree │ │ └── path-is-absolute@1.0.0
+590 silly currentTree │ └── promzard@0.3.0
+590 silly currentTree ├── lockfile@1.0.1
+590 silly currentTree ├── lodash._baseindexof@3.1.0
+590 silly currentTree ├─┬ lodash._baseuniq@4.6.0
+590 silly currentTree │ ├── lodash._createset@4.0.3
+590 silly currentTree │ └── lodash._root@3.0.1
+590 silly currentTree ├── lodash._bindcallback@3.0.1
+590 silly currentTree ├── lodash._cacheindexof@3.0.2
+590 silly currentTree ├── lodash._createcache@3.1.2
+590 silly currentTree ├── lodash._getnative@3.9.1
+590 silly currentTree ├── lodash.clonedeep@4.4.1
+590 silly currentTree ├── lodash.restparam@3.6.1
+590 silly currentTree ├── lodash.union@4.5.0
+590 silly currentTree ├── lodash.uniq@4.4.0
+590 silly currentTree ├── lodash.without@4.3.0
+590 silly currentTree ├─┬ mkdirp@0.5.1
+590 silly currentTree │ └── minimist@0.0.8
+590 silly currentTree ├─┬ node-gyp@3.4.0
+590 silly currentTree │ ├─┬ minimatch@3.0.3
+590 silly currentTree │ │ └─┬ brace-expansion@1.1.6
+590 silly currentTree │ │   ├── balanced-match@0.4.2
+590 silly currentTree │ │   └── concat-map@0.0.1
+590 silly currentTree │ └─┬ path-array@1.0.1
+590 silly currentTree │   └─┬ array-index@1.0.0
+590 silly currentTree │     ├─┬ debug@2.2.0
+590 silly currentTree │     │ └── ms@0.7.1
+590 silly currentTree │     └─┬ es6-symbol@3.1.0
+590 silly currentTree │       ├── d@0.1.1
+590 silly currentTree │       └─┬ es5-ext@0.10.12
+590 silly currentTree │         └── es6-iterator@2.0.0
+590 silly currentTree ├── nopt@3.0.6
+590 silly currentTree ├── normalize-git-url@3.0.2
+590 silly currentTree ├─┬ normalize-package-data@2.3.5
+590 silly currentTree │ └─┬ is-builtin-module@1.0.0
+590 silly currentTree │   └── builtin-modules@1.1.1
+590 silly currentTree ├── npm-cache-filename@1.0.2
+590 silly currentTree ├── npm-install-checks@3.0.0
+590 silly currentTree ├── npm-package-arg@4.2.0
+590 silly currentTree ├─┬ npm-registry-client@7.1.2
+590 silly currentTree │ ├─┬ concat-stream@1.5.1
+590 silly currentTree │ │ ├─┬ readable-stream@2.0.6
+590 silly currentTree │ │ │ ├── core-util-is@1.0.2
+590 silly currentTree │ │ │ ├── isarray@1.0.0
+590 silly currentTree │ │ │ ├── process-nextick-args@1.0.7
+590 silly currentTree │ │ │ ├── string_decoder@0.10.31
+590 silly currentTree │ │ │ └── util-deprecate@1.0.2
+590 silly currentTree │ │ └── typedarray@0.0.6
+590 silly currentTree │ └── retry@0.8.0
+590 silly currentTree ├── npm-user-validate@0.1.5
+590 silly currentTree ├─┬ npmlog@3.1.2
+590 silly currentTree │ ├─┬ are-we-there-yet@1.1.2
+590 silly currentTree │ │ └── delegates@1.0.0
+590 silly currentTree │ ├── console-control-strings@1.1.0
+590 silly currentTree │ ├─┬ gauge@2.6.0
+590 silly currentTree │ │ ├── has-color@0.1.7
+590 silly currentTree │ │ ├── object-assign@4.1.0
+590 silly currentTree │ │ ├── signal-exit@3.0.0
+590 silly currentTree │ │ ├─┬ string-width@1.0.1
+590 silly currentTree │ │ │ ├─┬ code-point-at@1.0.0
+590 silly currentTree │ │ │ │ └── number-is-nan@1.0.0
+590 silly currentTree │ │ │ └─┬ is-fullwidth-code-point@1.0.0
+590 silly currentTree │ │ │   └── number-is-nan@1.0.0
+590 silly currentTree │ │ └── wide-align@1.1.0
+590 silly currentTree │ └── set-blocking@2.0.0
+590 silly currentTree ├── once@1.3.3
+590 silly currentTree ├── opener@1.4.1
+590 silly currentTree ├─┬ osenv@0.1.3
+590 silly currentTree │ ├── os-homedir@1.0.1
+590 silly currentTree │ └── os-tmpdir@1.0.1
+590 silly currentTree ├── path-is-inside@1.0.1
+590 silly currentTree ├── read-cmd-shim@1.0.1
+590 silly currentTree ├─┬ read-installed@4.0.3
+590 silly currentTree │ └── util-extend@1.0.3
+590 silly currentTree ├─┬ read-package-json@2.0.4
+590 silly currentTree │ ├─┬ glob@6.0.4
+590 silly currentTree │ │ ├─┬ minimatch@3.0.3
+590 silly currentTree │ │ │ └─┬ brace-expansion@1.1.6
+590 silly currentTree │ │ │   ├── balanced-match@0.4.2
+590 silly currentTree │ │ │   └── concat-map@0.0.1
+590 silly currentTree │ │ └── path-is-absolute@1.0.0
+590 silly currentTree │ └─┬ json-parse-helpfulerror@1.0.3
+590 silly currentTree │   └── jju@1.3.0
+590 silly currentTree ├── read-package-tree@5.1.5
+590 silly currentTree ├─┬ read@1.0.7
+590 silly currentTree │ └── mute-stream@0.0.5
+590 silly currentTree ├─┬ readable-stream@2.1.4
+590 silly currentTree │ ├── buffer-shims@1.0.0
+590 silly currentTree │ ├── core-util-is@1.0.2
+590 silly currentTree │ ├── isarray@1.0.0
+590 silly currentTree │ ├── process-nextick-args@1.0.7
+590 silly currentTree │ ├── string_decoder@0.10.31
+590 silly currentTree │ └── util-deprecate@1.0.2
+590 silly currentTree ├── readdir-scoped-modules@1.0.2
+590 silly currentTree ├── realize-package-specifier@3.0.3
+590 silly currentTree ├─┬ request@2.74.0
+590 silly currentTree │ ├── aws-sign2@0.6.0
+590 silly currentTree │ ├── aws4@1.4.1
+590 silly currentTree │ ├─┬ bl@1.1.2
+590 silly currentTree │ │ └─┬ readable-stream@2.0.6
+590 silly currentTree │ │   ├── core-util-is@1.0.2
+590 silly currentTree │ │   ├── isarray@1.0.0
+590 silly currentTree │ │   ├── process-nextick-args@1.0.7
+590 silly currentTree │ │   ├── string_decoder@0.10.31
+590 silly currentTree │ │   └── util-deprecate@1.0.2
+590 silly currentTree │ ├── caseless@0.11.0
+590 silly currentTree │ ├─┬ combined-stream@1.0.5
+590 silly currentTree │ │ └── delayed-stream@1.0.0
+590 silly currentTree │ ├── extend@3.0.0
+590 silly currentTree │ ├── forever-agent@0.6.1
+590 silly currentTree │ ├─┬ form-data@1.0.0-rc4
+590 silly currentTree │ │ └── async@1.5.2
+590 silly currentTree │ ├─┬ har-validator@2.0.6
+590 silly currentTree │ │ ├─┬ chalk@1.1.3
+590 silly currentTree │ │ │ ├── ansi-styles@2.2.1
+590 silly currentTree │ │ │ ├── escape-string-regexp@1.0.5
+590 silly currentTree │ │ │ ├── has-ansi@2.0.0
+590 silly currentTree │ │ │ └── supports-color@2.0.0
+590 silly currentTree │ │ ├─┬ commander@2.9.0
+590 silly currentTree │ │ │ └── graceful-readlink@1.0.1
+590 silly currentTree │ │ ├─┬ is-my-json-valid@2.13.1
+590 silly currentTree │ │ │ ├── generate-function@2.0.0
+590 silly currentTree │ │ │ ├─┬ generate-object-property@1.2.0
+590 silly currentTree │ │ │ │ └── is-property@1.0.2
+590 silly currentTree │ │ │ ├── jsonpointer@2.0.0
+590 silly currentTree │ │ │ └── xtend@4.0.1
+590 silly currentTree │ │ └─┬ pinkie-promise@2.0.1
+590 silly currentTree │ │   └── pinkie@2.0.4
+590 silly currentTree │ ├─┬ hawk@3.1.3
+590 silly currentTree │ │ ├── boom@2.10.1
+590 silly currentTree │ │ ├── cryptiles@2.0.5
+590 silly currentTree │ │ ├── hoek@2.16.3
+590 silly currentTree │ │ └── sntp@1.0.9
+590 silly currentTree │ ├─┬ http-signature@1.1.1
+590 silly currentTree │ │ ├── assert-plus@0.2.0
+590 silly currentTree │ │ ├─┬ jsprim@1.3.0
+590 silly currentTree │ │ │ ├── extsprintf@1.0.2
+590 silly currentTree │ │ │ ├── json-schema@0.2.2
+590 silly currentTree │ │ │ └── verror@1.3.6
+590 silly currentTree │ │ └─┬ sshpk@1.9.2
+590 silly currentTree │ │   ├── asn1@0.2.3
+590 silly currentTree │ │   ├── assert-plus@1.0.0
+590 silly currentTree │ │   ├── dashdash@1.14.0
+590 silly currentTree │ │   ├── ecc-jsbn@0.1.1
+590 silly currentTree │ │   ├── getpass@0.1.6
+590 silly currentTree │ │   ├── jodid25519@1.0.2
+590 silly currentTree │ │   ├── jsbn@0.1.0
+590 silly currentTree │ │   └── tweetnacl@0.13.3
+590 silly currentTree │ ├── is-typedarray@1.0.0
+590 silly currentTree │ ├── isstream@0.1.2
+590 silly currentTree │ ├── json-stringify-safe@5.0.1
+590 silly currentTree │ ├─┬ mime-types@2.1.11
+590 silly currentTree │ │ └── mime-db@1.23.0
+590 silly currentTree │ ├── node-uuid@1.4.7
+590 silly currentTree │ ├── oauth-sign@0.8.2
+590 silly currentTree │ ├── qs@6.2.1
+590 silly currentTree │ ├── stringstream@0.0.5
+590 silly currentTree │ ├── tough-cookie@2.3.1
+590 silly currentTree │ └── tunnel-agent@0.4.3
+590 silly currentTree ├── retry@0.9.0
+590 silly currentTree ├── rimraf@2.5.4
+590 silly currentTree ├── semver@5.1.0
+590 silly currentTree ├── sha@2.0.1
+590 silly currentTree ├── slide@1.1.6
+590 silly currentTree ├── sorted-object@2.0.0
+590 silly currentTree ├── strip-ansi@3.0.1
+590 silly currentTree ├─┬ tar@2.2.1
+590 silly currentTree │ └── block-stream@0.0.8
+590 silly currentTree ├── text-table@0.2.0
+590 silly currentTree ├── uid-number@0.0.6
+590 silly currentTree ├── umask@1.1.0
+590 silly currentTree ├─┬ unique-filename@1.1.0
+590 silly currentTree │ └── unique-slug@2.0.0
+590 silly currentTree ├── unpipe@1.0.0
+590 silly currentTree ├─┬ validate-npm-package-license@3.0.1
+590 silly currentTree │ ├─┬ spdx-correct@1.0.2
+590 silly currentTree │ │ └── spdx-license-ids@1.2.0
+590 silly currentTree │ └─┬ spdx-expression-parse@1.0.2
+590 silly currentTree │   ├── spdx-exceptions@1.0.4
+590 silly currentTree │   └── spdx-license-ids@1.2.0
+590 silly currentTree ├─┬ validate-npm-package-name@2.2.2
+590 silly currentTree │ └── builtins@0.0.7
+590 silly currentTree ├─┬ which@1.2.10
+590 silly currentTree │ └── isexe@1.1.2
+590 silly currentTree ├── wrappy@1.0.2
+590 silly currentTree └── write-file-atomic@1.1.4
+591 silly idealTree npm@3.10.7
+591 silly idealTree ├── abbrev@1.0.9
+591 silly idealTree ├── ansi-regex@2.0.0
+591 silly idealTree ├── ansicolors@0.3.2
+591 silly idealTree ├── ansistyles@0.1.3
+591 silly idealTree ├── aproba@1.0.4
+591 silly idealTree ├── archy@1.0.0
+591 silly idealTree ├── asap@2.0.4
+591 silly idealTree ├── chownr@1.0.1
+591 silly idealTree ├── cmd-shim@2.0.2
+591 silly idealTree ├─┬ columnify@1.5.4
+591 silly idealTree │ └─┬ wcwidth@1.0.0
+591 silly idealTree │   └─┬ defaults@1.0.3
+591 silly idealTree │     └── clone@1.0.2
+591 silly idealTree ├─┬ config-chain@1.1.10
+591 silly idealTree │ └── proto-list@1.2.4
+591 silly idealTree ├── debuglog@1.0.1
+591 silly idealTree ├── dezalgo@1.0.3
+591 silly idealTree ├── editor@1.0.0
+591 silly idealTree ├── fs-vacuum@1.2.9
+591 silly idealTree ├── fs-write-stream-atomic@1.0.8
+591 silly idealTree ├─┬ fstream-npm@1.1.1
+591 silly idealTree │ └─┬ fstream-ignore@1.0.5
+591 silly idealTree │   └─┬ minimatch@3.0.3
+591 silly idealTree │     └─┬ brace-expansion@1.1.6
+591 silly idealTree │       ├── balanced-match@0.4.2
+591 silly idealTree │       └── concat-map@0.0.1
+591 silly idealTree ├── fstream@1.0.10
+591 silly idealTree ├─┬ glob@7.0.5
+591 silly idealTree │ ├── fs.realpath@1.0.0
+591 silly idealTree │ ├─┬ minimatch@3.0.3
+591 silly idealTree │ │ └─┬ brace-expansion@1.1.6
+591 silly idealTree │ │   ├── balanced-match@0.4.2
+591 silly idealTree │ │   └── concat-map@0.0.1
+591 silly idealTree │ └── path-is-absolute@1.0.0
+591 silly idealTree ├── graceful-fs@4.1.5
+591 silly idealTree ├── has-unicode@2.0.1
+591 silly idealTree ├── hosted-git-info@2.1.5
+591 silly idealTree ├── iferr@0.1.5
+591 silly idealTree ├── imurmurhash@0.1.4
+591 silly idealTree ├── inflight@1.0.5
+591 silly idealTree ├── inherits@2.0.1
+591 silly idealTree ├── ini@1.3.4
+591 silly idealTree ├─┬ init-package-json@1.9.4
+591 silly idealTree │ ├─┬ glob@6.0.4
+591 silly idealTree │ │ ├─┬ minimatch@3.0.3
+591 silly idealTree │ │ │ └─┬ brace-expansion@1.1.6
+591 silly idealTree │ │ │   ├── balanced-match@0.4.2
+591 silly idealTree │ │ │   └── concat-map@0.0.1
+591 silly idealTree │ │ └── path-is-absolute@1.0.0
+591 silly idealTree │ └── promzard@0.3.0
+591 silly idealTree ├── lockfile@1.0.1
+591 silly idealTree ├── lodash._baseindexof@3.1.0
+591 silly idealTree ├─┬ lodash._baseuniq@4.6.0
+591 silly idealTree │ ├── lodash._createset@4.0.3
+591 silly idealTree │ └── lodash._root@3.0.1
+591 silly idealTree ├── lodash._bindcallback@3.0.1
+591 silly idealTree ├── lodash._cacheindexof@3.0.2
+591 silly idealTree ├── lodash._createcache@3.1.2
+591 silly idealTree ├── lodash._getnative@3.9.1
+591 silly idealTree ├── lodash.clonedeep@4.4.1
+591 silly idealTree ├── lodash.restparam@3.6.1
+591 silly idealTree ├── lodash.union@4.5.0
+591 silly idealTree ├── lodash.uniq@4.4.0
+591 silly idealTree ├── lodash.without@4.3.0
+591 silly idealTree ├─┬ mkdirp@0.5.1
+591 silly idealTree │ └── minimist@0.0.8
+591 silly idealTree ├─┬ node-gyp@3.4.0
+591 silly idealTree │ ├─┬ minimatch@3.0.3
+591 silly idealTree │ │ └─┬ brace-expansion@1.1.6
+591 silly idealTree │ │   ├── balanced-match@0.4.2
+591 silly idealTree │ │   └── concat-map@0.0.1
+591 silly idealTree │ └─┬ path-array@1.0.1
+591 silly idealTree │   └─┬ array-index@1.0.0
+591 silly idealTree │     ├─┬ debug@2.2.0
+591 silly idealTree │     │ └── ms@0.7.1
+591 silly idealTree │     └─┬ es6-symbol@3.1.0
+591 silly idealTree │       ├── d@0.1.1
+591 silly idealTree │       └─┬ es5-ext@0.10.12
+591 silly idealTree │         └── es6-iterator@2.0.0
+591 silly idealTree ├── nopt@3.0.6
+591 silly idealTree ├── normalize-git-url@3.0.2
+591 silly idealTree ├─┬ normalize-package-data@2.3.5
+591 silly idealTree │ └─┬ is-builtin-module@1.0.0
+591 silly idealTree │   └── builtin-modules@1.1.1
+591 silly idealTree ├── npm-cache-filename@1.0.2
+591 silly idealTree ├── npm-install-checks@3.0.0
+591 silly idealTree ├── npm-package-arg@4.2.0
+591 silly idealTree ├─┬ npm-registry-client@7.1.2
+591 silly idealTree │ ├─┬ concat-stream@1.5.1
+591 silly idealTree │ │ ├─┬ readable-stream@2.0.6
+591 silly idealTree │ │ │ ├── core-util-is@1.0.2
+591 silly idealTree │ │ │ ├── isarray@1.0.0
+591 silly idealTree │ │ │ ├── process-nextick-args@1.0.7
+591 silly idealTree │ │ │ ├── string_decoder@0.10.31
+591 silly idealTree │ │ │ └── util-deprecate@1.0.2
+591 silly idealTree │ │ └── typedarray@0.0.6
+591 silly idealTree │ └── retry@0.8.0
+591 silly idealTree ├── npm-user-validate@0.1.5
+591 silly idealTree ├─┬ npmlog@3.1.2
+591 silly idealTree │ ├─┬ are-we-there-yet@1.1.2
+591 silly idealTree │ │ └── delegates@1.0.0
+591 silly idealTree │ ├── console-control-strings@1.1.0
+591 silly idealTree │ ├─┬ gauge@2.6.0
+591 silly idealTree │ │ ├── has-color@0.1.7
+591 silly idealTree │ │ ├── object-assign@4.1.0
+591 silly idealTree │ │ ├── signal-exit@3.0.0
+591 silly idealTree │ │ ├─┬ string-width@1.0.1
+591 silly idealTree │ │ │ ├─┬ code-point-at@1.0.0
+591 silly idealTree │ │ │ │ └── number-is-nan@1.0.0
+591 silly idealTree │ │ │ └─┬ is-fullwidth-code-point@1.0.0
+591 silly idealTree │ │ │   └── number-is-nan@1.0.0
+591 silly idealTree │ │ └── wide-align@1.1.0
+591 silly idealTree │ └── set-blocking@2.0.0
+591 silly idealTree ├── once@1.3.3
+591 silly idealTree ├── opener@1.4.1
+591 silly idealTree ├─┬ osenv@0.1.3
+591 silly idealTree │ ├── os-homedir@1.0.1
+591 silly idealTree │ └── os-tmpdir@1.0.1
+591 silly idealTree ├── path-is-inside@1.0.1
+591 silly idealTree ├── read-cmd-shim@1.0.1
+591 silly idealTree ├─┬ read-installed@4.0.3
+591 silly idealTree │ └── util-extend@1.0.3
+591 silly idealTree ├─┬ read-package-json@2.0.4
+591 silly idealTree │ ├─┬ glob@6.0.4
+591 silly idealTree │ │ ├─┬ minimatch@3.0.3
+591 silly idealTree │ │ │ └─┬ brace-expansion@1.1.6
+591 silly idealTree │ │ │   ├── balanced-match@0.4.2
+591 silly idealTree │ │ │   └── concat-map@0.0.1
+591 silly idealTree │ │ └── path-is-absolute@1.0.0
+591 silly idealTree │ └─┬ json-parse-helpfulerror@1.0.3
+591 silly idealTree │   └── jju@1.3.0
+591 silly idealTree ├── read-package-tree@5.1.5
+591 silly idealTree ├─┬ read@1.0.7
+591 silly idealTree │ └── mute-stream@0.0.5
+591 silly idealTree ├─┬ readable-stream@2.1.5
+591 silly idealTree │ ├── buffer-shims@1.0.0
+591 silly idealTree │ ├── core-util-is@1.0.2
+591 silly idealTree │ ├── isarray@1.0.0
+591 silly idealTree │ ├── process-nextick-args@1.0.7
+591 silly idealTree │ ├── string_decoder@0.10.31
+591 silly idealTree │ └── util-deprecate@1.0.2
+591 silly idealTree ├── readdir-scoped-modules@1.0.2
+591 silly idealTree ├── realize-package-specifier@3.0.3
+591 silly idealTree ├─┬ request@2.74.0
+591 silly idealTree │ ├── aws-sign2@0.6.0
+591 silly idealTree │ ├── aws4@1.4.1
+591 silly idealTree │ ├─┬ bl@1.1.2
+591 silly idealTree │ │ └─┬ readable-stream@2.0.6
+591 silly idealTree │ │   ├── core-util-is@1.0.2
+591 silly idealTree │ │   ├── isarray@1.0.0
+591 silly idealTree │ │   ├── process-nextick-args@1.0.7
+591 silly idealTree │ │   ├── string_decoder@0.10.31
+591 silly idealTree │ │   └── util-deprecate@1.0.2
+591 silly idealTree │ ├── caseless@0.11.0
+591 silly idealTree │ ├─┬ combined-stream@1.0.5
+591 silly idealTree │ │ └── delayed-stream@1.0.0
+591 silly idealTree │ ├── extend@3.0.0
+591 silly idealTree │ ├── forever-agent@0.6.1
+591 silly idealTree │ ├─┬ form-data@1.0.0-rc4
+591 silly idealTree │ │ └── async@1.5.2
+591 silly idealTree │ ├─┬ har-validator@2.0.6
+591 silly idealTree │ │ ├─┬ chalk@1.1.3
+591 silly idealTree │ │ │ ├── ansi-styles@2.2.1
+591 silly idealTree │ │ │ ├── escape-string-regexp@1.0.5
+591 silly idealTree │ │ │ ├── has-ansi@2.0.0
+591 silly idealTree │ │ │ └── supports-color@2.0.0
+591 silly idealTree │ │ ├─┬ commander@2.9.0
+591 silly idealTree │ │ │ └── graceful-readlink@1.0.1
+591 silly idealTree │ │ ├─┬ is-my-json-valid@2.13.1
+591 silly idealTree │ │ │ ├── generate-function@2.0.0
+591 silly idealTree │ │ │ ├─┬ generate-object-property@1.2.0
+591 silly idealTree │ │ │ │ └── is-property@1.0.2
+591 silly idealTree │ │ │ ├── jsonpointer@2.0.0
+591 silly idealTree │ │ │ └── xtend@4.0.1
+591 silly idealTree │ │ └─┬ pinkie-promise@2.0.1
+591 silly idealTree │ │   └── pinkie@2.0.4
+591 silly idealTree │ ├─┬ hawk@3.1.3
+591 silly idealTree │ │ ├── boom@2.10.1
+591 silly idealTree │ │ ├── cryptiles@2.0.5
+591 silly idealTree │ │ ├── hoek@2.16.3
+591 silly idealTree │ │ └── sntp@1.0.9
+591 silly idealTree │ ├─┬ http-signature@1.1.1
+591 silly idealTree │ │ ├── assert-plus@0.2.0
+591 silly idealTree │ │ ├─┬ jsprim@1.3.0
+591 silly idealTree │ │ │ ├── extsprintf@1.0.2
+591 silly idealTree │ │ │ ├── json-schema@0.2.2
+591 silly idealTree │ │ │ └── verror@1.3.6
+591 silly idealTree │ │ └─┬ sshpk@1.9.2
+591 silly idealTree │ │   ├── asn1@0.2.3
+591 silly idealTree │ │   ├── assert-plus@1.0.0
+591 silly idealTree │ │   ├── dashdash@1.14.0
+591 silly idealTree │ │   ├── ecc-jsbn@0.1.1
+591 silly idealTree │ │   ├── getpass@0.1.6
+591 silly idealTree │ │   ├── jodid25519@1.0.2
+591 silly idealTree │ │   ├── jsbn@0.1.0
+591 silly idealTree │ │   └── tweetnacl@0.13.3
+591 silly idealTree │ ├── is-typedarray@1.0.0
+591 silly idealTree │ ├── isstream@0.1.2
+591 silly idealTree │ ├── json-stringify-safe@5.0.1
+591 silly idealTree │ ├─┬ mime-types@2.1.11
+591 silly idealTree │ │ └── mime-db@1.23.0
+591 silly idealTree │ ├── node-uuid@1.4.7
+591 silly idealTree │ ├── oauth-sign@0.8.2
+591 silly idealTree │ ├── qs@6.2.1
+591 silly idealTree │ ├── stringstream@0.0.5
+591 silly idealTree │ ├── tough-cookie@2.3.1
+591 silly idealTree │ └── tunnel-agent@0.4.3
+591 silly idealTree ├── retry@0.9.0
+591 silly idealTree ├── rimraf@2.5.4
+591 silly idealTree ├── semver@5.1.0
+591 silly idealTree ├── sha@2.0.1
+591 silly idealTree ├── slide@1.1.6
+591 silly idealTree ├── sorted-object@2.0.0
+591 silly idealTree ├── strip-ansi@3.0.1
+591 silly idealTree ├─┬ tar@2.2.1
+591 silly idealTree │ └── block-stream@0.0.8
+591 silly idealTree ├── text-table@0.2.0
+591 silly idealTree ├── uid-number@0.0.6
+591 silly idealTree ├── umask@1.1.0
+591 silly idealTree ├─┬ unique-filename@1.1.0
+591 silly idealTree │ └── unique-slug@2.0.0
+591 silly idealTree ├── unpipe@1.0.0
+591 silly idealTree ├─┬ validate-npm-package-license@3.0.1
+591 silly idealTree │ ├─┬ spdx-correct@1.0.2
+591 silly idealTree │ │ └── spdx-license-ids@1.2.0
+591 silly idealTree │ └─┬ spdx-expression-parse@1.0.2
+591 silly idealTree │   ├── spdx-exceptions@1.0.4
+591 silly idealTree │   └── spdx-license-ids@1.2.0
+591 silly idealTree ├─┬ validate-npm-package-name@2.2.2
+591 silly idealTree │ └── builtins@0.0.7
+591 silly idealTree ├─┬ which@1.2.11
+591 silly idealTree │ └── isexe@1.1.2
+591 silly idealTree ├── wrappy@1.0.2
+591 silly idealTree └── write-file-atomic@1.1.4
+592 silly generateActionsToTake Starting
+593 silly install generateActionsToTake
+594 verbose stack TypeError: Cannot read property 'target' of null
+594 verbose stack     at module.exports (/usr/share/npm/lib/install/filter-invalid-actions.js:24:35)
+594 verbose stack     at Array.<anonymous> (/usr/share/npm/node_modules/slide/lib/bind-actor.js:15:8)
+594 verbose stack     at LOOP (/usr/share/npm/node_modules/slide/lib/chain.js:15:14)
+594 verbose stack     at /usr/share/npm/node_modules/slide/lib/chain.js:18:7
+594 verbose stack     at Object.Installer.computeLinked (/usr/share/npm/lib/install.js:411:41)
+594 verbose stack     at Array.<anonymous> (/usr/share/npm/node_modules/slide/lib/bind-actor.js:15:8)
+594 verbose stack     at LOOP (/usr/share/npm/node_modules/slide/lib/chain.js:15:14)
+594 verbose stack     at /usr/share/npm/node_modules/slide/lib/chain.js:18:7
+594 verbose stack     at module.exports (/usr/share/npm/lib/install/diff-trees.js:50:3)
+594 verbose stack     at Array.<anonymous> (/usr/share/npm/node_modules/slide/lib/bind-actor.js:15:8)
+595 verbose cwd /home/nelson/Desktop/seng2021/SENG2021/SENG_nodejs
+596 error Linux 4.4.0-36-generic
+597 error argv "/usr/bin/nodejs" "/usr/bin/npm" "update" "-g"
+598 error node v4.2.6
+599 error npm  v3.5.2
+600 error Cannot read property 'target' of null
+601 error If you need help, you may report this error at:
+601 error     <https://github.com/npm/npm/issues>
+602 verbose exit [ 1, true ]

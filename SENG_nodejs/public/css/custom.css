@@ -1,0 +1,102 @@
+/***
+    GENERAL STYLING
+***/
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+    height: 70px;
+    margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-brand {
+    padding-top: 7px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#logo {
+    width: 64px;
+    padding-right: 10px;
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: #a6a6a6;
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 16px;
+	font-size: 24px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	color: #f7f7f7;
+}
+
+.navbar-nav li::before {
+    content: '|';
+    font-size: 22px;
+    float: inherit;
+    padding-top: 18px;
+    color: #a6a6a6;
+}
+
+.navbar-nav li:first-child::before {
+    content: '';
+}
+
+/***
+    HOMEPAGE STYLING
+***/
+.jumbotron {
+    height: 950px;
+    background-image: url(../img/home2.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.input-group-xlg, .input-xlg, .btn-xlg {
+    height: 70px;
+    font-size: 32px;
+}
+
+.btn-xlg {
+    width: 70px;
+}
+
+.vcenter {
+    margin-top: 15%;
+}
+
+.colorless-link, .colorless-link:hover, .colorless-link:visited, .colorless-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1#discover {
+    font-family: 'Amatic SC', cursive;
+    font-size: 100px;
+}
+
+
+/***
+    CAMPSITE SEARCH STYLING
+***/
+
+.campsearch {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+height: 80%;
+width: 70%;
+}

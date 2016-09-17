@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{ title }}</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Raleway|Roboto" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- Currently not being used - called 'Angular Google Maps'
+    <script src="js/angular-simple-logger.js"></script>
+    <script src="js/lodash.core.min.js"></script>
+    <script src="js/angular-google-maps.min.js"></script>-->
+    <script src="js/app.module.js"></script>
+    <script src="js/site-navbar/site-navbar.module.js"></script>
+    <script src="js/site-navbar/site-navbar.component.js"></script>
+    <script src="js/home-search/home-search.module.js"></script>
+    <script src="js/home-search/home-search.component.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <site-navbar></site-navbar>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row vcenter">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-8">
+                    <h1 id="discover">Discover campsites...</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <home-search></home-search>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
