@@ -24,6 +24,9 @@
                 title: "Popular Campsites",
                 link: "popularcampsite.html"
             }, {
+                title: "Equipment",
+                link: "equipment.html"
+            }, {
                 title: "Guides",
                 link: "guides.html"
             },
