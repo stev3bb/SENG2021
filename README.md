@@ -4,7 +4,7 @@
 ## NODE setup
 To run the website now, Node.js is required. Install it if you don't have it.
 Install nodemon using `npm install -g nodemon`
-Navigate to the /SENG2021 directory and run `nodemon`
+Navigate to the /SENG2021 directory and run `nodemon` and access http://localhost:3000
 
 ## TODO
 * **Home:** Feedback pls
