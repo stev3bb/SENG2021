@@ -137,12 +137,12 @@ function search() {
       zoom: 10
     };
 
-    //make new map here
-     map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    console.log(map);
-
     //if the nearby textbox is tickled
     if (document.getElementById('checkednearby').checked) {
+
+        //make new map here
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        console.log(map);
 
         //if geolocation is enabled
         if (navigator.geolocation) {
@@ -169,25 +169,8 @@ function search() {
               handleNoGeolocation(true);
             });
         } else {
-          handleNoGeolocation(false);
-          //alert("screwed up guys");
+            handleNoGeolocation(false);
         }
-
-        //map.center = pos;
-        //map.zoom = 10;
-        // var map = new google.maps.Map(document.getElementById('map'), {
-        //     center: pos,
-        //     //fix hardcoded value here
-        //     zoom: 10
-        // });
-
-        //var infowindow = new google.maps.InfoWindow();
-    //    var service = new google.maps.places.PlacesService(map);
-      //  service.nearbySearch({
-           // location: pos,
-        //    radius: radius,
-         //   type: ['campground']
-        //}, callback);
 
         //add the pointers here
         function callback(results, status) {
@@ -200,8 +183,18 @@ function search() {
 
         function createMarker(place) {
             var placeLoc = place.geometry.location;
+
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71,71),
+                origin: new google.maps.Point(0,0),
+                anchor: new google.maps.Point (17,34),
+                scaledSize: new google.maps.Size(25,25)
+            };
+
             var marker = new google.maps.Marker({
                 map: map,
+                icon: icon,
                 position: place.geometry.location
             });
 
@@ -211,8 +204,9 @@ function search() {
             });
         }
 
-        alert(radius);
+        alert(request.get(radius));
     } else {
+        return;
         alert("doing something else")
     }
 
