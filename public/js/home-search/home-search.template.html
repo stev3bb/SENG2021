@@ -1,6 +1,15 @@
-<div class="input-group input-group-xlg">
-    <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="$ctrl.location">
-    <span class="input-group-btn">
-            <button class="btn btn-default btn-xlg" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-    </span>
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="input-group input-group-xlg">
+            <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="$ctrl.location">
+            <span class="input-group-btn">
+                <div class="input-group-btn">
+                    <button class="btn btn-default btn-xlg btn-xlg-magnify" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    <button class="btn btn-default btn-xlg btn-xlg-magnify" type="button" ng-click="$ctrl.nearbySearch()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon" src="/img/nearby-icon.png"></img></span></button>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
 </div>

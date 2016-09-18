@@ -67,12 +67,21 @@ html#home-page {
     text-align: center;
 }
 
+body {
+    text-align: center;
+}
+
 .input-group-xlg, .input-xlg, .btn-xlg {
     height: 70px;
     font-size: 32px;
 }
 
-.btn-xlg {
+.nearby-icon {
+    padding-bottom: 7px;
+    width: 41px;
+}
+
+.btn-xlg-magnify {
     width: 70px;
 }
 
