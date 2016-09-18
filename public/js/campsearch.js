@@ -2,7 +2,7 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-// revision: 0.4 
+// revision: 0.5
 
 /*
 Known bugs:
@@ -44,7 +44,7 @@ function initMap() {
         //clear markers here
         clearMarkers();
         markers = [];
-        
+
 
 
         var request = {
