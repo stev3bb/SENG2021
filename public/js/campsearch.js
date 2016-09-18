@@ -46,11 +46,6 @@ function initMap() {
         //clear markers here
         clearMarkers();
         markers = [];
-<<<<<<< HEAD
-
-
-=======
->>>>>>> f515bcf470edec68304e03eb03c8e84122432306
 
         var request = {
                 location: map.getCenter(),
@@ -187,7 +182,7 @@ function search() {
     //search functionality goes here
     var searchval = document.getElementById('value').value;
     var radius = document.getElementById('distval').value;
-
+    var nearbyCheck;
     //some variables
     var map;
     var service;
@@ -198,10 +193,17 @@ function search() {
       zoom: 10
     };
 
+    document.getElementById('button').onclick = function(){
+        nearbyCheck = 1;
+        alert("checked");
+    };
+
+
     //if the nearby textbox is tickled and radius confirmed
     // or if search value or radius is confirmed, then do stuff
-    if ((document.getElementById('checkednearby').checked && radius) || (searchval && radius)) {
-
+    //fix here tomorrow
+    if (searchval || nearbyCheck) {
+        alert("son please fix");
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         console.log(map);
