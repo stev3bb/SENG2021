@@ -41,9 +41,6 @@ function initMap() {
     google.maps.event.addListener(map, 'dragend', function() {
         //alert(map.getCenter());
 
-    google.maps.event.addListener(map, 'dragend', function() {
-        //alert(map.getCenter());
-
         //clear markers here
         clearMarkers();
         markers = [];
