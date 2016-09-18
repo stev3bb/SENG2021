@@ -1,6 +1,11 @@
 # SENG2021
 ## Theme: Camping Website
 
+## NODE setup
+To run the website now, Node.js is required. Install it if you don't have it.
+Install nodemon using `npm install -g nodemon`
+Navigate to the /SENG2021 directory and run `nodemon`
+
 ## TODO
 * **Home:** Feedback pls
 * **Campsite Search:** Pins need information when clicked
