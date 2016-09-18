@@ -26,3 +26,28 @@ kill -9 "pid" (which node is occupied)
 * **Other:** Powerpoint
 * **Everything:** Nice CSS
 * **Everything:** Nice code
+
+
+
+## Bugs
+* **Campsite Search: When moving map shows a blue selected section(can't reproduce)
+* **Campsite Search: Need to do something when the campsites are close together(can't click on icon)
+
+
+
+
+
+
+## Decision
+* **Campsite Search: Decide on marker to use
+* **Campsite Search: Marker position needs to be fixed
+
+
+
+
+
+
+
+
+
+
