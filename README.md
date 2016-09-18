@@ -32,7 +32,7 @@ kill -9 "pid" (which node is occupied)
 ## Bugs
 * **Campsite Search: When moving map shows a blue selected section(can't reproduce)
 * **Campsite Search: Need to do something when the campsites are close together(can't click on icon)
-
+* **Campsite Search: Screen just randomly whites out sometimes when zooming in and out fast
 
 
 
@@ -40,9 +40,13 @@ kill -9 "pid" (which node is occupied)
 
 ## Decision
 * **Campsite Search: Decide on marker to use
-* **Campsite Search: Marker position needs to be fixed
-
-
+* **Campsite Search: Marker popup position needs to be fixed
+* **Campsite Search: Zoom in and out
+* **Campsite Search: Disable some default Google map features
+* **Campsite Search: Radius?
+* **Campsite Search: Dragging feature (Horrendous amount of bugs)
+* **Campsite Search: Icons
+* **Campsite Search: Positioning of the map
 
 
 
