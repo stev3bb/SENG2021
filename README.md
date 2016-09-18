@@ -9,6 +9,10 @@ Install nodemon using `npm install -g nodemon`
 Navigate to the /SENG2021 directory and run `nodemon` and access http://localhost:3000 to view the website.
 Use Ctrl+C to close the app
 
+If you guys have problems (steve advice)
+ps aux | grep 3000
+kill -9 "pid" (which node is occupied)
+
 ## TODO
 * **Home:** Feedback pls
 * **Campsite Search:** Pins need information when clicked
