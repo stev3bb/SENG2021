@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand"><span>
+                <a href="/"><img alt="Explore NSW" src="img/tent.png" id="logo" onmouseover="this.src='img/tent_white.png';" onmouseout="this.src='img/tent.png';"/></a></span>Explore NSW</div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/campsearch">Campsite Search</a></li>
+                <li><a href="/popularcampsites">Popular Campsites</a></li>
+                <li><a href="/equipment">Equipment</a></li>
+                <li><a href="/guides">Guides</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

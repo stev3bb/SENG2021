@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mainApp">
+<html lang="en" ng-app="homeApp">
 
 <head>
     {{> header }}
+    <script src="js/home-search/home-search.module.js"></script>
+    <script src="js/home-search/home-search.component.js"></script>
 </head>
 
 <body>
-    <site-navbar></site-navbar>
+    {{> navbar }}
     <div class="jumbotron">
         <div class="container">
             <div class="row vcenter">
@@ -24,10 +26,7 @@
             </div>
         </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    {{> bottomJs }}
 </body>
 
 </html>
