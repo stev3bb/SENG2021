@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="campsearch">
+<html lang="en">
     <head>
         {{> header }}
     </head>
-    <body class="campsearch">
+    <body>
     {{> navbar }}
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-11">
-            <h1>Campsite search</h1>
-            <!-- search value -->
-            <form class="form-inline">
-                <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value" value="{{ qs.location }}"/>
-                <select class="selectpicker" name="distance" id="distval">
-                    <option value="" disabled selected>Distance</option>
-                    <option value="50">50km</option>
-                    <option value="100">100km</option>
-                    <option value="200">200km</option>
-                    <option value="500">500km</option>
-                </select>
-                <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
-                <input class="btn btn-default" type="button" value="Submit" onclick="search()">
-            </form>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="container" id="map-options">
+                    <h1>Campsite Search</h1>
+                    <form class="form-inline">
+                        <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value" value="{{ qs.location }}"/>
+                        <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
+                        <button class="btn btn-default" type="button" onclick="search()">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div id="map"></div>
+                <script src="js/campsearch.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
+            </div>
         </div>
-    </div>
-
-    <p></p>
-    <!--testing for passing values through search function-->
-        <div id="map"></div>
-         <script src="js/campsearch.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
 
     {{> bottomJs }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>

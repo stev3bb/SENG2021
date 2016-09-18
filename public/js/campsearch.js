@@ -179,7 +179,6 @@ function search() {
 
     //search functionality goes here
     var searchval = document.getElementById('value').value;
-    var radius = document.getElementById('distval').value;
 
     //some variables
     var map;
@@ -193,7 +192,7 @@ function search() {
 
     //if the nearby textbox is tickled and radius confirmed
     // or if search value or radius is confirmed, then do stuff
-    if ((document.getElementById('checkednearby').checked && radius) || (searchval && radius)) {
+    if ((document.getElementById('checkednearby').checked) || (searchval)) {
 
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);

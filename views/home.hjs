@@ -17,13 +17,6 @@
                     <h1 id="discover">Discover campsites...</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
-                    <home-nearby></home-nearby>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
             <home-search></home-search>
         </div>
     </div>
