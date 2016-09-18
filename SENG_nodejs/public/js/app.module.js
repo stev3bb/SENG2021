@@ -1,4 +1,3 @@
-angular.module('mainApp', [
-  'siteNavbar',
+angular.module('homeApp', [
   'homeSearch'
 ]);
