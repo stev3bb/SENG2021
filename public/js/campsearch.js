@@ -25,16 +25,21 @@ summary:
 */
 
 function initMap() {
+    //variables here
+
+    var infowindow;
+
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
             lng: 150.644
         },
-        zoom: 12
+        zoom: 10
     });
     //var directionsDisplay = new google.maps.DirectionsRenderer;
     //var directionsService = new google.maps.DirectionsService;
-
+    /*
     var campsites = [{
         title: 'TEST MARKER',
         location: {
@@ -81,11 +86,13 @@ function initMap() {
         });
     }
     map.fitBounds(bounds);
-
+    */
     // document.getElementById('show-markers').addEventListener('click', showMarkers);
     // document.getElementById('hide-markers').addEventListener('click', hideMarkers);
 
     // Populates the info window when a marker is clicked
+   /*
+
     function populateInfoWindow(marker, info_window) {
         // If the info_window is not already open on the current marker
         if (info_window.marker != marker) {
@@ -97,7 +104,62 @@ function initMap() {
                 info_window.marker = null;
             });
         }
-    }
+    }*/
+
+    google.maps.event.addListener(map, 'dragend', function() { 
+        alert(map.getCenter()); 
+
+
+        //clear markers here
+
+        
+
+        var request = {
+                location: map.getCenter(),
+                //max range
+                radius: 50000,
+                types: ['campground']
+        }
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request,callback);
+
+
+        //add the pointers here
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            }
+        }
+
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71,71),
+                origin: new google.maps.Point(0,0),
+                anchor: new google.maps.Point (17,34),
+                scaledSize: new google.maps.Size(25,25)
+            };
+
+            var marker = new google.maps.Marker({
+                map: map,
+                icon: icon,
+                position: place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(place.name);
+                infowindow.open(map, this);
+            });
+        }
+
+    });
+
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -116,18 +178,20 @@ function initMap() {
             });
         }, function() {
             //location not found
-            var infoWindow = new google.maps.InfoWindow({
+            infoWindow = new google.maps.InfoWindow({
                 map: map
             });
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
-        var infoWindow = new google.maps.InfoWindow({
+        infoWindow = new google.maps.InfoWindow({
             map: map
         });
         handleLocationError(false, infoWindow, map.getCenter());
     }
+
+    
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
