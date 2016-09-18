@@ -3,8 +3,8 @@
 
 <head>
     {{> header }}
-    <script src="js/home-search/home-search.module.js"></script>
-    <script src="js/home-search/home-search.component.js"></script>
+    <script src="/js/home-search/home-search.module.js"></script>
+    <script src="/js/home-search/home-search.component.js"></script>
 </head>
 
 <body>

@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var home = require('./routes/home');
 var campsearch = require('./routes/campsearch');
+var popularcampsites = require('./routes/popularcampsites');
+var equipment = require('./routes/equipment');
+var guides = require('./routes/guides');
 var campsites = require('./routes/campsites');
 
 var app = express();
@@ -27,6 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', home);
 app.use('/campsearch', campsearch);
+app.use('/popularcampsites', popularcampsites);
+app.use('/equipment', equipment);
+app.use('/guides', guides);
 app.use('/campsites', campsites);
 
 // catch 404 and forward to error handler

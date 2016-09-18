@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="campsearch">
     <head>
-        {{< header }}
+        {{> header }}
     </head>
     <body class="campsearch">
-    {{< navbar }}
+    {{> navbar }}
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-11">
@@ -31,7 +31,7 @@
          <script src="js/campsearch.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
 
-    {{< bottomJs }}
+    {{> bottomJs }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
   </body>
 </html>

@@ -7,9 +7,7 @@
 
 <body>
     {{> navbar }}
-    <div class="jumbotron">
-        <h1>Hi this is campsite {{ title }}</h1>
-    </div>
+    <h1>{{ title }}</h1>
     {{> bottomJs }}
 </body>
 
