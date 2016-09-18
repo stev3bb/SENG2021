@@ -2,6 +2,13 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
+// revision: 0.4 
+
+/*
+Known bugs:
+- radius problem 
+- info window is not centered with the icons
+*/
 
 // Keep map as a global
 var map;
@@ -9,8 +16,12 @@ var map;
 var markers = [];
 
 
-/*initialise map:
-it will show the near by camping grounds as i scroll through the map
+/*initialise map
+
+summary:
+- add event listener- drag
+- records the center of the map, and uses it to use place services 
+- repaint the markers and refresh the map
 */
 
 function initMap() {
@@ -125,6 +136,18 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Location not found' :
         'Your browser doesn\'t support geolocation.');
 }
+
+/*
+search function
+summary:
+- search for camping ground nearby or camping ground near the place that is searched
+- radius is currently broken
+- text box is not centered with the icon (broken af)
+- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another 
+google map page on how to drive there
+- search box is currently broken (fixing is under way)
+
+*/
 
 function search() {
 
