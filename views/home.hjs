@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="homeApp">
+<html lang="en" id="home-page" ng-app="homeApp">
 
 <head>
     {{> header }}

@@ -53,6 +53,10 @@ body {
 /***
     HOMEPAGE STYLING
 ***/
+html#home-page {
+        overflow-y: hidden;
+}
+
 .jumbotron {
     height: 950px;
     background-image: url(../img/home2.jpg);
