@@ -42,7 +42,9 @@ function initMap() {
 
 
         //clear markers here
-
+        clearMarkers();
+        markers = [];
+        
 
 
         var request = {
@@ -82,6 +84,9 @@ function initMap() {
                 icon: icon,
                 position: place.geometry.location
             });
+
+            //push into array to keep track of the markers
+            markers.push(marker);
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(place.name);
@@ -133,15 +138,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 //stolen functions mahahahaha
-
-// Adds a marker to the map and push to the array.
-function addMarker(location) {
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-    markers.push(marker);
-}
+//***************************************************
 
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
@@ -165,6 +162,8 @@ function deleteMarkers() {
     clearMarkers();
     markers = [];
 }
+
+//***************************************************
 
 /*
 search function
