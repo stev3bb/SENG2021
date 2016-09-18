@@ -8,6 +8,11 @@ var map;
 // Create a blank array for all map markers
 var markers = [];
 
+
+/*initialise map:
+it will show the near by camping grounds as i scroll through the map
+*/
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -137,14 +142,21 @@ function search() {
       zoom: 10
     };
 
+    //test here
+
+    //if (searchval){
+      //  alert(searchval);
+    //}
+
+
     //if the nearby textbox is tickled
-    if (document.getElementById('checkednearby').checked) {
+    if (document.getElementById('checkednearby').checked && radius) {
 
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         console.log(map);
 
-        //if geolocation is enabled
+        //if geolocation is enabled 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
               pos = new google.maps.LatLng(position.coords.latitude,
@@ -207,7 +219,7 @@ function search() {
         alert(request.get(radius));
     } else {
         return;
-        alert("doing something else")
+        //alert("doing something else")
     }
 
 
