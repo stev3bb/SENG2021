@@ -2,11 +2,11 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-// revision: 0.4 
+// revision: 0.4
 
 /*
 Known bugs:
-- radius problem 
+- radius problem
 - info window is not centered with the icons
 */
 
@@ -20,16 +20,11 @@ var markers = [];
 
 summary:
 - add event listener- drag
-- records the center of the map, and uses it to use place services 
+- records the center of the map, and uses it to use place services
 - repaint the markers and refresh the map
 */
 
 function initMap() {
-    //variables here
-
-    var infowindow;
-
-
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
@@ -39,80 +34,11 @@ function initMap() {
     });
     //var directionsDisplay = new google.maps.DirectionsRenderer;
     //var directionsService = new google.maps.DirectionsService;
-    /*
-    var campsites = [{
-        title: 'TEST MARKER',
-        location: {
-            lat: -34.4,
-            lng: 150.6
-        }
-    }, {
-        title: 'Honeymoon Bay',
-        location: {
-            lat: -35.01792,
-            lng: 150.807818
-        }
-    }, {
-        title: 'Cockatoo Island',
-        location: {
-            lat: -33.8476028,
-            lng: 151.1709488
-        }
-    }, ]
 
-    var largeInfoWindow = new google.maps.InfoWindow();
-    // Testing initial zoom size to fit all markers
-    var bounds = new google.maps.LatLngBounds();
-
-    for (var i = 0; i < campsites.length; i++) {
-        // Get the location of the campsite
-        var pos = campsites[i].location;
-        var title = campsites[i].title;
-        // Create a marker for each location and add to markers array
-        var marker = new google.maps.Marker({
-            map: map,
-            position: pos,
-            title: title,
-            animation: google.maps.Animation.DROP,
-            id: i
-        });
-        markers.push(marker);
-
-        // Extend the boundaries for each given marker
-        bounds.extend(marker.position);
-
-        marker.addListener('click', function() {
-            populateInfoWindow(this, largeInfoWindow);
-        });
-    }
-    map.fitBounds(bounds);
-    */
-    // document.getElementById('show-markers').addEventListener('click', showMarkers);
-    // document.getElementById('hide-markers').addEventListener('click', hideMarkers);
-
-    // Populates the info window when a marker is clicked
-   /*
-
-    function populateInfoWindow(marker, info_window) {
-        // If the info_window is not already open on the current marker
-        if (info_window.marker != marker) {
-            info_window.marker = marker;
-            info_window.setContent('<div>' + marker.title + '</div>');
-            info_window.open(map, marker);
-            // Clear the marker if the window is closed
-            info_window.addListener('closeclick', function() {
-                info_window.marker = null;
-            });
-        }
-    }*/
-
-    google.maps.event.addListener(map, 'dragend', function() { 
-        alert(map.getCenter()); 
-
+    google.maps.event.addListener(map, 'dragend', function() {
+        //alert(map.getCenter());
 
         //clear markers here
-
-        
 
         var request = {
                 location: map.getCenter(),
@@ -121,7 +47,7 @@ function initMap() {
                 types: ['campground']
         }
 
-        infowindow = new google.maps.InfoWindow();
+        var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
 
@@ -177,29 +103,29 @@ function initMap() {
                 title: "current location"
             });
         }, function() {
-            //location not found
-            infoWindow = new google.maps.InfoWindow({
-                map: map
-            });
-            handleLocationError(true, infoWindow, map.getCenter());
+            //location not found - DO NOTHING
+            // infoWindow = new google.maps.InfoWindow({
+            //     map: map
+            // });
+            // handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
-        // Browser doesn't support Geolocation
-        infoWindow = new google.maps.InfoWindow({
-            map: map
-        });
-        handleLocationError(false, infoWindow, map.getCenter());
+        // Browser doesn't support Geolocation - DO NOTHING
+        // infoWindow = new google.maps.InfoWindow({
+        //     map: map
+        // });
+        // handleLocationError(false, infoWindow, map.getCenter());
     }
 
-    
+
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Location not found' :
-        'Your browser doesn\'t support geolocation.');
-}
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//     infoWindow.setPosition(pos);
+//     infoWindow.setContent(browserHasGeolocation ?
+//         'Location not found' :
+//         'Your browser doesn\'t support geolocation.');
+// }
 
 /*
 search function
@@ -207,7 +133,7 @@ summary:
 - search for camping ground nearby or camping ground near the place that is searched
 - radius is currently broken
 - text box is not centered with the icon (broken af)
-- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another 
+- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another
 google map page on how to drive there
 - search box is currently broken (fixing is under way)
 
@@ -229,13 +155,6 @@ function search() {
       zoom: 10
     };
 
-    //test here
-
-    //if (searchval){
-      //  alert(searchval);
-    //}
-
-
     //if the nearby textbox is tickled
     if (document.getElementById('checkednearby').checked && radius) {
 
@@ -243,7 +162,7 @@ function search() {
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         console.log(map);
 
-        //if geolocation is enabled 
+        //if geolocation is enabled
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
               pos = new google.maps.LatLng(position.coords.latitude,
@@ -303,7 +222,7 @@ function search() {
             });
         }
 
-        alert(request.get(radius));
+        //alert(request.get(radius));
     } else {
         return;
         //alert("doing something else")
