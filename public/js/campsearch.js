@@ -28,8 +28,7 @@ function initMap() {
     //variables here
 
     var infowindow;
-
-
+    //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
@@ -37,82 +36,14 @@ function initMap() {
         },
         zoom: 10
     });
-    //var directionsDisplay = new google.maps.DirectionsRenderer;
-    //var directionsService = new google.maps.DirectionsService;
-    /*
-    var campsites = [{
-        title: 'TEST MARKER',
-        location: {
-            lat: -34.4,
-            lng: 150.6
-        }
-    }, {
-        title: 'Honeymoon Bay',
-        location: {
-            lat: -35.01792,
-            lng: 150.807818
-        }
-    }, {
-        title: 'Cockatoo Island',
-        location: {
-            lat: -33.8476028,
-            lng: 151.1709488
-        }
-    }, ]
-
-    var largeInfoWindow = new google.maps.InfoWindow();
-    // Testing initial zoom size to fit all markers
-    var bounds = new google.maps.LatLngBounds();
-
-    for (var i = 0; i < campsites.length; i++) {
-        // Get the location of the campsite
-        var pos = campsites[i].location;
-        var title = campsites[i].title;
-        // Create a marker for each location and add to markers array
-        var marker = new google.maps.Marker({
-            map: map,
-            position: pos,
-            title: title,
-            animation: google.maps.Animation.DROP,
-            id: i
-        });
-        markers.push(marker);
-
-        // Extend the boundaries for each given marker
-        bounds.extend(marker.position);
-
-        marker.addListener('click', function() {
-            populateInfoWindow(this, largeInfoWindow);
-        });
-    }
-    map.fitBounds(bounds);
-    */
-    // document.getElementById('show-markers').addEventListener('click', showMarkers);
-    // document.getElementById('hide-markers').addEventListener('click', hideMarkers);
-
-    // Populates the info window when a marker is clicked
-   /*
-
-    function populateInfoWindow(marker, info_window) {
-        // If the info_window is not already open on the current marker
-        if (info_window.marker != marker) {
-            info_window.marker = marker;
-            info_window.setContent('<div>' + marker.title + '</div>');
-            info_window.open(map, marker);
-            // Clear the marker if the window is closed
-            info_window.addListener('closeclick', function() {
-                info_window.marker = null;
-            });
-        }
-    }*/
 
     google.maps.event.addListener(map, 'dragend', function() { 
-        alert(map.getCenter()); 
+        //alert(map.getCenter()); 
 
 
         //clear markers here
 
-        
+
 
         var request = {
                 location: map.getCenter(),
@@ -236,8 +167,9 @@ function search() {
     //}
 
 
-    //if the nearby textbox is tickled
-    if (document.getElementById('checkednearby').checked && radius) {
+    //if the nearby textbox is tickled and radius confirmed 
+    // or if search value or radius is confirmed, then do stuff
+    if ((document.getElementById('checkednearby').checked && radius) || (searchval && radius)) {
 
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
