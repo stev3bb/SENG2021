@@ -11,7 +11,7 @@
             <h1>Campsite search</h1>
             <!-- search value -->
             <form class="form-inline">
-                <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value"/>
+                <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value" value="{{ qs.location }}"/>
                 <select class="selectpicker" name="distance" id="distval">
                     <option value="" disabled selected>Distance</option>
                     <option value="50">50km</option>
