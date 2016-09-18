@@ -1,6 +1,7 @@
 <div class="input-group input-group-xlg">
+    {{$ctrl.location}}
     <input type="text" required class="form-control input-xlg" placeholder="Address" ng-model="$ctrl.location">
     <span class="input-group-btn">
-            <button class="btn btn-default btn-xlg" type="button" ng-click="campsiteSearch"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            <button class="btn btn-default btn-xlg" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
     </span>
 </div>
