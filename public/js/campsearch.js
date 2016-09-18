@@ -2,11 +2,13 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-// revision: 0.5
+
+// revision: 0.4
+
 
 /*
 Known bugs:
-- radius problem 
+- radius problem
 - info window is not centered with the icons
 */
 
@@ -20,13 +22,12 @@ var markers = [];
 
 summary:
 - add event listener- drag
-- records the center of the map, and uses it to use place services 
+- records the center of the map, and uses it to use place services
 - repaint the markers and refresh the map
 */
 
 function initMap() {
     //variables here
-
     var infowindow;
     //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
@@ -36,16 +37,20 @@ function initMap() {
         },
         zoom: 10
     });
+    //var directionsDisplay = new google.maps.DirectionsRenderer;
+    //var directionsService = new google.maps.DirectionsService;
 
-    google.maps.event.addListener(map, 'dragend', function() { 
-        //alert(map.getCenter()); 
-
+    google.maps.event.addListener(map, 'dragend', function() {
+        //alert(map.getCenter());
 
         //clear markers here
         clearMarkers();
         markers = [];
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f515bcf470edec68304e03eb03c8e84122432306
 
         var request = {
                 location: map.getCenter(),
@@ -54,7 +59,7 @@ function initMap() {
                 types: ['campground']
         }
 
-        infowindow = new google.maps.InfoWindow();
+        var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
 
@@ -113,29 +118,29 @@ function initMap() {
                 title: "current location"
             });
         }, function() {
-            //location not found
-            infoWindow = new google.maps.InfoWindow({
-                map: map
-            });
-            handleLocationError(true, infoWindow, map.getCenter());
+            //location not found - DO NOTHING
+            // infoWindow = new google.maps.InfoWindow({
+            //     map: map
+            // });
+            // handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
-        // Browser doesn't support Geolocation
-        infoWindow = new google.maps.InfoWindow({
-            map: map
-        });
-        handleLocationError(false, infoWindow, map.getCenter());
+        // Browser doesn't support Geolocation - DO NOTHING
+        // infoWindow = new google.maps.InfoWindow({
+        //     map: map
+        // });
+        // handleLocationError(false, infoWindow, map.getCenter());
     }
 
-    
+
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Location not found' :
-        'Your browser doesn\'t support geolocation.');
-}
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//     infoWindow.setPosition(pos);
+//     infoWindow.setContent(browserHasGeolocation ?
+//         'Location not found' :
+//         'Your browser doesn\'t support geolocation.');
+// }
 
 //stolen functions mahahahaha
 //***************************************************
@@ -171,7 +176,7 @@ summary:
 - search for camping ground nearby or camping ground near the place that is searched
 - radius is currently broken
 - text box is not centered with the icon (broken af)
-- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another 
+- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another
 google map page on how to drive there
 - search box is currently broken (fixing is under way)
 
@@ -193,14 +198,7 @@ function search() {
       zoom: 10
     };
 
-    //test here
-
-    //if (searchval){
-      //  alert(searchval);
-    //}
-
-
-    //if the nearby textbox is tickled and radius confirmed 
+    //if the nearby textbox is tickled and radius confirmed
     // or if search value or radius is confirmed, then do stuff
     if ((document.getElementById('checkednearby').checked && radius) || (searchval && radius)) {
 
@@ -208,7 +206,7 @@ function search() {
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         console.log(map);
 
-        //if geolocation is enabled 
+        //if geolocation is enabled
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
               pos = new google.maps.LatLng(position.coords.latitude,
@@ -268,7 +266,7 @@ function search() {
             });
         }
 
-        alert(request.get(radius));
+        //alert(request.get(radius));
     } else {
         return;
         //alert("doing something else")
