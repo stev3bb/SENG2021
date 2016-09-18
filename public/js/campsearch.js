@@ -25,6 +25,9 @@ summary:
 */
 
 function initMap() {
+    //variables here
+    var infowindow;
+    //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
@@ -38,7 +41,12 @@ function initMap() {
     google.maps.event.addListener(map, 'dragend', function() {
         //alert(map.getCenter());
 
+    google.maps.event.addListener(map, 'dragend', function() {
+        //alert(map.getCenter());
+
         //clear markers here
+        clearMarkers();
+        markers = [];
 
         var request = {
                 location: map.getCenter(),
@@ -77,6 +85,9 @@ function initMap() {
                 icon: icon,
                 position: place.geometry.location
             });
+
+            //push into array to keep track of the markers
+            markers.push(marker);
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(place.name);
@@ -127,6 +138,34 @@ function initMap() {
 //         'Your browser doesn\'t support geolocation.');
 // }
 
+//stolen functions mahahahaha
+//***************************************************
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+    setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+    setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+}
+
+//***************************************************
+
 /*
 search function
 summary:
@@ -155,8 +194,9 @@ function search() {
       zoom: 10
     };
 
-    //if the nearby textbox is tickled
-    if (document.getElementById('checkednearby').checked && radius) {
+    //if the nearby textbox is tickled and radius confirmed
+    // or if search value or radius is confirmed, then do stuff
+    if ((document.getElementById('checkednearby').checked && radius) || (searchval && radius)) {
 
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
