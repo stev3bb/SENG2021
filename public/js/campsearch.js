@@ -177,11 +177,16 @@ function search() {
             navigator.geolocation.getCurrentPosition(function(position) {
               pos = new google.maps.LatLng(position.coords.latitude,
                                          position.coords.longitude);
-              infowindow = new google.maps.InfoWindow({
+              /*infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: pos,
                 content: 'My current location'
-              });
+            });*/
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: "current location"
+            })
 
               map.setCenter(pos);
 
