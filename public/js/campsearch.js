@@ -255,6 +255,7 @@ function createMarker(place) {
     markers.push(marker);
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
+    distance = Math.round(distance / 1000);
     console.log("Place ID: " + place.place_id + " Name: " + place.name);
 
     // UNCOMMENT FOR DEMO
@@ -270,13 +271,13 @@ function createMarker(place) {
     //         } else {
     //             var rating = "No reviews";
     //         }
-    //         $("#campsites-list ul").append('<li><b>' + name + ' </b>' + address + '</li>');
+    //         $("#campsites-list ul").append('<li><span class="campsite-name">' + name + '</span><br />' + address + '<br /><b>Phone:</b> ' + phone + '<br /><b>Distance:</b> ' + distance + 'km<br /><a href="/campsites/' + placeInfo.place_id + '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
     //         console.log(name + " " + address);
     //     } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
     //         console.log("?????");
     //     }
     // });
-    //console.log(place, distance)
+    console.log(place, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
         // var placeR;
