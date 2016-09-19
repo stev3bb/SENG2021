@@ -99,6 +99,10 @@ h1#discover {
 /***
     CAMPSITE SEARCH STYLING
 ***/
+.nearby-icon-sml {
+    padding-bottom: 9px;
+    width: 22px;
+}
 
 #map-options {
     float: left;
