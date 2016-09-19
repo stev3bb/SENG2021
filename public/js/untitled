@@ -66,3 +66,25 @@
             });
         }
     }*/
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            map.setCenter(pos);
+
+            //add a marker where u are
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: "current location"
+            });
+        }, function() {
+            //location not found - DO NOTHING
+        });
+    } else {
+            // Browser doesn't support Geolocation - DO NOTHING
+    }

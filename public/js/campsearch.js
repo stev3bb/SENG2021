@@ -67,26 +67,14 @@ function initMap() {
         });
     });
 
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            map.setCenter(pos);
 
-            //add a marker where u are
-            var marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                title: "current location"
-            });
-        }, function() {
-            //location not found - DO NOTHING
-        });
-    } else {
-            // Browser doesn't support Geolocation - DO NOTHING
+    if (window.location.search) {
+        var nearby = getParameterByName('nearby');
+        if (nearby === 'true') {
+            nearSearch();
+        } else {
+            querySearch();
+        }
     }
 }
 
@@ -130,7 +118,7 @@ google map page on how to drive there
 
 */
 
-function search() {
+function querySearch() {
     var newlatlong = [];
     //search functionality goes here
     var searchval = document.getElementById('value').value;
@@ -149,20 +137,14 @@ function search() {
         zoom: 4
     };
 
-
-
-    //make new map here
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    //console.log(map);
-
-    if (searchval){
+    if (searchval) {
+        //make new map here
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
         var geocoder = new google.maps.Geocoder(),
             service  = new google.maps.places.AutocompleteService(null, {
             types: ['geocode'] });
 
-
-
-        service.getPlacePredictions({ input: searchval}, 
+        service.getPlacePredictions({ input: searchval},
         function(predictions, status) {
             if(status=='OK'){
                 for(var i=0;i< 1;++i){
@@ -170,19 +152,19 @@ function search() {
                         (function(i){
                         var n = document.getElementById('results')
                         .appendChild(document.createElement('li')),
-        
+
                         s = new google.maps.places
                             .PlacesService(n.appendChild(document.createElement('div'))),
                         p = predictions[i].description;
 
                         s.getDetails({reference:predictions[i].reference},
-        
+
                         function(details,status){
                             n.appendChild(document.createTextNode(p));
                             n.appendChild(document.createElement('br'));
                             n.appendChild(document.createTextNode(
                             details.geometry.location.toString()));
-                            
+
                             console.log(details.geometry.location.toString());
 
                             //more repeated code:
@@ -198,69 +180,71 @@ function search() {
                                 title: "current location"
                             })
 
-                              map.setCenter(pos);
+                            map.setCenter(pos);
 
-                              var request = {
+                            var request = {
                                 location: pos,
                                 radius: 50000,
                                 types: ['campground']
-                              }
-                              infowindow = new google.maps.InfoWindow();
-                              var service = new google.maps.places.PlacesService(map);
-                              service.nearbySearch(request, function(results, status) {
-                                  if (status === google.maps.places.PlacesServiceStatus.OK) {
-                                      for (var i = 0; i < results.length; i++) {
-                                          //console.log(results[i]);
-                                          createMarker(results[i]);
-                                      }
-                                  }
-                              });
+                            }
+                            infowindow = new google.maps.InfoWindow();
+                            var service = new google.maps.places.PlacesService(map);
+                            service.nearbySearch(request, function(results, status) {
+                                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                    for (var i = 0; i < results.length; i++) {
+                                        //console.log(results[i]);
+                                        createMarker(results[i]);
+                                    }
+                                }
+                          });
                         });
                     })(i)
                 }
             }
         }
         });
-    }else{
-        //if geolocation is enabled
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              pos = new google.maps.LatLng(position.coords.latitude,
-                                         position.coords.longitude);
+    }
+}
 
-              /*infowindow = new google.maps.InfoWindow({
-                map: map,
-                position: pos,
-                content: 'My current location'
-            });*/
-            var marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                title: "current location"
-            })
+function nearSearch() {
+    //if geolocation is enabled
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = new google.maps.LatLng(position.coords.latitude,
+                                     position.coords.longitude);
 
-              map.setCenter(pos);
+          /*infowindow = new google.maps.InfoWindow({
+            map: map,
+            position: pos,
+            content: 'My current location'
+        });*/
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: "current location"
+        })
 
-              var request = {
-                location: pos,
-                radius: 50000,
-                types: ['campground']
-              }
-              infowindow = new google.maps.InfoWindow();
-              var service = new google.maps.places.PlacesService(map);
-              service.nearbySearch(request, function(results, status) {
-                  if (status === google.maps.places.PlacesServiceStatus.OK) {
-                      for (var i = 0; i < results.length; i++) {
-                          //console.log(results[i]);
-                          createMarker(results[i]);
-                      }
+          map.setCenter(pos);
+
+          var request = {
+            location: pos,
+            radius: 50000,
+            types: ['campground']
+          }
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, function(results, status) {
+              if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  for (var i = 0; i < results.length; i++) {
+                      //console.log(results[i]);
+                      createMarker(results[i]);
                   }
-              });
-            }, function (){});
-        }else{
-            //fail here
-            return;
-        }
+              }
+          });
+        }, function (){});
+    } else {
+        //fail here
+        return;
     }
 }
 
@@ -320,4 +304,9 @@ function createMarker(place) {
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
+}
+
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }

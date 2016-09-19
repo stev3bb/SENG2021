@@ -5,12 +5,12 @@ angular.
         controller: function HomeSearchController() {
             this.campsiteSearch = function() {
                 if (this.location != undefined) {
-                    document.location.href = '/campsearch?nearby=0&location=' + this.location;
+                    document.location.href = '/campsearch?nearby=false&location=' + this.location;
                 }
             };
 
             this.nearbySearch = function() {
-                document.location.href = '/campsearch?nearby=1';
+                document.location.href = '/campsearch?nearby=true';
             };
         }
     });
