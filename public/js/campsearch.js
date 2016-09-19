@@ -76,7 +76,7 @@ function initMap() {
             //location not found - DO NOTHING
         });
     } else {
-        // Browser doesn't support Geolocation - DO NOTHING
+            // Browser doesn't support Geolocation - DO NOTHING
     }
 }
 
@@ -233,7 +233,13 @@ var createMarker = function(place) {
     console.log(place.name, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent('<div>' + place.name + ' (' + place.rating + ' stars)</div>');
+        var placeR;
+        if (place.rating == undefined){
+            placeR = "(no rating)";
+        }else{
+            placeR = place.rating + ' stars';
+        }
+        infowindow.setContent('<div>' + place.name + ' <b>' + placeR + ' </b></div>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
