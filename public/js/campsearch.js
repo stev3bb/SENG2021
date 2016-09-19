@@ -133,51 +133,33 @@ function search() {
       zoom: 10
     };
 
-    document.getElementById('button').onclick = function(){
-        nearbyCheck = 1;
-        alert("checked");
-    };
+    //make new map here
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    //console.log(map);
 
+    //if geolocation is enabled
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = new google.maps.LatLng(position.coords.latitude,
+                                     position.coords.longitude);
+          infowindow = new google.maps.InfoWindow({
+            map: map,
+            position: pos,
+            content: 'My current location'
+          });
 
-    //if the nearby textbox is tickled and radius confirmed
-    // or if search value or radius is confirmed, then do stuff
+          map.setCenter(pos);
 
-    if ((document.getElementById('checkednearby').checked) || (searchval)) {
-
-        //make new map here
-        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        //console.log(map);
-
-        //if geolocation is enabled
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              pos = new google.maps.LatLng(position.coords.latitude,
-                                         position.coords.longitude);
-              infowindow = new google.maps.InfoWindow({
-                map: map,
-                position: pos,
-                content: 'My current location'
-              });
-
-              map.setCenter(pos);
-
-              var request = {
-                location: pos,
-                radius: 50000,
-                types: ['campground']
-              }
-              infowindow = new google.maps.InfoWindow();
-              var service = new google.maps.places.PlacesService(map);
-              service.nearbySearch(request, callback);
-            }, function (){});
-        }
-
-        //alert(request.get(radius));
-    } else {
-        return;
-        //alert("doing something else")
+          var request = {
+            location: pos,
+            radius: 50000,
+            types: ['campground']
+          }
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, callback);
+        }, function (){});
     }
-
 
 }
 
