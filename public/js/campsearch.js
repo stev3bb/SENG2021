@@ -125,12 +125,6 @@ function search() {
 
     //search functionality goes here
     var searchval = document.getElementById('value').value;
-<<<<<<< HEAD
-    var radius = document.getElementById('distval').value;
-    var nearbyCheck;
-=======
-
->>>>>>> afad555b7ca9820948857a4e8f5f2201d522731a
     //some variables
     var service;
     var marker;
@@ -147,14 +141,9 @@ function search() {
 
     //if the nearby textbox is tickled and radius confirmed
     // or if search value or radius is confirmed, then do stuff
-<<<<<<< HEAD
-    //fix here tomorrow
-    if (searchval || nearbyCheck) {
-        alert("son please fix");
-=======
+
     if ((document.getElementById('checkednearby').checked) || (searchval)) {
 
->>>>>>> afad555b7ca9820948857a4e8f5f2201d522731a
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         //console.log(map);

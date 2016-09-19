@@ -5,27 +5,7 @@
     </head>
     <body>
     {{> navbar }}
-<<<<<<< HEAD
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-11">
-            <h1>Campsite search</h1>
-            <!-- search value -->
-            <form class="form-inline">
-                <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value" value="{{ qs.location }}"/>
-                 <input class="btn btn-default" type="button" value="Submit" onclick="search()">
-                <!--<select class="selectpicker" name="distance" id="distval">
-                    <option value="" disabled selected>Distance</option>
-                    <option value="50">50km</option>
-                    <option value="100">100km</option>
-                    <option value="200">200km</option>
-                    <option value="500">500km</option>
-                </select>-->
-                <!-- testing this new button-->
-                //broken line here
-                <button id="nearme" type="submit"> <img src="icon/nearby.png" width="18" height="20"></img></button>
-            </form>
-=======
+
         <div class="row">
             <div class="col-lg-4">
                 <div class="container" id="map-options">
@@ -33,15 +13,17 @@
                     <div class="input-group input-group-lg">
                         <input type="text" required class="form-control input-lg" placeholder="Search campsites" ng-model="$ctrl.location" value="{{ qs.location }}">
                         <div class="input-group-btn">
+                            <!-- submit button-->
                             <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <!--nearby me button-->
                             <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.nearbySearch()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></button>
                         </div>
                     </div>
-                    <form class="form-inline">
+                    <!--<form class="form-inline">
                         <input type="text" class="form-control" placeholder="These will be removed" name="searchvalue" id="value" value="{{ qs.location }}"/>
                         <button class="btn btn-default" type="button" onclick="search()">Search</button>
                         <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
-                    </form>
+                    </form>-->
                 </div>
             </div>
             <div class="col-lg-8">
@@ -49,7 +31,6 @@
                 <script src="js/campsearch.js"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
             </div>
->>>>>>> afad555b7ca9820948857a4e8f5f2201d522731a
         </div>
 
     {{> bottomJs }}
