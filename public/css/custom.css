@@ -112,7 +112,7 @@ h1#discover {
     float: left;
     margin-left: 25px;
     width: 92%;
-    height: 60em;
+    height: 55em;
     display: inline;
     border: 2px solid #000;
 }
@@ -120,7 +120,7 @@ h1#discover {
 #map {
     background-color: #000;
     margin-right: 50px;
-    height: 60em;
+    height: 55em;
     width: 97%;
     float: right;
     border: 8px solid;
