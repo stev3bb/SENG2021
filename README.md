@@ -11,28 +11,28 @@ Use Ctrl+C to close the app
 
 If you guys have problems (steve advice)
 ps aux | grep 3000
-kill -9 "pid" (which node is occupied)
+kill -9 "pid" (which node is occupied) or just do "killall -9 node"
 
 ## TODO
 * **Home:** Feedback pls
-* **Campsite Search:** Pins need information when clicked
-* **Campsite Search:** Information for each campsite should be displayed below the map
+* **Campsite Search:** Pins need information when clicked (Title of camping ground, summary, maybe address and phone number, directions, maybe distance, and external link for more information)
+* **Campsite Search:** Information for each campsite should be displayed below the map (????)
 * **Campsite Search:** Search menu with a nice appearance
-* **Campsite Search:** Minor map issues (pin icons, radius, distance, directions)
+* **Campsite Search:** Minor map issues (pin icons, distance, directions) (mostly done- just need to fix distance and add some sexy icons)
 * **Campsite Search:** Some AngularJS stuff
 * **Campsite Details:** Everything - Need Node.js
 * **Equipment:** Everything - Need Node.js
 * **Guides:** Everything - not important
-* **Other:** Powerpoint
+* **Other:** Powerpoint (done)
 * **Everything:** Nice CSS
-* **Everything:** Nice code
+* **Everything:** Nice code (probably need a redone after tuesday)
 
 
 
 ## Bugs
-* **Campsite Search: When moving map shows a blue selected section(can't reproduce)
-* **Campsite Search: Need to do something when the campsites are close together(can't click on icon)
-* **Campsite Search: Screen just randomly whites out sometimes when zooming in and out fast
+* **Campsite Search: When moving map shows a blue selected section(can't reproduce- just daniel computer apparently)
+* **Campsite Search: Need to do something when the campsites are close together(can't click on icon)-> (steve sugguestion: increase the zoom if number of markers exceeds a certain number or have some fancy alogrithm to predict how many places in a radius then increase the zoom?)
+* **Campsite Search: Screen just randomly whites out sometimes when zooming in and out fast (it is normal, just load time)
 
 
 
