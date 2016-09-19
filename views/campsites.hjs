@@ -8,7 +8,7 @@
 <body>
     {{> navbar }}
     <div class="container" id="campsite-body">
-        <h1>Hi the id is: {{ place_id }}</h1>
+        <h1>The ID of this campsite is: {{ place_id }}</h1>
     </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">

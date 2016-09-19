@@ -3,11 +3,61 @@
 
 <head>
     {{> header }}
+    <style>
+        .img-marg{
+            margin-left: 50px;
+        }
+    </style>
 </head>
 
 <body>
     {{> navbar }}
-    <h1>{{ title }}</h1>
+    <h1>Browse Equipment</h1>
+    <!-- insert some fancy theme here-->
+
+    <ul>
+        <div class="img-thumbnail">
+            <a href="/equipment/single">
+            <img src="img/singletent.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Single Tents</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="/equipment/4tent">
+            <img src="img/4tent.jpeg" height="200" width="200">
+            <h3><div style="text-align: center;">4 Person Tents</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="/equipment/hydra">
+            <img src="img/waterbottle.jpeg" height="200" width="200">
+            <h3><div style="text-align: center;">Hydration</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="/equipment/chair">
+            <img src="img/chair.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Chairs</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="/equipment/cooking">
+            <img src="img/cooking.jpeg" height="200" width="200">
+            <h3><div style="text-align: center;">Cooking Utensils</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="/equipment/sleeping">
+            <img src="img/bag.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Sleeping Bags</div></h3>
+            </a>
+        </div>
+    </ul>
     {{> bottomJs }}
 </body>
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> header }}
+    <style>
+        .img-marg{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    {{> navbar }}
+    <h1>{{ title }}</h1>
+
+    {{> bottomJs }}
+</body>
+
+</html>
