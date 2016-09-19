@@ -103,6 +103,7 @@ h1#discover {
 #map-options {
     float: left;
     margin-left: 15px;
+    width: 430px;
     margin-top: 25px;
     display: inline;
 }

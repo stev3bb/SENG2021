@@ -6,17 +6,23 @@
     <body>
     {{> navbar }}
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-4">
                 <div class="container" id="map-options">
                     <h1>Campsite Search</h1>
+                    <div class="input-group input-group-lg">
+                        <input type="text" required class="form-control input-lg" placeholder="Search campsites" ng-model="$ctrl.location" value="{{ qs.location }}">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </span>
+                    </div>
                     <form class="form-inline">
                         <input type="text" class="form-control" placeholder="Search" name="searchvalue" id="value" value="{{ qs.location }}"/>
-                        <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
                         <button class="btn btn-default" type="button" onclick="search()">Search</button>
+                        <input type="checkbox" name="nearby" id="checkednearby" value="1">Nearby Me</input>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <div id="map"></div>
                 <script src="js/campsearch.js"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
