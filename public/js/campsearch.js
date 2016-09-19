@@ -132,35 +132,67 @@ function search() {
     var mapOptions = {
       zoom: 10
     };
+    //auto complete object
+    var autocomplete;
+    //australia region bounds
+    var country ={
+        center: {lat: -25.3, lng: 133.8},
+        zoom: 4
+    };
+
 
     //make new map here
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     //console.log(map);
 
-    //if geolocation is enabled
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          pos = new google.maps.LatLng(position.coords.latitude,
-                                     position.coords.longitude);
-          infowindow = new google.maps.InfoWindow({
-            map: map,
-            position: pos,
-            content: 'My current location'
-          });
+    if (searchval){
 
-          map.setCenter(pos);
+        alert(searchval);
 
-          var request = {
-            location: pos,
-            radius: 50000,
-            types: ['campground']
+       // show some auto complete bull shit, inject it into some array/harsh then geocode
+        var displaySuggestions = function(predictions, status) {
+          if (status != google.maps.places.PlacesServiceStatus.OK) {
+            alert(status);
+            return;
           }
-          infowindow = new google.maps.InfoWindow();
-          var service = new google.maps.places.PlacesService(map);
-          service.nearbySearch(request, callback);
-        }, function (){});
-    }
+          //draws out a list of prediction, this does it iteratively
+          predictions.forEach(function(prediction) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(prediction.description));
+            document.getElementById('results').appendChild(li);
+          });
+        };
 
+        var service = new google.maps.places.AutocompleteService();
+        service.getPlacePredictions({ input: searchval }, displaySuggestions);
+    }else{
+        //if geolocation is enabled
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              pos = new google.maps.LatLng(position.coords.latitude,
+                                         position.coords.longitude);
+              infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: pos,
+                content: 'My current location'
+              });
+
+              map.setCenter(pos);
+
+              var request = {
+                location: pos,
+                radius: 50000,
+                types: ['campground']
+              }
+              infowindow = new google.maps.InfoWindow();
+              var service = new google.maps.places.PlacesService(map);
+              service.nearbySearch(request, callback);
+            }, function (){});
+        }else{
+            //fail here
+            return;
+        }
+    }    
 }
 
 var callback = function(results, status) {
