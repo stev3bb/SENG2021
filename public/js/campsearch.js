@@ -156,46 +156,78 @@ function search() {
     //console.log(map);
 
     if (searchval){
+        var geocoder = new google.maps.Geocoder(),
+            service  = new google.maps.places.AutocompleteService(null, {
+            types: ['geocode'] });
 
-       // show some auto complete bull shit, inject it into some array then geocode
-        var displaySuggestions = function(predictions, status) {
-          if (status != google.maps.places.PlacesServiceStatus.OK) {
-            alert(status);
-            return;
-          }
 
-          //draws out a list of prediction, this does it iteratively(debugging only)/use this to push into array
-          predictions.forEach(function(prediction) {
-           var n = document.getElementById('results')
-                      .appendChild(document.createElement('li')),
-                s = new google.maps.places
-                      .PlacesService(n.appendChild(document.createElement('div'))),
-                p = prediction.description;
 
-                s.getDetails({reference:prediction.reference},
-                          function(details,status){
+        service.getPlacePredictions({ input: searchval}, 
+        function(predictions, status) {
+            if(status=='OK'){
+                for(var i=0;i< 1;++i){
+                    if(predictions[i]){
+                        (function(i){
+                        var n = document.getElementById('results')
+                        .appendChild(document.createElement('li')),
+        
+                        s = new google.maps.places
+                            .PlacesService(n.appendChild(document.createElement('div'))),
+                        p = predictions[i].description;
+
+                        s.getDetails({reference:predictions[i].reference},
+        
+                        function(details,status){
                             n.appendChild(document.createTextNode(p));
                             n.appendChild(document.createElement('br'));
                             n.appendChild(document.createTextNode(
-                              details.geometry.location.toString()));
-                            var coord = {
-                                lat: details.geometry.location.lat(),
-                                lng: details.geometry.location.lng()
-                            };
-                            //console.log(coord);
-                            newlatlong.push(coord);
-                });
-            });
-        };
+                            details.geometry.location.toString()));
+                            
+                            console.log(details.geometry.location.toString());
 
-        var service = new google.maps.places.AutocompleteService();
-        service.getPlacePredictions({ input: searchval }, displaySuggestions);
+                            //more repeated code:
+                            pos = details.geometry.location;
+                              /*infowindow = new google.maps.InfoWindow({
+                                map: map,
+                                position: pos,
+                                content: 'My current location'
+                            });*/
+                            var marker = new google.maps.Marker({
+                                position: pos,
+                                map: map,
+                                title: "current location"
+                            })
+
+                              map.setCenter(pos);
+
+                              var request = {
+                                location: pos,
+                                radius: 50000,
+                                types: ['campground']
+                              }
+                              infowindow = new google.maps.InfoWindow();
+                              var service = new google.maps.places.PlacesService(map);
+                              service.nearbySearch(request, function(results, status) {
+                                  if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                      for (var i = 0; i < results.length; i++) {
+                                          //console.log(results[i]);
+                                          createMarker(results[i]);
+                                      }
+                                  }
+                              });
+                        });
+                    })(i)
+                }
+            }
+        }
+        });
     }else{
         //if geolocation is enabled
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
               pos = new google.maps.LatLng(position.coords.latitude,
                                          position.coords.longitude);
+
               /*infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: pos,
