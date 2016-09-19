@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/:id', function(req, res, next) {
     res.render('campsites', {
         place_id: req.params.id,
-        partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs'}
+        partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs', API_KEY: 'partials/api_key'}
     });
 });
 
