@@ -24,7 +24,9 @@
                         </div>
                     </div>
                     <div>
-                        
+                        <ul>
+                            
+                        </ul>
                     </div>
                     <!--<form class="form-inline">
                         <input type="text" class="form-control" placeholder="These will be removed" name="searchvalue" id="value" value="{{ qs.location }}"/>

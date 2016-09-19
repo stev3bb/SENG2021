@@ -54,7 +54,14 @@ function initMap() {
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(request,callback);
+        service.nearbySearch(request, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    //console.log(results[i]);
+                    createMarker(results[i]);
+                }
+            }
+        });
     });
 
     // Try HTML5 geolocation.
@@ -160,7 +167,7 @@ function search() {
                 s = new google.maps.places
                       .PlacesService(n.appendChild(document.createElement('div'))),
                 p = prediction.description;
-                
+
                 s.getDetails({reference:prediction.reference},
                           function(details,status){
                             n.appendChild(document.createTextNode(p));
@@ -174,7 +181,7 @@ function search() {
                           });
             });
         };
-        
+
         var service = new google.maps.places.AutocompleteService();
         service.getPlacePredictions({ input: searchval }, displaySuggestions);
 
@@ -182,7 +189,7 @@ function search() {
         for (var i =0; i<newlatlong.length; i++){
             console.log(newlatlong.lat[i]);
         }
-        
+
     }else{
         //if geolocation is enabled
         if (navigator.geolocation) {
@@ -209,20 +216,18 @@ function search() {
               }
               infowindow = new google.maps.InfoWindow();
               var service = new google.maps.places.PlacesService(map);
-              service.nearbySearch(request, callback);
+              service.nearbySearch(request, function(results, status) {
+                  if (status === google.maps.places.PlacesServiceStatus.OK) {
+                      for (var i = 0; i < results.length; i++) {
+                          //console.log(results[i]);
+                          createMarker(results[i]);
+                      }
+                  }
+              });
             }, function (){});
         }else{
             //fail here
             return;
-        }
-    }
-}
-
-var callback = function(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            //console.log(results[i]);
-            createMarker(results[i]);
         }
     }
 }
@@ -247,7 +252,7 @@ var createMarker = function(place) {
     markers.push(marker);
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(place.geometry.location, map.getCenter());
-    console.log(place.name, distance)
+    //console.log(place, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
         var placeR;
@@ -256,7 +261,17 @@ var createMarker = function(place) {
         }else{
             placeR = place.rating + ' stars';
         }
-        infowindow.setContent('<div>' + place.name + ' <b>' + placeR + ' </b></div>');
+
+        console.log("Place ID: " + place.place_id);
+        var service = new google.maps.places.PlacesService(map);
+        service.getDetails({placeId: place.place_id}, function(place2, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                console.log(place2);
+            } else {
+                console.log("wtf");
+            }
+        });
+        infowindow.setContent('<div><a href="/campsites/' + place.id + '">'+ place.name + '</a> <b>' + placeR + ' </b></div>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });

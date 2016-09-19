@@ -3,5 +3,5 @@ angular.module('homeApp', [
 ]);
 
 angular.module('campSearchApp', [
-  'googleMap'
+  'campsiteListings'
 ]);
