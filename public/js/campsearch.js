@@ -16,6 +16,7 @@ Known bugs:
 var map;
 // Create a blank array for all map markers
 var markers = [];
+var infowindow;
 
 
 /*initialise map
@@ -28,7 +29,6 @@ summary:
 
 function initMap() {
     //variables here
-    var infowindow;
     //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -44,8 +44,7 @@ function initMap() {
         //alert(map.getCenter());
 
         //clear markers here
-        clearMarkers();
-        markers = [];
+        deleteMarkers();
 
         var request = {
                 location: map.getCenter(),
@@ -54,48 +53,10 @@ function initMap() {
                 types: ['campground']
         }
 
-        var infowindow = new google.maps.InfoWindow();
+        infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
-
-
-        //add the pointers here
-        function callback(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71,71),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point (17,34),
-                scaledSize: new google.maps.Size(25,25)
-            };
-
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                position: place.geometry.location
-            });
-
-            //push into array to keep track of the markers
-            markers.push(marker);
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
-        }
-
     });
-
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -114,28 +75,11 @@ function initMap() {
             });
         }, function() {
             //location not found - DO NOTHING
-            // infoWindow = new google.maps.InfoWindow({
-            //     map: map
-            // });
-            // handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation - DO NOTHING
-        // infoWindow = new google.maps.InfoWindow({
-        //     map: map
-        // });
-        // handleLocationError(false, infoWindow, map.getCenter());
     }
-
-
 }
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//     infoWindow.setPosition(pos);
-//     infoWindow.setContent(browserHasGeolocation ?
-//         'Location not found' :
-//         'Your browser doesn\'t support geolocation.');
-// }
 
 //stolen functions mahahahaha
 //***************************************************
@@ -181,14 +125,16 @@ function search() {
 
     //search functionality goes here
     var searchval = document.getElementById('value').value;
+<<<<<<< HEAD
     var radius = document.getElementById('distval').value;
     var nearbyCheck;
+=======
+
+>>>>>>> afad555b7ca9820948857a4e8f5f2201d522731a
     //some variables
-    var map;
     var service;
     var marker;
     var pos;
-    var infowindow;
     var mapOptions = {
       zoom: 10
     };
@@ -201,12 +147,17 @@ function search() {
 
     //if the nearby textbox is tickled and radius confirmed
     // or if search value or radius is confirmed, then do stuff
+<<<<<<< HEAD
     //fix here tomorrow
     if (searchval || nearbyCheck) {
         alert("son please fix");
+=======
+    if ((document.getElementById('checkednearby').checked) || (searchval)) {
+
+>>>>>>> afad555b7ca9820948857a4e8f5f2201d522731a
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        console.log(map);
+        //console.log(map);
 
         //if geolocation is enabled
         if (navigator.geolocation) {
@@ -223,49 +174,13 @@ function search() {
 
               var request = {
                 location: pos,
-                radius: radius*1000,
+                radius: 50000,
                 types: ['campground']
               }
               infowindow = new google.maps.InfoWindow();
               var service = new google.maps.places.PlacesService(map);
-              service.nearbySearch(request,callback);
-            }, function (){
-              handleNoGeolocation(true);
-            });
-        } else {
-            handleNoGeolocation(false);
-        }
-
-        //add the pointers here
-        function callback(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71,71),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point (17,34),
-                scaledSize: new google.maps.Size(25,25)
-            };
-
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                position: place.geometry.location
-            });
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
+              service.nearbySearch(request, callback);
+            }, function (){});
         }
 
         //alert(request.get(radius));
@@ -275,4 +190,40 @@ function search() {
     }
 
 
+}
+
+var callback = function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+    }
+}
+
+var createMarker = function(place) {
+    var placeLoc = place.geometry.location;
+
+    var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71,71),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point (10,34),
+        scaledSize: new google.maps.Size(25,25)
+    };
+
+    var marker = new google.maps.Marker({
+        map: map,
+        icon: icon,
+        position: place.geometry.location
+    });
+
+    markers.push(marker);
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow = new google.maps.InfoWindow({
+            content: place.name,
+            pixelOffset: new google.maps.Size(-25, 0)
+        })
+        infowindow.open(map, this);
+    });
 }

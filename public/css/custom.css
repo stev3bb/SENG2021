@@ -67,10 +67,6 @@ html#home-page {
     text-align: center;
 }
 
-body {
-    text-align: center;
-}
-
 .input-group-xlg, .input-xlg, .btn-xlg {
     height: 70px;
     font-size: 32px;
@@ -103,13 +99,25 @@ h1#discover {
 /***
     CAMPSITE SEARCH STYLING
 ***/
+.nearby-icon-sml {
+    padding-bottom: 9px;
+    width: 22px;
+}
 
-.campsearch {
-  height: 100%;
-  width: 100%;
+#map-options {
+    float: left;
+    margin-left: 15px;
+    width: 430px;
+    margin-top: 25px;
+    display: inline;
 }
 
 #map {
-height: 80%;
-width: 70%;
+    margin-top: 50px;
+    margin-right: 50px;
+    height: 720px;
+    width: 1400px;
+    float: right;
+    border: 8px solid;
+    display: inline;
 }
