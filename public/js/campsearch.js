@@ -147,25 +147,26 @@ function querySearch() {
         service.getPlacePredictions({ input: searchval},
         function(predictions, status) {
             if(status=='OK'){
-                for(var i=0;i< 1;++i){
+                var i = 1;
+                //for(var i=0;i< 1;++i){
                     if(predictions[i]){
                         (function(i){
-                        var n = document.getElementById('results')
-                        .appendChild(document.createElement('li')),
+                        //var n = document.getElementById('results')
+                        //.appendChild(document.createElement('li')),
 
-                        s = new google.maps.places
-                            .PlacesService(n.appendChild(document.createElement('div'))),
+                        var s = new google.maps.places
+                            .PlacesService(map),
                         p = predictions[i].description;
 
                         s.getDetails({reference:predictions[i].reference},
 
                         function(details,status){
-                            n.appendChild(document.createTextNode(p));
-                            n.appendChild(document.createElement('br'));
-                            n.appendChild(document.createTextNode(
-                            details.geometry.location.toString()));
+                            //n.appendChild(document.createTextNode(p));
+                            //n.appendChild(document.createElement('br'));
+                            //n.appendChild(document.createTextNode(
+                            //details.geometry.location.toString()));
 
-                            console.log(details.geometry.location.toString());
+                           // console.log(details.geometry.location.toString());
 
                             //more repeated code:
                             pos = details.geometry.location;
@@ -199,7 +200,7 @@ function querySearch() {
                           });
                         });
                     })(i)
-                }
+                //}
             }
         }
         });
