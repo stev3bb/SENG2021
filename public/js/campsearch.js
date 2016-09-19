@@ -54,42 +54,6 @@ function initMap() {
         var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
-
-        //add the pointers here
-        function callback(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71,71),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point (17,34),
-                scaledSize: new google.maps.Size(25,25)
-            };
-
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                position: place.geometry.location
-            });
-
-            //push into array to keep track of the markers
-            markers.push(marker);
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
-        }
-
     });
 
     // Try HTML5 geolocation.
@@ -175,7 +139,7 @@ function search() {
 
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        console.log(map);
+        //console.log(map);
 
         //if geolocation is enabled
         if (navigator.geolocation) {
@@ -192,49 +156,13 @@ function search() {
 
               var request = {
                 location: pos,
-                radius: radius*1000,
+                radius: 50000,
                 types: ['campground']
               }
               infowindow = new google.maps.InfoWindow();
               var service = new google.maps.places.PlacesService(map);
-              service.nearbySearch(request,callback);
-            }, function (){
-              handleNoGeolocation(true);
-            });
-        } else {
-            handleNoGeolocation(false);
-        }
-
-        //add the pointers here
-        function callback(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71,71),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point (17,34),
-                scaledSize: new google.maps.Size(25,25)
-            };
-
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                position: place.geometry.location
-            });
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
+              service.nearbySearch(request, callback);
+            }, function (){});
         }
 
         //alert(request.get(radius));
@@ -244,4 +172,37 @@ function search() {
     }
 
 
+}
+
+var callback = function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+    }
+}
+
+var createMarker = function(place) {
+    var placeLoc = place.geometry.location;
+
+    var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71,71),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point (17,34),
+        scaledSize: new google.maps.Size(25,25)
+    };
+
+    var marker = new google.maps.Marker({
+        map: map,
+        icon: icon,
+        position: place.geometry.location
+    });
+
+    markers.push(marker);
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
 }
