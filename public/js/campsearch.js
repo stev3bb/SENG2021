@@ -121,7 +121,7 @@ google map page on how to drive there
 */
 
 function search() {
-
+    var newlatlong = [];
     //search functionality goes here
     var searchval = document.getElementById('value').value;
     //some variables
@@ -140,12 +140,12 @@ function search() {
     };
 
 
+
     //make new map here
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     //console.log(map);
 
     if (searchval){
-        var newlatlong = [];
 
        // show some auto complete bull shit, inject it into some array then geocode
         var displaySuggestions = function(predictions, status) {
@@ -153,6 +153,7 @@ function search() {
             alert(status);
             return;
           }
+
           //draws out a list of prediction, this does it iteratively(debugging only)/use this to push into array
           predictions.forEach(function(prediction) {
            var n = document.getElementById('results')
@@ -167,22 +168,18 @@ function search() {
                             n.appendChild(document.createElement('br'));
                             n.appendChild(document.createTextNode(
                               details.geometry.location.toString()));
-                            newlatlong.push({
+                            var coord = {
                                 lat: details.geometry.location.lat(),
                                 lng: details.geometry.location.lng()
-                            })
-                          });
+                            };
+                            //console.log(coord);
+                            newlatlong.push(coord);
+                });
             });
         };
         
         var service = new google.maps.places.AutocompleteService();
         service.getPlacePredictions({ input: searchval }, displaySuggestions);
-
-        //test here
-        for (var i =0; i<newlatlong.length; i++){
-            console.log(newlatlong.lat[i]);
-        }
-        
     }else{
         //if geolocation is enabled
         if (navigator.geolocation) {
