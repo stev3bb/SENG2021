@@ -3,13 +3,12 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 
-// revision: 0.4
+// revision: 0.5
 
 
 /*
 Known bugs:
-- radius problem
-- info window is not centered with the icons
+- none at the time
 */
 
 // Keep map as a global
