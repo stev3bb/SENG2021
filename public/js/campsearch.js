@@ -13,17 +13,17 @@ Known bugs:
 
 /*** INITIALIZE DATABASE ***/
 
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
-
-var campsiteSchema = new mongoose.Schema({
-    id: String,
-    name: String,
-    address: String
-});
-
-var Campsite = mongoose.model('Campsite', campsiteSchema);
+// var mongoose = require('mongoose');
+//
+// mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
+//
+// var campsiteSchema = new mongoose.Schema({
+//     id: String,
+//     name: String,
+//     address: String
+// });
+//
+// var Campsite = mongoose.model('Campsite', campsiteSchema);
 
 /*** END ***/
 
@@ -334,6 +334,7 @@ function getParameterByName(name) {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
+/* DATABASE STUFF
 function addCampsite(place) {
     var newCampsite = Campsite({
 
@@ -341,3 +342,4 @@ function addCampsite(place) {
         if (err) throw err;
     })
 }
+*/
