@@ -3,13 +3,12 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 
-// revision: 0.4
+// revision: 0.5
 
 
 /*
 Known bugs:
-- radius problem
-- info window is not centered with the icons
+- none at the time
 */
 
 // Keep map as a global
@@ -146,21 +145,28 @@ function search() {
     //console.log(map);
 
     if (searchval){
-
-        alert(searchval);
-
        // show some auto complete bull shit, inject it into some array/harsh then geocode
         var displaySuggestions = function(predictions, status) {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
             alert(status);
             return;
           }
-          //draws out a list of prediction, this does it iteratively
+          //draws out a list of prediction, this does it iteratively(debugging only)/use this to push into array
           predictions.forEach(function(prediction) {
-            var li = document.createElement('li');
-            li.appendChild(document.createTextNode(prediction.description));
-            document.getElementById('results').appendChild(li);
-          });
+           var n = document.getElementById('results')
+                      .appendChild(document.createElement('li')),
+                s = new google.maps.places
+                      .PlacesService(n.appendChild(document.createElement('div'))),
+                p = prediction.description;
+                
+                s.getDetails({reference:prediction.reference},
+                          function(details,status){
+                            n.appendChild(document.createTextNode(p));
+                            n.appendChild(document.createElement('br'));
+                            n.appendChild(document.createTextNode(
+                              details.geometry.location.toString()));
+                          });
+            });
         };
 
         var service = new google.maps.places.AutocompleteService();
