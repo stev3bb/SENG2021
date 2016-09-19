@@ -14,6 +14,7 @@ Known bugs:
 var map;
 // Create a blank array for all map markers
 var markers = [];
+var infowindow;
 
 
 /*initialise map
@@ -26,7 +27,6 @@ summary:
 
 function initMap() {
     //variables here
-    var infowindow;
     //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -51,7 +51,7 @@ function initMap() {
                 types: ['campground']
         }
 
-        var infowindow = new google.maps.InfoWindow();
+        infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
     });
@@ -128,7 +128,6 @@ function search() {
     var service;
     var marker;
     var pos;
-    var infowindow;
     var mapOptions = {
       zoom: 10
     };
@@ -189,7 +188,7 @@ var createMarker = function(place) {
         url: place.icon,
         size: new google.maps.Size(71,71),
         origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point (17,34),
+        anchor: new google.maps.Point (10,34),
         scaledSize: new google.maps.Size(25,25)
     };
 
@@ -202,7 +201,10 @@ var createMarker = function(place) {
     markers.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
+        infowindow = new google.maps.InfoWindow({
+            content: place.name,
+            pixelOffset: new google.maps.Size(-25, 0)
+        })
         infowindow.open(map, this);
     });
 }
