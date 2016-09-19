@@ -42,8 +42,7 @@ function initMap() {
         //alert(map.getCenter());
 
         //clear markers here
-        clearMarkers();
-        markers = [];
+        deleteMarkers();
 
         var request = {
                 location: map.getCenter(),
@@ -55,7 +54,6 @@ function initMap() {
         var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request,callback);
-
 
         //add the pointers here
         function callback(results, status) {
@@ -94,7 +92,6 @@ function initMap() {
 
     });
 
-
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -112,28 +109,11 @@ function initMap() {
             });
         }, function() {
             //location not found - DO NOTHING
-            // infoWindow = new google.maps.InfoWindow({
-            //     map: map
-            // });
-            // handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation - DO NOTHING
-        // infoWindow = new google.maps.InfoWindow({
-        //     map: map
-        // });
-        // handleLocationError(false, infoWindow, map.getCenter());
     }
-
-
 }
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//     infoWindow.setPosition(pos);
-//     infoWindow.setContent(browserHasGeolocation ?
-//         'Location not found' :
-//         'Your browser doesn\'t support geolocation.');
-// }
 
 //stolen functions mahahahaha
 //***************************************************
@@ -181,7 +161,6 @@ function search() {
     var searchval = document.getElementById('value').value;
 
     //some variables
-    var map;
     var service;
     var marker;
     var pos;
