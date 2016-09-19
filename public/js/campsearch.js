@@ -145,7 +145,9 @@ function search() {
     //console.log(map);
 
     if (searchval){
-       // show some auto complete bull shit, inject it into some array/harsh then geocode
+        var newlatlong = [];
+
+       // show some auto complete bull shit, inject it into some array then geocode
         var displaySuggestions = function(predictions, status) {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
             alert(status);
@@ -165,12 +167,22 @@ function search() {
                             n.appendChild(document.createElement('br'));
                             n.appendChild(document.createTextNode(
                               details.geometry.location.toString()));
+                            newlatlong.push({
+                                lat: details.geometry.location.lat(),
+                                lng: details.geometry.location.lng()
+                            })
                           });
             });
         };
-
+        
         var service = new google.maps.places.AutocompleteService();
         service.getPlacePredictions({ input: searchval }, displaySuggestions);
+
+        //test here
+        for (var i =0; i<newlatlong.length; i++){
+            console.log(newlatlong.lat[i]);
+        }
+        
     }else{
         //if geolocation is enabled
         if (navigator.geolocation) {
