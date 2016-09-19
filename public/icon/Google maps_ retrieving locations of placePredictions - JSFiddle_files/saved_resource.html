@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://fiddle.jshell.net/_display/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="./dummy.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="./js"></script>
+    
+  
+
+  <style type="text/css">
+    
+  </style>
+
+  <title>Google maps: retrieving locations of placePredictions</title>
+
+  
+    
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+
+
+function initialize() {
+  var geocoder = new google.maps.Geocoder(),
+      service  = new google.maps.places.AutocompleteService(null, {
+                        types: ['geocode'] 
+                       });
+
+
+
+  service.getPlacePredictions({ input: 'blue mountains' }, 
+    function(predictions, status) {
+      if(status=='OK'){
+        for(var i=0;i< 1;++i){
+          if(predictions[i]){
+            (function(i){
+            var n = document.getElementById('ol')
+                      .appendChild(document.createElement('li')),
+                s = new google.maps.places
+                      .PlacesService(n.appendChild(document.createElement('div'))),
+                p = predictions[i].description;
+                
+                s.getDetails({reference:predictions[i].reference},
+                          function(details,status){
+                            n.appendChild(document.createTextNode(p));
+                            n.appendChild(document.createElement('br'));
+                            n.appendChild(document.createTextNode(
+                              details.geometry.location.toString()));
+                          });
+            })(i)
+      }
+    }
+    }}
+  );
+  
+  
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+//]]> 
+
+</script>
+
+  
+<script type="text/javascript" charset="UTF-8" src="./common.js"></script><script type="text/javascript" charset="UTF-8" src="./util.js"></script><script type="text/javascript" charset="UTF-8" src="./geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="./controls.js"></script><script type="text/javascript" charset="UTF-8" src="./places_impl.js"></script><script type="text/javascript" charset="UTF-8" src="./stats.js"></script></head>
+
+<body>
+  <ol id="ol"><li><div></div>Blue Mountains, New South Wales, Australia<br>(-33.49999729999999, 150.2499997)</li></ol>
+
+  
+
+
+
+
+</body></html>
