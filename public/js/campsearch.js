@@ -45,6 +45,9 @@ function initMap() {
         //clear markers here
         deleteMarkers();
 
+        // UNCOMMENT FOR DEMO
+        // $('#campsites-list ul').empty();
+
         var request = {
                 location: map.getCenter(),
                 //max range
@@ -58,7 +61,7 @@ function initMap() {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
                     //console.log(results[i]);
-                    createMarker(results[i]);
+                    setTimeout(createMarker(results[i]), 100);
                 }
             }
         });
@@ -232,7 +235,7 @@ function search() {
     }
 }
 
-var createMarker = function(place) {
+function createMarker(place) {
     var location = place.geometry.location;
 
     var icon = {
@@ -252,6 +255,27 @@ var createMarker = function(place) {
     markers.push(marker);
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
+    console.log("Place ID: " + place.place_id + " Name: " + place.name);
+
+    // UNCOMMENT FOR DEMO
+
+    // var service = new google.maps.places.PlacesService(map);
+    // service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
+    //     if (status == google.maps.places.PlacesServiceStatus.OK) {
+    //         var address = placeInfo.formatted_address;
+    //         var phone = placeInfo.formatted_phone_number;
+    //         var name = placeInfo.name;
+    //         if (placeInfo.rating) {
+    //             var rating = placeInfo.rating + " stars";
+    //         } else {
+    //             var rating = "No reviews";
+    //         }
+    //         $("#campsites-list ul").append('<li><b>' + name + ' </b>' + address + '</li>');
+    //         console.log(name + " " + address);
+    //     } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
+    //         console.log("?????");
+    //     }
+    // });
     //console.log(place, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -262,21 +286,6 @@ var createMarker = function(place) {
         //     placeR = place.rating + ' stars';
         // }
 
-        console.log("Place ID: " + place.place_id);
-        var service = new google.maps.places.PlacesService(map);
-        service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                var address = placeInfo.formatted_address;
-                var phone = placeInfo.formatted_phone_number;
-                var name = placeInfo.name;
-                if (placeInfo.rating) {
-                    var rating = placeInfo.rating + " stars";
-                } else {
-                    var rating = "No reviews";
-                }
-                console.log(address);
-            }
-        });
         infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>'+ place.name + '</a></b></div>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);

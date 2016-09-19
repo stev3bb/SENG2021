@@ -23,10 +23,8 @@
                             onclick="search()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></button>
                         </div>
                     </div>
-                    <div>
-                        <ul>
-                            
-                        </ul>
+                    <div id="campsites-list">
+                        <ul><li><b>Sydney Gateway Holiday Park </b>30 Majestic Dr, Stanhope Gardens NSW 2768, Australia</li><li><b>Canton Beach Holiday Park </b>1 Oleander St, Canton Beach NSW 2263, Australia</li><li><b>Patonga Camping Ground </b>Bay Street, Patonga NSW 2256, Australia</li><li><b>The Palms at Avoca </b>Carolina Park Rd, Avoca Beach NSW 2251, Australia</li><li><b>Del Rio Riverside Resort </b>76 Chaseling Rd, Webbs Creek NSW 2775, Australia</li><li><b>Norah Head Holiday Park </b>22-30 Victoria St, Norah Head NSW 2263, Australia</li><li><b>Toowoon Bay Holiday Park </b>1 Koongara St, Toowoon Bay NSW 2261, Australia</li><li><b>NRMA Ocean Beach Resort &amp; Holiday Park </b>Sydney Ave, Umina Beach NSW 2257, Australia</li><li><b>NRMA Sydney Lakeside Holiday Park </b>38 Lake Park Rd, North Narrabeen NSW 2101, Australia</li></ul>
                     </div>
                     <!--<form class="form-inline">
                         <input type="text" class="form-control" placeholder="These will be removed" name="searchvalue" id="value" value="{{ qs.location }}"/>
