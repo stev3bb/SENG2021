@@ -107,16 +107,16 @@ h1#discover {
 #map-options {
     float: left;
     margin-left: 15px;
-    width: 430px;
+    width: 90%;
     margin-top: 25px;
     display: inline;
 }
 
 #map {
-    margin-top: 50px;
+    margin-top: 60px;
     margin-right: 50px;
     height: 720px;
-    width: 1400px;
+    width: 100%;
     float: right;
     border: 8px solid;
     display: inline;
