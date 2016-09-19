@@ -233,7 +233,13 @@ var createMarker = function(place) {
     console.log(place.name, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent('<div>' + place.name + ' <b>' + place.rating + ' stars</b></div>');
+        var placeR;
+        if (place.rating == undefined){
+            placeR = "(no rating)";
+        }else{
+            placeR = place.rating + ' stars';
+        }
+        infowindow.setContent('<div>' + place.name + ' <b>' + placeR + ' </b></div>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
