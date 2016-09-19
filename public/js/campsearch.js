@@ -11,6 +11,22 @@ Known bugs:
 - none at the time
 */
 
+/*** INITIALIZE DATABASE ***/
+
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
+
+var campsiteSchema = new mongoose.Schema({
+    id: String,
+    name: String,
+    address: String
+});
+
+var Campsite = mongoose.model('Campsite', campsiteSchema);
+
+/*** END ***/
+
 // Keep map as a global
 var map;
 // Create a blank array for all map markers
@@ -305,7 +321,7 @@ function createMarker(place) {
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
 
-        
+
         infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>'+ place.name + '</a></b></div>'
             +'<li><a href = https://www.google.com/maps/dir/Current+Location/'+match[1]+','+match[2]+' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
@@ -316,4 +332,12 @@ function createMarker(place) {
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function addCampsite(place) {
+    var newCampsite = Campsite({
+
+    }).save(function(err, data) {
+        if (err) throw err;
+    })
 }
