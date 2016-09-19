@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/:title', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
     res.render('campsites', {
-        title: req.params.title,
+        place_id: req.params.id,
         partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs'}
     });
 });

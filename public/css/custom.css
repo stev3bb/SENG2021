@@ -110,11 +110,15 @@ h1#discover {
 
 #map-options {
     float: left;
-    margin-left: 25px;
+    margin-left: 5%;
     width: 92%;
     height: 55em;
+
     display: inline;
+    position: relative;
+    overflow: hidden;
     border: 2px solid #000;
+    overflow-y: auto;
 }
 
 #map {
@@ -122,7 +126,22 @@ h1#discover {
     margin-right: 50px;
     height: 55em;
     width: 97%;
-    float: right;
+    float: left;
     border: 8px solid;
     display: inline;
+}
+
+#campsites-list, #campsites-list ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+
+#campsites-list ul {
+    list-style-type: none;
+}
+
+.campsite-name {
+    font-size: 20px;
+    font-weight: bold;
 }
