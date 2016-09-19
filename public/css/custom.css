@@ -110,10 +110,13 @@ h1#discover {
 
 #map-options {
     float: left;
-    margin-left: 25px;
+    margin-left: 5%;
     width: 92%;
     height: 55em;
+    
     display: inline;
+    position: relative;
+    overflow: hidden;
     border: 2px solid #000;
     overflow-y: scroll;
 }
@@ -127,3 +130,9 @@ h1#discover {
     border: 8px solid;
     display: inline;
 }
+
+
+
+
+
+
