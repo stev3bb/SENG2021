@@ -199,12 +199,13 @@ function search() {
             //fail here
             return;
         }
-    }    
+    }
 }
 
 var callback = function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+            //console.log(results[i]);
             createMarker(results[i]);
         }
     }
@@ -229,11 +230,12 @@ var createMarker = function(place) {
 
     markers.push(marker);
 
+    var distance = google.maps.geometry.spherical.computeDistanceBetween(place.geometry.location, map.getCenter());
+    console.log(place.name, distance)
+
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow = new google.maps.InfoWindow({
-            content: place.name,
-            pixelOffset: new google.maps.Size(-25, 0)
-        })
-        infowindow.open(map, this);
+        infowindow.setContent('<div>' + place.name + ' ' + place.rating + ' stars</div>');
+        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
+        infowindow.open(map, marker);
     });
 }

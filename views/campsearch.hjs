@@ -33,7 +33,7 @@
             <div class="col-lg-9">
                 <div id="map"></div>
                 <script src="js/campsearch.js"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=geometry,places&callback=initMap" async defer></script>
             </div>
         </div>
 
