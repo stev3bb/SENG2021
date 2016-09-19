@@ -10,11 +10,14 @@
             <div class="col-lg-3">
                 <div class="container" id="map-options">
                     <h1>Campsite Search</h1>
+                    <!-- used for debugging results-->
+                    <div id="results"></div>
+
                     <div class="input-group input-group-lg">
                         <input type="text" id="value" required class="form-control input-lg" placeholder="Search campsites" ng-model="$ctrl.location" value="{{ qs.location }}">
                         <div class="input-group-btn">
                             <!-- submit button-->
-                            <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.campsiteSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.campsiteSearch()" onclick="search()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                             <!--nearby me button-->
                             <button class="btn btn-default btn-lg" type="button" ng-click="$ctrl.nearbySearch()"
                             onclick="search()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></button>
