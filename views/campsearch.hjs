@@ -23,6 +23,9 @@
                             onclick="search()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></button>
                         </div>
                     </div>
+                    <div>
+                        
+                    </div>
                     <!--<form class="form-inline">
                         <input type="text" class="form-control" placeholder="These will be removed" name="searchvalue" id="value" value="{{ qs.location }}"/>
                         <button class="btn btn-default" type="button" onclick="search()">Search</button>
