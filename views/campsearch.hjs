@@ -7,7 +7,7 @@
     {{> navbar }}
 
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="container" id="map-options">
                     <h1>Campsite Search</h1>
                     <!-- used for debugging results-->
@@ -30,7 +30,7 @@
                     </form>-->
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div id="map"></div>
                 <script src="js/campsearch.js"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places&callback=initMap" async defer></script>
