@@ -7,8 +7,8 @@
 
 <body>
     {{> navbar }}
-    <div class="jumbotron">
-        <h1>Hi the id is: {{ id }}</h1>
+    <div class="container" id="campsite-body">
+        <h1>Hi the id is: {{ place_id }}</h1>
     </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&libraries=places">

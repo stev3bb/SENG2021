@@ -233,7 +233,7 @@ function search() {
 }
 
 var createMarker = function(place) {
-    var placeLoc = place.geometry.location;
+    var location = place.geometry.location;
 
     var icon = {
         url: place.icon,
@@ -246,32 +246,38 @@ var createMarker = function(place) {
     var marker = new google.maps.Marker({
         map: map,
         icon: icon,
-        position: place.geometry.location
+        position: location
     });
 
     markers.push(marker);
 
-    var distance = google.maps.geometry.spherical.computeDistanceBetween(place.geometry.location, map.getCenter());
+    var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     //console.log(place, distance)
 
     google.maps.event.addListener(marker, 'click', function() {
-        var placeR;
-        if (place.rating == undefined){
-            placeR = "(no rating)";
-        }else{
-            placeR = place.rating + ' stars';
-        }
+        // var placeR;
+        // if (place.rating == undefined){
+        //     placeR = "(no rating)";
+        // }else{
+        //     placeR = place.rating + ' stars';
+        // }
 
         console.log("Place ID: " + place.place_id);
         var service = new google.maps.places.PlacesService(map);
-        service.getDetails({placeId: place.place_id}, function(place2, status) {
+        service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                console.log(place2);
-            } else {
-                console.log("wtf");
+                var address = placeInfo.formatted_address;
+                var phone = placeInfo.formatted_phone_number;
+                var name = placeInfo.name;
+                if (placeInfo.rating) {
+                    var rating = placeInfo.rating + " stars";
+                } else {
+                    var rating = "No reviews";
+                }
+                console.log(address);
             }
         });
-        infowindow.setContent('<div><a href="/campsites/' + place.id + '">'+ place.name + '</a> <b>' + placeR + ' </b></div>');
+        infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>'+ place.name + '</a></b></div>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
