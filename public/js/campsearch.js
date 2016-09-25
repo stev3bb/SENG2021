@@ -48,8 +48,8 @@ function initMap() {
     //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
-            lat: -34.397,
-            lng: 150.644
+            lat: -33.8688,
+            lng: 151.2093
         },
         zoom: 10
     });
@@ -83,7 +83,6 @@ function initMap() {
             }
         });
     });
-
 
     if (window.location.search && init === 0) {
         var nearby = getParameterByName('nearby');
