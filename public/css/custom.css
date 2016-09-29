@@ -58,7 +58,7 @@ html#home-page {
 }
 
 .jumbotron {
-    height: 950px;
+    height: 100vh;
     background-image: url(../img/home2.jpg);
     background-position: 0% 25%;
     background-size: cover;

@@ -1,31 +1,3 @@
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-
-// revision: 0.5
-
-
-/*
-Known bugs:
-- none at the time
-*/
-
-/*** INITIALIZE DATABASE ***/
-
-// var mongoose = require('mongoose');
-//
-// mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
-//
-// var campsiteSchema = new mongoose.Schema({
-//     id: String,
-//     name: String,
-//     address: String
-// });
-//
-// var Campsite = mongoose.model('Campsite', campsiteSchema);
-
-/*** END ***/
 
 // Keep map as a global
 var map;
@@ -44,8 +16,6 @@ summary:
 */
 
 function initMap() {
-    //variables here
-    //some default locations popup if al fails
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -33.8688,
@@ -57,19 +27,18 @@ function initMap() {
     //var directionsService = new google.maps.DirectionsService;
 
     google.maps.event.addListener(map, 'dragend', function() {
-        //alert(map.getCenter());
 
         //clear markers here
         deleteMarkers();
 
-        // UNCOMMENT FOR DEMO
+        // Empty the list of campsites
         $('#campsites-list ul').empty();
 
         var request = {
-                location: map.getCenter(),
-                //max range
-                radius: 50000,
-                types: ['campground']
+            location: map.getCenter(),
+            //max range
+            radius: 50000,
+            types: ['campground']
         }
 
         infowindow = new google.maps.InfoWindow();
@@ -123,18 +92,7 @@ function deleteMarkers() {
 
 //***************************************************
 
-/*
-search function
-summary:
-- search for camping ground nearby or camping ground near the place that is searched
-- radius is currently broken
-- text box is not centered with the icon (broken af)
-- if pin is clicked, maybe want to get the address for the person to know how to get there or link to another
-google map page on how to drive there
-- search box is currently broken (fixing is under way)
-
-*/
-
+// Searching using a given address
 function querySearch() {
     var newlatlong = [];
     //search functionality goes here
@@ -144,58 +102,51 @@ function querySearch() {
     var marker;
     var pos;
     var mapOptions = {
-      zoom: 10
+        zoom: 10
     };
     //auto complete object
     var autocomplete;
     //australia region bounds
-    var country ={
-        center: {lat: -25.3, lng: 133.8},
+    var country = {
+        center: {
+            lat: -25.3,
+            lng: 133.8
+        },
         zoom: 4
     };
 
     if (searchval) {
         //make new map here
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var geocoder = new google.maps.Geocoder(),
-            service  = new google.maps.places.AutocompleteService(null, {
-            types: ['geocode'] });
+        var geocoder = new google.maps.Geocoder();
+        var service = new google.maps.places.AutocompleteService(null, {types: ['geocode']});
 
-        service.getPlacePredictions({ input: searchval},
-        function(predictions, status) {
-            if(status=='OK'){
+        service.getPlacePredictions({input: searchval}, function(predictions, status) {
+            if (status == 'OK') {
                 var i = 1;
-                //for(var i=0;i< 1;++i){
-                    if(predictions[i]){
-                        (function(i){
+                if (predictions[i]) {
+                    (function(i) {
                         //var n = document.getElementById('results')
                         //.appendChild(document.createElement('li')),
-                        var s = new google.maps.places
-                            .PlacesService(map),
-                        p = predictions[i].description;
+                        var s = new google.maps.places.PlacesService(map);
+                        var p = predictions[i].description;
 
-                        s.getDetails({reference:predictions[i].reference},
-
-                        function(details,status){
+                        s.getDetails({reference: predictions[i].reference}, function(details, status) {
                             //n.appendChild(document.createTextNode(p));
                             //n.appendChild(document.createElement('br'));
                             //n.appendChild(document.createTextNode(
                             //details.geometry.location.toString()));
 
-                           // console.log(details.geometry.location.toString());
+                            // console.log(details.geometry.location.toString());
 
                             //more repeated code:
                             pos = details.geometry.location;
-                              /*infowindow = new google.maps.InfoWindow({
-                                map: map,
-                                position: pos,
-                                content: 'My current location'
-                            });*/
+
                             var marker = new google.maps.Marker({
                                 position: pos,
                                 map: map,
                                 title: "current location"
-                            })
+                            });
 
                             map.setCenter(pos);
 
@@ -203,7 +154,8 @@ function querySearch() {
                                 location: pos,
                                 radius: 50000,
                                 types: ['campground']
-                            }
+                            };
+
                             infowindow = new google.maps.InfoWindow();
                             var service = new google.maps.places.PlacesService(map);
                             service.nearbySearch(request, function(results, status) {
@@ -213,54 +165,51 @@ function querySearch() {
                                         createMarker(results[i]);
                                     }
                                 }
-                          });
+                            });
                         });
                     })(i)
-                //}
+                }
             }
-        }
         });
     }
 }
 
 function nearSearch() {
-    //if geolocation is enabled
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          pos = new google.maps.LatLng(position.coords.latitude,
-                                     position.coords.longitude);
+            pos = new google.maps.LatLng(position.coords.latitude,
+                position.coords.longitude);
 
-          /*infowindow = new google.maps.InfoWindow({
+            /*infowindow = new google.maps.InfoWindow({
             map: map,
             position: pos,
             content: 'My current location'
         });*/
-        var marker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: "current location"
-        })
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: "current location"
+            })
 
-          map.setCenter(pos);
+            map.setCenter(pos);
 
-          var request = {
-            location: pos,
-            radius: 50000,
-            types: ['campground']
-          }
-          infowindow = new google.maps.InfoWindow();
-          var service = new google.maps.places.PlacesService(map);
-          service.nearbySearch(request, function(results, status) {
-              if (status === google.maps.places.PlacesServiceStatus.OK) {
-                  for (var i = 0; i < results.length; i++) {
-                      //console.log(results[i]);
-                      createMarker(results[i]);
-                  }
-              }
-          });
-        }, function (){});
+            var request = {
+                location: pos,
+                radius: 50000,
+                types: ['campground']
+            }
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        //console.log(results[i]);
+                        createMarker(results[i]);
+                    }
+                }
+            });
+        }, function() {});
     } else {
-        //fail here
         return;
     }
 }
@@ -270,10 +219,10 @@ function createMarker(place) {
 
     var icon = {
         url: place.icon,
-        size: new google.maps.Size(71,71),
-        origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point (10,34),
-        scaledSize: new google.maps.Size(25,25)
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(10, 34),
+        scaledSize: new google.maps.Size(25, 25)
     };
 
     var marker = new google.maps.Marker({
@@ -287,8 +236,6 @@ function createMarker(place) {
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     distance = Math.round(distance / 1000);
     console.log("Place ID: " + place.place_id + " Name: " + place.name);
-
-    // UNCOMMENT FOR DEMO
 
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
@@ -322,8 +269,8 @@ function createMarker(place) {
         var match = regrex.exec(locString);
 
 
-        infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>'+ place.name + '</a></b></div>'
-            +'<li><a href = https://www.google.com/maps/dir/Current+Location/'+match[1]+','+match[2]+' target="_blank">Direction</a></li>');
+        infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>' + place.name + '</a></b></div>' +
+            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
@@ -334,7 +281,6 @@ function getParameterByName(name) {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-/* DATABASE STUFF
 function addCampsite(place) {
     var newCampsite = Campsite({
 
@@ -342,4 +288,3 @@ function addCampsite(place) {
         if (err) throw err;
     })
 }
-*/
