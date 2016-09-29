@@ -240,14 +240,19 @@ function createMarker(place) {
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-            var address = placeInfo.formatted_address;
-            var phone = placeInfo.formatted_phone_number;
-            var name = placeInfo.name;
             if (placeInfo.rating) {
                 var rating = placeInfo.rating + " stars";
             } else {
                 var rating = "No reviews";
             }
+            post({
+                id: placeInfo.place_id,
+                name: placeInfo.name,
+                address: placeInfo.formatted_address,
+                phone: placeInfo.formatted_phone_number,
+                rating: rating
+            });
+
             $("#campsites-list ul").append('<li><span class="campsite-name">' + name + '</span><br />' + address + '<br /><b>Phone:</b> ' + phone + '<br /><b>Distance:</b> ' + distance + 'km<br /><a href="/campsites/' + placeInfo.place_id + '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
             console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
@@ -279,12 +284,4 @@ function createMarker(place) {
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
-
-function addCampsite(place) {
-    var newCampsite = Campsite({
-
-    }).save(function(err, data) {
-        if (err) throw err;
-    })
 }

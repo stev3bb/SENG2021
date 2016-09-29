@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 var campsites_db = require('./models/campsites');
+mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
 
 var home = require('./routes/home');
 var campsearch = require('./routes/campsearch');
@@ -57,7 +58,6 @@ if (app.get('env') === 'development') {
             error: err
         });
     });
-    mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
 }
 
 // production error handler

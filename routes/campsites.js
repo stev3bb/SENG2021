@@ -17,7 +17,7 @@ var Campsite = mongoose.model('Campsite', campsiteSchema);
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
     /*
-    Campsite.find({id: req.params.id}, function(err, data) {
+    Campsite.findOne({id: req.params.id}, function(err, data) {
         if (err) throw err;
     })*/
     res.render('campsites', {
