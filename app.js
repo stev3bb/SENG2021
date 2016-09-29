@@ -5,10 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongoose = require('mongoose');
-var campsites_db = require('./models/campsites');
-mongoose.connect('mongodb://seng:seng@ds035846.mlab.com:35846/seng2021');
-
 var home = require('./routes/home');
 var campsearch = require('./routes/campsearch');
 var popularcampsites = require('./routes/popularcampsites');
