@@ -19,14 +19,14 @@ var Campsite = mongoose.model('Campsite', campsiteSchema);
 */
 
 /* GET home page. */
-router.get('/:id', function(req, res, next) {
+router.get('/', function(req, res, next) {
     /*
     Campsite.findOne({id: req.params.id}, function(err, data) {
         if (err) throw err;
     })*/
     res.render('campsites', {
-        place_id: req.params.id,
-        place_name: req.params.id,
+        place_id: req.param('id'),
+        place_address: req.param('address'),
         partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs', API_KEY: 'partials/api_key'}
     });
 });

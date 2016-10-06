@@ -253,8 +253,8 @@ function createMarker(place) {
             $("#campsites-list ul").append('<li><span class="campsite-name">' +
                 name + '</span><br />' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
-                'km<br /><a href="/campsites/site?id=' + id +
-                '&city=' + address +
+                'km<br /><a href="/campsites?id=' + id +
+                '&address=' + address +
                 '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
             console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
