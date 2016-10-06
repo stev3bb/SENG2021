@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express();
 
-
 /*
 var mongoose = require('mongoose');
 
@@ -16,18 +15,15 @@ var campsiteSchema = new mongoose.Schema({
 var Campsite = mongoose.model('Campsite', campsiteSchema);
 */
 
-
-
 /* GET home page. */
-router.get('/site', function(req, res, next) {
+router.get('/', function(req, res, next) {
     /*
     Campsite.findOne({id: req.params.id}, function(err, data) {
         if (err) throw err;
     })*/
     res.render('campsites', {
-        place_id: req.query.id,
-        place_name: req.query.city,
-
+        place_id: req.param('id'),
+        place_address: req.param('address'),
         partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs', API_KEY: 'partials/api_key'}
     });
 });
