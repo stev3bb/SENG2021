@@ -77,7 +77,9 @@ ___
 Very important page. These pages are dynamically generated based on a given ID, which will be used to retrieve information from our database **(requires Node.js + MongoDB knowledge)**. This information will then be generated onto the page (this isn't as difficult as it sounds, just need html), and external data such as the weather or sharing will be added using the three listed APIs.
 
 
-use this api: https://openweathermap.org/current
+use this api: https://openweathermap.org/
+api key: 4d30a475c46e1fc7e5c6d9f7ee6517be
+api doc: http://openweathermap.org/current
 
 ___
 
