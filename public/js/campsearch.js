@@ -217,6 +217,8 @@ function nearSearch() {
 function createMarker(place) {
     var location = place.geometry.location;
 
+    console.log("bad stuff is happening:"+ place.address);
+
     var icon = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
@@ -277,8 +279,9 @@ function createMarker(place) {
         //city here:
         //var city =
 
+        console.log("something is broken" + place_address);
 
-        infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' + '"><b>' + place.name + '</a></b></div>' +
+        infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' +'"><b>' + place.name + '</a></b></div>' +
             '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
