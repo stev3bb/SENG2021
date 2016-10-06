@@ -245,16 +245,13 @@ function createMarker(place) {
             } else {
                 var rating = "No reviews";
             }
-            post({
-                id: placeInfo.place_id,
-                name: placeInfo.name,
-                address: placeInfo.formatted_address,
-                phone: placeInfo.formatted_phone_number,
-                rating: rating
-            });
+            var id = placeInfo.place_id;
+            var name = placeInfo.name;
+            var address = placeInfo.formatted_address;
+            var phone = placeInfo.formatted_phone_number;
 
-            $("#campsites-list ul").append('<li><span class="campsite-name">' 
-                + name + '</span><br />' + address + '<br /><b>Phone:</b> ' 
+            $("#campsites-list ul").append('<li><span class="campsite-name">'
+                + name + '</span><br />' + address + '<br /><b>Phone:</b> '
                 + phone + '<br /><b>Distance:</b> ' + distance + 
                 'km<br /><a href="/campsites/' + placeInfo.place_id
                 + '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
