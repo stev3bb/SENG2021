@@ -250,12 +250,12 @@ function createMarker(place) {
             var address = placeInfo.formatted_address;
             var phone = placeInfo.formatted_phone_number;
 
-            $("#campsites-list ul").append('<li><span class="campsite-name">'
-                + name + '</span><br />' + address + '<br /><b>Phone:</b> '
-                + phone + '<br /><b>Distance:</b> ' + distance + 
-                'km<br /><a href="/campsites/site?id=' + placeInfo.place_id
-                + '&city=' + placeInfo.formatted_address +
-                + '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
+            $("#campsites-list ul").append('<li><span class="campsite-name">' +
+                name + '</span><br />' + address + '<br /><b>Phone:</b> ' +
+                phone + '<br /><b>Distance:</b> ' + distance +
+                'km<br /><a href="/campsites/site?id=' + id +
+                '&city=' + address +
+                '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
             console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             console.log("ran out of juice guys");
@@ -275,7 +275,7 @@ function createMarker(place) {
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
         //city here:
-        //var city = 
+        //var city =
 
 
         infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' + '"><b>' + place.name + '</a></b></div>' +
