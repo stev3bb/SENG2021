@@ -1,8 +1,5 @@
 var express = require('express');
-var router = express.Router();
-/*some var*/
-var location;
-
+var router = express();
 
 /*
 var mongoose = require('mongoose');
