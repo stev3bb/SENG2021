@@ -256,11 +256,12 @@ function createMarker(place) {
             $("#campsites-list ul").append('<li><span class="campsite-name">' 
                 + name + '</span><br />' + address + '<br /><b>Phone:</b> ' 
                 + phone + '<br /><b>Distance:</b> ' + distance + 
-                'km<br /><a href="/campsites/' + placeInfo.place_id + '&location=' + placeInfo.formatted_address
+                'km<br /><a href="/campsites/site?id=' + placeInfo.place_id
+                + '&city=' + placeInfo.formatted_address +
                 + '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
             console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
-            console.log("?????");
+            console.log("ran out of juice guys");
         }
     });
     console.log(place, distance)
@@ -276,9 +277,11 @@ function createMarker(place) {
         var locString = location.toString();
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
+        //city here:
+        //var city = 
 
 
-        infowindow.setContent('<div><a href="/campsites/' + place.place_id + '"><b>' + place.name + '</a></b></div>' +
+        infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' + '"><b>' + place.name + '</a></b></div>' +
             '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
