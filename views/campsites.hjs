@@ -9,6 +9,9 @@
     {{> navbar }}
     <div class="container" id="campsite-body">
         <h1>The ID of this campsite is: {{ place_id }}</h1>
+        <!-- give the location name here-->
+        <h2>The name of the campsite is: {{ place_name }} </h2>	
+        http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
     </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">

@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+/*some var*/
+var location;
+
+
 /*
 var mongoose = require('mongoose');
 
@@ -22,7 +26,7 @@ router.get('/:id', function(req, res, next) {
     })*/
     res.render('campsites', {
         place_id: req.params.id,
-
+        place_name: req.params.id,
         partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs', API_KEY: 'partials/api_key'}
     });
 });
