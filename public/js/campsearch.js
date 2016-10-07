@@ -278,14 +278,12 @@ function createMarker(place) {
         var locString = location.toString();
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
-        var apicall = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=45.714224,-73.961452&sensor=true'
+        var apicall = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
 
         //console.log("something is broken" + place_address);
 
-        //break the stuff here:
 
-
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng=45.714224,-73.961452&sensor=true', function (data) {
+        $.getJSON(apicall, function (data) {
             console.log("zzzzzzz broken code:" +data.results[0].formatted_address);
         });
 
