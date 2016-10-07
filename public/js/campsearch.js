@@ -286,7 +286,7 @@ function createMarker(place) {
         //break the stuff here:
 
         $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng=45.714224,-73.961452&sensor=true', function (data) {
-            console.log("zzzzzzz broken code:" +data.toString());
+            console.log("zzzzzzz broken code:" +data.results[0].formatted_address);
         });
 
 
