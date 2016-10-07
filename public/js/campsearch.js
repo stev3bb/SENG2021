@@ -279,17 +279,19 @@ function createMarker(place) {
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
         var apicall = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
+     
 
         //console.log("something is broken" + place_address);
 
 
         $.getJSON(apicall, function (data) {
-            console.log("zzzzzzz broken code:" +data.results[0].formatted_address);
+            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address +'"><b>' + place.name + '</a></b></div>' +
+            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         });
 
 
-        infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' +'"><b>' + place.name + '</a></b></div>' +
-            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
+        //infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ address +'"><b>' + place.name + '</a></b></div>' +
+          //  '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
