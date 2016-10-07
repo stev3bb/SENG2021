@@ -105,14 +105,15 @@ h1#discover {
 }
 
 #campsearch-body {
-    margin-top: 25px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 #map-options {
     float: left;
-    margin-left: 5%;
-    width: 92%;
-    height: 55em;
+    margin-left: 2vh;
+    width: 95%;
+    height: 88vh;
 
     display: inline;
     position: relative;
@@ -123,9 +124,8 @@ h1#discover {
 
 #map {
     background-color: #000;
-    margin-right: 50px;
-    height: 55em;
-    width: 97%;
+    height: 88vh;
+    width: 98%;
     float: left;
     border: 8px solid;
     display: inline;
