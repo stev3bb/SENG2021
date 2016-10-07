@@ -278,7 +278,7 @@ function createMarker(place) {
         var locString = location.toString();
         var regrex = /(\-.+)\, (.+)\)/g;
         var match = regrex.exec(locString);
-        var apicall = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
+        var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
      
 
         //console.log("something is broken" + place_address);
