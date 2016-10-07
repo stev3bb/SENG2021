@@ -217,7 +217,7 @@ function nearSearch() {
 function createMarker(place) {
     var location = place.geometry.location;
 
-    console.log("bad stuff is happening:"+ place.address);
+    //console.log("bad stuff is happening:"+ place.address);
 
     var icon = {
         url: place.icon,
@@ -263,7 +263,9 @@ function createMarker(place) {
             console.log("ran out of juice guys");
         }
     });
-    console.log(place, distance)
+    console.log(place, distance);
+
+   // console.log("zzzzz: "+place.formatted_address);
 
     google.maps.event.addListener(marker, 'click', function() {
         // var placeR;
@@ -279,7 +281,14 @@ function createMarker(place) {
         //city here:
         //var city =
 
-        console.log("something is broken" + place_address);
+        //console.log("something is broken" + place_address);
+
+        //break the stuff here:
+
+        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng=45.714224,-73.961452&sensor=true', function (data) {
+            console.log("zzzzzzz broken code:" +data.toString());
+        });
+
 
         infowindow.setContent('<div><a href="/campsites/site?id=' + place.place_id + '&city=' +'"><b>' + place.name + '</a></b></div>' +
             '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
