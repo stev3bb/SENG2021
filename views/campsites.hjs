@@ -12,6 +12,7 @@
         <!-- give the location weather-->
         <p> 
             <li>{{place_name}}</li>
+            <li>{{place_condition}}</li>
             <li>{{place_min}}</li>
             <li>{{place_max}}</li>
             <li>{{place_wind_speed}}</li>
