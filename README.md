@@ -63,16 +63,16 @@ Also, campsite information should have sorting options, such as by distance or r
 ___
 
 ### Campsite Information
-#### Completion: 1%
+#### Completion: 10%
 #### Requirements
 * **HTML**
-* **CSS + Bootstrap**
-* **Node.js**
-* **MongoDB + NoSQL**
-* **Twitter, Facebook API**
-* **Weather API**
+* **CSS + Bootstrap** (some one do this, i hate styling- steve)
+* **Node.js** 
+* **MongoDB + NoSQL** (do not really need, unless our site runs out of api calls)
+* **Twitter, Facebook API** 
+* **Weather API** (working, just need to implement 5 day weather report)
 
-#### Assigned to: [INSERT NAME(S) HERE]
+#### Assigned to: [steve]
 
 Very important page. These pages are dynamically generated based on a given ID, which will be used to retrieve information from our database **(requires Node.js + MongoDB knowledge)**. This information will then be generated onto the page (this isn't as difficult as it sounds, just need html), and external data such as the weather or sharing will be added using the three listed APIs.
 
