@@ -216,7 +216,9 @@ function nearSearch() {
 
 function createMarker(place) {
     var location = place.geometry.location;
-
+    var locString = location.toString();
+    var regrex = /(\-.+)\, (.+)\)/g;
+    var match = regrex.exec(locString);
     //console.log("bad stuff is happening:"+ place.address);
 
     var icon = {
@@ -253,14 +255,14 @@ function createMarker(place) {
             var phone = placeInfo.formatted_phone_number;
 
 
-            console.log('derpy derpy derp derp:'+placeInfo);
+            //console.log('derpy derpy derp derp:'+JSON.parse(placeInfo));
 
             $("#campsites-list ul").append('<li><span class="campsite-name">' +
                 name + '</span><br />' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
                 'km<br /><a href="/campsites?id=' + id +
-                '&address=' + address +
-                '"><button class="btn btn-default" type="button">View More</button></a></li><br />');
+                '&address=' + address + '&lat='+ match[1] + '&long=' + match[2]
+                +'"><button class="btn btn-default" type="button">View More</button></a></li><br />');
             console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             console.log("ran out of juice guys");
@@ -278,9 +280,9 @@ function createMarker(place) {
         //     placeR = place.rating + ' stars';
         // }
 
-        var locString = location.toString();
-        var regrex = /(\-.+)\, (.+)\)/g;
-        var match = regrex.exec(locString);
+        //var locString = location.toString();
+        //var regrex = /(\-.+)\, (.+)\)/g;
+        //var match = regrex.exec(locString);
         var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
      
 
