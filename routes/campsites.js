@@ -2,10 +2,10 @@
 var express = require('express');
 var router = express();
 var request = require('request');
-//var request = require('request');
 
-//url links 
-
+//open weather api key
+var weatherapikey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
+var flickrapikey = 'd417fc0243e0d8899645e1ff174d67d4';
 /*
 var mongoose = require('mongoose');
 
@@ -30,7 +30,13 @@ Campsite.findOne({id: req.params.id}, function(err, data) {
     var suburb = req.param('address');
     var match = regrex.exec(suburb);
 
-    var weatherapi ='http://api.openweathermap.org/data/2.5/weather?zip=+'+match[1]+',au&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=json&units=metric';
+    //api url licks
+    var weatherapi ='http://api.openweathermap.org/data/2.5/weather?zip=+'+match[1]+',au&appid='+weatherapikey+'&mode=json&units=metric';
+    var flickrapi ='https://api.flickr.com/services/rest/?method=flickr.photos.search
+    &api_key='+<insert api key>+'&tags='+<insert tags here>+'&min_upload_date='+<insert>+'&safe_search=1
+    &lat='+/*insert lattitude here*/+'&lon='+/*insert longitude here*/+'&format=json&nojsoncallback=1';
+
+
 
     request(
         {   url: weatherapi,
@@ -57,7 +63,13 @@ Campsite.findOne({id: req.params.id}, function(err, data) {
 });
 
 
-        
+/*
+
+===============
+instagram api key: 166f7b89a0044bfdb7c20ef2ed556049
+
+===============
+*/
 
 
 
