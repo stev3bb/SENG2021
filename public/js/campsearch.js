@@ -252,6 +252,9 @@ function createMarker(place) {
             var address = placeInfo.formatted_address;
             var phone = placeInfo.formatted_phone_number;
 
+
+            console.log('derpy derpy derp derp:'+placeInfo);
+
             $("#campsites-list ul").append('<li><span class="campsite-name">' +
                 name + '</span><br />' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
@@ -285,7 +288,8 @@ function createMarker(place) {
 
 
         $.getJSON(apicall, function (data) {
-            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address +'"><b>' + place.name + '</a></b></div>' +
+            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address 
+                +'&lat='+match[1]+'&long='+match[2]+'"><b>' + place.name + '</a></b></div>' +
             '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         });
 
