@@ -57,9 +57,14 @@ Campsite.findOne({id: req.params.id}, function(err, data) {
 
             for (i = 1, len=imgs.photos.photo.length; i<len; i++){
                 
-                arrpics+='<br>https://www.flickr.com/photos/'
-                +imgs.photos.photo[i].owner+'/'
-                +imgs.photos.photo[i].id+'</br>';
+                arrpics+='<br>https://farm'+imgs.photos.photo[i].farm
+                +'.staticflickr.com/'+imgs.photos.photo[i].server
+                +'/'+imgs.photos.photo[i].id+'_'
+                +imgs.photos.photo[i].secret+'.jpg</br>';
+
+               // arrpics+='<br>https://www.flickr.com/photos/'
+               // +imgs.photos.photo[i].owner+'/'
+                //+imgs.photos.photo[i].id+'</br>';
               //console.log('https://www.flickr.com/photos/'+imgs.photos.photo[i].owner+'/'+imgs.photos.photo[i].id);
 
             }
