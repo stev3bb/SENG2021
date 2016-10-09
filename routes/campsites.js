@@ -7,7 +7,7 @@ var request = require('request');
 var weatherapikey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrapikey = 'd417fc0243e0d8899645e1ff174d67d4';
 
-//time
+//time for 2016-01-01
 var unixtime = '1451606400';
 
 /* GET home page. */
@@ -21,11 +21,42 @@ router.get('/', function(req, res, next) {
 
     var placeImages = [];
 
+    var 5dayweather = [];
+
     //api url links
-    var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] + ',au&appid=' + weatherapikey + '&mode=json&units=metric';
+    var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] 
+    + ',au&appid=' + weatherapikey + '&mode=json&units=metric';
+    var weather5api = 'http://api.openweathermap.org/data/2.5/forecast?'
+    +'lat='+ test_lat +'&lon='+ test_long +'&appid='+ weatherapi +'&units=metric';
     var flickrapi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
         '&api_key=' + flickrapikey + '&tags=' + match[1] + '&min_upload_date=' + unixtime + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
+
+
+    //might use async package for multiple request
+    //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
+
+    //debugging statement:
+    console.log("the json request url:" + weather5api);
+
+    request({
+        url: weather5api,
+        json: true
+    }, function(error, response, weather5) {
+        if (!error && response.statusCode == 200) {
+            for (i = 1, requestlength = ; i<requestlength; i+=8){
+                5dayweather.push('array no.' + i  
+                    + ' weather description:'+ weather5.list[i].weather.description
+                    +' temp_min:' 
+                    + weather5.list[i].main.temp_min +  ' temp_max:'
+                    + weather5.list[i].main.temp_max + ' humidity:'
+                    + weather5.list[i].main.humidity + ' wind speed:'
+                    + weather5.list[i].wind.speed);
+            }
+        }
+    });
+
+
 
     request({
         url: flickrapi,
@@ -53,17 +84,18 @@ router.get('/', function(req, res, next) {
             request({
                 url: weatherapi,
                 json: true
-            }, function(error, response, body) {
+            }, function(error, response, weather) {
                 if (!error && response.statusCode == 200) {
                     console.log("Everything works");
                     res.render('campsites', {
                         //used for google maps
                         place_id: req.param('id'),
-                        place_name: body.name,
-                        place_condition: body.weather[0].description,
-                        place_min: body.main.temp_min,
-                        place_max: body.main.temp_max,
-                        place_wind_speed: body.wind.speed,
+                        place_name: weather.name,
+                        place_condition: weather.weather[0].description,
+                        place_min: weather.main.temp_min,
+                        place_max: weather.main.temp_max,
+                        place_wind_speed: weather.wind.speed,
+                        place_5day_weather: weather5,
                         placeImages: placeImages,
                         partials: {
                             header: 'partials/header',

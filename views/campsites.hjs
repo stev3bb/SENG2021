@@ -17,6 +17,11 @@
             <br>Max temperature: {{place_max}} degrees celsius</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
+        <p>
+            <ul>
+            {{#place_5day_weather}}<li>{{.}}</li>{{/place_5day_weather}}
+            </ul>
+        </p>
         <ul>
             {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
         </ul>
