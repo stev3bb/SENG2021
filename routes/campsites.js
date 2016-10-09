@@ -63,8 +63,8 @@ router.get('/', function(req, res, next) {
                     +'  temp_min:' 
                     + weather5.list[i].main.temp_min +  '  temp_max:'
                     + weather5.list[i].main.temp_max + '  humidity:'
-                    + weather5.list[i].main.humidity + '  wind speed:'
-                    + weather5.list[i].wind.speed); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
+                    + weather5.list[i].main.humidity + '%  wind speed:'
+                    + weather5.list[i].wind.speed +'m/s'); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
             }
         }
     });

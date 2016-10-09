@@ -11,6 +11,7 @@
         <h1>The ID of this campsite is: {{ place_id }}</h1>
         <!-- give the location weather-->
         <p>
+            <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
             <br>Weather condition: {{place_condition}}</br>
             <br>Min temperature: {{place_min}} degrees celsius</br>
