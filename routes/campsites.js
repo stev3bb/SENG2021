@@ -27,7 +27,12 @@ router.get('/', function(req, res, next) {
     var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] 
     + ',au&appid=' + weatherapikey + '&mode=json&units=metric';
     var weather5api = 'http://api.openweathermap.org/data/2.5/forecast?'
-    +'lat='+ test_lat +'&lon='+ test_long +'&appid='+ weatherapi +'&units=metric';
+    +'lat='+ test_lat +'&lon='+ test_long +'&appid='+ weatherapikey +'&units=metric';
+
+
+
+
+
     var flickrapi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
         '&api_key=' + flickrapikey + '&tags=' + match[1] + '&min_upload_date=' + unixtime + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
@@ -44,14 +49,22 @@ router.get('/', function(req, res, next) {
         json: true
     }, function(error, response, weather5) {
         if (!error && response.statusCode == 200) {
-            for (i = 1, requestlength = weather5.list.length ; i<requestlength; i+=8){
+            //more debugging
+            //console.log(weather5);
+            //check length here
+            //console.log("length of the array is here: "+weather5.list.length);
+
+            for (i = 0, requestlength = weather5.list.length ; i<requestlength; i+=8){
+
+
+                //console.log("array check :"+ i);
                 fivedayweather.push('array no.' + i  
-                    + ' weather description:'+ weather5.list[i].weather.description
-                    +' temp_min:' 
-                    + weather5.list[i].main.temp_min +  ' temp_max:'
-                    + weather5.list[i].main.temp_max + ' humidity:'
-                    + weather5.list[i].main.humidity + ' wind speed:'
-                    + weather5.list[i].wind.speed);
+                    + '  weather description:'+ weather5.list[i].weather[0].description
+                    +'  temp_min:' 
+                    + weather5.list[i].main.temp_min +  '  temp_max:'
+                    + weather5.list[i].main.temp_max + '  humidity:'
+                    + weather5.list[i].main.humidity + '  wind speed:'
+                    + weather5.list[i].wind.speed); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
             }
         }
     });
