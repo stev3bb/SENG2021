@@ -17,7 +17,9 @@
             <br>Max temperature: {{place_max}} degrees celsius</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
-        <p>{{#placeImages}}<li>{{.}}</li>{{/placeImages}}</p>
+        <ul>
+            {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
+        </ul>
        <!-- http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
     --></div>
     <script async defer

@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
     var test_lat = req.param('lat');
     var test_long = req.param('long');
 
-    var placeImgs = [];
+    var placeImages = [];
 
     //api url links
     var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] + ',au&appid=' + weatherapikey + '&mode=json&units=metric';
@@ -36,52 +36,48 @@ router.get('/', function(req, res, next) {
 
             for (i = 0; i < 20; i++) {
 
-                // placeImgs += '<br>https://farm' + imgs.photos.photo[i].farm +
+                // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
                 //     '.staticflickr.com/' + imgs.photos.photo[i].server +
                 //     '/' + imgs.photos.photo[i].id + '_' +
                 //     imgs.photos.photo[i].secret + '.jpg</br>';
                 //
-                // placeImgs += '<br>https://www.flickr.com/photos/' +
+                // placeImages += '<br>https://www.flickr.com/photos/' +
                 //     imgs.photos.photo[i].owner + '/' +
                 //     imgs.photos.photo[i].id + '</br>';
 
                 var imgUrl = 'https://www.flickr.com/photos/' + imgs.photos.photo[i].owner + '/' + imgs.photos.photo[i].id;
-                placeImgs.push(imgUrl);
+                placeImages.push(imgUrl);
                 console.log(imgUrl);
-
             }
 
-        }
-    });
-
-    request({
-        url: weatherapi,
-        json: true
-    }, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            //console.log(body)
-            res.render('campsites', {
-                //used for google maps
-                place_id: req.param('id'),
-                place_name: body.name,
-                place_condition: body.weather[0].description,
-                place_min: body.main.temp_min,
-                place_max: body.main.temp_max,
-                place_wind_speed: body.wind.speed,
-                placeImages: placeImgs,
-                partials: {
-                    header: 'partials/header',
-                    navbar: 'partials/navbar',
-                    bottomJs: 'partials/bottomJs',
-                    API_KEY: 'partials/api_key'
+            request({
+                url: weatherapi,
+                json: true
+            }, function(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    console.log("Everything works");
+                    res.render('campsites', {
+                        //used for google maps
+                        place_id: req.param('id'),
+                        place_name: body.name,
+                        place_condition: body.weather[0].description,
+                        place_min: body.main.temp_min,
+                        place_max: body.main.temp_max,
+                        place_wind_speed: body.wind.speed,
+                        placeImages: placeImages,
+                        partials: {
+                            header: 'partials/header',
+                            navbar: 'partials/navbar',
+                            bottomJs: 'partials/bottomJs',
+                            API_KEY: 'partials/api_key'
+                        }
+                    });
+                } else {
+                    console.log("Nothing works");
                 }
             });
-        } else {
-            //render something else
         }
-    })
-
-
+    });
 });
 
 
