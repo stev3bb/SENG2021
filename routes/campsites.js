@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 
     var placeImages = [];
 
-    var 5dayweather = [];
+    var fivedayweather = [];
 
     //api url links
     var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] 
@@ -44,8 +44,8 @@ router.get('/', function(req, res, next) {
         json: true
     }, function(error, response, weather5) {
         if (!error && response.statusCode == 200) {
-            for (i = 1, requestlength = ; i<requestlength; i+=8){
-                5dayweather.push('array no.' + i  
+            for (i = 1, requestlength = weather5.list.length ; i<requestlength; i+=8){
+                fivedayweather.push('array no.' + i  
                     + ' weather description:'+ weather5.list[i].weather.description
                     +' temp_min:' 
                     + weather5.list[i].main.temp_min +  ' temp_max:'
@@ -95,7 +95,7 @@ router.get('/', function(req, res, next) {
                         place_min: weather.main.temp_min,
                         place_max: weather.main.temp_max,
                         place_wind_speed: weather.wind.speed,
-                        place_5day_weather: weather5,
+                        place_5day_weather: fivedayweather,
                         placeImages: placeImages,
                         partials: {
                             header: 'partials/header',
