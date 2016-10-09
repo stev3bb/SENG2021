@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+  <style>
+  body {
+      position: relative;
+  }
+  .affix {
+      top: 20px;
+  }
+
+  </style>
+
+
+
 <head>
     {{> header }}
 </head>
@@ -16,7 +29,7 @@
   <div class="row">
     <nav class="col-sm-3" id="myScrollspy">
       <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section1">Camping!</a></li>
         <li><a href="#section2">Section 2</a></li>
         <li><a href="#section3">Section 3</a></li>
         <li class="dropdown">
@@ -29,73 +42,27 @@
       </ul>
     </nav>
     <div class="col-sm-9">
+
+
       <div id="section1">
-        <h1>Section 1</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
+
+
+
+        <h1>Camping!</h1>
+        <iframe width="420" height="236" src="https://www.youtube.com/embed/Z4rznVladqA" align="right" frameborder="0" border="5" allowfullscreen></iframe>
+        <p>
+            So, your probably wondering why you should leave your comfortable house, stop binging Game of Thrones and venture out into the great unknown that is camping. Our world is becoming larger and larger. More people are connected to the Internet than ever before. The amount of people who own a mobile phone has almost doubled in the past ten years. When in <br>a city, it is becoming virtually impossible to achieve a level of tranquility that comes by the very nature of being outdoors. <br><br>We all need a return to nature now and then, and we all can benefit with a break from our routines. The thought of sitting around a campfire under a clear sky, gazing up at the stars and listening to the sounds of the night can strengthen our bodies, pacify our minds and restore our spirits. Camping is rejuvenating!
+        </p>
+
+
+
+
+
+
       </div>
+
+
+
       <div id="section2">
         <h1>Section 2</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
