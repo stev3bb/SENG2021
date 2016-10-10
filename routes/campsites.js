@@ -48,7 +48,6 @@ router.get('/', function(req, res, next) {
             //console.log(weather5);
             //check length here
             //console.log("length of the array is here: "+weather5.list.length);
-           // if (typeof weather5.
             for (i = 3; i < weather5.list.length; i += 8) {
 
                 var day = {
@@ -82,26 +81,30 @@ router.get('/', function(req, res, next) {
         if (!error && response.statusCode == 200) {
             //console.log(imgs.photos.photo[0]);
 
-            for (i = 0; i < 20; i++) {
-                if (i === img.photos.photo.length) {
-                    break;
+            if (imgs.photos.photolength != 0){
+                for (i = 0; i < 20; i++) {
+                    if (i === img.photos.photo.length) {
+                        break;
+                    }
+
+                    // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
+                    //     '.staticflickr.com/' + imgs.photos.photo[i].server +
+                    //     '/' + imgs.photos.photo[i].id + '_' +
+                    //     imgs.photos.photo[i].secret + '.jpg</br>';
+                    //
+                    // placeImages += '<br>https://www.flickr.com/photos/' +
+                    //     imgs.photos.photo[i].owner + '/' +
+                    //     imgs.photos.photo[i].id + '</br>';
+
+                    var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
+                    '.staticflickr.com/' + imgs.photos.photo[i].server +
+                    '/' + imgs.photos.photo[i].id + '_' +
+                    imgs.photos.photo[i].secret + '.jpg';
+                    placeImages.push(imgUrl);
+                    console.log(imgUrl);
                 }
-
-                // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
-                //     '.staticflickr.com/' + imgs.photos.photo[i].server +
-                //     '/' + imgs.photos.photo[i].id + '_' +
-                //     imgs.photos.photo[i].secret + '.jpg</br>';
-                //
-                // placeImages += '<br>https://www.flickr.com/photos/' +
-                //     imgs.photos.photo[i].owner + '/' +
-                //     imgs.photos.photo[i].id + '</br>';
-
-                var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
-                '.staticflickr.com/' + imgs.photos.photo[i].server +
-                '/' + imgs.photos.photo[i].id + '_' +
-                imgs.photos.photo[i].secret + '.jpg';
-                placeImages.push(imgUrl);
-                console.log(imgUrl);
+            }else {
+                placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
             }
 
             request({
