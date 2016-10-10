@@ -36,47 +36,33 @@
             <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
             <br>Weather condition: {{place_condition}}</br>
-            <br>Min temperature: {{place_min}} degrees celsius</br>
-            <br>Max temperature: {{place_max}} degrees celsius</br>
+            <br>Current temperature: {{place_temp}}°C</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
 
         <p>
             <h2>5 day weather forecast:</h2>
             <ul>
-                {{#place_5day_weather}}<li>{{.}}</li>{{/place_5day_weather}}
+                {{#place_5day_weather}}<li>Date: {{ time }}
+                    <br />Weather forecast: {{ weather }}
+                    <br />Temperature: {{ temp }}°C
+                    <br />Humidity: {{ humidity }}%
+                    <br />Wind speed: {{ windSpeed }}m/s
+                </li>{{/place_5day_weather}}
             </ul>
         </p>
 
-        
+
+        <p>
+            <h2>Social media images of the place:</h2>
+            <ul>
+                {{#place_images}}<li>{{.}}</li>{{/place_images}}
+            </ul>
+        </P>
+
        <!-- http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
     --></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">
-    </script>
-
-    <!-- some copy and past function for image slider-->
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-                
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex-1].style.display = "block";
-        }
-    </script>
-
+    
     {{> bottomJs }}
 </body>
 
