@@ -21,13 +21,13 @@ router.get('/', function(req, res, next) {
 
     var placeImages = [];
 
-    var fivedayweather = [];
+    var fiveDayWeather = [];
 
     //api url links
-    var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] 
-    + ',au&appid=' + weatherapikey + '&mode=json&units=metric';
-    var weather5api = 'http://api.openweathermap.org/data/2.5/forecast?'
-    +'lat='+ test_lat +'&lon='+ test_long +'&appid='+ weatherapikey +'&units=metric';
+    var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] +
+        ',au&appid=' + weatherapikey + '&mode=json&units=metric';
+    var weather5api = 'http://api.openweathermap.org/data/2.5/forecast?' +
+        'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherapikey + '&units=metric';
 
 
 
@@ -54,17 +54,26 @@ router.get('/', function(req, res, next) {
             //check length here
             //console.log("length of the array is here: "+weather5.list.length);
 
-            for (i = 0, requestlength = weather5.list.length ; i<requestlength; i+=8){
+            for (i = 3; i < weather5.list.length; i += 8) {
 
-
+                var day = {
+                    time: weather5.list[i].dt_txt,
+                    weather: weather5.list[i].weather[0].description,
+                    minTemp: weather5.list[i].main.temp_min,
+                    maxTemp: weather5.list[i].main.temp_max,
+                    humidity: weather5.list[i].main.humidity,
+                    windSpeed: weather5.list[i].wind.speed
+                }
                 //console.log("array check :"+ i);
-                fivedayweather.push('array no.' + i  
-                    + '  weather description:'+ weather5.list[i].weather[0].description
-                    +'  temp_min:' 
-                    + weather5.list[i].main.temp_min +  '  temp_max:'
-                    + weather5.list[i].main.temp_max + '  humidity:'
-                    + weather5.list[i].main.humidity + '%  wind speed:'
-                    + weather5.list[i].wind.speed +'m/s'); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
+                // fiveDayWeather.push('Date:' + weather5.list[i].dt_txt +
+                //     'Weather description:' + weather5.list[i].weather[0].description +
+                //     'temp_min:' +
+                //     weather5.list[i].main.temp_min + '  temp_max:' +
+                //     weather5.list[i].main.temp_max + '  humidity:' +
+                //     weather5.list[i].main.humidity + '%  wind speed:' +
+                //     weather5.list[i].wind.speed + 'm/s'); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
+
+                fiveDayWeather.push(day);
             }
         }
     });
@@ -99,7 +108,6 @@ router.get('/', function(req, res, next) {
                 json: true
             }, function(error, response, weather) {
                 if (!error && response.statusCode == 200) {
-                    console.log("Everything works");
                     res.render('campsites', {
                         //used for google maps
                         place_id: req.param('id'),
@@ -108,7 +116,7 @@ router.get('/', function(req, res, next) {
                         place_min: weather.main.temp_min,
                         place_max: weather.main.temp_max,
                         place_wind_speed: weather.wind.speed,
-                        place_5day_weather: fivedayweather,
+                        place_5day_weather: fiveDayWeather,
                         placeImages: placeImages,
                         partials: {
                             header: 'partials/header',
