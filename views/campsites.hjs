@@ -13,15 +13,18 @@
 
 
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-<div class="fb-share-button" data-href=getCurrUrl() data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href=getCurrUrl()>Share</a></div>
+    <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
+    <a id="fbshareURL"class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
 
 
     <div class="container" id="campsite-body">
@@ -56,7 +59,36 @@
             </ul>
         </p>
     <script>
-        function getCurrUrl (){ return document.url; }
+
+        //give the page urls:
+
+        document.getElementById('pageURL').href = document.URL;
+        document.getElementById('fbshareURL').href = 'https://www.facebook.com/sharer/sharer.php?u='
+        + document.URL + '%2F&amp;src=sdkpreparse';
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+
+        function getCurrUrl (){
+            return document.url;
+        }
+
     </script>
     {{> bottomJs }}
     <script src="/js/unslider.js"></script>
