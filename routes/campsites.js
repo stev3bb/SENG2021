@@ -121,6 +121,9 @@ router.get('/', function(req, res, next) {
                     placeImages.push(imgUrl);
                     console.log(imgUrl);
                 }
+            }else {
+                //or else internet meme
+                placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
             }
 
             request({
