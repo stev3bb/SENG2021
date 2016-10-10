@@ -3,35 +3,100 @@
 
 <head>
     {{> header }}
+    <link rel="stylesheet" href="/css/unslider.css" />
+    <link rel="stylesheet" href="/css/unslider-dots.css" />
 </head>
 
 <body>
     {{> navbar }}
-    <div class="container" id="campsite-body">
-        <h1>The ID of this campsite is: {{ place_id }}</h1>
-        <!-- give the location weather-->
-        <p>
-            <br><b>The name of this camp site:</b> {{place_name}}</br>
-            <br>Weather condition: {{place_condition}}</br>
-            <br>Min temperature: {{place_min}} degrees celsius</br>
-            <br>Max temperature: {{place_max}} degrees celsius</br>
-            <br>Current wind speed: {{place_wind_speed}} m/s</br>
-        </p>
-        <p>
-            <ul>
-            {{#place_5day_weather}}<li>{{.}}</li>{{/place_5day_weather}}
-            </ul>
-        </p>
-        <ul>
-            {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
-        </ul>
-       <!-- http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
-    --></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">
+    <!-- ugly af facebook button-->
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
+    <a id="fbshareURL"class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
+
+
+    <div class="container" id="campsite-body">
+        <h1>{{ place.name }}</h1>
+        <h3>{{ place.address }}</h3>
+        <h3>{{ place.phone }}</h3>
+        <h3>{{ place.rating }} stars</h3>
+        <h3><a href="{{place.website}}">{{ place.website }}</a></h3>
+
+        <div class="slider">
+            <ul>{{#place_images}}<li><img src="{{.}}"></li>{{/place_images}}</ul>
+        </div>
+
+        <!-- give a 5 day weather forecast of the location-->
+        <p>
+            <h2>Today's weather:</h2>
+            <br><b>The name of this camp site:</b> {{place_name}}</br>
+            <br>Weather condition: {{place_condition}}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
+            <br>Current temperature: {{place_temp}}°C</br>
+            <br>Current wind speed: {{place_wind_speed}} m/s</br>
+        </p>
+
+        <p>
+            <h2>5 day weather forecast:</h2>
+            <ul>
+                {{#place_5day_weather}}<li>Date: {{ time }}
+                    <br />Weather forecast: {{ weather }} <img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png">
+                    <br />Temperature: {{ temp }}°C
+                    <br />Humidity: {{ humidity }}%
+                    <br />Wind speed: {{ windSpeed }}m/s
+                </li>{{/place_5day_weather}}
+            </ul>
+        </p>
+    <script>
+
+        //give the page urls:
+
+        document.getElementById('pageURL').href = document.URL;
+        document.getElementById('fbshareURL').href = 'https://www.facebook.com/sharer/sharer.php?u='
+        + document.URL + '%2F&amp;src=sdkpreparse';
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+
+        function getCurrUrl (){
+            return document.url;
+        }
+
+    </script>
     {{> bottomJs }}
+    <script src="/js/unslider.js"></script>
+    <script>$(function() {
+    $('.slider').unslider({
+        infinite: true
+    });
+    })</script>
 </body>
 
 </html>
