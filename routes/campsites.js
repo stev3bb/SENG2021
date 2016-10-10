@@ -58,6 +58,7 @@ router.get('/', function(req, res, next) {
                     temp: weather5.list[i].main.temp,
                     humidity: weather5.list[i].main.humidity,
                     windSpeed: weather5.list[i].wind.speed,
+                    icon: weather5.list[i].weather[0].icon
                     //code: weather5.list[i].weather[0].main,
                 }
                 //console.log("array check :"+ i);
@@ -140,6 +141,7 @@ router.get('/', function(req, res, next) {
                         place_wind_speed: weather.wind.speed,
                         place_5day_weather: fiveDayWeather,
                         place_images: placeImages,
+                        place_icon: weather.weather[0].icon,
                         partials: {
                             header: 'partials/header',
                             navbar: 'partials/navbar',

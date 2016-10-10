@@ -3,9 +3,8 @@
 
 <head>
     {{> header }}
-    <!-- SOME UGLY STYLE SHEET FROM W3-->
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <script src="js/campsites.js"></script>
+    <link rel="stylesheet" href="/css/unslider.css" />
+    <link rel="stylesheet" href="/css/unslider-dots.css" />
 </head>
 
 <body>
@@ -35,21 +34,15 @@
         <h3>{{ place.rating }} stars</h3>
         <h3><a href="{{place.website}}">{{ place.website }}</a></h3>
 
-        <!--test some slider -->
-        <h2 class="w3-center">DO YOU EVEN LIFT BRO?!?!</h2>
-        <div class="w3-content" style="max-width:800px;position:relative">
-        {{#place_images}}<img class="mySlides" src="{{.}}" style="width:100%">{{/place_images}}
-
-
-        <a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
-        <a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+        <div class="slider">
+            <ul>{{#place_images}}<li><img src="{{.}}"></li>{{/place_images}}</ul>
         </div>
 
         <!-- give a 5 day weather forecast of the location-->
         <p>
             <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
-            <br>Weather condition: {{place_condition}}</br>
+            <br>Weather condition: {{place_condition}}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
             <br>Current temperature: {{place_temp}}°C</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
@@ -58,16 +51,15 @@
             <h2>5 day weather forecast:</h2>
             <ul>
                 {{#place_5day_weather}}<li>Date: {{ time }}
-                    <br />Weather forecast: {{ weather }}
+                    <br />Weather forecast: {{ weather }} <img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png">
                     <br />Temperature: {{ temp }}°C
                     <br />Humidity: {{ humidity }}%
                     <br />Wind speed: {{ windSpeed }}m/s
                 </li>{{/place_5day_weather}}
             </ul>
         </p>
-
-    <!-- some copy and past function for image slider-->
     <script>
+
         //give the page urls:
 
         document.getElementById('pageURL').href = document.URL;
@@ -96,9 +88,13 @@
         function getCurrUrl (){
             return document.url;
         }
-    </script>
 
+    </script>
     {{> bottomJs }}
+    <script src="/js/unslider.js"></script>
+    <script>$(function() { $('.slider').unslider({
+        infinite: true
+    }); })</script>
 </body>
 
 </html>
