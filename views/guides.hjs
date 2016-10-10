@@ -41,7 +41,7 @@
             </ul>
         </li>
 
-        <li><a href="#section3">Section 3</a></li>
+        <li><a href="#section3">Things to do</a></li>
 
 
         <li class="dropdown">
@@ -287,7 +287,7 @@
                 </div>
 
 
-              </div>
+             </div>
 
         <div id="Cooking Utensils">
             <h2>Cooking Utensils</h2>
@@ -346,7 +346,75 @@
 
       </div>
       <div id="section3">
-        <h1>Section 3</h1>
+        <h1>Things to do</h1>
+        <p>There is no shortage of activities to do while camping. Simply coooking and breathing the fresh air is often enough. However, if you are more adventurous there are other options.</p>
+
+
+        <div class="panel-group" id="accordion3">
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse9">Fishing</a>
+                </h4>
+              </div>
+              <div id="collapse9" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="col-md-8">
+                        Fishing is great fun. It involves simply sitting nd chilling out for extended periods of time.
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img src="img/Fishing.jpg" width="200" height="200">
+                        </center>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse10">Hiking</a>
+                </h4>
+              </div>
+              <div id="collapse10" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="col-md-8">
+                        Unlike other XTREME sports like rock climbing and heli-skiing, you don’t need hundreds or thousands of dollars’ worth of gadgets and shiny things to hike. If you have shoes, a Snickers bar, and a bottle of water, you can go hiking. Also, if you only have shoes and no Snickers bar or bottle of water, you can still go hiking.
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img src="img/Hike.jpg" width="200" height="200">
+                        </center>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse11">Four-Wheel Driving</a>
+                </h4>
+              </div>
+              <div id="collapse11" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="col-md-8">
+                        Off road four-wheel driving provides much more flexibility and adrenaline than an equivalent hike. It allows explorers to read locations far further and more remote than an ordinary bush-walk.
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img src="img/four-wheel.jpg" width="200" height="200">
+                        </center>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+         </div>
 
 
 
