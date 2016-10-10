@@ -74,7 +74,14 @@ router.get('/', function(req, res, next) {
         }
     });
 
-
+    request({
+        url: mapsApi,
+        json: true
+    }, function(error, response, place) {
+        if (!error && response.statusCode == 200) {
+            console.log(place.result.formatted_address);
+        }
+    })
 
     request({
         url: flickrApi,
@@ -84,7 +91,7 @@ router.get('/', function(req, res, next) {
             //console.log(imgs.photos.photo[0]);
 
             for (i = 0; i < 20; i++) {
-                if (i === img.photos.photo.length) {
+                if (i === imgs.photos.photo.length) {
                     break;
                 }
 
