@@ -9,7 +9,7 @@ var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
 var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
 
 //time for 2016-01-01
-var unixTime = '1451606400';
+//var unixTime = '1451606400';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
     var fiveDayWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?' +
         'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherApiKey + '&units=metric';
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&min_upload_date=' + unixTime + '&safe_search=1' +
+        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&sort=date-posted-desc' + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
@@ -49,7 +49,7 @@ router.get('/', function(req, res, next) {
             //console.log(weather5);
             //check length here
             //console.log("length of the array is here: "+weather5.list.length);
-
+           // if (typeof weather5.
             for (i = 3; i < weather5.list.length; i += 8) {
 
                 var day = {
@@ -57,7 +57,8 @@ router.get('/', function(req, res, next) {
                     weather: weather5.list[i].weather[0].description,
                     temp: weather5.list[i].main.temp,
                     humidity: weather5.list[i].main.humidity,
-                    windSpeed: weather5.list[i].wind.speed
+                    windSpeed: weather5.list[i].wind.speed,
+                    //code: weather5.list[i].weather[0].main,
                 }
                 //console.log("array check :"+ i);
                 // fiveDayWeather.push('Date:' + weather5.list[i].dt_txt +
