@@ -9,6 +9,21 @@
 
 <body>
     {{> navbar }}
+    <!-- ugly af facebook button-->
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href=getCurrUrl() data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href=getCurrUrl()>Share</a></div>
+
+
     <div class="container" id="campsite-body">
         <h1>{{ place.name }}</h1>
         <h3>{{ place.address }}</h3>
@@ -24,7 +39,7 @@
         <p>
             <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
-            <br>Weather condition: {{place_condition}}</br>
+            <br>Weather condition: {{place_condition}}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
             <br>Current temperature: {{place_temp}}°C</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
@@ -33,14 +48,16 @@
             <h2>5 day weather forecast:</h2>
             <ul>
                 {{#place_5day_weather}}<li>Date: {{ time }}
-                    <br />Weather forecast: {{ weather }}
+                    <br />Weather forecast: {{ weather }} <img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png">
                     <br />Temperature: {{ temp }}°C
                     <br />Humidity: {{ humidity }}%
                     <br />Wind speed: {{ windSpeed }}m/s
                 </li>{{/place_5day_weather}}
             </ul>
         </p>
-
+    <script>
+        function getCurrUrl (){ return document.url; }
+    </script>
     {{> bottomJs }}
     <script src="/js/unslider.js"></script>
     <script>$(function() { $('.slider').unslider({
