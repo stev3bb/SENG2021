@@ -26,7 +26,11 @@
 
 
     <div class="container" id="campsite-body">
-        <h1>The ID of this campsite is: {{ place_id }}</h1>
+        <h1>{{ place.name }}</h1>
+        <h3>{{ place.address }}</h3>
+        <h3>{{ place.phone }}</h3>
+        <h3>{{ place.rating }} stars</h3>
+        <h3><a href="{{place.website}}">{{ place.website }}</a></h3>
 
         <!--test some slider -->
         <h2 class="w3-center">DO YOU EVEN LIFT BRO?!?!</h2>

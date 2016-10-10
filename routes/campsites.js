@@ -22,6 +22,7 @@ router.get('/', function(req, res, next) {
 
     var placeImages = [];
     var fiveDayWeather = [];
+    var placeDetails = {};
 
     //api url links
     var weatherApi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] +
@@ -78,7 +79,16 @@ router.get('/', function(req, res, next) {
         json: true
     }, function(error, response, place) {
         if (!error && response.statusCode == 200) {
-            console.log(place.result.formatted_address);
+            placeDetails.name = place.result.name;
+            placeDetails.address = place.result.formatted_address;
+            if (place.result.formatted_phone_number)
+                placeDetails.phone = place.result.formatted_phone_number;
+            if (place.result.opening_hours)
+                placeDetails.openingHours = place.result.opening_hours.weekday_text;
+            if (place.result.rating)
+                placeDetails.rating = place.result.rating;
+            if (place.result.website)
+                placeDetails.website = place.result.website;
         }
     })
 
@@ -110,10 +120,7 @@ router.get('/', function(req, res, next) {
                     imgs.photos.photo[i].secret + '.jpg';
                     placeImages.push(imgUrl);
                     console.log(imgUrl);
-
                 }
-            }else {
-                placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
             }
 
             request({
@@ -121,10 +128,10 @@ router.get('/', function(req, res, next) {
                 json: true
             }, function(error, response, weather) {
                 if (!error && response.statusCode == 200) {
+                    // console.log(placeDetails);
                     res.render('campsites', {
                         //used for google maps
-                        place_id: req.query.id,
-                        place_name: weather.name,
+                        place: placeDetails,
                         place_condition: weather.weather[0].description,
                         place_temp: weather.main.temp,
                         place_wind_speed: weather.wind.speed,
