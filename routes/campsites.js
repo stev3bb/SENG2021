@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
             //console.log(weather5);
             //check length here
             //console.log("length of the array is here: "+weather5.list.length);
-
+           // if (typeof weather5.
             for (i = 3; i < weather5.list.length; i += 8) {
 
                 var day = {
