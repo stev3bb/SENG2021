@@ -82,6 +82,9 @@ router.get('/', function(req, res, next) {
             //console.log(imgs.photos.photo[0]);
 
             for (i = 0; i < 20; i++) {
+                if (i === img.photos.photo.length) {
+                    break;
+                }
 
                 // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
                 //     '.staticflickr.com/' + imgs.photos.photo[i].server +
