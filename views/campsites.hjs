@@ -60,9 +60,11 @@
     </script>
     {{> bottomJs }}
     <script src="/js/unslider.js"></script>
-    <script>$(function() { $('.slider').unslider({
+    <script>$(function() {
+    $('.slider').unslider({
         infinite: true
-    }); })</script>
+    });
+    })</script>
 </body>
 
 </html>
