@@ -82,7 +82,7 @@ router.get('/', function(req, res, next) {
 
             console.log("debugging starting here:");
             console.log(imgs.photos.photo);
-
+            console.log(flickrapi);
 
 
 
