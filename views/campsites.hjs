@@ -24,8 +24,7 @@
             <ul>
                 {{#place_5day_weather}}<li>Date: {{ time }}
                     <br />Weather forecast: {{ weather }}
-                    <br />Minimum temperature: {{ minTemp }}
-                    <br />Maximum temperature: {{ maxTemp }}
+                    <br />Temperature: {{ temp }}°C
                     <br />Humidity: {{ humidity }}
                     <br />Wind speed: {{ windSpeed }}
                 </li>{{/place_5day_weather}}

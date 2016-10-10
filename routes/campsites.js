@@ -4,37 +4,32 @@ var router = express();
 var request = require('request');
 
 //api keys
-var weatherapikey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
-var flickrapikey = 'd417fc0243e0d8899645e1ff174d67d4';
+var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
+var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
 
 //time for 2016-01-01
-var unixtime = '1451606400';
+var unixTime = '1451606400';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var regrex = /.*\, .* (.*) (\d+)\, \w+/g;
-    var suburb = req.param('address');
+    var suburb = req.query.address;
     var match = regrex.exec(suburb);
 
-    var test_lat = req.param('lat');
-    var test_long = req.param('long');
+    var test_lat = req.query.lat;
+    var test_long = req.query.long;
 
     var placeImages = [];
 
     var fiveDayWeather = [];
 
     //api url links
-    var weatherapi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] +
-        ',au&appid=' + weatherapikey + '&mode=json&units=metric';
-    var weather5api = 'http://api.openweathermap.org/data/2.5/forecast?' +
-        'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherapikey + '&units=metric';
-
-
-
-
-
-    var flickrapi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-        '&api_key=' + flickrapikey + '&tags=' + match[1] + '&min_upload_date=' + unixtime + '&safe_search=1' +
+    var weatherApi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] +
+        ',au&appid=' + weatherApiKey + '&mode=json&units=metric';
+    var fiveDayWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?' +
+        'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherApiKey + '&units=metric';
+    var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
+        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&min_upload_date=' + unixTime + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
 
 
@@ -42,10 +37,10 @@ router.get('/', function(req, res, next) {
     //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
 
     //debugging statement:
-    console.log("the json request url:" + weather5api);
+    console.log("the json request url:" + fiveDayWeatherApi);
 
     request({
-        url: weather5api,
+        url: fiveDayWeatherApi,
         json: true
     }, function(error, response, weather5) {
         if (!error && response.statusCode == 200) {
@@ -59,8 +54,7 @@ router.get('/', function(req, res, next) {
                 var day = {
                     time: weather5.list[i].dt_txt,
                     weather: weather5.list[i].weather[0].description,
-                    minTemp: weather5.list[i].main.temp_min,
-                    maxTemp: weather5.list[i].main.temp_max,
+                    temp: weather5.list[i].main.temp,
                     humidity: weather5.list[i].main.humidity,
                     windSpeed: weather5.list[i].wind.speed
                 }
@@ -81,7 +75,7 @@ router.get('/', function(req, res, next) {
 
 
     request({
-        url: flickrapi,
+        url: flickrApi,
         json: true
     }, function(error, response, imgs) {
         if (!error && response.statusCode == 200) {
@@ -104,13 +98,13 @@ router.get('/', function(req, res, next) {
             }
 
             request({
-                url: weatherapi,
+                url: weatherApi,
                 json: true
             }, function(error, response, weather) {
                 if (!error && response.statusCode == 200) {
                     res.render('campsites', {
                         //used for google maps
-                        place_id: req.param('id'),
+                        place_id: req.query.id,
                         place_name: weather.name,
                         place_condition: weather.weather[0].description,
                         place_min: weather.main.temp_min,
