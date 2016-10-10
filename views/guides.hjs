@@ -42,15 +42,9 @@
         </li>
 
         <li><a href="#section3">Things to do</a></li>
+        <li><a href="#section4">How to use this <br>Website</a></li>
 
 
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#section41">Section 4-1</a></li>
-            <li><a href="#section42">Section 4-2</a></li>
-          </ul>
-        </li>
       </ul>
     </nav>
     <div class="col-sm-9">
@@ -91,7 +85,9 @@
                                 Ridge tents are very stable, easy to construct and perfect for one-to-two occupants. They can be found at almost any camping/outlet store and are generally the cheapest on the market. The largest drawback is the lack of headroom which can become frustranting if used for extended periods of time.
                                 <br>
 
-                                <br><a href="https://www.youtube.com/watch?v=6f32w5N6QfU"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+                                <br><a href="https://www.youtube.com/watch?v=6f32w5N6QfU"><button type="button" class="btn btn-default">Assembly Instructions</button></a></a>
+                                <a href="http://www.ebay.co.uk/bhp/ridge-tent"><button type="button" class="btn btn-default">Purchase</button></a></a>
+
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -117,6 +113,7 @@
                             <br>
 
                             <br><a href="https://www.youtube.com/watch?v=WYxbKlm5fAM"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+                            <a href="https://www.anacondastores.com/camping-hiking/tents/camping-tents/spinifex-jindabyne-dome-tent/p/BP90040785"><button type="button" class="btn btn-default">Purchase</button></a>
 
                         </div>
                         <div class="col-md-4">
@@ -142,6 +139,7 @@
                             <br>
 
                             <br><a href="https://www.youtube.com/watch?v=vEdSVmbkrj8"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+                            <a href="https://www.anacondastores.com/camping-hiking/tents/camping-tents/spinifex-strahan-6v-tent/p/BP90040783"><button type="button" class="btn btn-default">Purchase</button></a>
 
 
 
@@ -171,6 +169,7 @@
                             <br>
 
                             <br><a href="https://www.youtube.com/watch?v=ko2OZPzxytk"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+                            <a href="https://www.podtents.com/shop/?v=6cc98ba2045f"><button type="button" class="btn btn-default">Purchase</button></a>
 
 
                         </div>
@@ -197,7 +196,7 @@
                             <br>
 
                             <br><a href="https://www.youtube.com/watch?v=r8sYK-doyLE"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
-
+                            <a href="https://arcticoventent.com/tents/all-tents/arctic-oven-10-extreme/"><button type="button" class="btn btn-default">Purchase</button></a>
 
                         </div>
                         <div class="col-md-4">
@@ -421,14 +420,11 @@
 
       </div>
 
-      <div id="section41">
-        <h1>Section 4-1</h1>
+      <div id="section4">
+        <h1>How to use this Website</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
       </div>
-      <div id="section42">
-        <h1>Section 4-2</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-      </div>
+
     </div>
   </div>
 </div>
