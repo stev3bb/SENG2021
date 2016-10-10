@@ -107,11 +107,10 @@ router.get('/', function(req, res, next) {
                         place_id: req.query.id,
                         place_name: weather.name,
                         place_condition: weather.weather[0].description,
-                        place_min: weather.main.temp_min,
-                        place_max: weather.main.temp_max,
+                        place_temp: weather.main.temp,
                         place_wind_speed: weather.wind.speed,
                         place_5day_weather: fiveDayWeather,
-                        placeImages: placeImages,
+                        place_images: placeImages,
                         partials: {
                             header: 'partials/header',
                             navbar: 'partials/navbar',
