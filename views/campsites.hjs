@@ -46,7 +46,7 @@
         <p>
             <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
-            <br>Weather condition: {{place_condition}}</br>
+            <br>Weather condition: {{place_condition}}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
             <br>Current temperature: {{place_temp}}°C</br>
             <br>Current wind speed: {{place_wind_speed}} m/s</br>
         </p>
@@ -55,7 +55,7 @@
             <h2>5 day weather forecast:</h2>
             <ul>
                 {{#place_5day_weather}}<li>Date: {{ time }}
-                    <br />Weather forecast: {{ weather }}
+                    <br />Weather forecast: {{ weather }} <img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"> 
                     <br />Temperature: {{ temp }}°C
                     <br />Humidity: {{ humidity }}%
                     <br />Wind speed: {{ windSpeed }}m/s
