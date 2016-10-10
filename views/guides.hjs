@@ -27,11 +27,23 @@
 
 <div class="container">
   <div class="row">
-    <nav class="col-sm-3" id="myScrollspy">
+    <nav class="col-sm-2" id="myScrollspy">
       <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-        <li><a href="#section1">Camping!</a></li>
-        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section1">Camping</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">What to Take <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#Tent">Tent</a></li>
+                <li><a href="#Sleeping-Bag">Sleeping Bag</a></li>
+                <li><a href="#Cooking Utensils">Cooking Utensils</a></li>
+
+            </ul>
+        </li>
+
         <li><a href="#section3">Section 3</a></li>
+
+
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -45,98 +57,302 @@
 
 
       <div id="section1">
-
-
-
-        <h1>Camping!</h1>
+        <h1>Camping</h1>
         <iframe width="420" height="236" src="https://www.youtube.com/embed/Z4rznVladqA" align="right" frameborder="0" border="5" allowfullscreen></iframe>
         <p>
             So, your probably wondering why you should leave your comfortable house, stop binging Game of Thrones and venture out into the great unknown that is camping. Our world is becoming larger and larger. More people are connected to the Internet than ever before. The amount of people who own a mobile phone has almost doubled in the past ten years. When in <br>a city, it is becoming virtually impossible to achieve a level of tranquility that comes by the very nature of being outdoors. <br><br>We all need a return to nature now and then, and we all can benefit with a break from our routines. The thought of sitting around a campfire under a clear sky, gazing up at the stars and listening to the sounds of the night can strengthen our bodies, pacify our minds and restore our spirits. Camping is rejuvenating!
         </p>
-
-
-
-
-
-
       </div>
 
 
 
       <div id="section2">
-        <h1>Section 2</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <br>
+        <h1>What to Take</h1>
+            <p>You know the old Scout motto: "A boy scout is always prepared". Equally, your camping trip will become exponentially easier and more enjoyable if proper planning and equipment has been brought along.Here is a bare-bones starter kit to bring with you on your first camping trip:
+            </p>
+
+        <div id="Tent">
+            <h2>Tent </h2>
+              <p>The most important piece of equipment for your camping arsenal is a proper tent. Depending of the size and length of your expedition a different type of tent could be warranted. </p><br>
+
+
+              <div class="panel-group" id="accordion">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">The Basic Ridge Tent</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            <div class="row">
+                                Ridge tents are very stable, easy to construct and perfect for one-to-two occupants. They can be found at almost any camping/outlet store and are generally the cheapest on the market. The largest drawback is the lack of headroom which can become frustranting if used for extended periods of time.
+                                <br>
+
+                                <br><a href="https://www.youtube.com/watch?v=6f32w5N6QfU"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Rigde-Tent.png" width="245" height="133">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Dome Tent</a>
+                    </h4>
+                  </div>
+                  <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            Dome tents have become the most popular tent on the market. The sides are more vertical so overall headroom is better across a wider floor area. Stability is good in smaller models but, unlike the ridge tent, domes can get less stable as they scale up in size.
+
+                            <br>
+
+                            <br><a href="https://www.youtube.com/watch?v=WYxbKlm5fAM"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Dome-Tent.jpg" width="150" height="150">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Instant Tent</a>
+                    </h4>
+                  </div>
+                  <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            Instant tents are the latest innovation in the technology of tent assembly. Simply remove the tent from it's casing, place it in the required position and watch it spring open. The most frustrating part of this tent is the struggle of squeezing the body back into the case from where it came.
+                            <br>
+
+                            <br><a href="https://www.youtube.com/watch?v=vEdSVmbkrj8"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+
+
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Instant-Tent.jpg" width="150" height="150">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Pod Living</a>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            Pod/Modular tents are another new innovation in tent design. They are often very large with ample room between 'rooms'. Children could have their own sleeping area far away from the quieter adults. The disadvantages for this design lie in its size. The tent can be very heavy and a pain to erect. Further, many campsites charge more for tents this large.
+
+                            <br>
+
+                            <br><a href="https://www.youtube.com/watch?v=ko2OZPzxytk"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Pod-Tent.jpg" width="273" height="185">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Cold Weather Tent</a>
+                    </h4>
+                  </div>
+                  <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            Many of the best camping spots lie off the beaten trail. In Many of these grounds you could find yourself staying the night in some cold and inhospitable places. For these, it is recommended that you obtain a cold weather tent. These tents are specially engineered for the coldest of surroundings and can be the difference between a comfortable nights sleep and waking up to frostbite.
+
+                            <br>
+
+                            <br><a href="https://www.youtube.com/watch?v=r8sYK-doyLE"><button type="button" class="btn btn-default">Assembly Instructions</button></a>
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Cold-Tent.jpg" width="250" height="200">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+        </div>
+        <div id="Sleeping-Bag">
+            <h2>Sleeping Bag</h2>
+            <p>A comfortable sleeping bag is crucial to a good nights sleep when camping. In a lot of cases, keeping ourselves warm can be the difference between a great camping experience & an absolute miserable one. On a personal note this drives me crazy! As for a lot of first time campers it could spell the end of camping forever. NOT A GOOD START!</p>
+
+
+
+            <div class="panel-group" id="accordion2">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Alpine Sleeping Bag</a>
+                    </h4>
+                  </div>
+                  <div id="collapse6" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            Designed for extreme conditions above the snowline. They need to be both warm and light: a mummy shape, lightweight fabric and high quality down are used to give a high warmth-to-weight ratio, with water-resistant shell fabrics also common.
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Alpine-Bag.jpg" width="200" height="200">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Bushwalking Bags</a>
+                    </h4>
+                  </div>
+                  <div id="collapse7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            This bag is used by highers and bushwalkers who are setting up camp during their expeditions. These bags are focused on a light-weight design with a minimal footprint - taking up little room in your bag.
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Bush-Bag.gif" width="200" height="200">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">All-Rounder Bag</a>
+                    </h4>
+                  </div>
+                  <div id="collapse8" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-md-8">
+                            These bags are for your first time campers. They have a lightweight, low-cost and ease of pack-up combination that make them perfect for the maiden camping expedition.
+                        </div>
+                        <div class="col-md-4">
+                            <center>
+                                <img src="img/Sleep-Bag.jpg" width="200" height="200">
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+        <div id="Cooking Utensils">
+            <h2>Cooking Utensils</h2>
+            The following cooking utensils are vital for preparing meals while camping. All the <button type="button" class="btn btn-default">Purchase</button> links redirect to a camping website which you can buy the item from.
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th><center>Utensil</center></th>
+                  <th><center>Image</center></th>
+                  <th><center>Purchase</center></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><center>Plates</center></th>
+                  <td>
+                      <center>
+                          <img src="img/Plates.jpg" width="100" height="100">
+                      </center></td>
+                  <td><center><a href="https://www.anacondastores.com/camping-hiking/camp-cooking/camp-tableware/campfire-melamine-dinner-plate/p/BP90042165"><button type="button" class="btn btn-default">Purchase</button></center></td>
+                </tr>
+                <tr>
+                  <th scope="row"><center>Plates</center></th>
+                  <td>
+                      <center>
+                          <img src="img/Cutlery.jpg" width="100" height="100">
+                      </center></td>
+                  <td><center><a href="https://www.anacondastores.com/camping-hiking/camp-cooking/camp-tableware/sea-to-summit-alpha-light-3-piece-cutlery-set/p/BP90026869001"><button type="button" class="btn btn-default">Purchase</button></center></td>
+                </tr>
+                <tr>
+                  <th scope="row"><center>Thermos</center></th>
+                  <td>
+                      <center>
+                          <img src="img/Thermos.png" width="100" height="100">
+                      </center></td>
+                  <td><center><a href="https://www.anacondastores.com/camping-hiking/camp-cooking/camp-tableware/thermos-vacuum-insulated-flask/p/BP90046340"><button type="button" class="btn btn-default">Purchase</button></center></td>
+                </tr>
+                <tr>
+                  <th scope="row"><center>Frying Pan</center></th>
+                  <td>
+                      <center>
+                          <img src="img/Fryer.jpg" width="100" height="100">
+                      </center></td>
+                  <td><center><a href="https://www.anacondastores.com/camping-hiking/camp-cooking/cast-iron/spinifex-frying-pan/p/BP90001993001"><button type="button" class="btn btn-default">Purchase</button></center></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+        </div>
 
 
 
       </div>
       <div id="section3">
         <h1>Section 3</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+
+
+
+
       </div>
+
       <div id="section41">
         <h1>Section 4-1</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>

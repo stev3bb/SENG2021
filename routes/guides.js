@@ -7,6 +7,10 @@ router.get('/', function(req, res, next) {
         title: 'Guides',
         partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs'}
     });
+
+
 });
+
+
 
 module.exports = router;
