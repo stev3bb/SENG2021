@@ -5,21 +5,13 @@
     {{> header }}
     <!-- SOME UGLY STYLE SHEET FROM W3-->
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="js/campsites.js"></script>
 </head>
 
 <body>
     {{> navbar }}
     <div class="container" id="campsite-body">
         <h1>The ID of this campsite is: {{ place_id }}</h1>
-        <!--flickr images-->
-        <!-- debugging links
-        <p>
-            <h2>Social media images of the place:</h2>
-            <ul>
-                {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
-            </ul>
-        </P>
-        -->
 
         <!--test some slider -->
         <h2 class="w3-center">DO YOU EVEN LIFT BRO?!?!</h2>
@@ -51,11 +43,6 @@
                 </li>{{/place_5day_weather}}
             </ul>
         </p>
-
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">
-    </script>
 
     <!-- some copy and past function for image slider-->
     <script>

@@ -6,6 +6,7 @@ var request = require('request');
 //api keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
+var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
 
 //time for 2016-01-01
 //var unixTime = '1451606400';
@@ -20,7 +21,6 @@ router.get('/', function(req, res, next) {
     var test_long = req.query.long;
 
     var placeImages = [];
-
     var fiveDayWeather = [];
 
     //api url links
@@ -31,6 +31,7 @@ router.get('/', function(req, res, next) {
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
         '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&sort=date-posted-desc' + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
+    var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
 
     //might use async package for multiple request
@@ -72,7 +73,14 @@ router.get('/', function(req, res, next) {
         }
     });
 
-
+    request({
+        url: mapsApi,
+        json: true
+    }, function(error, response, place) {
+        if (!error && response.statusCode == 200) {
+            console.log(place.result.formatted_address);
+        }
+    })
 
     request({
         url: flickrApi,
@@ -83,7 +91,7 @@ router.get('/', function(req, res, next) {
 
             if (imgs.photos.photolength != 0){
                 for (i = 0; i < 20; i++) {
-                    if (i === img.photos.photo.length) {
+                    if (i === imgs.photos.photo.length) {
                         break;
                     }
 
@@ -102,6 +110,7 @@ router.get('/', function(req, res, next) {
                     imgs.photos.photo[i].secret + '.jpg';
                     placeImages.push(imgUrl);
                     console.log(imgUrl);
+
                 }
             }else {
                 placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
