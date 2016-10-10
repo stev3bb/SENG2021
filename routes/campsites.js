@@ -6,6 +6,7 @@ var request = require('request');
 //api keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
+var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
 
 //time for 2016-01-01
 var unixTime = '1451606400';
@@ -20,7 +21,6 @@ router.get('/', function(req, res, next) {
     var test_long = req.query.long;
 
     var placeImages = [];
-
     var fiveDayWeather = [];
 
     //api url links
@@ -31,6 +31,7 @@ router.get('/', function(req, res, next) {
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
         '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&min_upload_date=' + unixTime + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
+    var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
 
     //might use async package for multiple request
