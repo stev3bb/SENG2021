@@ -3,13 +3,35 @@
 
 <head>
     {{> header }}
+    <!-- SOME UGLY STYLE SHEET FROM W3-->
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
 
 <body>
     {{> navbar }}
     <div class="container" id="campsite-body">
         <h1>The ID of this campsite is: {{ place_id }}</h1>
-        <!-- give the location weather-->
+        <!--flickr images-->
+        <!-- debugging links
+        <p>
+            <h2>Social media images of the place:</h2>
+            <ul>
+                {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
+            </ul>
+        </P>
+        -->
+
+        <!--test some slider -->
+        <h2 class="w3-center">DO YOU EVEN LIFT BRO?!?!</h2>
+        <div class="w3-content" style="max-width:800px;position:relative">
+        {{#placeImages}}<img class="mySlides" src="{{.}}" style="width:100%">{{/placeImages}}
+    
+
+        <a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
+        <a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+        </div>
+
+        <!-- give a 5 day weather forecast of the location-->
         <p>
             <h2>Today's weather:</h2>
             <br><b>The name of this camp site:</b> {{place_name}}</br>
@@ -26,16 +48,33 @@
             </ul>
         </p>
 
-        <p>
-            <h2>Social media images of the place:</h2>
-            <ul>
-                {{#placeImages}}<li>{{.}}</li>{{/placeImages}}
-            </ul>
-        </P>
+        
        <!-- http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
     --></div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=places">
+    </script>
+
+    <!-- some copy and past function for image slider-->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+                
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
     </script>
 
     {{> bottomJs }}

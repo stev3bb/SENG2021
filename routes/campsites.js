@@ -89,7 +89,12 @@ router.get('/', function(req, res, next) {
                 //     imgs.photos.photo[i].owner + '/' +
                 //     imgs.photos.photo[i].id + '</br>';
 
-                var imgUrl = 'https://www.flickr.com/photos/' + imgs.photos.photo[i].owner + '/' + imgs.photos.photo[i].id;
+                //var imgUrl = 'https://www.flickr.com/photos/' + imgs.photos.photo[i].owner + '/' + imgs.photos.photo[i].id;
+                
+                var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
+                '.staticflickr.com/' + imgs.photos.photo[i].server +
+                '/' + imgs.photos.photo[i].id + '_' +
+                imgs.photos.photo[i].secret + '.jpg';
                 placeImages.push(imgUrl);
                 console.log(imgUrl);
             }
