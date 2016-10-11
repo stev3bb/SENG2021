@@ -21,6 +21,7 @@ function initMap() {
             lat: -33.8688,
             lng: 151.2093
         },
+        mapTypeControl: false,
         zoom: 10
     });
     //var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -64,7 +65,7 @@ function initMap() {
     }
 }
 
-//stolen functions mahahahaha
+
 //***************************************************
 
 // Sets the map on all markers in the array.
@@ -102,7 +103,8 @@ function querySearch() {
     var marker;
     var pos;
     var mapOptions = {
-        zoom: 10
+        zoom: 10,
+        mapTypeControl: false
     };
     //auto complete object
     var autocomplete;
