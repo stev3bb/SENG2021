@@ -156,6 +156,7 @@ router.get('/', function(req, res, next) {
                         place_temp: weather.main.temp,
                         place_wind_speed: weather.wind.speed,
                         place_5day_weather: fiveDayWeather,
+                        header_image: placeImages[0],
                         place_images: placeImages,
                         place_icon: weather.weather[0].icon,
                         //place_chance: weather.precipitation.value,

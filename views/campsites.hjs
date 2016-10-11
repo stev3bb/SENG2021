@@ -23,20 +23,22 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
-    <a id="fbshareURL"class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
+    <div class="jumbotron" id="info-main">
+        <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
+        <h1 id="info-header">{{ place.name }}</h1>
+    </div>
 
+    <div class="slider">
+        <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
+    </div>
 
     <div class="container" id="campsite-body">
-        <h1>{{ place.name }}</h1>
         <h3>{{ place.address }}</h3>
         <h3>{{ place.phone }}</h3>
         <h3>{{ place.rating }} stars</h3>
         <h3><a href="{{place.website}}">{{ place.website }}</a></h3>
 
-        <div class="slider">
-            <ul>{{#place_images}}<li><img src="{{.}}"></li>{{/place_images}}</ul>
-        </div>
+
 
         <!-- give a 5 day weather forecast of the location-->
         <p>
@@ -87,37 +89,14 @@
                 </li>{{/place_5day_weather}}
             </ul>
         </p>
+        <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
+        <a id="fbshareURL"class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
+    </div>
     <script>
-
         //give the page urls:
-
         document.getElementById('pageURL').href = document.URL;
         document.getElementById('fbshareURL').href = 'https://www.facebook.com/sharer/sharer.php?u='
         + document.URL + '%2F&amp;src=sdkpreparse';
-
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex-1].style.display = "block";
-        }
-
-        function getCurrUrl (){
-            return document.url;
-        }
-
     </script>
     {{> bottomJs }}
     <script src="/js/unslider.js"></script>

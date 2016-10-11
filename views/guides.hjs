@@ -67,7 +67,7 @@
 
         <div id="Tent">
             <h2>Tent </h2>
-              <p>The most important piece of equipment for your camping arsenal is a proper tent. Depending of the size and length of your expedition a different type of tent could be warranted. </p><br>
+              <p>The most important piece of equipment for your camping arsenal is a proper tent. Depending of the size and length of your expedition a different type of tent could be warranted. All the <button type="button" class="btn btn-default">Purchase</button> and <button type="button" class="btn btn-default">Assembly Instructions</button> links redirect to a third-party website</p><br>
 
 
               <div class="panel-group" id="accordion">
@@ -290,7 +290,7 @@
 
         <div id="Cooking Utensils">
             <h2>Cooking Utensils</h2>
-            The following cooking utensils are vital for preparing meals while camping. All the <button type="button" class="btn btn-default">Purchase</button> links redirect to a camping website which you can buy the item from.
+            The following cooking utensils are vital for preparing meals while camping. All the <button type="button" class="btn btn-default">Purchase</button> links redirect to a third-party camping website which you can buy the item from.
             <table class="table table-hover">
               <thead>
                 <tr>
