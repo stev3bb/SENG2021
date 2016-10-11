@@ -51,15 +51,31 @@ router.get('/', function(req, res, next) {
             //check length here
             //console.log("length of the array is here: "+weather5.list.length);
             for (i = 3; i < weather5.list.length; i += 8) {
-
-                var day = {
-                    time: weather5.list[i].dt_txt,
+                //2016-10-11 12:00:00
+                // sets the day of the week from a number returned by getday function
+                var weekday = new Array(7);
+                weekday[0]=  "Sun";
+                weekday[1] = "Mon";
+                weekday[2] = "Tue";
+                weekday[3] = "Wed";
+                weekday[4] = "Thu";
+                weekday[5] = "Fri";
+                weekday[6] = "Sat";
+                
+                //obtaining day from time retrieved from weather api
+                var t = weather5.list[i].dt_txt;                 
+                //var t = new Date();
+                var day = weekday[new Date(t).getDay()];
+                //fixing icon from night to all day
+                var oldicon = weather5.list[i].weather[0].icon;
+                oldicon = oldicon.replace("n","d");
+                var date = {
+                    time: day,
                     weather: weather5.list[i].weather[0].description,
                     temp: weather5.list[i].main.temp,
                     humidity: weather5.list[i].main.humidity,
                     windSpeed: weather5.list[i].wind.speed,
-                    icon: weather5.list[i].weather[0].icon
-                    //code: weather5.list[i].weather[0].main,
+                    icon: oldicon,
                 }
                 //console.log("array check :"+ i);
                 // fiveDayWeather.push('Date:' + weather5.list[i].dt_txt +
@@ -70,7 +86,7 @@ router.get('/', function(req, res, next) {
                 //     weather5.list[i].main.humidity + '%  wind speed:' +
                 //     weather5.list[i].wind.speed + 'm/s'); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
 
-                fiveDayWeather.push(day);
+                fiveDayWeather.push(date);
             }
         }
     });
@@ -143,6 +159,7 @@ router.get('/', function(req, res, next) {
                         header_image: placeImages[0],
                         place_images: placeImages,
                         place_icon: weather.weather[0].icon,
+                        //place_chance: weather.precipitation.value,
                         partials: {
                             header: 'partials/header',
                             navbar: 'partials/navbar',
