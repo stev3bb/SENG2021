@@ -9,84 +9,42 @@
     {{> navbar }}
     <h1>{{ title }}</h1>
 
+    <center>
+        <h1>
+            Explore Beautiful Campsites
+        </h1>
+        <br><br>
+    </center>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+<center>
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+    <div class="col-xs-12 col-md-1"></div>
+    <div class="col-xs-12 col-md-7"><img src="img/Seal-Rocks.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 col-sm-1half"></div>
+    <div class="col-xs-6 col-md-2"><img src="img/Jervis-Bay.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 col-md-1"></div>
 
-        <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
+</div>
+<br><br>
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+    <div class="col-xs-12 col-md-1"></div>
+    <div class="col-xs-6 col-md-3"><img src="img/Glenworth-Valley.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 col-md-1"></div>
+    <div class="col-xs-6 col-md-3"><img src="img/Lakesea.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 col-md-1"></div>
 
-        <div class="item active">
-            <div class="text-center">
-                <h3>Jervis Bay</h3>
-            </div>
-            <center><img src="img/Jervis-Bay.jpg" alt="Beach"></center>
-            <div class="text-center">
-                <p>The spectacular and secluded Honeymoon Bay at Point Perpendicular delivers a fantastic bush camping experience.<br>
-                   Only a moment’s walk to the beaches of northern part of Jervis Bay, this rustic bush camp site is on the northern<br>
-                   end of Jervis Bay on the NSW South Coast. Camping sites are allocated on a first-come, first-served basis.</p>
-            </div>
-        </div>
+  <div class="col-xs-6 col-md-2"><img src="img/picnic-point.jpg" width="100%" height="300"></div>
+</div>
 
-        <div class="item">
-            <div class="text-center">
-                <h3>Picnic Point</h3>
-            </div>
-            <center><img src="img/picnic-point.jpg" alt="Beach"></center>
-            <div class="text-center">
-                <p>Camp in an idyllic and quiet spot by the beach, amongst Banksia trees and beautiful wilderness at Picnic Point <br>
-                Campground in Mimosa Rocks National Park. Find the perfect fishing spot, swim in crystal clear waters and enjoy scenic <br>
-                views of the stunning Sapphire Coast.</p>
-            </div>
-        </div>
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
 
-        <div class="item">
-            <div class="text-center">
-                <h3>Picnic Point</h3>
-            </div>
-            <center><img src="img/Lakesea.jpg" alt="Beach"></center>
-            <div class="text-center">
-                <p>A little known gem, Lakesea Caravan Park Durras near Batemans Bay, has grassy shaded sites with BBQ drums and a <br>
-                campground that is kitted out for the novice camper including a camp kitchen with free gas BBQs, fridge and oven. Just <br>
-                moments to Durras Beach and Lake Durras, enjoy surfing, kayaking, fishing and bush walking in nearby Murramarang National Park.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="text-center">
-                <h3>Glenworth Valley</h3>
-            </div>
-            <center><img src="img/Glenworth-Valley.jpg" alt="Beach"></center>
-             <div class="text-center">
-                <p>While many know the Central Coast’s Glenworth Valley for its horse riding and quad biking, it’s amazing bush camping sites <br>
-                may surprise many. The open bush style campsites situated along the Popran Creek come with wood-fired BBQs, hot showers and plenty <br>
-                of peace and quiet. There are also tents and tipis for hire.</p>
-             </div>
-        </div>
-
-
-
-
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-
+</center>
 
     {{> bottomJs }}
 </body>

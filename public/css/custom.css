@@ -149,3 +149,17 @@ h1#discover {
 .slider {
     width: 50vh;
 }
+.col-sm-1half, .col-sm-8half {
+    position: relative;
+    min-height: 1px;
+}
+
+@media (min-width: 768px) {
+    
+    .col-sm-1half {
+        width: 3%;
+    }
+    .col-sm-8half {
+        width: 70.83333333%;
+    }
+}
