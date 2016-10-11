@@ -91,6 +91,7 @@
         </p>
         <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
         <a id="fbshareURL"class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <script>
         //give the page urls:
