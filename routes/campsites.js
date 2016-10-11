@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
     var fiveDayWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?' +
         'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherApiKey + '&units=metric';
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&sort=date-posted-desc' + '&safe_search=1' +
+        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&sort=interestingness-desc' + '&safe_search=1' +
         '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 

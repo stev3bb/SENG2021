@@ -111,7 +111,7 @@ h1#discover {
 
 #map-options {
     float: left;
-    margin-left: 2vh;
+    margin-left: 2vw;
     width: 95%;
     height: 88vh;
 
@@ -164,11 +164,11 @@ h1#discover {
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
 }
 
 #info-header {
@@ -189,10 +189,16 @@ h1#discover {
 }
 
 .slider {
-    width: 50vh;
+    text-align: center;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slide-img {
-    height: 500px;
+    height: 64vh;
     width: 100%;
+    border: 5px solid #000;
+    border-radius: 5px;
+    margin-bottom: 2vh;
 }

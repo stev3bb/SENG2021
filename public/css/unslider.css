@@ -21,7 +21,6 @@
     display: block;
 	width: 32px;
 	height: 32px;
-	top: 50%;
 	overflow: hidden;
     background: rgba(0,0,0,.2) no-repeat 50% 50%;
     background-image: url('../img/arrownext.png');
@@ -36,7 +35,7 @@
 
 
 .unslider-arrow.next{
-	right: 10%;
+	right: 37%;
 	left: auto;
 }
 
@@ -45,7 +44,6 @@
     display: block;
 	width: 32px;
 	height: 32px;
-	top: 50%;
 	right: auto;
-    left: 10%;
+    left: 37%;
 }
