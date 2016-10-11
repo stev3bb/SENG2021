@@ -1,3 +1,5 @@
+.unslider{overflow:auto;margin:0;padding:0}
+
 .unslider-wrap{position:relative}
 
 .unslider-wrap.unslider-carousel>li{float:left}
@@ -39,6 +41,7 @@
 }
 
 .unslider-arrow.prev{
+    transform: rotate(180deg);
     display: block;
 	width: 32px;
 	height: 32px;

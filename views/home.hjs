@@ -9,7 +9,7 @@
 
 <body>
     {{> navbar }}
-    <div class="jumbotron">
+    <div class="jumbotron" id="home-main">
         <div class="container">
             <div class="row vcenter">
                 <div class="col-lg-1"></div>
