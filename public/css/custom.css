@@ -145,3 +145,22 @@ h1#discover {
     font-size: 20px;
     font-weight: bold;
 }
+.table-condensed,th, td {
+     border: 1px solid black;
+     text-align: center;
+}
+.table-condensed tr: 2th-child {
+     height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

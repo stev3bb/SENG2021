@@ -41,12 +41,41 @@
         <!-- give a 5 day weather forecast of the location-->
         <p>
             <h2>Today's weather:</h2>
-            <br><b>The name of this camp site:</b> {{place_name}}</br>
-            <br>Weather condition: {{place_condition}}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
-            <br>Current temperature: {{place_temp}}°C</br>
-            <br>Current wind speed: {{place_wind_speed}} m/s</br>
+            <br><b>The name of this camp site:</b> {{ place_name }}</br>
+            <br>Weather condition: {{ place_condition }}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
+            <br>Current temperature: {{ place_temp }}°C</br>
+            <br>Current wind speed: {{ place_wind_speed }} m/s</br>
+            <br>Current time: {{ place_time }}</br>
         </p>
-
+        
+            <table class="table-condensed">
+                <thead>
+                    <tr>        
+                        <th></th>
+                        {{#place_5day_weather}}
+                        <th>{{ time }}</th>
+                        {{/place_5day_weather}}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Weather:</th>
+                        {{#place_5day_weather}}
+                        <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
+                        {{/place_5day_weather}}
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">Temperature:</th>
+                        {{#place_5day_weather}}
+                        <td>{{ temp }}°C</td>
+                        {{/place_5day_weather}}
+                    </tr>
+                </tbody>
+            </table>
+        
+        
         <p>
             <h2>5 day weather forecast:</h2>
             <ul>
