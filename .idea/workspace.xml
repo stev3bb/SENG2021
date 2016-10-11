@@ -26,11 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="campsites.hjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/campsites.hjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="57" column="42" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="guides.hjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/guides.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="69" column="338" selection-start-line="69" selection-start-column="338" selection-end-line="69" selection-end-column="338" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="campsites.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/campsites.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="141" column="42" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -187,24 +207,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENG20213" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENG20213" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -333,7 +335,7 @@
       <workItem from="1474762496685" duration="1393000" />
       <workItem from="1476005282023" duration="6205000" />
       <workItem from="1476055705140" duration="13365000" />
-      <workItem from="1476085722198" duration="4954000" />
+      <workItem from="1476085722198" duration="5963000" />
     </task>
     <task id="LOCAL-00001" summary="added caption for one slide&#10;">
       <created>1476005333908</created>
@@ -384,11 +386,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476139286284</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="More guide page stuff">
+      <created>1476142305953</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1476142305953</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39858000" />
+    <option name="totallyTimeSpent" value="40867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1424" height="877" extended-state="0" />
@@ -429,7 +438,8 @@
     <MESSAGE value="working on the guides section&#10;" />
     <MESSAGE value="guide page&#10;" />
     <MESSAGE value="More guide page stuff, gonna add 'how to use our website'" />
-    <option name="LAST_COMMIT_MESSAGE" value="More guide page stuff, gonna add 'how to use our website'" />
+    <MESSAGE value="More guide page stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="More guide page stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -647,20 +657,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/guide.js" />
-    <entry file="file://$PROJECT_DIR$/routes/campsites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/campsites.hjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -668,10 +664,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/campsites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="141" column="42" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/campsites.hjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/guides.hjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="69" column="338" selection-start-line="69" selection-start-column="338" selection-end-line="69" selection-end-column="338" />
           <folding />
         </state>
       </provider>
