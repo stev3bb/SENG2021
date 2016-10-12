@@ -197,7 +197,7 @@ h1#discover {
     border-radius: 5px;
     margin-bottom: 2vh;
 }
-.col-sm-1half, .col-sm-8half {
+.col-sm-1half, .col-sm-8half, .col-sm-longer, .bottom-right, .whole_row {
     position: relative;
     min-height: 1px;
 }
@@ -205,9 +205,22 @@ h1#discover {
 @media (min-width: 768px) {
 
     .col-sm-1half {
-        width: 3%;
+        width: 2%;
     }
     .col-sm-8half {
         width: 70.83333333%;
     }
+
+    .col-sm-longer {
+        width: 31.3%
+    }
+
+    .bottom-right {
+        width: 50%
+    }
+
+    .whole_row {
+        width: 77%
+    }
+
 }
