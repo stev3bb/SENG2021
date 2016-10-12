@@ -147,12 +147,10 @@ h1#discover {
 
 .jumbotron#info-main {
     height: 50vh;
-    color: white;
-    text-align: center;
     position: relative;
 }
 
-#info-bg, #info-header {
+#info-bg {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -164,30 +162,19 @@ h1#discover {
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
 }
 
 #info-header {
-    top: 70%;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-    z-index: 1;
 }
 
 .campsite-name {
     font-size: 20px;
     font-weight: bold;
 }
-<<<<<<< HEAD
+
 .table-condensed,th, td {
      border: 1px solid black;
      text-align: center;
@@ -216,7 +203,7 @@ h1#discover {
 }
 
 @media (min-width: 768px) {
-    
+
     .col-sm-1half {
         width: 3%;
     }
