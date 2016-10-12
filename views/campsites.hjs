@@ -25,8 +25,8 @@
 
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
-        <h1 id="info-header">{{ place.name }}</h1>
     </div>
+    <h1 id="info-header">{{ place.name }}</h1>
 
     <div class="slider">
         <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
@@ -49,10 +49,10 @@
             <br>Current wind speed: {{ place_wind_speed }} m/s</br>
             <br>Current time: {{ place_time }}</br>
         </p>
-        
+
             <table class="table-condensed">
                 <thead>
-                    <tr>        
+                    <tr>
                         <th></th>
                         {{#place_5day_weather}}
                         <th>{{ time }}</th>
@@ -76,8 +76,8 @@
                     </tr>
                 </tbody>
             </table>
-        
-        
+
+
         <p>
             <h2>5 day weather forecast:</h2>
             <ul>
