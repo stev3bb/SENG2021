@@ -197,7 +197,7 @@ h1#discover {
     border-radius: 5px;
     margin-bottom: 2vh;
 }
-.col-sm-1half, .col-sm-8half, .col-sm-longer, .bottom-right, .whole_row {
+.col-sm-1half, .col-sm-8half, .col-sm-longer, .bottom-right, .whole_row, .leftmost {
     position: relative;
     min-height: 1px;
 }
@@ -221,6 +221,10 @@ h1#discover {
 
     .whole_row {
         width: 77%
+    }
+
+    .leftmost {
+        width: 11%
     }
 
 }
