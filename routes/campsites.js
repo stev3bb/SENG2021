@@ -101,12 +101,18 @@ router.get('/', function(req, res, next) {
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
                 placeDetails.phone = place.result.formatted_phone_number;
+            else
+                placeDetails.phone = "N/A";
             if (place.result.opening_hours)
                 placeDetails.openingHours = place.result.opening_hours.weekday_text;
             if (place.result.rating)
-                placeDetails.rating = place.result.rating;
+                placeDetails.rating = (Math.round(place.result.rating*2)/2)*20;
+            else
+                placeDetails.rating = 0;
             if (place.result.website)
                 placeDetails.website = place.result.website;
+            else
+                placeDetails.website = "N/A";
         }
     })
 
@@ -117,7 +123,7 @@ router.get('/', function(req, res, next) {
         if (!error && response.statusCode == 200) {
             //console.log(imgs.photos.photo[0]);
 
-            if (imgs.photos.photolength != 0){
+            if (imgs.photos.photo.length != 0){
                 for (i = 0; i < 20; i++) {
                     if (i === imgs.photos.photo.length) {
                         break;
@@ -132,12 +138,13 @@ router.get('/', function(req, res, next) {
                     //     imgs.photos.photo[i].owner + '/' +
                     //     imgs.photos.photo[i].id + '</br>';
 
+                    // _h gives us the largest resolution possible
                     var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
                     '.staticflickr.com/' + imgs.photos.photo[i].server +
                     '/' + imgs.photos.photo[i].id + '_' +
-                    imgs.photos.photo[i].secret + '.jpg';
+                    imgs.photos.photo[i].secret + '_h.jpg';
                     placeImages.push(imgUrl);
-                    // console.log(imgUrl);
+                    console.log("[" + i + "]: " + placeImages[i]);
                 }
             }else {
                 //or else internet meme
