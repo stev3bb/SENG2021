@@ -146,22 +146,26 @@ h1#discover {
 ***/
 
 .jumbotron#info-main {
-    height: 50vh;
+    height: 40vh;
     position: relative;
 }
 
 #info-bg {
     height: 100%;
     width: 100%;
+    background-position: 0% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-#info-bg {
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);
 }
 
 #info-header {
@@ -185,17 +189,16 @@ h1#discover {
 
 .slider {
     text-align: center;
+    border: 3px solid #000;
     width: 60vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2vh;
 }
 
 .slide-img {
     height: 64vh;
-    width: 100%;
-    border: 5px solid #000;
-    border-radius: 5px;
-    margin-bottom: 2vh;
+    text-align: center;
 }
 .col-sm-1half, .col-sm-8half, .col-sm-longer, .bottom-right, .whole_row, .leftmost {
     position: relative;
