@@ -21,9 +21,9 @@
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-12 col-md-7"><img src="img/Seal-Rocks.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 col-md-7"><a href="http://www.northcoastholidayparks.com.au/park/info/seal-rocks"><img src="img/Seal-Rocks.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-6 col-md-2"><img src="img/Jervis-Bay.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-2"><a href="http://www.visitnsw.com/destinations/south-coast/jervis-bay-and-shoalhaven/camping"><img src="img/Jervis-Bay.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-md-1"></div>
 
 </div>
@@ -31,25 +31,25 @@
 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-6 col-md-3"><img src="img/Glenworth-Valley.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-3"><a href="http://www.glenworth.com.au/camping-and-accommodation"><img src="img/Glenworth-Valley.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-6 col-sm-longer"><img src="img/Dingo-Tops.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-sm-longer"><a href="https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/Dingo-Tops-campground"><img src="img/Dingo-Tops.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-6 col-md-2"><img src="img/Coffs.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-2"><a href="http://www.visitnsw.com/destinations/north-coast/coffs-harbour-area/accommodation-caravan-and-camping"><img src="img/Coffs.jpg" width="100%" height="300"></a></div>
 </div>
 <br><br>
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-6 col-md-3"><img src="img/Broome.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-3"><a href="https://www.tripadvisor.com.au/Hotel_Review-g255102-d1229757-Reviews-Broome_Caravan_Park-Broome_Kimberley_Region_Western_Australia.html"><img src="img/Broome.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-12 bottom-right"><img src="img/Noosa.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 bottom-right"><a href="http://www.noosaholidayparks.com.au/noosa-north-shore"><img src="img/Noosa.jpg" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-md-1"></div>
 </div>
 <br><br>
 
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-12 whole_row"><img src="img/Byron.png" width="100%" height="300"></div>
+    <div class="col-xs-12 whole_row"><a href="http://www.byron-bay.com/caravan/"><img src="img/Byron.png" width="100%" height="300"></a></div>
     <div class="col-xs-12 col-md-1"></div>
 </div>
 
