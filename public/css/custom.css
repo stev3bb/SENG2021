@@ -226,12 +226,18 @@ h1#discover {
 .stars-90:after { width: 90%; }
 .stars-100:after { width: 100; }
 
-.table-condensed,th, td {
-     border: 1px solid black;
-     text-align: center;
+.table-condensed{
+    /*float: right;*/
+    position: absolute;
+    margin-top: 30px;
+    /*right change to 17 if align with picture above*/
+    right: 16%;
+    height: 0%;
+    width: 0%;
 }
-.table-condensed tr: 2th-child {
-     height: 100px;
+.table-condensed ,th, td {
+    border: 1px solid black;
+    text-align: center;
 }
 
 /*
@@ -268,3 +274,4 @@ h1#discover {
     }
 
 }
+#
