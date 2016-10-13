@@ -26,24 +26,25 @@
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
-    <h1 id="info-header">{{ place.name }}</h1>
 
-    <div class="slider">
-        <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
-    </div>
 
     <div class="container" id="campsite-body">
+        <div>
+            <span><h1 id="info-header">{{ place.name }}</h1></span>
+            <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
+        </div>
+        <br />
+        <div class="slider">
+            <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
+        </div>
+
         <h3>{{ place.address }}</h3>
         <h3>{{ place.phone }}</h3>
-        <h3>{{ place.rating }} stars</h3>
-        <h3><a href="{{place.website}}">{{ place.website }}</a></h3>
-
-
+        <h3><a href="{{ place.website }}">{{ place.website }}</a></h3>
 
         <!-- give a 5 day weather forecast of the location-->
         <p>
             <h2>Today's weather:</h2>
-            <br><b>The name of this camp site:</b> {{ place_name }}</br>
             <br>Weather condition: {{ place_condition }}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
             <br>Current temperature: {{ place_temp }}°C</br>
             <br>Current wind speed: {{ place_wind_speed }} m/s</br>

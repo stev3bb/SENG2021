@@ -101,12 +101,18 @@ router.get('/', function(req, res, next) {
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
                 placeDetails.phone = place.result.formatted_phone_number;
+            else
+                placeDetails.phone = "N/A";
             if (place.result.opening_hours)
                 placeDetails.openingHours = place.result.opening_hours.weekday_text;
             if (place.result.rating)
-                placeDetails.rating = place.result.rating;
+                placeDetails.rating = (Math.round(place.result.rating*2)/2)*20;
+            else
+                placeDetails.rating = 0;
             if (place.result.website)
                 placeDetails.website = place.result.website;
+            else
+                placeDetails.website = "N/A";
         }
     })
 
