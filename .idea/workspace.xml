@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="11ceaaea-9587-4ec2-8a54-3d366f2744fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Fishing.jpg" afterPath="$PROJECT_DIR$/public/img/Fishing.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Glenworth-Valley.jpg" afterPath="$PROJECT_DIR$/public/img/Glenworth-Valley.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Jervis-Bay.jpg" afterPath="$PROJECT_DIR$/public/img/Jervis-Bay.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Seal-Rocks.jpg" afterPath="$PROJECT_DIR$/public/img/Seal-Rocks.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/popularcampsites.hjs" afterPath="$PROJECT_DIR$/views/popularcampsites.hjs" />
     </list>
     <ignored path="SENG2021.iws" />
@@ -28,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
@@ -38,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popularcampsites.hjs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="popularcampsites.hjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/popularcampsites.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+            <state relative-caret-position="225">
+              <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -77,8 +79,8 @@
         <option value="$PROJECT_DIR$/views/guides.hjs" />
         <option value="$PROJECT_DIR$/routes/campsites.js" />
         <option value="$PROJECT_DIR$/views/campsites.hjs" />
-        <option value="$PROJECT_DIR$/views/popularcampsites.hjs" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
+        <option value="$PROJECT_DIR$/views/popularcampsites.hjs" />
       </list>
     </option>
   </component>
@@ -184,6 +186,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SENG20213" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SENG20213" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -347,7 +367,7 @@
       <workItem from="1476055705140" duration="13365000" />
       <workItem from="1476085722198" duration="10130000" />
       <workItem from="1476309468166" duration="465000" />
-      <workItem from="1476313646736" duration="1790000" />
+      <workItem from="1476313646736" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="added caption for one slide&#10;">
       <created>1476005333908</created>
@@ -426,11 +446,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476309543038</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="got image width right on popular campistes">
+      <created>1476316101696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1476316101696</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47289000" />
+    <option name="totallyTimeSpent" value="48682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1424" height="877" extended-state="0" />
@@ -473,7 +500,8 @@
     <MESSAGE value="More guide page stuff, gonna add 'how to use our website'" />
     <MESSAGE value="More guide page stuff" />
     <MESSAGE value="Trying to make popular campsites better" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to make popular campsites better" />
+    <MESSAGE value="got image width right on popular campistes" />
+    <option name="LAST_COMMIT_MESSAGE" value="got image width right on popular campistes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -710,18 +738,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/popularcampsites.hjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="222" column="17" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/popularcampsites.hjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
           <folding />
         </state>
       </provider>

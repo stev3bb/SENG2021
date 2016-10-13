@@ -13,6 +13,7 @@
         <h1>
             Explore Beautiful Campsites
         </h1>
+        <p>Click on any image to view campsite information</p>
         <br><br>
     </center>
 
@@ -32,24 +33,23 @@
     <div class="col-xs-12 col-md-1"></div>
     <div class="col-xs-6 col-md-3"><img src="img/Glenworth-Valley.jpg" width="100%" height="300"></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-6 col-sm-longer"><img src="img/Lakesea.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-sm-longer"><img src="img/Dingo-Tops.jpg" width="100%" height="300"></div>
     <div class="col-xs-12 col-sm-1half"></div>
-
-  <div class="col-xs-6 col-md-2"><img src="img/picnic-point.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-2"><img src="img/Coffs.jpg" width="100%" height="300"></div>
 </div>
 <br><br>
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-6 col-md-3"><img src="img/Jervis-Bay.jpg" width="100%" height="300"></div>
+    <div class="col-xs-6 col-md-3"><img src="img/Broome.jpg" width="100%" height="300"></div>
     <div class="col-xs-12 col-sm-1half"></div>
-    <div class="col-xs-12 bottom-right"><img src="img/Seal-Rocks.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 bottom-right"><img src="img/Noosa.jpg" width="100%" height="300"></div>
     <div class="col-xs-12 col-md-1"></div>
 </div>
 <br><br>
 
 <div class="row">
     <div class="col-xs-12 col-md-1"></div>
-    <div class="col-xs-12 whole_row"><img src="img/Seal-Rocks.jpg" width="100%" height="300"></div>
+    <div class="col-xs-12 whole_row"><img src="img/Byron.png" width="100%" height="300"></div>
     <div class="col-xs-12 col-md-1"></div>
 </div>
 
