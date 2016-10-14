@@ -6,20 +6,22 @@
     <link rel="stylesheet" href="/css/unslider.css" />
     <link rel="stylesheet" href="/css/unslider-dots.css" />
 
+    <style>
     <!-- more dirty css -->
-    #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-    }
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -98,6 +100,8 @@
 
 
         <!-- new map goes here-->
+
+
         <div class="col-lg-9">   
             <div id="floating-panel">
                 <h3>Show:</h3>
