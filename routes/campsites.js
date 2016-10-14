@@ -167,6 +167,8 @@ router.get('/', function(req, res, next) {
                         header_image: placeImages[0],
                         place_images: placeImages,
                         place_icon: weather.weather[0].icon,
+                        place_lat: test_lat,
+                        place_lng: test_long,
                         //place_chance: weather.precipitation.value,
                         partials: {
                             header: 'partials/header',

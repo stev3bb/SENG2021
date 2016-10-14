@@ -1,13 +1,10 @@
 /* new js for the camping information map*/
+var map;
 
-function newInfoMap (){
-	var map = new google.maps.Map(document.getElementById('infoMap'), {
-		center: {
-			siteLat:,
-			siteLng:
-		},
-		mapTypeControl: false,
-		zoom: 10
+function initMap() {
+	map = new google.maps.Map(document.getElementById('InfoMap'), {
+		center: {lat: -34.397,
+		lng: 150.644},
+ 		zoom: 8
 	});
-	
 }
