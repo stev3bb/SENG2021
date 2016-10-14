@@ -36,7 +36,9 @@ router.get('/', function(req, res, next) {
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
     var googlePlaceImgs = 'https://maps.googleapis.com/maps/api/place/photo?'+'&key='+mapsApi;
-
+    //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-35.1522,150.7027&radius=1000&key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw
+    //http request here
+   //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw
 
     //might use async package for multiple request
     //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
