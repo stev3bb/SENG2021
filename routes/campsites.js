@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
     var regrex = /.*\, .* (.*) (\d+)\, \w+/g;
     var suburb = req.query.address;
     var match = regrex.exec(suburb);
+    console.log("Match 1: " + match[1] + " Match 2: " + match[2]);
 
     var test_lat = req.query.lat;
     var test_long = req.query.long;
@@ -30,8 +31,8 @@ router.get('/', function(req, res, next) {
     var fiveDayWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?' +
         'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherApiKey + '&units=metric';
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-        '&api_key=' + flickrApiKey + '&tags=' + match[1] + '&sort=interestingness-desc' + '&safe_search=1' +
-        '&lat=' + test_lat + '&lon=' + test_long + '&format=json&nojsoncallback=1';
+        '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
+        '&media=photos&lat=' + test_lat + '&lon=' + test_long + '&radius=1&format=json&nojsoncallback=1';
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
 
@@ -39,7 +40,7 @@ router.get('/', function(req, res, next) {
     //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
 
     //debugging statement:
-    console.log("the json request url:" + fiveDayWeatherApi);
+    // console.log("the json request url:" + fiveDayWeatherApi);
 
     request({
         url: fiveDayWeatherApi,
@@ -61,9 +62,9 @@ router.get('/', function(req, res, next) {
                 weekday[4] = "Thu";
                 weekday[5] = "Fri";
                 weekday[6] = "Sat";
-                
+
                 //obtaining day from time retrieved from weather api
-                var t = weather5.list[i].dt_txt;                 
+                var t = weather5.list[i].dt_txt;
                 //var t = new Date();
                 var day = weekday[new Date(t).getDay()];
                 //fixing icon from night to all day
@@ -100,12 +101,18 @@ router.get('/', function(req, res, next) {
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
                 placeDetails.phone = place.result.formatted_phone_number;
+            else
+                placeDetails.phone = "N/A";
             if (place.result.opening_hours)
                 placeDetails.openingHours = place.result.opening_hours.weekday_text;
             if (place.result.rating)
-                placeDetails.rating = place.result.rating;
+                placeDetails.rating = (Math.round(place.result.rating*2)/2)*20;
+            else
+                placeDetails.rating = 0;
             if (place.result.website)
                 placeDetails.website = place.result.website;
+            else
+                placeDetails.website = "N/A";
         }
     })
 
@@ -116,7 +123,7 @@ router.get('/', function(req, res, next) {
         if (!error && response.statusCode == 200) {
             //console.log(imgs.photos.photo[0]);
 
-            if (imgs.photos.photolength != 0){
+            if (imgs.photos.photo.length != 0){
                 for (i = 0; i < 20; i++) {
                     if (i === imgs.photos.photo.length) {
                         break;
@@ -131,12 +138,13 @@ router.get('/', function(req, res, next) {
                     //     imgs.photos.photo[i].owner + '/' +
                     //     imgs.photos.photo[i].id + '</br>';
 
+                    // _h gives us the largest resolution possible
                     var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
                     '.staticflickr.com/' + imgs.photos.photo[i].server +
                     '/' + imgs.photos.photo[i].id + '_' +
-                    imgs.photos.photo[i].secret + '.jpg';
+                    imgs.photos.photo[i].secret + '_h.jpg';
                     placeImages.push(imgUrl);
-                    console.log(imgUrl);
+                    console.log("[" + i + "]: " + placeImages[i]);
                 }
             }else {
                 //or else internet meme

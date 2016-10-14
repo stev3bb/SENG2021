@@ -146,81 +146,132 @@ h1#discover {
 ***/
 
 .jumbotron#info-main {
-    height: 50vh;
-    color: white;
-    text-align: center;
+    height: 40vh;
     position: relative;
 }
 
-#info-bg, #info-header {
+#info-bg {
     height: 100%;
     width: 100%;
+    background-position: 0% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-#info-bg {
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
     -webkit-filter: blur(1px);
     -moz-filter: blur(1px);
-    -o-filter: blur(1px);
     -ms-filter: blur(1px);
+    -o-filter: blur(1px);
     filter: blur(1px);
 }
 
 #info-header {
-    top: 70%;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-    z-index: 1;
 }
 
-.campsite-name {
-    font-size: 20px;
-    font-weight: bold;
-}
-<<<<<<< HEAD
-.table-condensed,th, td {
-     border: 1px solid black;
-     text-align: center;
-}
-.table-condensed tr: 2th-child {
-     height: 100px;
+#campsite-body {
+    width: 70vw;
 }
 
 .slider {
     text-align: center;
-    width: 60vw;
+    border: 3px solid #000;
+    width: 65vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2vh;
 }
 
 .slide-img {
     height: 64vh;
-    width: 100%;
-    border: 5px solid #000;
-    border-radius: 5px;
-    margin-bottom: 2vh;
+    text-align: center;
 }
-.col-sm-1half, .col-sm-8half {
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: grey;
+  overflow: hidden;
+}
+
+.stars-0:after { width: 0%; }
+.stars-10:after { width: 10%; }
+.stars-20:after { width: 20%; }
+.stars-30:after { width: 30%; }
+.stars-40:after { width: 40%; }
+.stars-50:after { width: 50%; }
+.stars-60:after { width: 60%; }
+.stars-70:after { width: 70%; }
+.stars-80:after { width: 80%; }
+.stars-90:after { width: 90%; }
+.stars-100:after { width: 100; }
+
+.table-condensed{
+    /*float: right;*/
+    position: absolute;
+    margin-top: 30px;
+    /*right change to 17 if align with picture above*/
+    right: 16%;
+    height: 0%;
+    width: 0%;
+}
+.table-condensed ,th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+/*
+    ???
+*/
+.col-sm-1half, .col-sm-8half, .col-sm-longer, .bottom-right, .whole_row, .leftmost {
     position: relative;
     min-height: 1px;
 }
 
 @media (min-width: 768px) {
-    
+
     .col-sm-1half {
-        width: 3%;
+        width: 2%;
     }
     .col-sm-8half {
         width: 70.83333333%;
     }
+
+    .col-sm-longer {
+        width: 31.3%
+    }
+
+    .bottom-right {
+        width: 50%
+    }
+
+    .whole_row {
+        width: 77%
+    }
+
+    .leftmost {
+        width: 11%
+    }
+
 }
+#

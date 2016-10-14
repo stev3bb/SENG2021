@@ -291,6 +291,7 @@
         <div id="Cooking Utensils">
             <h2>Cooking Utensils</h2>
             The following cooking utensils are vital for preparing meals while camping. All the <button type="button" class="btn btn-default">Purchase</button> links redirect to a third-party camping website which you can buy the item from.
+            <br><br>
             <table class="table table-hover">
               <thead>
                 <tr>
