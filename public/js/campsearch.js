@@ -1,4 +1,6 @@
 
+//need to go through this tomorrow to debug
+
 // Keep map as a global
 var map;
 // Create a blank array for all map markers

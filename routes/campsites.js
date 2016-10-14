@@ -35,6 +35,8 @@ router.get('/', function(req, res, next) {
         '&media=photos&lat=' + test_lat + '&lon=' + test_long + '&radius=1&format=json&nojsoncallback=1';
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
+    var googlePlaceImgs = 'https://maps.googleapis.com/maps/api/place/photo?'+'&key='+mapsApi;
+
 
     //might use async package for multiple request
     //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
@@ -169,6 +171,7 @@ router.get('/', function(req, res, next) {
                         place_icon: weather.weather[0].icon,
                         place_lat: test_lat,
                         place_lng: test_long,
+                        place_id: req.query.id,
                         //place_chance: weather.precipitation.value,
                         partials: {
                             header: 'partials/header',
