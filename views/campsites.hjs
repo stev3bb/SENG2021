@@ -26,8 +26,6 @@
 
 <body>
     {{> navbar }}
-    <!-- ugly af facebook button-->
-
 
     <div id="fb-root"></div>
     <script>
@@ -54,7 +52,7 @@
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
         </div>
-<!-- weather table for 5 days(average weather and temperature) -->
+        <!-- weather table for 5 days(average weather and temperature) -->
         <table class="table-condensed">
             <thead>
                 <tr>
@@ -110,46 +108,6 @@
                 <input onclick="showMeds();" type=button value="Medical Facilities">
             </div>
             <div id="map"></div>
-            <script>
-            //will clean up this mess later
-            //some vars
-
-            //some interesting places needed, petrol stations, phamarcy, hospital and super markets
-
-              var map;
-              var mapLatLng = { lat: {{place_lat}}, lng: {{place_lng}} };
-
-              //var request = {
-              //}
-
-              function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: mapLatLng,
-                  zoom: 13,
-                  mapTypeControl: false
-                });
-
-                var marker = new google.maps.Marker({
-                    position: mapLatLng,
-                    map: map,
-                });
-
-              }
-
-              function showShops (){
-                return;
-              }
-
-              function showPetrolStation(){
-                return;
-              }
-
-              function showMeds (){
-                return;
-              }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&callback=initMap"
-            async defer></script>
         </div>
 
         <!--share buttons for facebook and twitter-->
@@ -157,14 +115,54 @@
         <a id="fbshareURL" class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
         <!-- probably need to fix the size of the buttons-->
         <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-        <button onclick="myFunction()">Print this page</button>
+    </div>
 
-        <script>
-        function myFunction() {
-            window.print();
-        }
-        </script>
-        
+    <script>
+        //will clean up this mess later
+        //some vars
+
+        //some interesting places needed, petrol stations, phamarcy, hospital and super markets
+
+      var map;
+      var mapLatLng = { lat: {{place_lat}}, lng: {{place_lng}} };
+
+      //different array of markers
+      var meds = [];
+      var shops = [];
+      var petrol = [];
+      //var request = {
+      //}
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: mapLatLng,
+          zoom: 13,
+          mapTypeControl: false
+        });
+
+        var marker = new google.maps.Marker({
+            position: mapLatLng,
+            map: map,
+        });
+
+      }
+
+      function showShops (){
+        return;
+      }
+
+      function showPetrolStation(){
+        return;
+      }
+
+      function showMeds (){
+        return;
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&callback=initMap"
+    async defer></script>
+
     <script>
         //give the page urls:
         document.getElementById('pageURL').href = document.URL;
