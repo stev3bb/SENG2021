@@ -231,6 +231,14 @@
             array.push(marker);
 
 
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent('derp test');
+                infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
+                infowindow.open(map, marker);
+
+            });
+
+
         }
 
        // Sets the map on all markers in the array.
