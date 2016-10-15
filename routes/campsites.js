@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express();
 var request = require('request');
-var async = require('async');
 
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
