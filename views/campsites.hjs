@@ -120,6 +120,9 @@
                 <input onclick="showMeds();" type=button value="Medical Facilities">
             </div>
             <div id="map"></div>
+            <br><br>
+            <button type="button" class="btn btn-primary" onclick="goBack()"">Go Back</button>
+            <script> function goBack() { window.history.back();}</script>
         </div>
     </div>
 
@@ -329,6 +332,7 @@
         infinite: true
     });
     })</script>
+
 </body>
 
 </html>

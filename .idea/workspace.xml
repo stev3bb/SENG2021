@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="11ceaaea-9587-4ec2-8a54-3d366f2744fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/campsites.hjs" afterPath="$PROJECT_DIR$/views/campsites.hjs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/guides.hjs" afterPath="$PROJECT_DIR$/views/guides.hjs" />
     </list>
     <ignored path="SENG2021.iws" />
@@ -26,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="campsites.hjs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="campsites.hjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/campsites.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+            <state relative-caret-position="308">
+              <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -39,18 +40,28 @@
       <file leaf-file-name="campsearch.hjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/campsearch.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
+            <state relative-caret-position="120">
               <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guides.hjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="campsearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/campsearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="45" column="28" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guides.hjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/guides.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="469" column="105" selection-start-line="469" selection-start-column="105" selection-end-line="469" selection-end-column="105" />
+            <state relative-caret-position="237">
+              <caret line="419" column="0" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,8 +108,8 @@
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/views/partials/header.hjs" />
         <option value="$PROJECT_DIR$/public/js/guides.js" />
-        <option value="$PROJECT_DIR$/views/campsites.hjs" />
         <option value="$PROJECT_DIR$/views/guides.hjs" />
+        <option value="$PROJECT_DIR$/views/campsites.hjs" />
       </list>
     </option>
   </component>
@@ -393,7 +404,7 @@
       <workItem from="1476341116161" duration="1256000" />
       <workItem from="1476428210490" duration="549000" />
       <workItem from="1476485195722" duration="445000" />
-      <workItem from="1476495631949" duration="3447000" />
+      <workItem from="1476495631949" duration="4619000" />
     </task>
     <task id="LOCAL-00001" summary="added caption for one slide&#10;">
       <created>1476005333908</created>
@@ -535,11 +546,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476572724291</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="back to top button">
+      <created>1476572979526</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1476572979526</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56108000" />
+    <option name="totallyTimeSpent" value="57280000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1424" height="877" extended-state="0" />
@@ -590,14 +608,14 @@
     <MESSAGE value="Images" />
     <MESSAGE value="adding camping shop map to guides&#10;" />
     <MESSAGE value="tiny change" />
-    <option name="LAST_COMMIT_MESSAGE" value="tiny change" />
+    <MESSAGE value="back to top button" />
+    <option name="LAST_COMMIT_MESSAGE" value="back to top button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/angular-google-maps.min.js" />
     <entry file="file://$PROJECT_DIR$/js/angular-simple-logger.js" />
     <entry file="file://$PROJECT_DIR$/SENG_nodejs/app.js" />
     <entry file="file://$PROJECT_DIR$/js/bootstrap.js" />
@@ -814,18 +832,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/home-search/home-search.component.js">
+    <entry file="file://$PROJECT_DIR$/routes/campsites.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/campsearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="193" column="27" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="27" />
+        <state relative-caret-position="113">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -838,17 +848,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/campsites.js">
+    <entry file="file://$PROJECT_DIR$/public/js/home-search/home-search.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/npm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/campsearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/guides.hjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="419" column="0" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/campsearch.hjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="120">
           <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
         </state>
@@ -856,16 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/campsites.hjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/guides.hjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="469" column="105" selection-start-line="469" selection-start-column="105" selection-end-line="469" selection-end-column="105" />
+        <state relative-caret-position="308">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           <folding />
         </state>
       </provider>
