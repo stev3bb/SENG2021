@@ -197,6 +197,8 @@ h1#discover {
   left: 0;
   content: '★★★★★';
   color: lightgray;
+  height: 5px;
+  width: 15px;
 }
 
 .stars-container:after {
@@ -204,7 +206,7 @@ h1#discover {
   top: 0;
   left: 0;
   content: '★★★★★';
-  color: grey;
+  color: darkgrey;
   overflow: hidden;
 }
 
@@ -225,9 +227,9 @@ Weather Table
 */
 .table-condensed{
     float: right;
-    margin-top: 30px;
+    margin-top: 3vh;
     /*right change to 17 if align with picture above*/
-    margin-right: 2vw;
+    margin-right: 17vw;
     /*width: 0%;*/
 }
 .table-condensed ,th, td {
@@ -269,4 +271,30 @@ Weather Table
     }
 
 }
-#
+/*
+share buttons - facebook and twitter
+*/
+.fb-share-button {
+    margin-left: 0.5vw;
+    margin-top: 0.5vh;
+    float: left;
+}
+.twitter-share-button {
+    margin-left: 0.5vw;
+    margin-bottom: 1vh;
+    margin-top: 0.5vh;
+}
+
+/* 
+size of rating and stars
+ */
+#ratingText {
+    margin-left: 0.5vw;
+    font-size: 22px;
+}
+
+
+
+
+
+

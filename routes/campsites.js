@@ -41,7 +41,7 @@ function getWeather(req, res, next) {
                 var date = {
                     time: day,
                     weather: weather5.list[i].weather[0].description,
-                    temp: weather5.list[i].main.temp,
+                    temp: Math.round(weather5.list[i].main.temp),
                     humidity: weather5.list[i].main.humidity,
                     windSpeed: weather5.list[i].wind.speed,
                     icon: oldicon,
