@@ -5,7 +5,7 @@ var request = require('request');
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
-var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
+var mapsApiKey = 'AIzaSyAYTU5RrUrjNE8uDsWKuvl95yMLhRphYgM';
 
 function getWeather(req, res, next) {
     var lat = req.query.lat;
@@ -67,6 +67,7 @@ function getPlaceDetails(req, res, next) {
             var placeImages = [];
 
             placeDetails.name = place.result[0].name;
+
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
                 placeDetails.phone = place.result.formatted_phone_number;
