@@ -160,12 +160,6 @@ h1#discover {
     top: 0;
     left: 0;
     border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -ms-filter: blur(1px);
-    -o-filter: blur(1px);
-    filter: blur(1px);
 }
 
 #info-header {

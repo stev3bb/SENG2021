@@ -7,10 +7,6 @@ var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
 var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
 
-// var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-//     '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
-//     '&media=photos&lat=' + lat + '&lon=' + lng + '&radius=1&format=json&nojsoncallback=1';
-
 function getWeather(req, res, next) {
     var lat = req.query.lat;
     var lng = req.query.long;
@@ -96,8 +92,49 @@ function getPlaceDetails(req, res, next) {
                     "photoreference=" + photoRef + "&maxheight=" + height +
                     "&key=" + mapsApiKey);
                 }
-            }
+            } else {
+                // We have to use flickr here
+                var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
+                    '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
+                    '&media=photos&lat=' + lat + '&lon=' + lng + '&radius=1&format=json&nojsoncallback=1';
 
+                request({
+                    url: flickrApi,
+                    json: true
+                }, function(error, response, imgs) {
+                    if (!error && response.statusCode == 200) {
+                        //console.log(imgs.photos.photo[0]);
+
+                        if (imgs.photos.photo.length != 0){
+                            for (i = 0; i < 20; i++) {
+                                if (i === imgs.photos.photo.length) {
+                                    break;
+                                }
+
+                                // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
+                                //     '.staticflickr.com/' + imgs.photos.photo[i].server +
+                                //     '/' + imgs.photos.photo[i].id + '_' +
+                                //     imgs.photos.photo[i].secret + '.jpg</br>';
+                                //
+                                // placeImages += '<br>https://www.flickr.com/photos/' +
+                                //     imgs.photos.photo[i].owner + '/' +
+                                //     imgs.photos.photo[i].id + '</br>';
+
+                                // _h gives us the largest resolution possible
+                                var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
+                                '.staticflickr.com/' + imgs.photos.photo[i].server +
+                                '/' + imgs.photos.photo[i].id + '_' +
+                                imgs.photos.photo[i].secret + '.jpg';
+                                placeImages.push(imgUrl);
+                                console.log("[" + i + "]: " + placeImages[i]);
+                            }
+                        }else {
+                            //or else internet meme
+                            placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
+                        }
+                    }
+                });
+            }
             req.placeDetails = placeDetails;
             req.placeImages = placeImages;
         }
@@ -126,46 +163,4 @@ function renderPage(req, res) {
 }
 
 router.get('/', getWeather, getPlaceDetails, renderPage);
-
-
-
-// OLD FLICKR STUFF LEAVE ILL FIX LATER
-    // request({
-    //     url: flickrApi,
-    //     json: true
-    // }, function(error, response, imgs) {
-    //     if (!error && response.statusCode == 200) {
-    //         //console.log(imgs.photos.photo[0]);
-    //
-    //         if (imgs.photos.photo.length != 0){
-    //             for (i = 0; i < 20; i++) {
-    //                 if (i === imgs.photos.photo.length) {
-    //                     break;
-    //                 }
-    //
-    //                 // placeImages += '<br>https://farm' + imgs.photos.photo[i].farm +
-    //                 //     '.staticflickr.com/' + imgs.photos.photo[i].server +
-    //                 //     '/' + imgs.photos.photo[i].id + '_' +
-    //                 //     imgs.photos.photo[i].secret + '.jpg</br>';
-    //                 //
-    //                 // placeImages += '<br>https://www.flickr.com/photos/' +
-    //                 //     imgs.photos.photo[i].owner + '/' +
-    //                 //     imgs.photos.photo[i].id + '</br>';
-    //
-    //                 // _h gives us the largest resolution possible
-    //                 var imgUrl =  'https://farm' + imgs.photos.photo[i].farm +
-    //                 '.staticflickr.com/' + imgs.photos.photo[i].server +
-    //                 '/' + imgs.photos.photo[i].id + '_' +
-    //                 imgs.photos.photo[i].secret + '_h.jpg';
-    //                 placeImages.push(imgUrl);
-    //                 console.log("[" + i + "]: " + placeImages[i]);
-    //             }
-    //         }else {
-    //             //or else internet meme
-    //             placeImages.push('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVWU-oMzxvDFu35Ky6uWAn63fqbu2DagpEBtOnFPkC6RAa30wmSg');
-    //         }
-    //     }
-    // });
-
-
 module.exports = router;
