@@ -243,7 +243,6 @@ function createMarker(place) {
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     distance = Math.round(distance / 1000);
-    console.log("Place ID: " + place.place_id + " Name: " + place.name);
 
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
@@ -258,23 +257,22 @@ function createMarker(place) {
             var address = placeInfo.formatted_address;
             var phone = placeInfo.formatted_phone_number;
 
+            console.log(placeInfo);
+            if (placeInfo.photos) var photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
 
-            //console.log('derpy derpy derp derp:'+JSON.parse(placeInfo));
-
-            $("#campsites-list ul").append('<li><span class="campsite-name">' +
-                name + '</span><br />' + address + '<br /><b>Phone:</b> ' +
+            if (photo)
+            $("#campsites-list ul").append('<li><div class="row"><div class="col-md-4 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
+            '<div class="col-md-8"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
                 'km<br /><a href="/campsites?id=' + id +
                 '&address=' + address + '&lat='+ match[1] + '&long=' + match[2]
-                +'"><button class="btn btn-default" type="button">View More</button></a></li><br />');
-            console.log(name + " " + address);
+                +'"><button class="btn btn-default" type="button">View More</button></a></li><br /></div></div>');
+            // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
-            console.log("ran out of juice guys");
+            // console.log("ran out of juice guys");
         }
     });
-    console.log(place, distance);
-
-   // console.log("zzzzz: "+place.formatted_address);
+    // console.log(place, distance);
 
     google.maps.event.addListener(marker, 'click', function() {
         // var placeR;
@@ -288,13 +286,13 @@ function createMarker(place) {
         //var regrex = /(\-.+)\, (.+)\)/g;
         //var match = regrex.exec(locString);
         var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
-     
+
 
         //console.log("something is broken" + place_address);
 
 
         $.getJSON(apicall, function (data) {
-            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address 
+            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address
                 +'&lat='+match[1]+'&long='+match[2]+'"><b>' + place.name + '</a></b></div>' +
             '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         });

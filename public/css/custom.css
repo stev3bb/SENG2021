@@ -99,46 +99,46 @@ h1#discover {
 /***
     CAMPSITE SEARCH STYLING
 ***/
-.nearby-icon-sml {
-    padding-bottom: 9px;
-    width: 22px;
-}
-
 #campsearch-body {
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
 #map-options {
-    float: left;
-    margin-left: 2vw;
-    width: 95%;
     height: 88vh;
-
-    display: inline;
-    position: relative;
     overflow: hidden;
     border: 2px solid #000;
     overflow-y: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.nearby-icon-sml {
+    padding-bottom: 9px;
+    width: 22px;
 }
 
 #map {
     background-color: #000;
     height: 88vh;
-    width: 98%;
-    float: left;
     border: 8px solid;
-    display: inline;
+}
+
+#campsites-list {
+    padding-top: 1.5em;
 }
 
 #campsites-list, #campsites-list ul {
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
+    padding-left: 0;
 }
 
-#campsites-list ul {
+#campsites-list ul li {
+    padding-top: 0;
     list-style-type: none;
+}
+
+.campsite-img-container {
+    padding-top: 2em;
 }
 
 /***
