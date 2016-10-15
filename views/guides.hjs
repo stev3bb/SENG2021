@@ -467,6 +467,7 @@
       <div id="section4">
         <h1>How to use this Website</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <a href="#top"><button type="button" class="btn btn-success">Back to top</button></a><br><br><br>
       </div>
 
     </div>
