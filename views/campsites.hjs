@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/unslider-dots.css" />
 
     <style>
+    <!-- more dirty css -->
         #floating-panel {
             position: absolute;
             top: 10px;
@@ -40,6 +41,7 @@
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
+
 
     <div class="container" id="campsite-body">
         <div>
@@ -78,7 +80,7 @@
             </tbody>
         </table>
         <h3>{{ place.address }}</h3>
-
+        
         <h3>{{ place.phone }}</h3>
         <h3><a href="{{ place.website }}">{{ place.website }}</a></h3>
 
@@ -98,9 +100,8 @@
         <!-- new map goes here-->
 
 
-        <div class="col-lg-9">
+        <div class="col-lg-9">   
             <div id="floating-panel">
-                <h3>Show:</h3>
                 <input onclick="showShops();" type=button value="Shops">
                 <input onclick="showPetrolStation();" type=button value="Service Station">
                 <input onclick="showMeds();" type=button value="Medical Facilities">
@@ -170,7 +171,7 @@
             service.nearbySearch(medsRequest, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
-                        console.log(results[i]);
+                        //console.log(results[i]);
                         createMarker(meds, results[i]);
                     }
                 }
@@ -213,7 +214,7 @@
                 scaledSize: new google.maps.Size(25, 25)
             };
 
-            var marker = {
+            var marker = new google.maps.Marker({
                 map: map,
                 icon: icon,
                 position: location
