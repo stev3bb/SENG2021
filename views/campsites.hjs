@@ -147,16 +147,33 @@
 
       }
 
+       // Sets the map on all markers in the array.
+      function setMapOnAll(markers, map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+      // Removes the markers from the map, but keeps them in the array.
+      function clearMarkers(markers) {
+        setMapOnAll(markers, null);
+      }
+
       function showShops (){
-        return;
+        //remove w.e. was last
+        //then set onto map
+        clearMarkers(shops);
+        setMapOnAll(shops, map);
       }
 
       function showPetrolStation(){
-        return;
+        clearMarkers(petrol);
+        setMapOnAll(petrol, map);
       }
 
       function showMeds (){
-        return;
+        clearMarkers(meds);
+        setMapOnAll(meds, map);
       }
     </script>
 
