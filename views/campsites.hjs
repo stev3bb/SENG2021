@@ -37,12 +37,38 @@
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
-
-
+    <!-- weather table for 5 days(average weather and temperature) -->
+    <table class="table-condensed">
+        <thead>
+            <tr>
+                <th></th>
+                {{#place_5day_weather}}
+                <th>{{ time }}</th>
+                {{/place_5day_weather}}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Weather:</th>
+                {{#place_5day_weather}}
+                <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
+                {{/place_5day_weather}}
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th scope="row">Temperature:</th>
+                {{#place_5day_weather}}
+                <td>{{ temp }}°C</td>
+                {{/place_5day_weather}}
+            </tr>
+        </tbody>
+    </table>
+    
     <div class="container" id="campsite-body">
         <div>
             <span><h1 id="info-header">{{ place.name }}</h1></span>
@@ -52,39 +78,20 @@
             <!-- probably need to fix the size of the buttons-->
             <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" 
                 data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>  
+            
+            <div id="ratingText">
+                <b>Rating: </b>         
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
+            </div>
         </div>
+        <br>
+        <br>
+        
         <br />
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
         </div>
-        <!-- weather table for 5 days(average weather and temperature) -->
-        <table class="table-condensed">
-            <thead>
-                <tr>
-                    <th></th>
-                    {{#place_5day_weather}}
-                    <th>{{ time }}</th>
-                    {{/place_5day_weather}}
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Weather:</th>
-                    {{#place_5day_weather}}
-                    <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
-                    {{/place_5day_weather}}
-                </tr>
-            </tbody>
-            <tbody>
-                <tr>
-                    <th scope="row">Temperature:</th>
-                    {{#place_5day_weather}}
-                    <td>{{ temp }}°C</td>
-                    {{/place_5day_weather}}
-                </tr>
-            </tbody>
-        </table>
+        
         <h3>{{ place.address }}</h3>
         
         <h3>{{ place.phone }}</h3>
@@ -104,7 +111,8 @@
 
 
         <!-- new map goes here-->
-
+        <br>
+        
 
         <div class="col-lg-9">   
             <div id="floating-panel">
