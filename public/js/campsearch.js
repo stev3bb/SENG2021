@@ -1,21 +1,10 @@
 
-//need to go through this tomorrow to debug
-
 // Keep map as a global
 var map;
 // Create a blank array for all map markers
 var markers = [];
 var infowindow;
 var init = 0;
-
-
-/*initialise map
-
-summary:
-- add event listener- drag
-- records the center of the map, and uses it to use place services
-- repaint the markers and refresh the map
-*/
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -26,8 +15,6 @@ function initMap() {
         mapTypeControl: false,
         zoom: 10
     });
-    //var directionsDisplay = new google.maps.DirectionsRenderer;
-    //var directionsService = new google.maps.DirectionsService;
 
     google.maps.event.addListener(map, 'dragend', function() {
 
@@ -220,10 +207,8 @@ function nearSearch() {
 
 function createMarker(place) {
     var location = place.geometry.location;
-    var locString = location.toString();
-    var regrex = /(\-.+)\, (.+)\)/g;
-    var match = regrex.exec(locString);
-    //console.log("bad stuff is happening:"+ place.address);
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
 
     var icon = {
         url: place.icon,
@@ -265,8 +250,8 @@ function createMarker(place) {
             '<div class="col-md-8"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
                 'km<br /><a href="/campsites?id=' + id +
-                '&address=' + address + '&lat='+ match[1] + '&long=' + match[2]
-                +'"><button class="btn btn-default" type="button">View More</button></a></li><br /></div></div>');
+                '&address=' + address + '&lat='+ lat + '&long=' + lng +
+                '"><button class="btn btn-default" type="button">View More</button></a></li><br /></div></div>');
             // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             // console.log("ran out of juice guys");
@@ -275,31 +260,14 @@ function createMarker(place) {
     // console.log(place, distance);
 
     google.maps.event.addListener(marker, 'click', function() {
-        // var placeR;
-        // if (place.rating == undefined){
-        //     placeR = "(no rating)";
-        // }else{
-        //     placeR = place.rating + ' stars';
-        // }
-
-        //var locString = location.toString();
-        //var regrex = /(\-.+)\, (.+)\)/g;
-        //var match = regrex.exec(locString);
-        var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+match[1]+','+match[2]+'&sensor=true';
-
-
-        //console.log("something is broken" + place_address);
-
+        var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+ lat +','+ lng +'&sensor=true';
 
         $.getJSON(apicall, function (data) {
             infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address
-                +'&lat='+match[1]+'&long='+match[2]+'"><b>' + place.name + '</a></b></div>' +
-            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
+                +'&lat='+ lat +'&long='+ lng +'"><b>' + place.name + '</a></b></div>' +
+            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + lat + ',' + lng + ' target="_blank">Direction</a></li>');
         });
 
-
-        //infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ address +'"><b>' + place.name + '</a></b></div>' +
-          //  '<li><a href = https://www.google.com/maps/dir/Current+Location/' + match[1] + ',' + match[2] + ' target="_blank">Direction</a></li>');
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
