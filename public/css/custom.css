@@ -271,15 +271,25 @@ Weather Table
     }
 
 }
+/*
+share buttons - facebook and twitter
+*/
 .fb-share-button {
-    
+    margin-left: 0.5vw;
+    margin-top: 0.5vh;
     float: left;
+}
+.twitter-share-button {
+    margin-left: 0.5vw;
+    margin-bottom: 1vh;
+    margin-top: 0.5vh;
 }
 
 /* 
 size of rating and stars
  */
 #ratingText {
+    margin-left: 0.5vw;
     font-size: 22px;
 }
 

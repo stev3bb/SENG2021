@@ -78,7 +78,6 @@
             <!-- probably need to fix the size of the buttons-->
             <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" 
                 data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>  
-            
             <div id="ratingText">
                 <b>Rating: </b>         
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
