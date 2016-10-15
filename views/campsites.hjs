@@ -220,32 +220,64 @@
                 anchor: new google.maps.Point(10, 34),
                 scaledSize: new google.maps.Size(25, 25)
             };
-
             var marker = new google.maps.Marker({
                 map: map,
                 icon: icon,
                 position: location
             });
 
-            array.push(marker);
+            //console.log ("something:"+ place.place_id);
+            
+            //add info window, need debugging here
+            //var name;
+            //var address;
+            //var phone;
+            
+            var service = new google.maps.places.PlacesService(map);
+            service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    //name = placeInfo.name;
+                    //address = placeInfo.formatted_address;
+                    //phone = placeInfo.formatted_phone_number;
 
-            //add info window
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<p>'+placeInfo.name+'</p>'+ '<p>'+placeInfo.formatted_address+'</p>' + '<p>'+placeInfo.formatted_phone_number+'</p>'
+                    });
 
-            var infowindow;
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
+                        infowindow.open(map, marker);
+                    });
 
+
+                }else{
+                    console.log("ran out of api call or unexpected error");
+                }
+            });
+    
+
+
+           // var contentString = '<p>'+name+'</p>'+ '<p>'+address+'</p>' + '<p>'+phone+'</p>';
+
+            //var infowindow = new google.maps.InfoWindow({
+              //  content: contentString
+            //});
+
+            
+            /*
             google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent('derp test');
                 infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
                 infowindow.open(map, marker);
-
             });
+    */
+            array.push(marker);
 
 
         }
 
        // Sets the map on all markers in the array.
         function setMapOnAll(markers, map) {
-            console.log("showing markers");
+           // console.log("showing markers");
             for (var i = 0; i < markers.length; i++) {
               markers[i].setMap(map);
             }
@@ -253,7 +285,7 @@
 
         // Removes the markers from the map, but keeps them in the array.
         function clearMarkers(markers) {
-            console.log("clearing markers");
+            //console.log("clearing markers");
             setMapOnAll(markers, null);
         }
 

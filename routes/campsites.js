@@ -66,7 +66,7 @@ function getPlaceDetails(req, res, next) {
             var placeDetails = {};
             var placeImages = [];
 
-            placeDetails.name = place.result[0].name;
+            placeDetails.name = place.result.name;
 
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
