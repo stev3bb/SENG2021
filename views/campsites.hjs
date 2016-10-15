@@ -222,6 +222,9 @@
 
             array.push(marker);
 
+            //add info window
+
+            var infowindow;
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent('derp test');
