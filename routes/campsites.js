@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express();
 var request = require('request');
+var async = require('async');
 
 //api keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
@@ -16,7 +17,7 @@ router.get('/', function(req, res, next) {
     var regrex = /.*\, .* (.*) (\d+)\, \w+/g;
     var suburb = req.query.address;
     var match = regrex.exec(suburb);
-    console.log("Match 1: " + match[1] + " Match 2: " + match[2]);
+    // console.log("Match 1: " + match[1] + " Match 2: " + match[2]);
 
     var test_lat = req.query.lat;
     var test_long = req.query.long;
@@ -34,11 +35,6 @@ router.get('/', function(req, res, next) {
         '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
         '&media=photos&lat=' + test_lat + '&lon=' + test_long + '&radius=1&format=json&nojsoncallback=1';
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
-
-    var googleImgsApi = [];
-    //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-35.1522,150.7027&radius=1000&key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw
-    //http request here
-   //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw
 
     //might use async package for multiple request
     //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
@@ -118,52 +114,37 @@ router.get('/', function(req, res, next) {
             else
                 placeDetails.website = "N/A";
 
-            // Place photos
             if (place.result.photos) {
-                console.log(place.result.photos[0].getUrl);
+                console.log(place.result.photos[0]);
                 for (var i = 0; i < place.result.photos.length; i++) {
                     var photoRef = place.result.photos[i].photo_reference;
                     var height = place.result.photos[i].height;
-                    googleImgsApi.push("https://maps.googleapis.com/maps/api/place/photo?" +
+                    placeImages.push("https://maps.googleapis.com/maps/api/place/photo?" +
                     "photoreference=" + photoRef + "&maxheight=" + height +
                     "&key=" + mapsApiKey);
-                    // console.log(googleImgsApi);
                 }
             }
-
-            request({
-                url: weatherApi,
-                json: true
-            }, function(error, response, weather) {
-                if (!error && response.statusCode == 200) {
-                    // console.log(placeDetails);
-                    res.render('campsites', {
-                        //used for google maps
-                        place: placeDetails,
-                        place_condition: weather.weather[0].description,
-                        place_temp: weather.main.temp,
-                        place_wind_speed: weather.wind.speed,
-                        place_5day_weather: fiveDayWeather,
-                        header_image: placeImages[0],
-                        place_images: placeImages,
-                        place_icon: weather.weather[0].icon,
-                        place_lat: test_lat,
-                        place_lng: test_long,
-                        place_id: req.query.id,
-                        //place_chance: weather.precipitation.value,
-                        partials: {
-                            header: 'partials/header',
-                            navbar: 'partials/navbar',
-                            bottomJs: 'partials/bottomJs',
-                            API_KEY: 'partials/api_key'
-                        }
-                    });
-                } else {
-                    console.log("Nothing works");
-                }
-            });
         }
-    })
+    });
+
+    console.log(placeImages);
+    res.render('campsites', {
+        //used for google maps
+        place: placeDetails,
+        place_5day_weather: fiveDayWeather,
+        header_image: placeImages[0],
+        place_images: placeImages,
+        place_lat: test_lat,
+        place_lng: test_long,
+        place_id: req.query.id,
+        //place_chance: weather.precipitation.value,
+        partials: {
+            header: 'partials/header',
+            navbar: 'partials/navbar',
+            bottomJs: 'partials/bottomJs',
+            API_KEY: 'partials/api_key'
+        }
+    });
 
     // request({
     //     url: flickrApi,
