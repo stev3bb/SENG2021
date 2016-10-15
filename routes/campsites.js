@@ -1,56 +1,29 @@
-//load some node js modules
 var express = require('express');
 var router = express();
 var request = require('request');
 var async = require('async');
 
-//api keys
+// API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
 var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
 
-//time for 2016-01-01
-//var unixTime = '1451606400';
+// var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
+//     '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
+//     '&media=photos&lat=' + lat + '&lon=' + lng + '&radius=1&format=json&nojsoncallback=1';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    var regrex = /.*\, .* (.*) (\d+)\, \w+/g;
-    var suburb = req.query.address;
-    var match = regrex.exec(suburb);
-    // console.log("Match 1: " + match[1] + " Match 2: " + match[2]);
-
-    var test_lat = req.query.lat;
-    var test_long = req.query.long;
-
-    var placeImages = [];
-    var fiveDayWeather = [];
-    var placeDetails = {};
-
-    //api url links
-    var weatherApi = 'http://api.openweathermap.org/data/2.5/weather?zip=+' + match[2] +
-        ',au&appid=' + weatherApiKey + '&mode=json&units=metric';
+function getWeather(req, res, next) {
+    var lat = req.query.lat;
+    var lng = req.query.long;
     var fiveDayWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?' +
-        'lat=' + test_lat + '&lon=' + test_long + '&appid=' + weatherApiKey + '&units=metric';
-    var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
-        '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
-        '&media=photos&lat=' + test_lat + '&lon=' + test_long + '&radius=1&format=json&nojsoncallback=1';
-    var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
-
-    //might use async package for multiple request
-    //http://stackoverflow.com/questions/34436455/calling-multiple-http-requests-in-a-single-http-request-in-node-js
-
-    //debugging statement:
-    // console.log("the json request url:" + fiveDayWeatherApi);
-
+        'lat=' + lat + '&lon=' + lng + '&appid=' + weatherApiKey + '&units=metric';
     request({
         url: fiveDayWeatherApi,
         json: true
     }, function(error, response, weather5) {
         if (!error && response.statusCode == 200) {
-            //more debugging
-            //console.log(weather5);
-            //check length here
-            //console.log("length of the array is here: "+weather5.list.length);
+
+            var fiveDayWeather = [];
             for (i = 3; i < weather5.list.length; i += 8) {
                 //2016-10-11 12:00:00
                 // sets the day of the week from a number returned by getday function
@@ -78,25 +51,26 @@ router.get('/', function(req, res, next) {
                     windSpeed: weather5.list[i].wind.speed,
                     icon: oldicon,
                 }
-                //console.log("array check :"+ i);
-                // fiveDayWeather.push('Date:' + weather5.list[i].dt_txt +
-                //     'Weather description:' + weather5.list[i].weather[0].description +
-                //     'temp_min:' +
-                //     weather5.list[i].main.temp_min + '  temp_max:' +
-                //     weather5.list[i].main.temp_max + '  humidity:' +
-                //     weather5.list[i].main.humidity + '%  wind speed:' +
-                //     weather5.list[i].wind.speed + 'm/s'); // more debugging statements+ '        zzzzzzz:' + weather5.list[i].dt_txt);
-
                 fiveDayWeather.push(date);
             }
+            req.fiveDayWeather = fiveDayWeather;
         }
+        next();
     });
+}
 
+function getPlaceDetails(req, res, next) {
+    var lat = req.query.lat;
+    var lng = req.query.long;
+    var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
     request({
         url: mapsApi,
         json: true
     }, function(error, response, place) {
         if (!error && response.statusCode == 200) {
+            var placeDetails = {};
+            var placeImages = [];
+
             placeDetails.name = place.result.name;
             placeDetails.address = place.result.formatted_address;
             if (place.result.formatted_phone_number)
@@ -124,18 +98,23 @@ router.get('/', function(req, res, next) {
                     "&key=" + mapsApiKey);
                 }
             }
-        }
-    });
 
-    console.log(placeImages);
+            req.placeDetails = placeDetails;
+            req.placeImages = placeImages;
+        }
+        next();
+    });
+}
+
+function renderPage(req, res) {
     res.render('campsites', {
         //used for google maps
-        place: placeDetails,
-        place_5day_weather: fiveDayWeather,
-        header_image: placeImages[0],
-        place_images: placeImages,
-        place_lat: test_lat,
-        place_lng: test_long,
+        place: req.placeDetails,
+        place_5day_weather: req.fiveDayWeather,
+        header_image: req.placeImages[0],
+        place_images: req.placeImages,
+        place_lat: req.query.lat,
+        place_lng: req.query.long,
         place_id: req.query.id,
         //place_chance: weather.precipitation.value,
         partials: {
@@ -145,7 +124,13 @@ router.get('/', function(req, res, next) {
             API_KEY: 'partials/api_key'
         }
     });
+}
 
+router.get('/', getWeather, getPlaceDetails, renderPage);
+
+
+
+// OLD FLICKR STUFF LEAVE ILL FIX LATER
     // request({
     //     url: flickrApi,
     //     json: true
@@ -182,7 +167,6 @@ router.get('/', function(req, res, next) {
     //         }
     //     }
     // });
-});
 
 
 module.exports = router;
