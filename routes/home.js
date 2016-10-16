@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('home', {
         title: 'Home',
-        partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs'}
+        partials: {header: 'partials/header', navbar: 'partials/navbar', bottomJs: 'partials/bottomJs', API_KEY: 'partials/api_key'}
     });
 });
 

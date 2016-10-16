@@ -4,7 +4,6 @@ var map;
 // Create a blank array for all map markers
 var markers = [];
 var infowindow;
-var init = 0;
 var autoListener;
 var autocomplete;
 
@@ -21,23 +20,31 @@ function initMap() {
     // TESTING PLACES SEARCH BOX
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('value')), {
-            types: ['geocode']
+            types: ['geocode'],
+            componentRestrictions: {country: 'au'}
         }
     )
 
     // If the user returns to the page with the checkbox already checked, set the listener to be active
     if (document.getElementById('automatic').checked) {
-        console.log("Checked");
         addAutoListener();
     }
 
-    if (window.location.search && init === 0) {
+    if (window.location.search) {
         var nearby = getParameterByName('nearby');
-        init = 1;
-        if (nearby === 'true') {
+        if (nearby) {
             nearSearch();
         } else {
-            querySearch();
+            var place_id = getParameterByName('location');
+            var request = {placeId: place_id};
+            var service = new google.maps.places.PlacesService(map);
+            service.getDetails(request, callback);
+            function callback(place, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    autocomplete.set("place", place);
+                    querySearch();
+                }
+            }
         }
     }
 }
@@ -52,8 +59,6 @@ function checkAuto() {
 
 function addAutoListener() {
     autoListener = google.maps.event.addListener(map, 'dragend', function() {
-
-        //clear markers here
         deleteMarkers();
 
         // Empty the list of campsites
@@ -108,11 +113,26 @@ function deleteMarkers() {
 
 // Searching using a given address
 function querySearch() {
+    deleteMarkers();
     var place = autocomplete.getPlace();
     // Only search if they have selected a valid google maps place
     if (place) {
+        // console.log(place);
         var pos = place.geometry.location;
         map.setCenter(pos);
+
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: "current location"
+        })
+        infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.adr_address);
+            infowindow.setOptions({pixelOffset: new google.maps.Size(0, 0)})
+            infowindow.open(map, marker);
+        });
 
         var request = {
             location: pos,
@@ -134,16 +154,24 @@ function querySearch() {
 }
 
 function nearSearch() {
+    deleteMarkers();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             pos = new google.maps.LatLng(position.coords.latitude,
                 position.coords.longitude);
-                
+
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: "current location"
             })
+            infowindow = new google.maps.InfoWindow();
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent('Current Location');
+                infowindow.setOptions({pixelOffset: new google.maps.Size(0, 0)})
+                infowindow.open(map, marker);
+            });
 
             map.setCenter(pos);
 
@@ -152,7 +180,6 @@ function nearSearch() {
                 radius: 50000,
                 types: ['campground']
             }
-            infowindow = new google.maps.InfoWindow();
             var service = new google.maps.places.PlacesService(map);
             service.nearbySearch(request, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -241,6 +268,12 @@ function createMarker(place) {
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
         infowindow.open(map, marker);
     });
+}
+
+function updateLocation() {
+    console.log(autocomplete.getPlace().place_id);
+    var val = document.getElementById('value').value;
+    document.location.href = "?location=" + autocomplete.getPlace().place_id;
 }
 
 function getParameterByName(name) {
