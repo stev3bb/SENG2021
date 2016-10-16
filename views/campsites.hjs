@@ -266,7 +266,7 @@
                         }
 
                         //some fruit loops
-                        for (var i = 0; i<placeInfo.opening_hours.weekday_text.length(); i++){
+                        for (var i = 0; i<placeInfo.opening_hours[0].weekday_text.length(); i++){
                             TradeString += '<li>'+placeInfo.opening_hours.weekday_text[i]+'</li>';
                         }
                        
@@ -332,7 +332,7 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMQuu3AAGiMOYnu6eFaiVnMLW2snsGTAE&callback=initMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIqjvI6UU8E0BIVSmVUzS0V02rKoErpyw&callback=initMap&libraries=places"
     async defer></script>
 
     <script>
