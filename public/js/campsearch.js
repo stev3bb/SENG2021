@@ -261,8 +261,7 @@ function createMarker(place) {
 
         $.getJSON(apicall, function (data) {
             infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address
-                +'&lat='+ lat +'&long='+ lng +'"><b>' + place.name + '</a></b></div>' +
-            '<li><a href = https://www.google.com/maps/dir/Current+Location/' + lat + ',' + lng + ' target="_blank">Direction</a></li>');
+                +'&lat='+ lat +'&long='+ lng +'"><b>' + place.name + '</a></b></div>');
         });
 
         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})

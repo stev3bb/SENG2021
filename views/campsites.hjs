@@ -55,7 +55,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="noHor">
+            <tr>
                 <th scope="row">Weather:</th>
                 {{#place_5day_weather}}
                 <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
@@ -63,7 +63,7 @@
             </tr>
         </tbody>
         <tbody>
-            <tr class="noHor">
+            <tr>
                 <th scope="row">Temperature:</th>
                 {{#place_5day_weather}}
                 <td>{{ temp }}°C</td>
@@ -86,15 +86,6 @@
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
             </div>
         </div>
-        <b id="facility">Facilities: </b>
-        <div class="campicons"> 
-            <img src="/img/Toilet.png">      
-            <img src="/img/Disable facility.png">     
-            <img src="/img/Shower.png">
-            <img src="/img/Drinking water.png">
-            <img src="/img/Campfire.png">
-            
-        </div>
         <br>
         <br>
 
@@ -107,6 +98,7 @@
 
         <h3>Phone Number: {{ place.phone }}</h3>
         <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
+        <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Direction</a></h3>
 
         <!-- give a 5 day weather forecast of the location // use for debugging purposes-->
         <!--
@@ -117,11 +109,6 @@
             <br>Current wind speed: {{ place_wind_speed }} m/s</br>
             <br>Current time: {{ place_time }}</br>
         </p>-->
-
-        <p> id is : {{place_id}} </p>
-
-
-        <!-- new map goes here-->
         <br>
 
 
@@ -142,7 +129,7 @@
     <script>
         //will clean up this later
         //global vars here
-
+        var infowindow;
         var map;
         var mapLatLng = { lat: {{place_lat}}, lng: {{place_lng}} };
 
@@ -256,17 +243,26 @@
 
                 service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
-                        var infowindow = new google.maps.InfoWindow({
-                            content: '<p>'+placeInfo.name+'</p>'+ '<p>'+placeInfo.formatted_address+'</p>' + '<p>'+placeInfo.formatted_phone_number+'</p>'
+                        if (infowindow != null){
+                            infowindow.close();
+                        }
+                        //if ()
+
+
+                        infowindow = new google.maps.InfoWindow({
+                            content: '<p><br>'+placeInfo.name+'</br></p>'+ '<p>'
+                            +placeInfo.formatted_address+'</p>' 
+                            + '<p>'+placeInfo.formatted_phone_number+'</p>'
+                            +'<li><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/' 
+                            + place.geometry.location.lat() +','+ place.geometry.location.lng() + ' target="_blank">Direction</a></li>'
                         });
-                        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
+                        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)});
+                        map.panTo(place.geometry.location);
                         infowindow.open(map, marker);
                     }else{
                         console.log("ran out of api call or unexpected error");
                     }
                 });
-
-
             });
             array.push(marker);
 
@@ -312,7 +308,7 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&callback=initMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap&libraries=places"
     async defer></script>
 
     <script>
