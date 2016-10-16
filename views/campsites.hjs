@@ -221,7 +221,7 @@
         
         function createMarker (array, place){
             //debugging here
-            console.log(JSON.parse(JSON.stringify(place)));
+            //console.log(JSON.parse(JSON.stringify(place)));
 
             //some location
             var location = place.geometry.location;
@@ -244,39 +244,49 @@
                 service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         //some more variables
-                        var placeNum;
-                        var placeOpen;
+                        var placeNum ='';
+                        var placeOpen ='';
                         var TradeString = '';
 
 
-
+                        console.log(JSON.parse(JSON.stringify(placeInfo)));
+                        
                         if (infowindow != null){
                             infowindow.close();
                         }
-                        if (placeInfo.formatted_phone_number != null){
+
+                        //bug link http://localhost:3000/campsites?id=ChIJ3amYAYQUc2sRXRlk5fdgibE&address=4%20Pitt%20St,%20Stockton%20NSW%202295,%20Australia&lat=-32.912986&long=151.78823260000001 (vw petrol station)
+
+                        console.log("why is this num retarded:"+ placeInfo.formatted_phone_number);
+                        //bug here 
+                        if (placeInfo.formatted_phone_number != '' || placeInfo.formatted_phone_number != null || placeInfo.formatted_phone_number != undefined || placeInfo.hasOwnProperty("formatted_phone_number")){
                             placeNum = placeInfo.formatted_phone_number;
                         }else{
                             placeNum = 'n/a'; 
                         }
 
-                        if (placeInfo.opening_hours.open_now == true){
-                            placeOpen = '<p><b><font color="green">OPEN</font><b></p>';
-                        }else {
-                            placeOpen = '<p><b><font color="green">CLOSED</font><b></p>';
-                        }
+                        if (placeInfo.opening_hours){
+                            if (placeInfo.opening_hours.open_now == true){
+                                placeOpen = '</ p><p><b><font color="green">OPEN</font><b></p>';
+                            }else {
+                                placeOpen = '</ p><p><b><font color="green">CLOSED</font><b></p>';
+                            }
 
-                        //some fruit loops
-                        for (var i = 0; i<placeInfo.opening_hours[0].weekday_text.length(); i++){
-                            TradeString += '<li>'+placeInfo.opening_hours.weekday_text[i]+'</li>';
+                            //some fruit loops
+                            for (var i = 0; i<placeInfo.opening_hours.weekday_text.length; i++){
+                                TradeString += '<li>'+placeInfo.opening_hours.weekday_text[i]+'</li>';
+                            }
+                        }else{
+                            TradeString += 'n/a';
                         }
                        
 
 
                         infowindow = new google.maps.InfoWindow({
-                            content: '<p><br>'+placeInfo.name+'</br></p>'+ '<p>'
+                            content: '<b>'+placeInfo.name+'</b>'+ '<p>'
                             +placeInfo.formatted_address+'</p>' 
                             + '<p>'+placeInfo.formatted_phone_number+'</p>'
-                            + '</ p>' + placeOpen + '<p><b>Trading Hours:</b></p>' + TradeString
+                            + placeOpen + '<p><b>Trading Hours:</b></p>' + TradeString
                             +'<p><b><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/' 
                             + place.geometry.location.lat() +','+ place.geometry.location.lng() + ' target="_blank">Direction</a></b></p>'
                         });
@@ -332,7 +342,7 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIqjvI6UU8E0BIVSmVUzS0V02rKoErpyw&callback=initMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas&callback=initMap&libraries=places"
     async defer></script>
 
     <script>
