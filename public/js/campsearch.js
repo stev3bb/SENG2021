@@ -5,6 +5,7 @@ var map;
 var markers = [];
 var infowindow;
 var init = 0;
+var autoListener;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -16,7 +17,33 @@ function initMap() {
         zoom: 10
     });
 
-    google.maps.event.addListener(map, 'dragend', function() {
+    // If the user returns to the page with the checkbox already checked, set the listener to be active
+    if (document.getElementById('automatic').checked) {
+        console.log("Checked");
+        addAutoListener();
+    }
+
+    if (window.location.search && init === 0) {
+        var nearby = getParameterByName('nearby');
+        init = 1;
+        if (nearby === 'true') {
+            nearSearch();
+        } else {
+            querySearch();
+        }
+    }
+}
+
+function checkAuto() {
+    if(document.getElementById('automatic').checked) {
+        addAutoListener();
+    } else {
+        autoListener.remove();
+    }
+}
+
+function addAutoListener() {
+    autoListener = google.maps.event.addListener(map, 'dragend', function() {
 
         //clear markers here
         deleteMarkers();
@@ -42,18 +69,7 @@ function initMap() {
             }
         });
     });
-
-    if (window.location.search && init === 0) {
-        var nearby = getParameterByName('nearby');
-        init = 1;
-        if (nearby === 'true') {
-            nearSearch();
-        } else {
-            querySearch();
-        }
-    }
 }
-
 
 //***************************************************
 
