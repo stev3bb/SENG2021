@@ -17,6 +17,12 @@ function initMap() {
         zoom: 10
     });
 
+    // If the user returns to the page with the checkbox already checked, set the listener to be active
+    if (document.getElementById('automatic').checked) {
+        console.log("Checked");
+        addAutoListener();
+    }
+
     if (window.location.search && init === 0) {
         var nearby = getParameterByName('nearby');
         init = 1;
@@ -30,37 +36,40 @@ function initMap() {
 
 function checkAuto() {
     if(document.getElementById('automatic').checked) {
-        console.log("Adding listener");
-        autoListener = google.maps.event.addListener(map, 'dragend', function() {
-
-            //clear markers here
-            deleteMarkers();
-
-            // Empty the list of campsites
-            $('#campsites-list ul').empty();
-
-            var request = {
-                location: map.getCenter(),
-                //max range
-                radius: 50000,
-                types: ['campground']
-            }
-
-            infowindow = new google.maps.InfoWindow();
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch(request, function(results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        //console.log(results[i]);
-                        createMarker(results[i]);
-                    }
-                }
-            });
-        });
+        addAutoListener();
     } else {
         console.log("Removing listener");
         autoListener.remove();
     }
+}
+
+function addAutoListener() {
+    autoListener = google.maps.event.addListener(map, 'dragend', function() {
+
+        //clear markers here
+        deleteMarkers();
+
+        // Empty the list of campsites
+        $('#campsites-list ul').empty();
+
+        var request = {
+            location: map.getCenter(),
+            //max range
+            radius: 50000,
+            types: ['campground']
+        }
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    //console.log(results[i]);
+                    createMarker(results[i]);
+                }
+            }
+        });
+    });
 }
 
 //***************************************************
