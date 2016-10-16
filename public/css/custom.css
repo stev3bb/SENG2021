@@ -192,6 +192,8 @@ input[type='checkbox'] {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
+    background-color: black;
+    border-radius: 25px;
 }
 
 .slide-img {
@@ -220,7 +222,7 @@ input[type='checkbox'] {
   top: 0;
   left: 0;
   content: '★★★★★';
-  color: darkgrey;
+  color: #1E90FF;
   overflow: hidden;
 }
 
