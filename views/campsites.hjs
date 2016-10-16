@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="/css/unslider.css" />
     <link rel="stylesheet" href="/css/unslider-dots.css" />
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
-</script>
-
+   <<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+    </script>
 
     <style>
     <!-- more dirty css -->
@@ -132,11 +131,9 @@
 
 
     <script>
-        //will clean up this mess later
-        //some vars
-
-        //some interesting places needed, petrol stations, phamarcy, hospital and super markets
+        //will clean up this later
         //global vars here
+
         var map;
         var mapLatLng = { lat: {{place_lat}}, lng: {{place_lng}} };
 
@@ -144,6 +141,9 @@
         var meds = [];
         var shops = [];
         var petrol = [];
+
+        //google services kept global
+        var service; 
 
 
         function initMap() {
@@ -181,20 +181,24 @@
 
 
             //first request
-            var service = new google.maps.places.PlacesService(map);
+            service = new google.maps.places.PlacesService(map);
 
             service.nearbySearch(medsRequest, function(results, status) {
+
+
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
-                        //console.log(results[i]);
 
-                        _.throttle(createMarker(meds, results[i]), 1000); 
-                        
+
+                        //var a = _.throttle(function(){createMarker(meds,results[i]);}, 1000);
+                        //console.log(results[i]);
+                        createMarker(meds,results[i]);
+                        //a();
                     }
                 }
             });
 
-
+/*
             //second request
             service.nearbySearch(shopsRequest, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -214,15 +218,11 @@
                     }
                 }
             });
-
+*/
 
         }
         
         function createMarker (array, place){
-
-            _.throttle(function(){console.log('1000');}, 1000);
-
-
             //some location
             var location = place.geometry.location;
            //icons
@@ -239,50 +239,22 @@
                 position: location
             });
 
-            //console.log ("something:"+ place.place_id);
+            google.maps.event.addListener(marker, "click", function() {
 
-            //add info window, need debugging here
-            //var name;
-            //var address;
-            //var phone;
-
-            var service = new google.maps.places.PlacesService(map);
-            service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    //name = placeInfo.name;
-                    //address = placeInfo.formatted_address;
-                    //phone = placeInfo.formatted_phone_number;
-
-                    var infowindow = new google.maps.InfoWindow({
-                        content: '<p>'+placeInfo.name+'</p>'+ '<p>'+placeInfo.formatted_address+'</p>' + '<p>'+placeInfo.formatted_phone_number+'</p>'
-                    });
-
-                    google.maps.event.addListener(marker, 'click', function() {
+                service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        var infowindow = new google.maps.InfoWindow({
+                            content: '<p>'+placeInfo.name+'</p>'+ '<p>'+placeInfo.formatted_address+'</p>' + '<p>'+placeInfo.formatted_phone_number+'</p>'
+                        });
                         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
                         infowindow.open(map, marker);
-                    });
+                    }else{
+                        console.log("ran out of api call or unexpected error");
+                    }
+                });
 
 
-                }else{
-                    console.log("ran out of api call or unexpected error");
-                }
             });
-
-
-
-           // var contentString = '<p>'+name+'</p>'+ '<p>'+address+'</p>' + '<p>'+phone+'</p>';
-
-            //var infowindow = new google.maps.InfoWindow({
-              //  content: contentString
-            //});
-
-
-            /*
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
-                infowindow.open(map, marker);
-            });
-    */
             array.push(marker);
 
 
@@ -324,11 +296,6 @@
             clearMarkers(meds);
             setMapOnAll(meds, map);
         }
-
-
-
-
-
 
     </script>
 
