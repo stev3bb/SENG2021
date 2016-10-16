@@ -226,9 +226,7 @@
             //debugging here
             //console.log(JSON.stringify(place));
 
-            if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png" 
-                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png"
-                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
+            if (place.icon !== ("https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png")||("https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png")||("https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png")){
                 return;
             }
             //some location

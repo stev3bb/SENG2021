@@ -55,7 +55,7 @@ function getWeather(req, res, next) {
 }
 
 function getPlaceDetails(req, res, next) {
-    var lat = req.query.lat;
+    var lat = req.query.lat;    
     var lng = req.query.long;
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
     request({
