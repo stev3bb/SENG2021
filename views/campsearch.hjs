@@ -20,6 +20,12 @@
                                 <button class="btn btn-default btn-lg" type="button"><a href="?nearby=true"><span class="glyphicon" aria-hidden="true">
                                 <img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></a></button>
                             </div>
+
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Search while scrolling
+                            </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">
                             <ul></ul>
