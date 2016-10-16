@@ -17,6 +17,13 @@ function initMap() {
         zoom: 10
     });
 
+    // TESTING PLACES SEARCH BOX
+    new google.maps.places.Autocomplete(
+        (document.getElementById('value')), {
+            types: ['geocode']
+        }
+    )
+
     // If the user returns to the page with the checkbox already checked, set the listener to be active
     if (document.getElementById('automatic').checked) {
         console.log("Checked");
@@ -144,8 +151,8 @@ function querySearch() {
                             //n.appendChild(document.createTextNode(
                             //details.geometry.location.toString()));
 
-                            // console.log(details.geometry.location.toString());
-
+                            console.log(details.geometry.location.toString());
+                            document.location.href = "?location=" + p;
                             //more repeated code:
                             pos = details.geometry.location;
 
