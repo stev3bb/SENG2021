@@ -232,6 +232,8 @@
             //var name;
             //var address;
             //var phone;
+
+            //need to find a solution for the api running out solution
             
             var service = new google.maps.places.PlacesService(map);
             service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
