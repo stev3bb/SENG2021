@@ -37,7 +37,7 @@
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
@@ -68,7 +68,7 @@
             </tr>
         </tbody>
     </table>
-    
+
     <div class="container" id="campsite-body">
         <div>
             <span><h1 id="info-header">{{ place.name }}</h1></span>
@@ -76,23 +76,23 @@
             <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
             <a id="fbshareURL" class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
             <!-- probably need to fix the size of the buttons-->
-            <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" 
-                data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>  
+            <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
             <div id="ratingText">
-                <b>Rating: </b>         
+                <b>Rating: </b>
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
             </div>
         </div>
         <br>
         <br>
-        
+
         <br />
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
         </div>
-        
+
         <h3>Address: {{ place.address }}</h3>
-        
+
         <h3>Phone Number: {{ place.phone }}</h3>
         <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
 
@@ -111,9 +111,9 @@
 
         <!-- new map goes here-->
         <br>
-        
 
-        <div class="col-lg-9">   
+
+        <div class="col-lg-9">
             <div id="floating-panel">
                 <input onclick="showShops();" type=button value="Shops">
                 <input onclick="showPetrolStation();" type=button value="Service Station">
@@ -139,7 +139,7 @@
         var meds = [];
         var shops = [];
         var petrol = [];
-      
+
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
@@ -187,7 +187,7 @@
                 }
             });
 
-            
+
             //second request
             service.nearbySearch(shopsRequest, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -208,14 +208,14 @@
                 }
             });
 
-            
+
         }
 
 
         function createMarker (array, place){
             //some location
             var location = place.geometry.location;
-           //icons 
+           //icons
             var icon = {
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
@@ -230,14 +230,12 @@
             });
 
             //console.log ("something:"+ place.place_id);
-            
+
             //add info window, need debugging here
             //var name;
             //var address;
             //var phone;
 
-            //need to find a solution for the api running out solution
-            
             var service = new google.maps.places.PlacesService(map);
             service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -259,7 +257,7 @@
                     console.log("ran out of api call or unexpected error");
                 }
             });
-    
+
 
 
            // var contentString = '<p>'+name+'</p>'+ '<p>'+address+'</p>' + '<p>'+phone+'</p>';
@@ -268,7 +266,7 @@
               //  content: contentString
             //});
 
-            
+
             /*
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})

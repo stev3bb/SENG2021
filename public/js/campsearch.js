@@ -246,12 +246,12 @@ function createMarker(place) {
             if (placeInfo.photos) var photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
 
             if (photo)
-            $("#campsites-list ul").append('<li><div class="row"><div class="col-md-6 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
-            '<div class="col-md-6"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
+            $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
+            '<div class="col-lg-7 col-md-12"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
                 'km<br /><a href="/campsites?id=' + id +
                 '&address=' + address + '&lat='+ lat + '&long=' + lng +
-                '"><button class="btn btn-default" type="button">View More</button></a></li><br /></div></div>');
+                '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
             // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             // console.log("ran out of juice guys");

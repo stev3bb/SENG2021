@@ -139,6 +139,8 @@ h1#discover {
 
 .campsite-img-container {
     padding-top: 2em;
+    margin-right: 2em;
+    width: 170px;
 }
 
 /***
@@ -285,16 +287,10 @@ share buttons - facebook and twitter
     margin-top: 0.5vh;
 }
 
-/* 
+/*
 size of rating and stars
  */
 #ratingText {
     margin-left: 0.5vw;
     font-size: 22px;
 }
-
-
-
-
-
-
