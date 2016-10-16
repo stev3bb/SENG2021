@@ -55,7 +55,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="noHor">
                 <th scope="row">Weather:</th>
                 {{#place_5day_weather}}
                 <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
@@ -63,7 +63,7 @@
             </tr>
         </tbody>
         <tbody>
-            <tr>
+            <tr class="noHor">
                 <th scope="row">Temperature:</th>
                 {{#place_5day_weather}}
                 <td>{{ temp }}°C</td>
@@ -85,6 +85,15 @@
                 <b>Rating: </b>
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
             </div>
+        </div>
+        <b id="facility">Facilities: </b>
+        <div class="campicons"> 
+            <img src="/img/Toilet.png">      
+            <img src="/img/Disable facility.png">     
+            <img src="/img/Shower.png">
+            <img src="/img/Drinking water.png">
+            <img src="/img/Campfire.png">
+            
         </div>
         <br>
         <br>
