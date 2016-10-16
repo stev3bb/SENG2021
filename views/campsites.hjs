@@ -210,9 +210,17 @@
 
 
         }
-
+        
+        function callback () {
+            console.count("Throttled");
+        }
 
         function createMarker (array, place){
+            //something
+            throttle(callback, 1000);
+
+
+
             //some location
             var location = place.geometry.location;
            //icons
@@ -314,6 +322,24 @@
             clearMarkers(meds);
             setMapOnAll(meds, map);
         }
+
+        //some throttle function
+        function throttle (callback, limit) {
+            var wait = false;                 // Initially, we're not waiting
+            return function () {              // We return a throttled function
+                if (!wait) {                  // If we're not waiting
+                    callback.call();          // Execute users function
+                    wait = true;              // Prevent future invocations
+                    setTimeout(function () {  // After a period of time
+                        wait = false;         // And allow future invocations
+                }, limit);
+            }
+        }
+}
+
+
+
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&callback=initMap&libraries=places"
