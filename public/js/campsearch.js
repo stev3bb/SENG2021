@@ -228,7 +228,7 @@ function createMarker(place) {
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     distance = Math.round(distance / 1000);
-
+    //console.log(placeInfo.reviews);
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
