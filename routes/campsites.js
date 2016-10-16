@@ -61,10 +61,6 @@ function getPlaceDetails(req, res, next) {
     var lng = req.query.long;
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
 
-    if (DEBUG_MODE) {
-        next();
-    }
-
     request({
         url: mapsApi,
         json: true
@@ -91,8 +87,12 @@ function getPlaceDetails(req, res, next) {
             else
                 placeDetails.website = "N/A";
 
+            if (DEBUG_MODE) {
+                next();
+            }
+
             if (place.result.photos) {
-                console.log(place.result.photos[0]);
+                // console.log(place.result.photos[0]);
                 for (var i = 0; i < place.result.photos.length; i++) {
                     var photoRef = place.result.photos[i].photo_reference;
                     var height = place.result.photos[i].height;
@@ -151,6 +151,25 @@ function getPlaceDetails(req, res, next) {
 }
 
 function renderPage(req, res) {
+    if (DEBUG_MODE) {
+        res.render('campsites', {
+            //used for google maps
+            place: req.placeDetails,
+            place_5day_weather: req.fiveDayWeather,
+            header_image: 0,
+            place_images: 0,
+            place_lat: req.query.lat,
+            place_lng: req.query.long,
+            place_id: req.query.id,
+            //place_chance: weather.precipitation.value,
+            partials: {
+                header: 'partials/header',
+                navbar: 'partials/navbar',
+                bottomJs: 'partials/bottomJs',
+                API_KEY: 'partials/api_key'
+            }
+        });
+    }
     res.render('campsites', {
         //used for google maps
         place: req.placeDetails,

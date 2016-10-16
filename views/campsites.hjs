@@ -139,7 +139,7 @@
         var petrol = [];
 
         //google services kept global
-        var service; 
+        var service;
 
 
         function initMap() {
@@ -199,7 +199,7 @@
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
                         if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
-                          createMarker(shops, results[i]); 
+                          createMarker(shops, results[i]);
                         }
                     }
                 }
@@ -212,13 +212,13 @@
                         //console.log(results[i]);
                         if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png"){
                             createMarker(petrol, results[i]);
-                        }   
+                        }
                     }
                 }
             });
 
         }
-        
+
         function createMarker (array, place){
             //debugging here
             //console.log(JSON.parse(JSON.stringify(place)));
@@ -242,34 +242,37 @@
             google.maps.event.addListener(marker, "click", function() {
 
                 service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
-                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
                         //some more variables
                         var placeNum ='';
                         var placeOpen ='';
                         var TradeString = '';
 
 
-                        console.log(JSON.parse(JSON.stringify(placeInfo)));
-                        
+                        // console.log(JSON.parse(JSON.stringify(placeInfo)));
+
                         if (infowindow != null){
                             infowindow.close();
                         }
 
                         //bug link http://localhost:3000/campsites?id=ChIJ3amYAYQUc2sRXRlk5fdgibE&address=4%20Pitt%20St,%20Stockton%20NSW%202295,%20Australia&lat=-32.912986&long=151.78823260000001 (vw petrol station)
 
-                        console.log("why is this num retarded:"+ placeInfo.formatted_phone_number);
-                        //bug here 
-                        if (placeInfo.formatted_phone_number != '' || placeInfo.formatted_phone_number != null || placeInfo.formatted_phone_number != undefined || placeInfo.hasOwnProperty("formatted_phone_number")){
+                        console.log("Phone: "+ placeInfo.formatted_phone_number);
+                        console.log("Opening hours: "+ placeInfo.opening_hours);
+                        console.log(placeInfo);
+                        //bug here
+                        if (placeInfo.formatted_phone_number){
                             placeNum = placeInfo.formatted_phone_number;
                         }else{
-                            placeNum = 'n/a'; 
+                            console.log("Y");
+                            placeNum = 'N/A';
                         }
 
                         if (placeInfo.opening_hours){
                             if (placeInfo.opening_hours.open_now == true){
                                 placeOpen = '</ p><p><b><font color="green">OPEN</font><b></p>';
                             }else {
-                                placeOpen = '</ p><p><b><font color="green">CLOSED</font><b></p>';
+                                placeOpen = '</ p><p><b><font color="red">CLOSED</font><b></p>';
                             }
 
                             //some fruit loops
@@ -277,17 +280,17 @@
                                 TradeString += '<li>'+placeInfo.opening_hours.weekday_text[i]+'</li>';
                             }
                         }else{
-                            TradeString += 'n/a';
+                            TradeString += 'N/A';
                         }
-                       
+
 
 
                         infowindow = new google.maps.InfoWindow({
                             content: '<b>'+placeInfo.name+'</b>'+ '<p>'
-                            +placeInfo.formatted_address+'</p>' 
-                            + '<p>'+placeInfo.formatted_phone_number+'</p>'
+                            + placeInfo.formatted_address +'</p>'
+                            + '<p>'+ placeNum +'</p>'
                             + placeOpen + '<p><b>Trading Hours:</b></p>' + TradeString
-                            +'<p><b><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/' 
+                            +'<p><b><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/'
                             + place.geometry.location.lat() +','+ place.geometry.location.lng() + ' target="_blank">Direction</a></b></p>'
                         });
                         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)});
