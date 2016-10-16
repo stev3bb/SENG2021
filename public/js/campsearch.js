@@ -38,7 +38,6 @@ function checkAuto() {
     if(document.getElementById('automatic').checked) {
         addAutoListener();
     } else {
-        console.log("Removing listener");
         autoListener.remove();
     }
 }
