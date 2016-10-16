@@ -12,13 +12,20 @@
                     <div id="map-options">
                         <h1>{{ title }}</h1>
                         <div class="input-group input-group-lg">
-                            <input type="text" id="value" required class="form-control input-lg" placeholder="Search campsites" ng-model="$ctrl.location" value="{{ qs.location }}">
+                            <input type="text" id="value" required class="form-control input-lg" placeholder="Search campsites">
                             <div class="input-group-btn">
                                 <!-- submit button-->
-                                <button class="btn btn-default btn-lg" type="button" onclick="querySearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                <button class="btn btn-default btn-lg" type="button" onclick="updateLocation()">
+                                    <div>
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </div>
+                                </button>
                                 <!--nearby me button-->
-                                <button class="btn btn-default btn-lg" type="button"><a href="?nearby=true"><span class="glyphicon" aria-hidden="true">
-                                <img class="nearby-icon-sml" src="/img/nearby-icon.png"></img></span></a></button>
+                                <button class="btn btn-default btn-lg" type="button" onclick="document.location.href='?nearby=true'">
+                                    <span class="glyphicon" aria-hidden="true">
+                                        <img class="nearby-icon-sml" src="/img/nearby-icon.png"></img>
+                                    </span>
+                                </button>
                             </div>
 
                         </div>
