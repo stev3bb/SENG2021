@@ -24,7 +24,7 @@
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Search while scrolling
+                                <input id="automatic" type="checkbox" onclick="checkAuto()"> Search while scrolling
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">

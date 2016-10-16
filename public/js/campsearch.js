@@ -5,6 +5,7 @@ var map;
 var markers = [];
 var infowindow;
 var init = 0;
+var autoListener;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -14,33 +15,6 @@ function initMap() {
         },
         mapTypeControl: false,
         zoom: 10
-    });
-
-    google.maps.event.addListener(map, 'dragend', function() {
-
-        //clear markers here
-        deleteMarkers();
-
-        // Empty the list of campsites
-        $('#campsites-list ul').empty();
-
-        var request = {
-            location: map.getCenter(),
-            //max range
-            radius: 50000,
-            types: ['campground']
-        }
-
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(request, function(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    //console.log(results[i]);
-                    createMarker(results[i]);
-                }
-            }
-        });
     });
 
     if (window.location.search && init === 0) {
@@ -54,6 +28,40 @@ function initMap() {
     }
 }
 
+function checkAuto() {
+    if(document.getElementById('automatic').checked) {
+        console.log("Adding listener");
+        autoListener = google.maps.event.addListener(map, 'dragend', function() {
+
+            //clear markers here
+            deleteMarkers();
+
+            // Empty the list of campsites
+            $('#campsites-list ul').empty();
+
+            var request = {
+                location: map.getCenter(),
+                //max range
+                radius: 50000,
+                types: ['campground']
+            }
+
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        //console.log(results[i]);
+                        createMarker(results[i]);
+                    }
+                }
+            });
+        });
+    } else {
+        console.log("Removing listener");
+        autoListener.remove();
+    }
+}
 
 //***************************************************
 
