@@ -170,10 +170,8 @@ function nearSearch() {
 
 function createMarker(place) {
     //for debugging only here
-    //console.log(JSON.parse(JSON.stringify(place)));
-    if (place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"
-        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png"
-        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png"){
+    console.log(JSON.parse(JSON.stringify(place)));
+    if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/camping-71.png"){
         return;
     }
 

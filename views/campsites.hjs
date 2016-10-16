@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/unslider.css" />
     <link rel="stylesheet" href="/css/unslider-dots.css" />
 
-   <<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
     </script>
 
     <style>
@@ -198,13 +198,12 @@
                 }
             });
 
-/*
             //second request
             service.nearbySearch(shopsRequest, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        _.throttle(createMarker(shops, results[i]), 1000); 
+                        createMarker(shops, results[i]); 
                     }
                 }
             });
@@ -214,15 +213,24 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        _.throttle(createMarker(petrol, results[i]), 1000); 
+                        createMarker(petrol, results[i]);
                     }
                 }
             });
-*/
 
         }
         
         function createMarker (array, place){
+
+            //if (place.)
+            //debugging here
+            //console.log(JSON.stringify(place));
+
+            if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png" 
+                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png"
+                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
+                return;
+            }
             //some location
             var location = place.geometry.location;
            //icons
