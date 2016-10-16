@@ -243,18 +243,42 @@
 
                 service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        //some more variables
+                        var placeNum;
+                        var placeOpen;
+                        var TradeString = '';
+
+
+
                         if (infowindow != null){
                             infowindow.close();
                         }
-                        //if ()
+                        if (placeInfo.formatted_phone_number != null){
+                            placeNum = placeInfo.formatted_phone_number;
+                        }else{
+                            placeNum = 'n/a'; 
+                        }
+
+                        if (placeInfo.opening_hours.open_now == true){
+                            placeOpen = '<p><b><font color="green">OPEN</font><b></p>';
+                        }else {
+                            placeOpen = '<p><b><font color="green">CLOSED</font><b></p>';
+                        }
+
+                        //some fruit loops
+                        for (var i = 0; i<placeInfo.opening_hours.weekday_text.length(); i++){
+                            TradeString += '<li>'+placeInfo.opening_hours.weekday_text[i]+'</li>';
+                        }
+                       
 
 
                         infowindow = new google.maps.InfoWindow({
                             content: '<p><br>'+placeInfo.name+'</br></p>'+ '<p>'
                             +placeInfo.formatted_address+'</p>' 
                             + '<p>'+placeInfo.formatted_phone_number+'</p>'
-                            +'<li><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/' 
-                            + place.geometry.location.lat() +','+ place.geometry.location.lng() + ' target="_blank">Direction</a></li>'
+                            + '</ p>' + placeOpen + '<p><b>Trading Hours:</b></p>' + TradeString
+                            +'<p><b><a href = https://www.google.com/maps/dir/'+{{place_lat}}+','+{{place_lng}}+'/' 
+                            + place.geometry.location.lat() +','+ place.geometry.location.lng() + ' target="_blank">Direction</a></b></p>'
                         });
                         infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)});
                         map.panTo(place.geometry.location);
@@ -308,7 +332,7 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMQuu3AAGiMOYnu6eFaiVnMLW2snsGTAE&callback=initMap&libraries=places"
     async defer></script>
 
     <script>
