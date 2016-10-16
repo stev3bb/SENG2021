@@ -2,6 +2,8 @@ var express = require('express');
 var router = express();
 var request = require('request');
 
+const DEBUG_MODE = true;
+
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
@@ -55,9 +57,14 @@ function getWeather(req, res, next) {
 }
 
 function getPlaceDetails(req, res, next) {
-    var lat = req.query.lat;    
+    var lat = req.query.lat;
     var lng = req.query.long;
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
+
+    if (DEBUG_MODE) {
+        next();
+    }
+
     request({
         url: mapsApi,
         json: true
