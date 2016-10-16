@@ -5,7 +5,7 @@ angular.
         controller: function HomeSearchController() {
             this.campsiteSearch = function() {
                 if (this.location != undefined) {
-                    document.location.href = '/campsearch?nearby=false&location=' + this.location;
+                    document.location.href = '/campsearch?location=' + this.location;
                 }
             };
 

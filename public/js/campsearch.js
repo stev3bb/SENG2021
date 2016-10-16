@@ -6,6 +6,7 @@ var markers = [];
 var infowindow;
 var init = 0;
 var autoListener;
+var autocomplete;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -16,6 +17,13 @@ function initMap() {
         mapTypeControl: false,
         zoom: 10
     });
+
+    // TESTING PLACES SEARCH BOX
+    autocomplete = new google.maps.places.Autocomplete(
+        (document.getElementById('value')), {
+            types: ['geocode']
+        }
+    )
 
     // If the user returns to the page with the checkbox already checked, set the listener to be active
     if (document.getElementById('automatic').checked) {
@@ -100,81 +108,25 @@ function deleteMarkers() {
 
 // Searching using a given address
 function querySearch() {
-    var newlatlong = [];
-    //search functionality goes here
-    var searchval = document.getElementById('value').value;
-    //some variables
-    var service;
-    var marker;
-    var pos;
-    var mapOptions = {
-        zoom: 10,
-        mapTypeControl: false
-    };
-    //auto complete object
-    var autocomplete;
-    //australia region bounds
-    var country = {
-        center: {
-            lat: -25.3,
-            lng: 133.8
-        },
-        zoom: 4
-    };
+    var place = autocomplete.getPlace();
+    // Only search if they have selected a valid google maps place
+    if (place) {
+        var pos = place.geometry.location;
+        map.setCenter(pos);
 
-    if (searchval) {
-        //make new map here
-        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var geocoder = new google.maps.Geocoder();
-        var service = new google.maps.places.AutocompleteService(null, {types: ['geocode']});
+        var request = {
+            location: pos,
+            radius: 50000,
+            types: ['campground']
+        };
 
-        service.getPlacePredictions({input: searchval}, function(predictions, status) {
-            if (status == 'OK') {
-                var i = 1;
-                if (predictions[i]) {
-                    (function(i) {
-                        //var n = document.getElementById('results')
-                        //.appendChild(document.createElement('li')),
-                        var s = new google.maps.places.PlacesService(map);
-                        var p = predictions[i].description;
-
-                        s.getDetails({reference: predictions[i].reference}, function(details, status) {
-                            //n.appendChild(document.createTextNode(p));
-                            //n.appendChild(document.createElement('br'));
-                            //n.appendChild(document.createTextNode(
-                            //details.geometry.location.toString()));
-
-                            // console.log(details.geometry.location.toString());
-
-                            //more repeated code:
-                            pos = details.geometry.location;
-
-                            var marker = new google.maps.Marker({
-                                position: pos,
-                                map: map,
-                                title: "current location"
-                            });
-
-                            map.setCenter(pos);
-
-                            var request = {
-                                location: pos,
-                                radius: 50000,
-                                types: ['campground']
-                            };
-
-                            infowindow = new google.maps.InfoWindow();
-                            var service = new google.maps.places.PlacesService(map);
-                            service.nearbySearch(request, function(results, status) {
-                                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                                    for (var i = 0; i < results.length; i++) {
-                                        //console.log(results[i]);
-                                        createMarker(results[i]);
-                                    }
-                                }
-                            });
-                        });
-                    })(i)
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    //console.log(results[i]);
+                    createMarker(results[i]);
                 }
             }
         });
@@ -186,12 +138,7 @@ function nearSearch() {
         navigator.geolocation.getCurrentPosition(function(position) {
             pos = new google.maps.LatLng(position.coords.latitude,
                 position.coords.longitude);
-
-            /*infowindow = new google.maps.InfoWindow({
-            map: map,
-            position: pos,
-            content: 'My current location'
-        });*/
+                
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
@@ -223,10 +170,8 @@ function nearSearch() {
 
 function createMarker(place) {
     //for debugging only here
-    //console.log(JSON.parse(JSON.stringify(place)));
-    if (place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"
-        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png"
-        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png"){
+    console.log(JSON.parse(JSON.stringify(place)));
+    if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/camping-71.png"){
         return;
     }
 
