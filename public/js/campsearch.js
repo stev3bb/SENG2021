@@ -206,6 +206,15 @@ function nearSearch() {
 }
 
 function createMarker(place) {
+    //for debugging only here
+    //console.log(JSON.parse(JSON.stringify(place)));
+    if (place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"
+        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png"
+        || place.icon == "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png"){
+        return;
+    }
+
+
     var location = place.geometry.location;
     var lat = place.geometry.location.lat();
     var lng = place.geometry.location.lng();
@@ -242,7 +251,7 @@ function createMarker(place) {
             var address = placeInfo.formatted_address;
             var phone = placeInfo.formatted_phone_number;
 
-            console.log(placeInfo);
+            //console.log(placeInfo);
             if (placeInfo.photos) var photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
 
             if (photo)
