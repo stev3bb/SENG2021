@@ -246,8 +246,9 @@ Weather Table
     margin-right: 17vw;
     /*width: 0%;*/
 }
-.table-condensed ,th, td {
+.table-condensed, th, td {
     border: 1px solid black;
+    border: none;
     text-align: center;
 }
 
@@ -306,3 +307,17 @@ size of rating and stars
     margin-left: 0.5vw;
     font-size: 22px;
 }
+
+.campicons {
+    float: left;
+    margin-top: 2vh; 
+    margin-left: 1vw;
+}
+#facility {
+    float: left;
+    margin-top: 2vh; 
+    margin-left: 0.5vw;
+    font-size: 20px;
+}
+
+
