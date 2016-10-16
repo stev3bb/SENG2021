@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/css/unslider.css" />
     <link rel="stylesheet" href="/css/unslider-dots.css" />
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+</script>
+
+
     <style>
     <!-- more dirty css -->
         #floating-panel {
@@ -126,6 +130,7 @@
         </div>
     </div>
 
+
     <script>
         //will clean up this mess later
         //some vars
@@ -182,7 +187,9 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        createMarker(meds, results[i]);
+
+                        _.throttle(createMarker(meds, results[i]), 1000); 
+                        
                     }
                 }
             });
@@ -193,7 +200,7 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        createMarker(shops, results[i]);
+                        _.throttle(createMarker(shops, results[i]), 1000); 
                     }
                 }
             });
@@ -203,7 +210,7 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        createMarker(petrol, results[i]);
+                        _.throttle(createMarker(petrol, results[i]), 1000); 
                     }
                 }
             });
@@ -211,14 +218,9 @@
 
         }
         
-        function callback () {
-            console.count("Throttled");
-        }
-
         function createMarker (array, place){
-            //something
-            throttle(callback, 1000);
 
+            _.throttle(function(){console.log('1000');}, 1000);
 
 
             //some location
@@ -323,19 +325,7 @@
             setMapOnAll(meds, map);
         }
 
-        //some throttle function
-        function throttle (callback, limit) {
-            var wait = false;                 // Initially, we're not waiting
-            return function () {              // We return a throttled function
-                if (!wait) {                  // If we're not waiting
-                    callback.call();          // Execute users function
-                    wait = true;              // Prevent future invocations
-                    setTimeout(function () {  // After a period of time
-                        wait = false;         // And allow future invocations
-                }, limit);
-            }
-        }
-}
+
 
 
 
