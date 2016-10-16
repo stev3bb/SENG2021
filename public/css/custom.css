@@ -118,6 +118,18 @@ h1#discover {
     width: 22px;
 }
 
+input[type='checkbox'] {
+    margin-top: 7px;
+    width: 15px;
+    height: 15px;
+}
+
+.checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+}
+
 #map {
     background-color: #000;
     height: 88vh;
