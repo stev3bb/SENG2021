@@ -188,12 +188,11 @@
 
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
-
-
-                        //var a = _.throttle(function(){createMarker(meds,results[i]);}, 1000);
                         //console.log(results[i]);
-                        createMarker(meds,results[i]);
-                        //a();
+                        if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png"){
+                            createMarker(meds,results[i]);
+                        }
+
                     }
                 }
             });
@@ -203,7 +202,9 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        createMarker(shops, results[i]); 
+                        if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
+                          createMarker(shops, results[i]); 
+                        }
                     }
                 }
             });
@@ -213,7 +214,9 @@
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         //console.log(results[i]);
-                        createMarker(petrol, results[i]);
+                        if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png"){
+                            createMarker(petrol, results[i]);
+                        }   
                     }
                 }
             });
@@ -221,14 +224,9 @@
         }
         
         function createMarker (array, place){
-
-            //if (place.)
             //debugging here
-            //console.log(JSON.stringify(place));
+            console.log(JSON.parse(JSON.stringify(place)));
 
-            if (place.icon !== ("https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png")||("https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png")||("https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png")){
-                return;
-            }
             //some location
             var location = place.geometry.location;
            //icons
