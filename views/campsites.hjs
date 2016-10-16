@@ -91,10 +91,10 @@
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
         </div>
         
-        <h3>{{ place.address }}</h3>
+        <h3>Address: {{ place.address }}</h3>
         
-        <h3>{{ place.phone }}</h3>
-        <h3><a href="{{ place.website }}">{{ place.website }}</a></h3>
+        <h3>Phone Number: {{ place.phone }}</h3>
+        <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
 
         <!-- give a 5 day weather forecast of the location // use for debugging purposes-->
         <!--
@@ -120,6 +120,9 @@
                 <input onclick="showMeds();" type=button value="Medical Facilities">
             </div>
             <div id="map"></div>
+            <br><br>
+            <button type="button" class="btn btn-primary" onclick="goBack()"">Go Back</button>
+            <script> function goBack() { window.history.back();}</script>
         </div>
     </div>
 
@@ -331,6 +334,7 @@
         infinite: true
     });
     })</script>
+
 </body>
 
 </html>

@@ -417,15 +417,12 @@
          </div>
 
       </div>
-      <div id="map"></div>
-      <script src="js/campsearch.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=geometry,places&callback=initMap" async defer></script>
-
 
 
       <div id="section4">
         <h1>How to use this Website</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <a href="#top"><button type="button" class="btn btn-success">Back to top</button></a><br><br><br>
       </div>
 
     </div>

@@ -228,7 +228,7 @@ function createMarker(place) {
 
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     distance = Math.round(distance / 1000);
-
+    //console.log(placeInfo.reviews);
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -246,8 +246,8 @@ function createMarker(place) {
             if (placeInfo.photos) var photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
 
             if (photo)
-            $("#campsites-list ul").append('<li><div class="row"><div class="col-md-4 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
-            '<div class="col-md-8"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
+            $("#campsites-list ul").append('<li><div class="row"><div class="col-md-6 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
+            '<div class="col-md-6"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
                 phone + '<br /><b>Distance:</b> ' + distance +
                 'km<br /><a href="/campsites?id=' + id +
                 '&address=' + address + '&lat='+ lat + '&long=' + lng +
