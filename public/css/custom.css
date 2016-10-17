@@ -246,6 +246,7 @@ select.form-control {
     text-align: center;
     border: 3px solid #000;
     width: 68vw;
+    line-height: 64vh;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
@@ -255,7 +256,9 @@ select.form-control {
 }
 
 .slide-img {
-    height: 64vh;
+    vertical-align: middle;
+    max-height: 64vh;
+    max-width: 67vw;
     text-align: center;
 }
 
