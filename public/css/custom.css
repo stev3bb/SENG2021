@@ -389,6 +389,11 @@ size of rating and stars
     width: 300px;
 }
 
+.btn-div {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
 .info-map {
     background-color: #000;
     height: 70vh;
