@@ -89,8 +89,6 @@
                 <div class="info-text"><b>Phone Number: </b>{{ place.phone }}</div>
                 <div class="info-text"><b>Website: </b><a href="{{ place.website }}">{{ place.website }}</a></div>
             </div>
-            <br />
-            <br />
         </div>
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
@@ -110,7 +108,7 @@
             </div>
             <div class="btn-div">
                 <button onclick="showAll();" class="show-btn btn btn-default btn-lg" type=button>Show All</button>
-            </div>    
+            </div>
             <h2>Directions</h2>
             <a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">
                 <button class="show-btn btn btn-default btn-lg" type=button>Get Directions to Campsite</button>
