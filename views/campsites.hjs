@@ -8,23 +8,6 @@
     <!-- some underscore script from the net
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
     </script>-->
-
-    <style>
-    <!-- more dirty css -->
-        #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -44,10 +27,9 @@
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
-    
+
     <!-- back button -->
     <button type="button" class="btn-primary" onclick="goBack()">Go Back</button>
-    <script> function goBack() { window.history.back();}</script>
 
     <div>
         <!-- weather table for 5 days(average weather and temperature) -->
@@ -84,7 +66,6 @@
             <!--share buttons for facebook and twitter-->
             <div id="pageURL" class="fb-share-button" data-href="#" data-layout="button" data-size="large" data-mobile-iframe="true">
             <a id="fbshareURL" class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
-            <!-- probably need to fix the size of the buttons-->
             <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large"
                 data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
             <div id="ratingText">
@@ -93,13 +74,13 @@
             </div>
         </div>
         <b id="facility">Facilities: </b>
-        <div class="campicons"> 
-            <img src="/img/Toilet.png">      
-            <img src="/img/Disable facility.png">     
+        <div class="campicons">
+            <img src="/img/Toilet.png">
+            <img src="/img/Disable facility.png">
             <img src="/img/Shower.png">
             <img src="/img/Drinking water.png">
-            <img src="/img/Campfire.png">        
-        </div>    
+            <img src="/img/Campfire.png">
+        </div>
         <br>
         <br>
         <br>
@@ -114,16 +95,6 @@
         <h3>Phone Number: {{ place.phone }}</h3>
         <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
         <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Directions</a></h3>
-
-        <!-- give a 5 day weather forecast of the location // use for debugging purposes-->
-        <!--
-        <p>
-            <h2>Today's weather:</h2>
-            <br>Weather condition: {{ place_condition }}<img id="weatherIcon" src="http://openweathermap.org/img/w/{{place_icon}}.png"></br>
-            <br>Current temperature: {{ place_temp }}°C</br>
-            <br>Current wind speed: {{ place_wind_speed }} m/s</br>
-            <br>Current time: {{ place_time }}</br>
-        </p>-->
         <br>
 
 

@@ -18,14 +18,13 @@
 
 .unslider-arrow{
     position:absolute;
+    top: 112%;
     display: block;
-	width: 32px;
-	height: 32px;
+	width: 108px;
+	height: 192px;
 	overflow: hidden;
     background: rgba(0,0,0,.2) no-repeat 50% 50%;
     background-image: url('../img/arrownext.png');
-    background-size: 7px 11px;
-	border-radius: 32px;
 	text-indent: -999em;
     z-index:2;
     cursor:pointer;
@@ -33,17 +32,19 @@
 	transition: opacity .2s ease 0s;
 }
 
+.unslider-arrow:hover {
+    opacity: .9;
+}
+
 
 .unslider-arrow.next{
-	right: 37%;
+	right: 18vw;
 	left: auto;
 }
 
 .unslider-arrow.prev{
     transform: rotate(180deg);
     display: block;
-	width: 32px;
-	height: 32px;
 	right: auto;
-    left: 37%;
+    left: 18vw;
 }
