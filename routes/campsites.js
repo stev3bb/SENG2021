@@ -7,7 +7,7 @@ const IMAGES_ON = true;
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
-var mapsApiKey = 'AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas';
+var mapsApiKey = 'AIzaSyAYTU5RrUrjNE8uDsWKuvl95yMLhRphYgM';
 
 var placeImages = [];
 
@@ -91,6 +91,7 @@ function getPlaceDetails(req, res, next) {
             if (!IMAGES_ON) {
                 req.placeDetails = placeDetails;
                 next();
+                return;
             }
 
             if (place.result.photos) {
@@ -114,6 +115,11 @@ function checkFlickrImages(req, res, next) {
     var flickrApi = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
         '&api_key=' + flickrApiKey + '&sort=interestingness-desc' + '&safe_search=1' +
         '&media=photos&lat=' + lat + '&lon=' + lng + '&radius=1&format=json&nojsoncallback=1';
+
+    if (!IMAGES_ON) {
+        next();
+        return;
+    }
 
     if (placeImages.length) {
         // console.log("Ignoring flickr");

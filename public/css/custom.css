@@ -182,7 +182,7 @@ select.form-control {
     width: 130px;
 }
 
-#map {
+.search-map {
     background-color: #000;
     height: 88vh;
     border: 2px solid #000;
@@ -263,28 +263,28 @@ select.form-control {
 }
 
 .stars-container {
-  position: relative;
-  display: inline-block;
-  color: transparent;
+    position: relative;
+    display: inline-block;
+    color: transparent;
 }
 
 .stars-container:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '★★★★★';
-  color: lightgray;
-  height: 5px;
-  width: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '★★★★★';
+    color: lightgray;
+    height: 5px;
+    width: 15px;
 }
 
 .stars-container:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '★★★★★';
-  color: #1E90FF;
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '★★★★★';
+    color: #1E90FF;
+    overflow: hidden;
 }
 
 .stars-0:after { width: 0%; }
@@ -320,7 +320,6 @@ Weather Table
     float: right;
     margin-top: 2vh;
     /*right change to 17 if align with picture above*/
-    margin-right: 17vw;
     margin-bot: 1vh;
     clear: right;
     /*width: 0%;*/
@@ -335,21 +334,9 @@ Weather Table
 }
 
 /*
-back button
-*/
-.btn-primary {
-
-    float: right;
-    margin-right: 16vw;
-    margin-top: 4vh;
-    font-size: 22px;
-}
-
-/*
 share buttons - facebook and twitter
 */
 .fb-share-button {
-    margin-left: 0.5vw;
     margin-top: 0.5vh;
     float: left;
 }
@@ -362,10 +349,30 @@ share buttons - facebook and twitter
 /*
 size of rating and stars
  */
+
 #ratingText {
-    margin-left: 0.5vw;
-    font-size: 22px;
     margin-right: 2vw;
+}
+
+
+#facility {
+    float: left;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.info-body {
+    font-size: 22px;
+}
+
+.body-text {
+    display: block;
+    clear: both;
+}
+
+.info-text {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 .campicons {
@@ -373,10 +380,18 @@ size of rating and stars
     margin-top: 2vh;
     margin-left: 1vw;
 }
-#facility {
+
+#show-btns {
+    padding-right: 5vh;
     float: left;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 0.5vw;
-    font-size: 22px;
+}
+
+.show-btn {
+    width: 300px;
+}
+
+.info-map {
+    background-color: #000;
+    height: 70vh;
+    border: 2px solid #000;
 }

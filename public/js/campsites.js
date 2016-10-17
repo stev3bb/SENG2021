@@ -193,6 +193,12 @@ function showMeds() {
     setMapOnAll(meds, map);
 }
 
+function showAll() {
+    setMapOnAll(meds, map);
+    setMapOnAll(petrol, map);
+    setMapOnAll(shops, map);
+}
+
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
