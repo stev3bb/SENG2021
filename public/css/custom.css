@@ -371,8 +371,7 @@ size of rating and stars
 }
 
 .info-text {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    margin-top: 2vh;
 }
 
 .campicons {
