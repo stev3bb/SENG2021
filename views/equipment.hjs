@@ -7,9 +7,14 @@
         .img-marg{
             margin-left: 50px;
         }
-        .center {
-            margin: auto;
+        .center { 
+            position: relative;
             width: 90%;
+            left: 9%;
+        }
+        .heading {
+            position: relative;
+            left: 8%;
             padding: 10px;
         }
     </style>
@@ -17,10 +22,9 @@
 
 <body>
     {{> navbar }}
-    <h1>Browse Equipment</h1>
+    <div class="heading"><h2>Browse Equipment</h2></div>
     <!-- insert some fancy theme here-->
     <div class="center">
-        <ul>
             <div class="img-thumbnail">
                 <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=one%20person%20tent&tbs=vw%3Al%2Cmr%3A1%2Cseller%3A8641533%7C6580476%7C9802953%2Cprice%3A1%2Cppr_min%3A%2Cppr_max%3A200" target="_blank">
                 <img src="img/singletent.jpg" height="200" width="200">
@@ -91,9 +95,8 @@
                 <h3><div style="text-align: center;">First Aid</div></h3>
                 </a>
             </div>
-        </ul>
     </div>
-        
+
     {{> bottomJs }}
 </body>
 
