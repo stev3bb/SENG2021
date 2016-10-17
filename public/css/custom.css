@@ -189,6 +189,8 @@ select.form-control {
 #info-header {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 3vh;
 }
 
 #campsite-body {
@@ -202,6 +204,7 @@ select.form-control {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
+    margin-top: 10vh;
     background-color: black;
     border-radius: 25px;
 }
@@ -253,9 +256,11 @@ Weather Table
 */
 .table-condensed{
     float: right;
-    margin-top: 2.5vh;
+    margin-top: 2vh;
     /*right change to 17 if align with picture above*/
-    margin-right: 20vw;
+    margin-right: 17vw;
+    margin-bot: 1vh;
+    clear: right;
     /*width: 0%;*/
 }
 .table-condensed, th, td {
@@ -265,6 +270,16 @@ Weather Table
     font-size:25px;
     font-family: tahoma;
     width: 25vw;
+}
+/*
+back button
+*/
+.btn-primary {
+    
+    float: right;
+    margin-right: 16vw;
+    margin-top: 4vh;
+    font-size: 22px;
 }
 
 
@@ -340,6 +355,4 @@ size of rating and stars
     margin-left: 0.5vw;
     font-size: 22px;
 }
-
-
 
