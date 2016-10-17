@@ -31,7 +31,7 @@
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input id="automatic" type="checkbox" onclick="checkAuto()"> Automatically Update Campsites
+                                <input id="automatic" type="checkbox" onclick="checkAuto()"> Refresh campsites upon map movement
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">

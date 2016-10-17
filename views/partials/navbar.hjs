@@ -14,7 +14,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/">Home</a></li>
                 <li><a href="/campsearch">Campsite Search</a></li>
-                <li><a href="/popularcampsites">Popular Campsites</a></li>
                 <li><a href="/equipment">Equipment</a></li>
                 <li><a href="/guides">Guides</a></li>
             </ul>
