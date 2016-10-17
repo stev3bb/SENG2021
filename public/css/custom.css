@@ -326,8 +326,8 @@ Weather Table
     border: 1px solid black;
     border: none;
     text-align: center;
-    font-size:25px;
-    font-family: tahoma;
+    font-size: 25px;
+    font-family: 'Open Sans', 'sans-serif';
     width: 25vw;
 }
 
