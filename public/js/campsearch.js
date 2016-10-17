@@ -256,6 +256,11 @@ function createMarker(place) {
                 rating: rating,
                 distance: distance
             }
+            if (place.phone){
+                var listPlacePh = place.phone;
+            }else {
+                var listPlacePh = 'n/a';
+            }
 
             if (placeInfo.photos) {
                 place.photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
@@ -264,14 +269,14 @@ function createMarker(place) {
             if (place.photo)
                 $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + place.photo + '></div>' +
                     '<div class="col-lg-7 col-md-12"><h3><span class="name">' + place.name + '</span></h3>' + place.address + '<br /><b>Phone:</b> ' +
-                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + 'km</span><br /><b>Rating: </b><span class="rating">' + place.rating +
+                    listPlacePh + '<br /><b>Distance: </b><span class="distance">' + place.distance + 'km</span><br /><b>Rating: </b><span class="rating">' + place.rating +
                     '</span><br /><a href="/campsites?id=' + place.id +
                     '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
                     '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
             else
                 $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"></div>' +
                     '<div class="col-lg-7 col-md-12"><h3><span class="name">' + place.name + '</span></h3>' + place.address + '<br /><b>Phone:</b> ' +
-                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + 'km</span><br /><b>Rating: </b><span class="rating">' + place.rating +
+                    listPlacePh + '<br /><b>Distance: </b><span class="distance">' + place.distance + 'km</span><br /><b>Rating: </b><span class="rating">' + place.rating +
                     '</span><br /><a href="/campsites?id=' + place.id +
                     '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
                     '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
