@@ -7,7 +7,7 @@ const IMAGES_ON = true;
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
-var mapsApiKey = 'AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas';
+var mapsApiKey = 'AIzaSyAYTU5RrUrjNE8uDsWKuvl95yMLhRphYgM';
 
 function getWeather(req, res, next) {
     var lat = req.query.lat;
