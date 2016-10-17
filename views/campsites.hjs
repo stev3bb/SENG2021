@@ -127,10 +127,8 @@
 
 
     <script src="/js/campsites.js"></script>
-    {{ #map_on }}
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas&callback=initMap&libraries=places"
         async defer></script>
-    {{ /map_on }}
 
     <script>
         //give the page urls:
