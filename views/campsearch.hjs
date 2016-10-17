@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div id="map"></div>
+                    <div id="map" class="search-map"></div>
                     <script src="js/campsearch.js"></script>
                     <script src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&libraries=geometry,places&callback=initMap" async defer></script>
                 </div>

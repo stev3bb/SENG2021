@@ -72,29 +72,6 @@ function initMap() {
             }
         });
     }
-    /*
-    service.nearbySearch(shopsRequest, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                //console.log(results[i]);
-                if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
-                  createMarker(shops, results[i]);
-                }
-            }
-        }
-    });
-
-    //third request
-    service.nearbySearch(petrolRequest, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                //console.log(results[i]);
-                if (results[i].icon =="https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png"){
-                    createMarker(petrol, results[i]);
-                }
-            }
-        }
-    });*/
 
 }
 
@@ -177,7 +154,6 @@ function createMarker(array, place) {
     });
     array.push(marker);
 
-
 }
 
 // Sets the map on all markers in the array.
@@ -215,6 +191,12 @@ function showMeds() {
     clearMarkers(petrol);
     clearMarkers(meds);
     setMapOnAll(meds, map);
+}
+
+function showAll() {
+    setMapOnAll(meds, map);
+    setMapOnAll(petrol, map);
+    setMapOnAll(shops, map);
 }
 
 function getParameterByName(name) {

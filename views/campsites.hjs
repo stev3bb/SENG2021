@@ -28,39 +28,40 @@
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
 
-    <!-- back button -->
-    <button type="button" class="btn-primary" onclick="goBack()">Go Back</button>
 
-    <div>
-        <!-- weather table for 5 days(average weather and temperature) -->
-        <table class="table-condensed">
-            <thead>
-                <tr>
-                    <th></th>
-                    {{#place_5day_weather}}
-                    <th>{{ time }}</th>
-                    {{/place_5day_weather}}
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th id="tableweather" scope="row"></th>
-                    {{#place_5day_weather}}
-                    <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
-                    {{/place_5day_weather}}
-                </tr>
-            </tbody>
-            <tbody>
-                <tr>
-                    <th id="tabletemp" scope="row"></th>
-                    {{#place_5day_weather}}
-                    <td>{{ temp }}°C</td>
-                    {{/place_5day_weather}}
-                </tr>
-            </tbody>
-        </table>
-    </div>
     <div class="container" id="campsite-body">
+        <!-- back button -->
+        <button type="button" id="back-btn" class="btn btn-primary btn-lg" onclick="goBack()">Go Back</button>
+
+        <div>
+            <!-- weather table for 5 days(average weather and temperature) -->
+            <table class="table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        {{#place_5day_weather}}
+                        <th>{{ time }}</th>
+                        {{/place_5day_weather}}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="tableweather" scope="row"></th>
+                        {{#place_5day_weather}}
+                        <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
+                        {{/place_5day_weather}}
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th id="tabletemp" scope="row"></th>
+                        {{#place_5day_weather}}
+                        <td>{{ temp }}°C</td>
+                        {{/place_5day_weather}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div>
             <span><h1 id="info-header">{{ place.name }}</h1></span>
             <!--share buttons for facebook and twitter-->
@@ -68,45 +69,54 @@
             <a id="fbshareURL" class="fb-xfbml-parse-ignore" target="_blank" href="#">Share</a></div>
             <div><a href="https://twitter.com/share" class="twitter-share-button" data-size="large"
                 data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-            <div id="ratingText">
+            <div class="info-body" id="ratingText">
                 <b>Rating: </b>
             <span class="rating stars-container stars-{{ place.rating }}">★★★★★</span>
             </div>
         </div>
-        <b id="facility">Facilities: </b>
-        <div class="campicons">
-            <img src="/img/Toilet.png">
-            <img src="/img/Disable facility.png">
-            <img src="/img/Shower.png">
-            <img src="/img/Drinking water.png">
-            <img src="/img/Campfire.png">
+        <div class="info-body">
+            <b id="facility">Facilities: </b>
+            <div class="campicons">
+                <img src="/img/Toilet.png">
+                <img src="/img/Disable facility.png">
+                <img src="/img/Shower.png">
+                <img src="/img/Drinking water.png">
+                <img src="/img/Campfire.png">
+                <br />
+            </div>
+            <div class="body-text">
+                <div class="info-text"><b>Address: </b>{{ place.address }}</div>
+                <div class="info-text"><b>Phone Number: </b>{{ place.phone }}</div>
+                <div class="info-text"><b>Website: </b><a href="{{ place.website }}">{{ place.website }}</a></div>
+            </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br />
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
         </div>
-
-        <h3>Address: {{ place.address }}</h3>
-
-        <h3>Phone Number: {{ place.phone }}</h3>
-        <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
-        <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Directions</a></h3>
         <br>
 
-
-        <div class="col-lg-9">
-            <div id="floating-panel">
-                <input onclick="showShops();" type=button value="Shops">
-                <input onclick="showPetrolStation();" type=button value="Service Station">
-                <input onclick="showMeds();" type=button value="Medical Facilities">
+        <div id="show-btns">
+            <h2>Nearby Facilities</h2>
+            <div class="btn-div">
+                <button onclick="showShops();" class="show-btn btn btn-default btn-lg" type=button>Show Shops</button>
             </div>
-            <div id="map"></div>
-            <br><br><br>
+            <div class="btn-div">
+                <button onclick="showPetrolStation();" class="show-btn btn btn-default btn-lg" type=button>Show Petrol Stations</button>
+            </div>
+            <div class="btn-div">
+                <button onclick="showMeds();" class="show-btn btn btn-default btn-lg" type=button>Show Medical Facilities</button>
+            </div>
+            <div class="btn-div">
+                <button onclick="showAll();" class="show-btn btn btn-default btn-lg" type=button>Show All</button>
+            </div>
+            <h2>Directions</h2>
+            <a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">
+                <button class="show-btn btn btn-default btn-lg" type=button>Get Directions to Campsite</button>
+            </a>
         </div>
+        <div id="map" class="info-map"></div>
+        <br />
+        <br />
     </div>
 
 
