@@ -44,34 +44,40 @@
     <div class="jumbotron" id="info-main">
         <div id="info-bg" style="background-image: url('{{ header_image }}');"></div>
     </div>
-    <!-- weather table for 5 days(average weather and temperature) -->
-    <table class="table-condensed">
-        <thead>
-            <tr>
-                <th></th>
-                {{#place_5day_weather}}
-                <th>{{ time }}</th>
-                {{/place_5day_weather}}
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th id="tableweather" scope="row"></th>
-                {{#place_5day_weather}}
-                <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
-                {{/place_5day_weather}}
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <th id="tabletemp" scope="row"></th>
-                {{#place_5day_weather}}
-                <td>{{ temp }}°C</td>
-                {{/place_5day_weather}}
-            </tr>
-        </tbody>
-    </table>
+    
+    <!-- back button -->
+    <button type="button" class="btn-primary" onclick="goBack()">Go Back</button>
+    <script> function goBack() { window.history.back();}</script>
 
+    <div>
+        <!-- weather table for 5 days(average weather and temperature) -->
+        <table class="table-condensed">
+            <thead>
+                <tr>
+                    <th></th>
+                    {{#place_5day_weather}}
+                    <th>{{ time }}</th>
+                    {{/place_5day_weather}}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="tableweather" scope="row"></th>
+                    {{#place_5day_weather}}
+                    <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
+                    {{/place_5day_weather}}
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th id="tabletemp" scope="row"></th>
+                    {{#place_5day_weather}}
+                    <td>{{ temp }}°C</td>
+                    {{/place_5day_weather}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="container" id="campsite-body">
         <div>
             <span><h1 id="info-header">{{ place.name }}</h1></span>
@@ -128,9 +134,7 @@
                 <input onclick="showMeds();" type=button value="Medical Facilities">
             </div>
             <div id="map"></div>
-            <br><br>
-            <button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
-            <script> function goBack() { window.history.back();}</script>
+            <br><br><br>
         </div>
     </div>
 

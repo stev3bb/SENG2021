@@ -42,7 +42,6 @@
         </li>
 
         <li><a href="#section3">Things to do</a></li>
-        <li><a href="#section4">How to use this <br>Website</a></li>
 
 
       </ul>
@@ -234,6 +233,9 @@
                     <div class="panel-body">
                         <div class="col-md-8">
                             Designed for extreme conditions above the snowline. They need to be both warm and light: a mummy shape, lightweight fabric and high quality down are used to give a high warmth-to-weight ratio, with water-resistant shell fabrics also common.
+                            <br><br><br>
+                            <a href="http://www.macpac.com.au/equipment/sleeping-bags/down"><button type="button" class="btn btn-default">Purchase</button></a>
+
                         </div>
                         <div class="col-md-4">
                             <center>
@@ -254,6 +256,10 @@
                     <div class="panel-body">
                         <div class="col-md-8">
                             This bag is used by highers and bushwalkers who are setting up camp during their expeditions. These bags are focused on a light-weight design with a minimal footprint - taking up little room in your bag.
+
+                            <br><br><br>
+                            <a href="http://www.wildearth.com.au/shop/camp-hike/sleeping/lightweight-sleeping-bags/3215"><button type="button" class="btn btn-default">Purchase</button></a>
+
                         </div>
                         <div class="col-md-4">
                             <center>
@@ -275,6 +281,9 @@
                     <div class="panel-body">
                         <div class="col-md-8">
                             These bags are for your first time campers. They have a lightweight, low-cost and ease of pack-up combination that make them perfect for the maiden camping expedition.
+                            <br><br><br>
+                            <a href="http://www.kmart.com.au/product/glacier-hooded-sleeping-bag/1024811"><button type="button" class="btn btn-default">Purchase</button></a>
+
                         </div>
                         <div class="col-md-4">
                             <center>
@@ -415,15 +424,12 @@
 
 
          </div>
-
-      </div>
-
-
-      <div id="section4">
-        <h1>How to use this Website</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <a href="#top"><button type="button" class="btn btn-success">Back to top</button></a><br><br><br>
+
       </div>
+
+
+
 
     </div>
   </div>
