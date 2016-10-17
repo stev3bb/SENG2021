@@ -65,6 +65,28 @@
             <h3><div style="text-align: center;">Sleeping Bags</div></h3>
             </a>
         </div>
+
+        <div class="img-thumbnail">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=fishing+rods&tbs=vw:l,mr:1,seller:6580476%7C8790395,ss:9,p_ord:r&tbm=shop" target="_blank">
+            <img src="img/fishrod.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Fishing Rods</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbs=vw:l,mr:1,seller:6580476&tbm=shop&q=walking+poles" target="_blank">
+            <img src="img/poles.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Hiking Equipment</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbs=vw:l,mr:1,p_ord:rv,seller:100384561%7C6985436&tbm=shop&q=first+aid+kit" target="_blank">
+            <img src="img/firstaid.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">First Aid</div></h3>
+            </a>
+        </div>
+
     </ul>
     {{> bottomJs }}
 </body>
