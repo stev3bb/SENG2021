@@ -290,20 +290,8 @@ function createMarker(place) {
                 rating: place.rating,
             }
 
-            if (place.photos) {
-                placeDetails.photo = place.photos[0].getUrl({'maxWidth': 160});
-            }
-
-            console.log(placeDetails.photo)
-
-            if (placeDetails.photo) {
-                infowindow.setContent('<div><img class="campsite-img-thumbnail" src=' + placeDetails.photo + '><a href="/campsites?id=' + placeDetails.id +
-                                    '&address=' + data.results[0].formatted_address +
-                                    '&lat=' + lat + '&long=' + lng + '"><b><h5>' + place.name + '<h5></a></b></div>');
-            } else {
-                infowindow.setContent('<div><a href="/campsites?id=' + placeDetails.id + '&address=' + data.results[0].formatted_address +
-                                    '&lat=' + lat + '&long=' + lng + '"><b>' + placeDetails.name + '</a></b></div>');
-            }
+            infowindow.setContent('<div><a href="/campsites?id=' + placeDetails.id + '&address=' + data.results[0].formatted_address +
+                                '&lat=' + lat + '&long=' + lng + '"><b>' + placeDetails.name + '</a></b></div>');
 
         });
 
