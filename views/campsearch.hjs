@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         {{> header }}
+        <script src="/js/campsite-listings.component.js"></script>
     </head>
     <body>
     {{> navbar }}
@@ -35,6 +36,9 @@
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">
+                            <button class="sort" data-sort="name">
+                                Sort
+                            </button>
                             <ul></ul>
                         </div>
                     </div>
