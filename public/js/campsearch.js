@@ -16,7 +16,6 @@ function initMap() {
         zoom: 10
     });
 
-    // TESTING PLACES SEARCH BOX
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('value')), {
             types: ['geocode'],
@@ -259,9 +258,9 @@ function createMarker(place) {
 
             if (place.photo)
                 $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + place.photo + '></div>' +
-                    '<div class="col-lg-7 col-md-12"><h3>' + place.name + '</h3>' + place.address + '<br /><b>Phone:</b> ' +
-                    place.phone + '<br /><b>Distance: </b><p class="distance">' + place.distance + '</p><br /><b>Rating: </b><p class="rating">' + place.rating +
-                    '</p><br /><a href="/campsites?id=' + place.id +
+                    '<div class="col-lg-7 col-md-12"><h3><span class="name">' + place.name + '</span></h3>' + place.address + '<br /><b>Phone:</b> ' +
+                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + '</span><br /><b>Rating: </b><span class="rating">' + place.rating +
+                    '</span><br /><a href="/campsites?id=' + place.id +
                     '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
                     '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
             // console.log(name + " " + address);
@@ -305,6 +304,14 @@ function createMarker(place) {
         })
         infowindow.open(map, marker);
     });
+}
+
+function sortList() {
+    var sortValue = document.getElementById('sort-option').value;
+    console.log(sortValue);
+    $('li').sortElements(function(a, b) {
+        return $(a).find('.name').text() > $(b).find('.name').text() ? 1 : -1;
+    })
 }
 
 function updateLocation() {
