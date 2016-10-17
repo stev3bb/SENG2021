@@ -57,6 +57,7 @@
         </div>
 
     {{> bottomJs }}
+    <script src="/js/jquery.sortElements.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
   </body>
 </html>

@@ -155,6 +155,8 @@ function querySearch() {
                     //console.log(results[i]);
                     createMarker(results[i]);
                 }
+
+                sortList();
             }
         });
     }
@@ -196,6 +198,8 @@ function nearSearch() {
                         //console.log(results[i]);
                         createMarker(results[i]);
                     }
+
+                    sortList();
                 }
             });
         }, function() {});
@@ -247,14 +251,14 @@ function createMarker(place) {
             if (placeInfo.rating) {
                 var rating = placeInfo.rating + " stars";
             } else {
-                var rating = "No reviews";
+                var rating = "0 stars (no reviews)";
             }
             var place = {
                 id: placeInfo.place_id,
                 name: placeInfo.name,
                 address: placeInfo.formatted_address,
                 phone: placeInfo.formatted_phone_number,
-                rating: placeInfo.rating,
+                rating: rating,
                 distance: distance
             }
 
@@ -265,7 +269,7 @@ function createMarker(place) {
             if (place.photo)
                 $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + place.photo + '></div>' +
                     '<div class="col-lg-7 col-md-12"><h3><span class="name">' + place.name + '</span></h3>' + place.address + '<br /><b>Phone:</b> ' +
-                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + '</span><br /><b>Rating: </b><span class="rating">' + place.rating +
+                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + 'km</span><br /><b>Rating: </b><span class="rating">' + place.rating +
                     '</span><br /><a href="/campsites?id=' + place.id +
                     '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
                     '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
@@ -316,9 +320,21 @@ function createMarker(place) {
 function sortList() {
     var sortValue = document.getElementById('sort-option').value;
     console.log(sortValue);
-    $('li').sortElements(function(a, b) {
-        return $(a).find('.name').text() > $(b).find('.name').text() ? 1 : -1;
-    })
+    if (sortValue === "name") {
+        $('div#campsites-list ul li').sortElements(function(a, b) {
+            return $(a).find('.name').text() > $(b).find('.name').text() ? 1 : -1;
+        })
+    } else if (sortValue === "distance") {
+        $('div#campsites-list ul li').sortElements(function(a, b) {
+            return $(a).find('.distance').text() > $(b).find('.distance').text() ? 1 : -1;
+        })
+    } else if (sortValue === "rating") {
+        // Sort ratings in descending instead of ascending
+        $('div#campsites-list ul li').sortElements(function(a, b) {
+            return $(b).find('.rating').text() > $(a).find('.rating').text() ? 1 : -1;
+        })
+    }
+
 }
 
 function updateLocation() {
