@@ -209,7 +209,6 @@ function createMarker(place) {
 
     //console.log(JSON.parse(JSON.stringify(place)));
     if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/camping-71.png"){
-
         return;
     }
 
