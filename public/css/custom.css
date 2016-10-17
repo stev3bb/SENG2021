@@ -137,7 +137,7 @@ select.form-control {
 #map {
     background-color: #000;
     height: 88vh;
-    border: 8px solid;
+    border: 2px solid #000;
 }
 
 #campsites-list {
@@ -335,11 +335,8 @@ size of rating and stars
 }
 #facility {
     float: left;
-    margin-top: 2vh; 
+    margin-top: 2vh;
     margin-bottom: 2vh;
     margin-left: 0.5vw;
     font-size: 22px;
 }
-
-
-
