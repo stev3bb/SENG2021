@@ -3,7 +3,6 @@ var router = express();
 var request = require('request');
 
 const IMAGES_ON = false;
-const MAP_ON = false;
 
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
@@ -164,7 +163,6 @@ function renderPage(req, res) {
             place_lat: req.query.lat,
             place_lng: req.query.long,
             place_id: req.query.id,
-            map_on: MAP_ON,
             //place_chance: weather.precipitation.value,
             partials: {
                 header: 'partials/header',
@@ -184,7 +182,6 @@ function renderPage(req, res) {
         place_lat: req.query.lat,
         place_lng: req.query.long,
         place_id: req.query.id,
-        map_on: MAP_ON,
         //place_chance: weather.precipitation.value,
         partials: {
             header: 'partials/header',
