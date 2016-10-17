@@ -1,4 +1,3 @@
-
 // Keep map as a global
 var map;
 // Create a blank array for all map markers
@@ -17,11 +16,12 @@ function initMap() {
         zoom: 10
     });
 
-    // TESTING PLACES SEARCH BOX
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('value')), {
             types: ['geocode'],
-            componentRestrictions: {country: 'au'}
+            componentRestrictions: {
+                country: 'au'
+            }
         }
     )
 
@@ -36,9 +36,12 @@ function initMap() {
             nearSearch();
         } else {
             var place_id = getParameterByName('location');
-            var request = {placeId: place_id};
+            var request = {
+                placeId: place_id
+            };
             var service = new google.maps.places.PlacesService(map);
             service.getDetails(request, callback);
+
             function callback(place, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
                     autocomplete.set("place", place);
@@ -50,7 +53,7 @@ function initMap() {
 }
 
 function checkAuto() {
-    if(document.getElementById('automatic').checked) {
+    if (document.getElementById('automatic').checked) {
         addAutoListener();
     } else {
         autoListener.remove();
@@ -118,7 +121,7 @@ function querySearch() {
     deleteMarkers();
     var place = autocomplete.getPlace();
     // Only search if they have selected a valid google maps place
-    if (place) {
+    if (place.place_id) {
         // console.log(place);
         var pos = place.geometry.location;
         map.setCenter(pos);
@@ -132,7 +135,9 @@ function querySearch() {
 
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(place.adr_address);
-            infowindow.setOptions({pixelOffset: new google.maps.Size(0, 0)})
+            infowindow.setOptions({
+                pixelOffset: new google.maps.Size(0, 0)
+            })
             infowindow.open(map, marker);
         });
 
@@ -171,7 +176,9 @@ function nearSearch() {
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent('Current Location');
-                infowindow.setOptions({pixelOffset: new google.maps.Size(0, 0)})
+                infowindow.setOptions({
+                    pixelOffset: new google.maps.Size(0, 0)
+                })
                 infowindow.open(map, marker);
             });
 
@@ -199,8 +206,10 @@ function nearSearch() {
 
 function createMarker(place) {
     //for debugging only here
+
     //console.log(JSON.parse(JSON.stringify(place)));
     if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/camping-71.png"){
+
         return;
     }
 
@@ -231,28 +240,35 @@ function createMarker(place) {
 
     
     var service = new google.maps.places.PlacesService(map);
-    service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
+    service.getDetails({
+        placeId: place.place_id
+    }, function(placeInfo, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             if (placeInfo.rating) {
                 var rating = placeInfo.rating + " stars";
             } else {
                 var rating = "No reviews";
             }
-            var id = placeInfo.place_id;
-            var name = placeInfo.name;
-            var address = placeInfo.formatted_address;
-            var phone = placeInfo.formatted_phone_number;
+            var place = {
+                id: placeInfo.place_id,
+                name: placeInfo.name,
+                address: placeInfo.formatted_address,
+                phone: placeInfo.formatted_phone_number,
+                rating: placeInfo.rating,
+                distance: distance
+            }
 
-            //console.log(placeInfo);
-            if (placeInfo.photos) var photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
+            if (placeInfo.photos) {
+                place.photo = placeInfo.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 180});
+            }
 
-            if (photo)
-            $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + photo + '></div>' +
-            '<div class="col-lg-7 col-md-12"><h3>' + name + '</h3>' + address + '<br /><b>Phone:</b> ' +
-                phone + '<br /><b>Distance:</b> ' + distance +
-                'km<br /><a href="/campsites?id=' + id +
-                '&address=' + address + '&lat='+ lat + '&long=' + lng +
-                '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
+            if (place.photo)
+                $("#campsites-list ul").append('<li><div class="row"><div class="col-lg-5 col-md-12 campsite-img-container"><img class="campsite-img" src=' + place.photo + '></div>' +
+                    '<div class="col-lg-7 col-md-12"><h3><span class="name">' + place.name + '</span></h3>' + place.address + '<br /><b>Phone:</b> ' +
+                    place.phone + '<br /><b>Distance: </b><span class="distance">' + place.distance + '</span><br /><b>Rating: </b><span class="rating">' + place.rating +
+                    '</span><br /><a href="/campsites?id=' + place.id +
+                    '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
+                    '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
             // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             console.log("ran out of juice guys");
@@ -262,22 +278,54 @@ function createMarker(place) {
     // console.log(place, distance);
 
     google.maps.event.addListener(marker, 'click', function() {
-        var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+ lat +','+ lng +'&sensor=true';
+        var apicall = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng + '&sensor=true';
 
-        $.getJSON(apicall, function (data) {
-            infowindow.setContent('<div><a href="/campsites?id=' + place.place_id + '&address='+ data.results[0].formatted_address
-                +'&lat='+ lat +'&long='+ lng +'"><b>' + place.name + '</a></b></div>');
+        $.getJSON(apicall, function(data) {
+            var placeDetails = {
+                id: place.place_id,
+                name: place.name,
+                address: place.formatted_address,
+                phone: place.formatted_phone_number,
+                rating: place.rating,
+            }
+
+            if (place.photos) {
+                placeDetails.photo = place.photos[0].getUrl({'maxWidth': 160});
+            }
+
+            console.log(placeDetails.photo)
+
+            if (placeDetails.photo) {
+                infowindow.setContent('<div><img class="campsite-img-thumbnail" src=' + placeDetails.photo + '><a href="/campsites?id=' + placeDetails.id +
+                                    '&address=' + data.results[0].formatted_address +
+                                    '&lat=' + lat + '&long=' + lng + '"><b><h5>' + place.name + '<h5></a></b></div>');
+            } else {
+                infowindow.setContent('<div><a href="/campsites?id=' + placeDetails.id + '&address=' + data.results[0].formatted_address +
+                                    '&lat=' + lat + '&long=' + lng + '"><b>' + placeDetails.name + '</a></b></div>');
+            }
+
         });
 
-        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
+        infowindow.setOptions({
+            pixelOffset: new google.maps.Size(-25, 0)
+        })
         infowindow.open(map, marker);
     });
 }
 
+function sortList() {
+    var sortValue = document.getElementById('sort-option').value;
+    console.log(sortValue);
+    $('li').sortElements(function(a, b) {
+        return $(a).find('.name').text() > $(b).find('.name').text() ? 1 : -1;
+    })
+}
+
 function updateLocation() {
-    console.log(autocomplete.getPlace().place_id);
-    var val = document.getElementById('value').value;
-    document.location.href = "?location=" + autocomplete.getPlace().place_id;
+    if (autocomplete.getPlace().place_id) {
+        var val = document.getElementById('value').value;
+        document.location.href = "?location=" + autocomplete.getPlace().place_id;
+    }
 }
 
 function getParameterByName(name) {

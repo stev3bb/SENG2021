@@ -38,6 +38,12 @@
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">
+                            <h4>Sort by:</h4>
+                            <select id="sort-option" class="form-control" onchange="sortList()">
+                                <option value="name">Name</option>
+                                <option value="distance">Distance</option>
+                                <option value="rating">Rating</option>
+                            </select>
                             <ul></ul>
                         </div>
                     </div>

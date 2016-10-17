@@ -2,7 +2,7 @@ var express = require('express');
 var router = express();
 var request = require('request');
 
-const DEBUG_MODE = true;
+const IMAGES_ON = false;
 
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
@@ -87,7 +87,8 @@ function getPlaceDetails(req, res, next) {
             else
                 placeDetails.website = "N/A";
 
-            if (DEBUG_MODE) {
+            if (!IMAGES_ON) {
+                req.placeDetails = placeDetails;
                 next();
             }
 
@@ -151,11 +152,12 @@ function getPlaceDetails(req, res, next) {
 }
 
 function renderPage(req, res) {
-    if (DEBUG_MODE) {
+    if (!IMAGES_ON) {
         res.render('campsites', {
             //used for google maps
             place: req.placeDetails,
             place_5day_weather: req.fiveDayWeather,
+            // Take out images if they're not on
             header_image: 0,
             place_images: 0,
             place_lat: req.query.lat,
@@ -170,6 +172,7 @@ function renderPage(req, res) {
             }
         });
     }
+
     res.render('campsites', {
         //used for google maps
         place: req.placeDetails,
