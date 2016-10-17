@@ -243,7 +243,7 @@ Weather Table
 */
 .table-condensed{
     float: right;
-    margin-top: 3vh;
+    margin-top: 3.5vh;
     /*right change to 17 if align with picture above*/
     margin-right: 17vw;
     /*width: 0%;*/
@@ -318,6 +318,7 @@ size of rating and stars
 #facility {
     float: left;
     margin-top: 2vh; 
+    
     margin-left: 0.5vw;
     font-size: 20px;
 }
