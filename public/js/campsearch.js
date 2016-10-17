@@ -75,9 +75,11 @@ function addAutoListener() {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, function(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
+                console.log ("number of results returned: "+results.length);
                 for (var i = 0; i < results.length; i++) {
                     //console.log(results[i]);
                     createMarker(results[i]);
+                    
                 }
             }
         });
@@ -197,7 +199,7 @@ function nearSearch() {
 
 function createMarker(place) {
     //for debugging only here
-    console.log(JSON.parse(JSON.stringify(place)));
+    //console.log(JSON.parse(JSON.stringify(place)));
     if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/camping-71.png"){
         return;
     }
@@ -226,6 +228,8 @@ function createMarker(place) {
     var distance = google.maps.geometry.spherical.computeDistanceBetween(location, map.getCenter());
     distance = Math.round(distance / 1000);
     //console.log(placeInfo.reviews);
+
+    
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -251,9 +255,10 @@ function createMarker(place) {
                 '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
             // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
-            // console.log("ran out of juice guys");
+            console.log("ran out of juice guys");
         }
     });
+
     // console.log(place, distance);
 
     google.maps.event.addListener(marker, 'click', function() {
