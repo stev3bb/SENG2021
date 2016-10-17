@@ -185,7 +185,7 @@ select.form-control {
 #map {
     background-color: #000;
     height: 88vh;
-    border: 8px solid;
+    border: 2px solid #000;
 }
 
 #campsites-list {
