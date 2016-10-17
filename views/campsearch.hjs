@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+        </script>
         {{> header }}
-        <script src="/js/campsite-listings.component.js"></script>
     </head>
     <body>
     {{> navbar }}
@@ -36,9 +38,12 @@
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">
-                            <button class="sort" data-sort="name">
-                                Sort
-                            </button>
+                            <h4>Sort by:</h4>
+                            <select id="sort-option" class="form-control" onchange="sortList()">
+                                <option value="name">Name</option>
+                                <option value="distance">Distance</option>
+                                <option value="rating">Rating</option>
+                            </select>
                             <ul></ul>
                         </div>
                     </div>
