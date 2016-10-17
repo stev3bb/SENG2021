@@ -38,7 +38,7 @@
 
 
 .unslider-arrow.next{
-	right: 18vw;
+	right: 16vw;
 	left: auto;
 }
 
@@ -46,5 +46,5 @@
     transform: rotate(180deg);
     display: block;
 	right: auto;
-    left: 18vw;
+    left: 16vw;
 }
