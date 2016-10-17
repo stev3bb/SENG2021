@@ -17,42 +17,50 @@
 
     <ul>
         <div class="img-thumbnail">
-            <a href="/equipment/single">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=one%20person%20tent&tbs=vw%3Al%2Cmr%3A1%2Cseller%3A8641533%7C6580476%7C9802953%2Cprice%3A1%2Cppr_min%3A%2Cppr_max%3A200" target="_blank">
             <img src="img/singletent.jpg" height="200" width="200">
             <h3><div style="text-align: center;">Single Tents</div></h3>
             </a>
         </div>
 
         <div class="img-thumbnail">
-            <a href="/equipment/4tent">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=4%20person%20tent&tbs=vw%3Al%2Cmr%3A1%2Cp_ord%3Arv%2Cseller%3A6580476%7C8641533%2Cprice%3A1%2Cppr_min%3A0%2Cppr_max%3A300" target="_blank">
             <img src="img/4tent.jpeg" height="200" width="200">
             <h3><div style="text-align: center;">4 Person Tents</div></h3>
             </a>
         </div>
 
+
         <div class="img-thumbnail">
-            <a href="/equipment/hydra">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbs=vw:l,mr:1,seller:6580476%7C8641533,price:1,ppr_min:300,ppr_max:500&tbm=shop&q=family+tent" target="_blank">
+            <img src="img/famtent.jpg" height="200" width="200">
+            <h3><div style="text-align: center;">Family Tents</div></h3>
+            </a>
+        </div>
+
+        <div class="img-thumbnail">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=water%20bottle&tbs=vw%3Al%2Cmr%3A1%2Cp_ord%3Arv%2Cseller%3A6580476%7C8641533%2Cprice%3A1%2Cppr_min%3A%2Cppr_max%3A50" target="_blank">
             <img src="img/waterbottle.jpeg" height="200" width="200">
             <h3><div style="text-align: center;">Hydration</div></h3>
             </a>
         </div>
 
         <div class="img-thumbnail">
-            <a href="/equipment/chair">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=camping+chairs&tbs=vw:l,mr:1,price:1,ppr_max:50,seller:6580476%7C8641533,ss:9,p_ord:rv&tbm=shop" target="_blank">
             <img src="img/chair.jpg" height="200" width="200">
             <h3><div style="text-align: center;">Chairs</div></h3>
             </a>
         </div>
 
         <div class="img-thumbnail">
-            <a href="/equipment/cooking">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=camping%20cooking%20utensil&tbs=vw%3Al%2Cmr%3A1%2Cp_ord%3Arv%2Cseller%3A6580476%7C8790395%7C8641533%2Cprice%3A1%2Cppr_min%3A%2Cppr_max%3A150" target="_blank">
             <img src="img/cooking.jpeg" height="200" width="200">
             <h3><div style="text-align: center;">Cooking Utensils</div></h3>
             </a>
         </div>
 
         <div class="img-thumbnail">
-            <a href="/equipment/sleeping">
+            <a href="https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=shop&q=sleeping%20bags&tbs=vw%3Al%2Cmr%3A1%2Cp_ord%3Arv%2Cseller%3A6580476%7C8641533%2Cprice%3A1%2Cppr_min%3A%2Cppr_max%3A150" target="_blank">
             <img src="img/bag.jpg" height="200" width="200">
             <h3><div style="text-align: center;">Sleeping Bags</div></h3>
             </a>
