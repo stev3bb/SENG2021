@@ -19,12 +19,18 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
                     <div class="input-group input-group-xlg">
-                        <input id="location" type="text" required class="form-control input-xlg" placeholder="Address">
+                        <input id="location" type="text" required class="form-control input-xlg" placeholder="Search">
                         <div class="input-group-btn">
                             <button class="btn btn-default btn-xlg btn-xlg-magnify" type="button" onclick="querySearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                             <button class="btn btn-default btn-xlg btn-xlg-magnify" type="button" onclick="nearbySearch()"><span class="glyphicon" aria-hidden="true"><img class="nearby-icon" src="/img/nearby-icon.png"></img></span></button>
                         </div>
                     </div>
+                    <div style="background-color:rgba(0, 0, 0, 0.3);">
+                        <div>
+                            <h2 id="invalid"></h2>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col-lg-2"></div>
             </div>

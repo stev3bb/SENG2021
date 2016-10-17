@@ -14,7 +14,7 @@ body {
     margin-top: 16px;
 }
 
-@media (max-width: 1107px) {
+@media (max-width: 1200px) {
   .navbar-header {
       float: none;
   }
@@ -323,7 +323,7 @@ Weather Table
 back button
 */
 .btn-primary {
-    
+
     float: right;
     margin-right: 16vw;
     margin-top: 4vh;
@@ -403,8 +403,3 @@ size of rating and stars
     margin-left: 0.5vw;
     font-size: 22px;
 }
-
-
-
-
-
