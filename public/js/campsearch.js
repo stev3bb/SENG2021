@@ -82,7 +82,7 @@ function addAutoListener() {
                 for (var i = 0; i < results.length; i++) {
                     //console.log(results[i]);
                     createMarker(results[i]);
-                    
+
                 }
             }
         });
@@ -155,8 +155,6 @@ function querySearch() {
                     //console.log(results[i]);
                     createMarker(results[i]);
                 }
-
-                sortList();
             }
         });
     }
@@ -198,8 +196,6 @@ function nearSearch() {
                         //console.log(results[i]);
                         createMarker(results[i]);
                     }
-
-                    sortList();
                 }
             });
         }, function() {});
@@ -242,7 +238,7 @@ function createMarker(place) {
     distance = Math.round(distance / 1000);
     //console.log(placeInfo.reviews);
 
-    
+
     var service = new google.maps.places.PlacesService(map);
     service.getDetails({
         placeId: place.place_id
@@ -273,6 +269,8 @@ function createMarker(place) {
                     '</span><br /><a href="/campsites?id=' + place.id +
                     '&address=' + place.address + '&lat=' + lat + '&long=' + lng +
                     '"><button class="btn btn-default" type="button">View More</button></a></div></div></li><br />');
+
+            sortList();
             // console.log(name + " " + address);
         } else if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
             console.log("ran out of juice guys");
