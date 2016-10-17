@@ -317,7 +317,6 @@ function createMarker(place) {
 
 function sortList() {
     var sortValue = document.getElementById('sort-option').value;
-    console.log(sortValue);
     if (sortValue === "name") {
         $('div#campsites-list ul li').sortElements(function(a, b) {
             return $(a).find('.name').text() > $(b).find('.name').text() ? 1 : -1;
