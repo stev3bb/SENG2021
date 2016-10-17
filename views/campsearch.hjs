@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         {{> header }}
+        <script src="/js/campsite-listings.component.js"></script>
     </head>
     <body>
     {{> navbar }}
@@ -31,10 +32,13 @@
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input id="automatic" type="checkbox" onclick="checkAuto()"> Search while scrolling
+                                <input id="automatic" type="checkbox" onclick="checkAuto()"> Automatically Update Campsites
                             </label>
                         </div>
                         <div id="campsites-list" class="container-fluid">
+                            <button class="sort" data-sort="name">
+                                Sort
+                            </button>
                             <ul></ul>
                         </div>
                     </div>

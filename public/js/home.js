@@ -3,7 +3,7 @@ var autocomplete;
 
 function querySearch() {
     var place = autocomplete.getPlace();
-    if (place) {
+    if (place.place_id) {
         var loc = place.place_id;
         document.location.href = '/campsearch?location=' + loc;
     }

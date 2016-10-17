@@ -55,7 +55,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="noHor">
+            <tr>
                 <th scope="row">Weather:</th>
                 {{#place_5day_weather}}
                 <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
@@ -63,7 +63,7 @@
             </tr>
         </tbody>
         <tbody>
-            <tr class="noHor">
+            <tr>
                 <th scope="row">Temperature:</th>
                 {{#place_5day_weather}}
                 <td>{{ temp }}°C</td>
@@ -94,6 +94,7 @@
             <img src="/img/Drinking water.png">
             <img src="/img/Campfire.png">        
         </div>
+        
         <br>
         <br>
 
@@ -106,6 +107,7 @@
 
         <h3>Phone Number: {{ place.phone }}</h3>
         <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
+        <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Direction</a></h3>
 
         <!-- give a 5 day weather forecast of the location // use for debugging purposes-->
         <!--
@@ -116,11 +118,6 @@
             <br>Current wind speed: {{ place_wind_speed }} m/s</br>
             <br>Current time: {{ place_time }}</br>
         </p>-->
-
-        <p> id is : {{place_id}} </p>
-
-
-        <!-- new map goes here-->
         <br>
 
 
@@ -138,184 +135,8 @@
     </div>
 
 
-    <script>
-        //will clean up this later
-        //global vars here
-
-        var map;
-        var mapLatLng = { lat: {{place_lat}}, lng: {{place_lng}} };
-
-        //different array of markers
-        var meds = [];
-        var shops = [];
-        var petrol = [];
-
-        //google services kept global
-        var service; 
-
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: mapLatLng,
-            zoom: 13,
-            mapTypeControl: false
-            });
-
-            var marker = new google.maps.Marker({
-                position: mapLatLng,
-                map: map,
-            });
-
-
-            //some request here
-            var medsRequest = {
-                location: map.getCenter(),
-                //max range
-                radius: 5000,
-                types: ['hospital']
-            }
-
-            var shopsRequest = {
-                location: map.getCenter(),
-                radius: 5000,
-                types: ['grocery_or_supermarket']
-            }
-
-            var petrolRequest = {
-                location: map.getCenter(),
-                radius: 5000,
-                types: ['gas_station']
-            }
-
-
-            //first request
-            service = new google.maps.places.PlacesService(map);
-
-            service.nearbySearch(medsRequest, function(results, status) {
-
-
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-
-
-                        //var a = _.throttle(function(){createMarker(meds,results[i]);}, 1000);
-                        //console.log(results[i]);
-                        createMarker(meds,results[i]);
-                        //a();
-                    }
-                }
-            });
-
-            //second request
-            service.nearbySearch(shopsRequest, function(results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        //console.log(results[i]);
-                        createMarker(shops, results[i]); 
-                    }
-                }
-            });
-
-            //third request
-            service.nearbySearch(petrolRequest, function(results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        //console.log(results[i]);
-                        createMarker(petrol, results[i]);
-                    }
-                }
-            });
-
-        }
-        
-        function createMarker (array, place){
-
-            //if (place.)
-            //debugging here
-            //console.log(JSON.stringify(place));
-
-            if (place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/gas_station-71.png" 
-                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png"
-                || place.icon != "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png"){
-                return;
-            }
-            //some location
-            var location = place.geometry.location;
-           //icons
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(10, 34),
-                scaledSize: new google.maps.Size(25, 25)
-            };
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                position: location
-            });
-
-            google.maps.event.addListener(marker, "click", function() {
-
-                service.getDetails({placeId: place.place_id}, function(placeInfo, status) {
-                    if (status == google.maps.places.PlacesServiceStatus.OK) {
-                        var infowindow = new google.maps.InfoWindow({
-                            content: '<p>'+placeInfo.name+'</p>'+ '<p>'+placeInfo.formatted_address+'</p>' + '<p>'+placeInfo.formatted_phone_number+'</p>'
-                        });
-                        infowindow.setOptions({pixelOffset: new google.maps.Size(-25, 0)})
-                        infowindow.open(map, marker);
-                    }else{
-                        console.log("ran out of api call or unexpected error");
-                    }
-                });
-
-
-            });
-            array.push(marker);
-
-
-        }
-
-       // Sets the map on all markers in the array.
-        function setMapOnAll(markers, map) {
-           // console.log("showing markers");
-            for (var i = 0; i < markers.length; i++) {
-              markers[i].setMap(map);
-            }
-        }
-
-        // Removes the markers from the map, but keeps them in the array.
-        function clearMarkers(markers) {
-            //console.log("clearing markers");
-            setMapOnAll(markers, null);
-        }
-
-        function showShops (){
-        //remove w.e. was last
-        //then set onto map
-            clearMarkers(petrol);
-            clearMarkers(meds);
-            clearMarkers(shops);
-            setMapOnAll(shops, map);
-        }
-
-        function showPetrolStation(){
-            clearMarkers(shops);
-            clearMarkers(meds);
-            clearMarkers(petrol);
-            setMapOnAll(petrol, map);
-        }
-
-        function showMeds (){
-            clearMarkers(shops);
-            clearMarkers(petrol);
-            clearMarkers(meds);
-            setMapOnAll(meds, map);
-        }
-
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw&callback=initMap&libraries=places"
+    <script src="/js/campsites.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas&callback=initMap&libraries=places"
     async defer></script>
 
     <script>
@@ -333,13 +154,4 @@
     })</script>
 
 </body>
-
 </html>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

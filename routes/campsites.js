@@ -2,10 +2,12 @@ var express = require('express');
 var router = express();
 var request = require('request');
 
+const IMAGES_ON = false;
+
 // API keys
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
-var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
+var mapsApiKey = 'AIzaSyD9KC8l4lg-FlrO37Pl-Cu-02MK8RMpOas';
 
 function getWeather(req, res, next) {
     var lat = req.query.lat;
@@ -58,6 +60,7 @@ function getPlaceDetails(req, res, next) {
     var lat = req.query.lat;
     var lng = req.query.long;
     var mapsApi = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.query.id + '&key=' + mapsApiKey;
+
     request({
         url: mapsApi,
         json: true
@@ -84,8 +87,13 @@ function getPlaceDetails(req, res, next) {
             else
                 placeDetails.website = "N/A";
 
+            if (!IMAGES_ON) {
+                req.placeDetails = placeDetails;
+                next();
+            }
+
             if (place.result.photos) {
-                console.log(place.result.photos[0]);
+                // console.log(place.result.photos[0]);
                 for (var i = 0; i < place.result.photos.length; i++) {
                     var photoRef = place.result.photos[i].photo_reference;
                     var height = place.result.photos[i].height;
@@ -144,6 +152,27 @@ function getPlaceDetails(req, res, next) {
 }
 
 function renderPage(req, res) {
+    if (!IMAGES_ON) {
+        res.render('campsites', {
+            //used for google maps
+            place: req.placeDetails,
+            place_5day_weather: req.fiveDayWeather,
+            // Take out images if they're not on
+            header_image: 0,
+            place_images: 0,
+            place_lat: req.query.lat,
+            place_lng: req.query.long,
+            place_id: req.query.id,
+            //place_chance: weather.precipitation.value,
+            partials: {
+                header: 'partials/header',
+                navbar: 'partials/navbar',
+                bottomJs: 'partials/bottomJs',
+                API_KEY: 'partials/api_key'
+            }
+        });
+    }
+
     res.render('campsites', {
         //used for google maps
         place: req.placeDetails,
