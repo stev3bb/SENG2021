@@ -84,15 +84,11 @@
                 <img src="/img/Campfire.png">
                 <br />
             </div>
-            <p class="body-text">
-                <span class="info-text"><b>Address: </b>{{ place.address }}</span>
-                <br />
-                <br />
-                <span class="info-text"><b>Phone Number: </b>{{ place.phone }}</span>
-                <br />
-                <br />
-                <span class="info-text"><b>Website: </b><a href="{{ place.website }}">{{ place.website }}</a></span>
-            </p>
+            <div class="body-text">
+                <div class="info-text"><b>Address: </b>{{ place.address }}</div>
+                <div class="info-text"><b>Phone Number: </b>{{ place.phone }}</div>
+                <div class="info-text"><b>Website: </b><a href="{{ place.website }}">{{ place.website }}</a></div>
+            </div>
             <br />
             <br />
         </div>
