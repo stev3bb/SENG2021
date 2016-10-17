@@ -253,16 +253,23 @@ Weather Table
 */
 .table-condensed{
     float: right;
-    margin-top: 3.5vh;
+    margin-top: 2.5vh;
     /*right change to 17 if align with picture above*/
-    margin-right: 17vw;
+    margin-right: 20vw;
     /*width: 0%;*/
 }
 .table-condensed, th, td {
     border: 1px solid black;
     border: none;
     text-align: center;
+    font-size:25px;
+    font-family: tahoma;
+    width: 25vw;
 }
+
+
+
+
 
 /*
     ???
@@ -318,6 +325,7 @@ size of rating and stars
 #ratingText {
     margin-left: 0.5vw;
     font-size: 22px;
+    margin-right: 2vw;
 }
 
 .campicons {
@@ -328,7 +336,10 @@ size of rating and stars
 #facility {
     float: left;
     margin-top: 2vh; 
-    margin-top: 2vh;
+    margin-bottom: 2vh;
     margin-left: 0.5vw;
-    font-size: 20px;
+    font-size: 22px;
 }
+
+
+

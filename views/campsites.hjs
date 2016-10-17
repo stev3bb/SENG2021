@@ -56,7 +56,7 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">Weather:</th>
+                <th id="tableweather" scope="row"></th>
                 {{#place_5day_weather}}
                 <td><img id="weatherIcon" src="http://openweathermap.org/img/w/{{ icon }}.png"></td>
                 {{/place_5day_weather}}
@@ -64,7 +64,7 @@
         </tbody>
         <tbody>
             <tr>
-                <th scope="row">Temperature:</th>
+                <th id="tabletemp" scope="row"></th>
                 {{#place_5day_weather}}
                 <td>{{ temp }}°C</td>
                 {{/place_5day_weather}}
@@ -93,11 +93,11 @@
             <img src="/img/Shower.png">
             <img src="/img/Drinking water.png">
             <img src="/img/Campfire.png">        
-        </div>
-        
+        </div>    
         <br>
         <br>
-
+        <br>
+        <br>
         <br />
         <div class="slider">
             <ul>{{#place_images}}<li><img src="{{.}}" class="slide-img"></li>{{/place_images}}</ul>
@@ -107,7 +107,7 @@
 
         <h3>Phone Number: {{ place.phone }}</h3>
         <h3>Website: <a href="{{ place.website }}">{{ place.website }}</a></h3>
-        <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Direction</a></h3>
+        <h3><a href= "https://maps.google.com?saddr=Current+Location&daddr={{place_lat}},{{place_lng}}">Directions</a></h3>
 
         <!-- give a 5 day weather forecast of the location // use for debugging purposes-->
         <!--
