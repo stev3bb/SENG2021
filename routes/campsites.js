@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express();
 var request = require('request');
+var file = '/api_key.txt';
+
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+
 
 const IMAGES_ON = true;
 
@@ -8,6 +13,7 @@ const IMAGES_ON = true;
 var weatherApiKey = '4d30a475c46e1fc7e5c6d9f7ee6517be';
 var flickrApiKey = 'd417fc0243e0d8899645e1ff174d67d4';
 var mapsApiKey = 'AIzaSyDydgd2jbeRErhSowqagqkqVqARAPUieAw';
+
 
 var placeImages = [];
 
