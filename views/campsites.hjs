@@ -119,7 +119,7 @@
         <br />
     </div>
     <script src="/js/campsites.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?{{> API_KEY }}&callback=initMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key={{> API_KEY }}&callback=initMap&libraries=places"
     async defer></script>
 
     <script>

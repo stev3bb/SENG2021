@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express();
 var request = require('request');
-var file = '/api_key.txt';
+// var file = '/api_key.txt';
 
 
 
