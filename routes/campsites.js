@@ -3,8 +3,6 @@ var router = express();
 var request = require('request');
 var file = '/api_key.txt';
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
 
 
 const IMAGES_ON = true;
