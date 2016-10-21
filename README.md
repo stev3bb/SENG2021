@@ -78,7 +78,6 @@ Very important page. These pages are dynamically generated based on a given ID, 
 
 
 ###use this api: https://openweathermap.org/
-###api key: 4d30a475c46e1fc7e5c6d9f7ee6517be
 ###api doc: http://openweathermap.org/current
 ###example : http://api.openweathermap.org/data/2.5/weather?q=randwick,au&callback=test&appid=4d30a475c46e1fc7e5c6d9f7ee6517be&mode=html
 
